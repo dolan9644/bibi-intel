@@ -1,1 +1,12 @@
+sessions/
 sessions/*.jsonl*
+data/
+tmp/
+docs/
+index.html
+.DS_Store
+agent/
+.openclaw/
+*.key
+*.pem
+**/secrets*
