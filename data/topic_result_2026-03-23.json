@@ -1,0 +1,691 @@
+[
+  {
+    "category": "LLM Engineering / Evaluation",
+    "event_core": "LLM-as-Judge Won't Save Your Product—Fixing Your Process Will",
+    "tier": "T0",
+    "source": "Eugene Yan",
+    "details_and_data": "2025-04-20 (337d). https://eugeneyan.com//writing/eval-process/\nKey argument: LLM-as-judge is not a shortcut; eval must use scientific method + EDD. Core loop: Look at Data -> Annotate -> Hypothesize -> Experiment -> Measure. HN-discussed.\nTitle: An LLM-as-Judge Won't Save The Product—Fixing Your Process Will URL Source: https://eugeneyan.com/writing/eval-process/ Published Time: 2025-04-20T00:00:00+00:00 Markdown Content: - [x] *   [Start Here](https://eugeneyan.com/start-here/ \"Start Here\") *   [Writing](https://eugeneyan.com/writing/ \"Writing\") *   [Speaking](https://eugeneyan.com/speaking/ \"Speaking\") *   [Prototyping](https://eugeneyan.com/prototyping/ \"Prototyping\") *   [About](https://eugeneyan.com/about/ \"About\") [ [eval](https://eugeneyan.com/tag/eval/)[llm](https://eugeneyan.com/tag/llm/)[engineering](https://eugeneyan.com/tag/engineering/) ]  · 5 min read Product [evals](https://eugeneyan.com/tag/eval/) are misunderstood. Some folks think that adding another tool, metric, or LLM-as-judge will solve the problems and save the product. But this sidesteps the core problem and avoids the real work. Evals aren’t static artifacts or quick fixes; they’re practices that apply the scientific method, eval-driven development, and AI output monitoring. **Building product evals is simply the scientific method in disguise.** That’s the secret sauce. It’s a cycle of inquiry, experimentation, and analysis. It starts with _",
+    "perspectives": [
+      "LLM-as-Judge correlation with human eval only when calibrated",
+      "50:50 pass/fail annotation split recommended",
+      "EDD embeds evals into every code change"
+    ],
+    "focus_trace": true
+  },
+  {
+    "category": "LLM Engineering / Industry Events",
+    "event_core": "NVIDIA GTC 2025 — Building LLM-Powered Applications",
+    "tier": "T0",
+    "source": "Eugene Yan",
+    "details_and_data": "2025-03-?? (370d). https://eugeneyan.com//speaking/nvidia-gtc-2025/\nCoverage from NVIDIA GTC 2025. LLM inference optimization, GPU advances, Llama ecosystem, building LLM-powered apps at scale.\nTitle: NVIDIA GTC 2025 - Building LLM-Powered Applications URL Source: https://eugeneyan.com/speaking/nvidia-gtc-2025/ Published Time: 2025-03-18T00:00:00+00:00 Markdown Content: - [x] *   [Start Here](https://eugeneyan.com/start-here/ \"Start Here\") *   [Writing](https://eugeneyan.com/writing/ \"Writing\") *   [Speaking](https://eugeneyan.com/speaking/ \"Speaking\") *   [Prototyping](https://eugeneyan.com/prototyping/ \"Prototyping\") *   [About](https://eugeneyan.com/about/ \"About\") [ [llm](https://eugeneyan.com/tag/llm/)[engineering](https://eugeneyan.com/tag/engineering/)[production](https://eugeneyan.com/tag/production/) ]  · 1 min read Chip and I were invited to speak on a [panel](https://register.nvidia.com/flow/nvidia/gtcs25/ap/page/catalog/session/1730316437243001MymS) at NVIDIA GTC 2025",
+    "perspectives": [
+      "NVIDIA GTC 2025: inference optimization and GPU advances",
+      "Llama ecosystem and open model deployment",
+      "LLM-powered application building at scale"
+    ],
+    "focus_trace": true
+  },
+  {
+    "category": "LLM Engineering / Recommender Systems",
+    "event_core": "Improving Recommendation Systems & Search in the Age of LLMs",
+    "tier": "T0",
+    "source": "Eugene Yan",
+    "details_and_data": "2025-03-?? (372d). https://eugeneyan.com//writing/recsys-llm/\nLLMs transforming recommendation systems and search. Semantic search, LLM-based ranking, personalization advances, convergence of IR and language models.\nTitle: Improving Recommendation Systems & Search in the Age of LLMs URL Source: https://eugeneyan.com/writing/recsys-llm/ Published Time: 2025-03-16T00:00:00+00:00 Markdown Content: Recommendation systems and search have historically drawn inspiration from language modeling. For example, the adoption of [Word2vec](https://arxiv.org/abs/2009.12192) to learn item embeddings (for embedding-based retrieval), and using [GRUs](https://arxiv.org/abs/1511.06939), [Transformer](https://arxiv.org/abs/1905.06874), and [BERT](https://arxiv.org/abs/1904.06690) to predict the next best item (for ranking). The current paradigm of large language models is no different. Here, we’ll discuss how industrial search and recommendation systems have evolved over the past year or so and cover model architectures, ",
+    "perspectives": [
+      "LLMs enhancing recommendation ranking and search",
+      "Semantic search with LLMs",
+      "Convergence of RecSys and NLP/LLM approaches"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Evaluation",
+    "event_core": "Task-Specific LLM Evals that Do & Don't Work",
+    "tier": "T0",
+    "source": "Eugene Yan",
+    "details_and_data": "2024-03-31 (722d). https://eugeneyan.com//writing/evals/\nCritique of off-the-shelf benchmarks for domain-specific LLM apps. Generic evals fail to correlate with real-world task performance. Guidance on building custom evals.",
+    "perspectives": [
+      "Off-the-shelf evals do not correlate with domain-specific performance",
+      "Need custom eval datasets per application",
+      "Eval quality beats eval quantity"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Recommender Systems",
+    "event_core": "Netflix PRS 2024 — Applying LLMs to Recommendation Experiences",
+    "tier": "T0",
+    "source": "Eugene Yan (Speaking)",
+    "details_and_data": "2024-05-31 (661d). https://eugeneyan.com//speaking/netflix-prs/\nTalk at Netflix PRS 2024 on applying LLMs to recommendation systems. Covers ranking, explanation generation, personalization at Netflix scale.",
+    "perspectives": [
+      "LLMs applied to recommendation ranking and explanation generation",
+      "Netflix production scale case study",
+      "Cross-domain: RecSys + LLM convergence"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Application",
+    "event_core": "Building an AI Coach to Help Tame My Monkey Mind",
+    "tier": "T0",
+    "source": "Eugene Yan",
+    "details_and_data": "2024-04-07 (715d). https://eugeneyan.com//writing/ai-coach/\nPersonal case study building an AI coaching app using LLMs. Prompt engineering for therapeutic use cases, product design for behavioral change.",
+    "perspectives": [
+      "LLM applied to personal coaching and productivity",
+      "Prompt engineering for therapeutic applications",
+      "AI coach as a product case study"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Practitioner Insights",
+    "event_core": "What We've Learned From A Year of Building with LLMs",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2025-01-13 (680d). https://eugeneyan.com//writing/llm-lessons/\nYear-end retrospective on building with LLMs in production. What worked, what failed, key lessons from the first year of LLM engineering discipline.",
+    "perspectives": [
+      "First-year retrospective on LLM production systems",
+      "Failure mode taxonomy",
+      "What the discipline learned collectively in 2024"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Testing",
+    "event_core": "Do Not Mock Machine Learning Models in Unit Tests",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2024-02-25 (757d). https://eugeneyan.com//writing/unit-testing-ml/\nContrarian take: mocking ML models in unit tests leads to brittle, unrealistic tests. Advocates testing ML code with real model behavior.",
+    "perspectives": [
+      "Mocking ML models creates false confidence",
+      "Test ML code behavior, not ML model internals",
+      "Integration tests with real models preferred"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Finetuning",
+    "event_core": "How to Generate and Use Synthetic Data for Finetuning",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2024-02-11 (771d). https://eugeneyan.com//writing/synthetic/\nGuide to generating synthetic training data for LLM finetuning. When synthetic data is viable, generation methods, quality filtering, instruction-tuning and preference-tuning (DPO, RLHF).",
+    "perspectives": [
+      "Synthetic data viability for LLM finetuning",
+      "Instruction-tuning vs preference-tuning with synthetic data",
+      "Quality filtering for synthetic datasets"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Learning Resources",
+    "event_core": "Language Modeling Reading List (to Start Your Paper Club)",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2024-01-07 (806d). https://eugeneyan.com//writing/llm-reading-list/\nCurated reading list for LLM paper club. Foundational papers in language modeling, attention, transformers, emergent LLM capabilities.",
+    "perspectives": [
+      "Curated LLM paper reading list",
+      "Paper club format for continuous learning",
+      "Foundational transformer and language model papers"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / Production",
+    "event_core": "Push Notifications: What to Push, What Not to Push, and How Often",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-12-24 (820d). https://eugeneyan.com//writing/push/\nNovel framing: push notifications as a recommender system. Timing, content selection, frequency as collaborative filtering / multi-armed bandit problem.",
+    "perspectives": [
+      "Push notification optimization via recsys techniques",
+      "Timing, content, frequency as bandit problem",
+      "Novel intersection of notifications and recsys"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Hallucination Mitigation",
+    "event_core": "Out-of-Domain Finetuning to Bootstrap Hallucination Detection",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-11-05 (869d). https://eugeneyan.com//writing/finetuning/\nMethod for detecting hallucinations via out-of-domain finetuning. Finetuning small model on labeled hallucination data as detector for larger production models.",
+    "perspectives": [
+      "Finetuning for hallucination detection",
+      "Out-of-domain generalization for eval",
+      "Bootstrapping eval data with small models"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Practitioner Insights",
+    "event_core": "Reflections on AI Engineer Summit 2023",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-10-15 (890d). https://eugeneyan.com//writing/aieng-reflections/\nPractitioner reflections from AI Engineer Summit 2023. Emerging discipline of AI engineering, common patterns in successful LLM apps, state of the field in its formative year.",
+    "perspectives": [
+      "State of AI engineering as a discipline in 2023",
+      "Common patterns in successful LLM apps",
+      "Observations from early AI engineering community"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / System Design",
+    "event_core": "AI Engineer 2023 Keynote — Building Blocks for LLM Systems",
+    "tier": "T1",
+    "source": "Eugene Yan (Speaking)",
+    "details_and_data": "2023-10-09 (896d). https://eugeneyan.com//speaking/ai-eng-summit/\nKeynote at AI Engineer Summit 2023. Foundational building blocks for LLM apps: prompting, retrieval, evaluation, inference optimization, observability.",
+    "perspectives": [
+      "Early definitive map of LLM system architecture",
+      "Building blocks taxonomy for LLM applications",
+      "Keynote from formative year of AI engineering"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Evaluation",
+    "event_core": "Evaluation & Hallucination Detection for Abstractive Summaries",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-09-03 (932d). https://eugeneyan.com//writing/abstractive/\nSpecialized eval framework for abstractive summarization. Faithfulness, factuality, coherence. Hallucination detection for summary generation.",
+    "perspectives": [
+      "Faithfulness vs factuality in summarization eval",
+      "Hallucination metrics for abstractive summarization",
+      "Domain-specific evaluation framework"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / System Design",
+    "event_core": "How to Match LLM Patterns to Problems",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-08-13 (953d). https://eugeneyan.com//writing/llm-problems/\nFollow-up to LLM patterns article. Guides on selecting right architectural pattern (RAG vs fine-tuning vs chain-of-thought vs agents) based on problem characteristics.",
+    "perspectives": [
+      "Decision framework: which LLM pattern fits which problem",
+      "RAG vs fine-tuning decision tree",
+      "Problem characteristics to pattern mapping"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / System Design",
+    "event_core": "Patterns for Building LLM-based Systems & Products (2023)",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-07-30 (967d). https://eugeneyan.com//writing/llm-patterns/\nSeminal article cataloging 30+ patterns for LLM-based systems. Covers RAG, caching, guardrails, retries, fallbacks, human-in-the-loop, eval frameworks, observability. HN: 900+ points.",
+    "perspectives": [
+      "30+ production-ready LLM system patterns",
+      "HN-discussed widely",
+      "Covers RAG, eval, error handling, caching, guardrails"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / Conference",
+    "event_core": "RecSys 2022-2024: Conference Recaps and Key Recommendation Systems Papers",
+    "tier": "T1",
+    "source": "Eugene Yan (Speaking)",
+    "details_and_data": "Netflix PRS 2024 (661d): https://eugeneyan.com//speaking/netflix-prs/ | RecSys 2022 (1277d): https://eugeneyan.com//speaking/recsys2022-keynote/\nRecSys conference coverage spanning 2022-2024. State of recommendation research, key papers, position bias, industry lessons from Netflix-scale deployments.",
+    "perspectives": [
+      "RecSys 2022 key papers and lessons",
+      "Netflix scale recommendation with LLMs",
+      "Position bias measurement and mitigation"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Practitioner Insights",
+    "event_core": "2023 Year in Review — Reflections on Writing, Reading, and ML Practice",
+    "tier": "T1",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-12-?? (813d). https://eugeneyan.com//writing/2023-review/\nYear-end review covering writing, reading, and ML practice reflections. LLM adoption acceleration, rise of AI engineering discipline.\nTitle: 2023 Year in Review URL Source: https://eugeneyan.com/writing/2023-review/ Published Time: 2023-12-31T00:00:00+00:00 Markdown Content: - [x] *   [Start Here](https://eugeneyan.com/start-here/ \"Start Here\") *   [Writing](https://eugeneyan.com/writing/ \"Writing\") *   [Speaking](https://eugeneyan.com/speaking/ \"Speaking\") *   [Prototyping](https://eugeneyan.com/prototyping/ \"Prototyping\") *   [About](https://eugeneyan.com/about/ \"About\") [ [life](https://eugeneyan.com/tag/life/) ]  · 8 min read 2023 was a peaceful year of small, steady steps. There were no major lifestyle changes and I had",
+    "perspectives": [
+      "2023 year-end retrospective on ML practice",
+      "LLM adoption acceleration in industry",
+      "Rise of AI engineering as a discipline"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Best Practices",
+    "event_core": "More Design Patterns for Machine Learning Systems",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-?? (1065d). https://eugeneyan.com//writing/more-patterns/\nAdditional design patterns beyond the original 30+ catalog. Emerging patterns for LLM systems, agentic workflows, and advanced production ML.\nTitle: More Design Patterns For Machine Learning Systems URL Source: https://eugeneyan.com/writing/more-patterns/ Published Time: 2023-04-23T00:00:00+00:00 Markdown Content: Design patterns are reusable, time-tested solutions to common problems in software engineering. They distill best practices and past knowledge into pragmatic advice for practitioners, and provide a shared vocabulary so we can collaborate effectively. Here, I’d like to share a couple of patterns I’ve seen in machine learning systems. Some of them, such as process data once and evaluate before deploy, may seem basic to seaso",
+    "perspectives": [
+      "Additional ML system design patterns beyond basics",
+      "Agentic workflow patterns",
+      "Advanced production ML patterns"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / System Design",
+    "event_core": "Patterns for Personalization in Recommendations and Search",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2021-2022 (1744d). https://eugeneyan.com//writing/patterns-for-personalization/\nDetailed guide to personalization patterns in recommendation and search systems. Two-tower architecture, user representation, contextual bandits.\nTitle: Patterns for Personalization in Recommendations and Search URL Source: https://eugeneyan.com/writing/patterns-for-personalization/ Published Time: 2021-06-13T00:00:00+00:00 Markdown Content: Personalization is the process of customizing each individual’s experience. It’s how an electronics geek gets different recommendations from a cooking hobbyist, and how they might get different results from the same search query (e.g., “Apple”) How does personalization happen? I dug into a couple of industry papers and bucketed them into a few groups (e.g., bandit, sequential, graph-based). These gr",
+    "perspectives": [
+      "Personalization patterns for recsys and search",
+      "Two-tower model for user representation",
+      "Contextual bandits for personalization"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / MLOps",
+    "event_core": "A Practical Guide to Maintaining Machine Learning in Production",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2019 (2128d). https://eugeneyan.com//writing/practical-guide-to-maintaining-machine-learning/\nMaintaining ML systems post-deployment. Data drift detection, model retraining triggers, monitoring, operational burden of production ML.",
+    "perspectives": [
+      "ML maintenance challenges post-deployment",
+      "Data drift detection methods",
+      "Retraining triggers and monitoring practices"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Best Practices",
+    "event_core": "Design Patterns in Machine Learning Code and Systems",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2022-2023 (1380d). https://eugeneyan.com//writing/design-patterns/\nSoftware engineering design patterns applied to ML: adapter for model swapping, strategy for serving, factory for hyperparameter search, observability patterns.",
+    "perspectives": [
+      "Software patterns applied to ML code",
+      "Model serving patterns",
+      "ML-specific code architecture"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / MLOps",
+    "event_core": "Feature Stores: A Hierarchy of Needs",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2020 (1856d). https://eugeneyan.com//writing/feature-stores/\nFramework for feature stores: hierarchy of needs from basic storage to serving, transformation, monitoring, and discovery.",
+    "perspectives": [
+      "Feature store capability maturity model",
+      "Feature reuse across models",
+      "Feature engineering infrastructure"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / Evaluation",
+    "event_core": "Counterfactual Evaluation for Recommendation Systems",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2022 (1443d). https://eugeneyan.com//writing/counterfactual-evaluation/\nEvaluating recsys using counterfactual/logged data instead of online A/B. Inverse propensity scoring, policy learning from logged bandit feedback.",
+    "perspectives": [
+      "Counterfactual reasoning for recsys evaluation",
+      "Offline evaluation using logged data",
+      "Inverse propensity scoring"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Philosophy",
+    "event_core": "The Metagame of Applying Machine Learning",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2020 (1786d). https://eugeneyan.com//writing/machine-learning-metagame/\nMeta-level discussion on strategy and game theory in applying ML. How to think about ML adoption decisions, competitive dynamics, and strategic positioning of ML capabilities.\nTitle: The Metagame of Applying Machine Learning URL Source: https://eugeneyan.com/writing/machine-learning-metagame/ Published Time: 2021-05-02T00:00:00+00:00 Markdown Content: - [x] *   [Start Here](https://eugeneyan.com/start-here/ \"Start Here\") *   [Writing](https://eugeneyan.com/writing/ \"Writing\") *   [Speaking](https://eugeneyan.com/speaking/ \"Speaking\") *   [Prototyping](https://eugeneyan.com/prototyping/ \"Prototyping\") *   [About](https://eugeneyan.com/about/ \"About\") [ [machinelearning](https://eugeneyan.com/tag/machinelearning/)[career](https://eugeneyan.com/tag/career/)[🩷](https://",
+    "perspectives": [
+      "Strategic thinking about ML adoption",
+      "Game theory in ML application decisions",
+      "Competitive dynamics of ML capabilities"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Career / Leadership",
+    "event_core": "My First 100 Days as Data Science Lead",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2017 (3101d). https://eugeneyan.com//writing/my-first-100-days-as-data-science-lead/\nTransitioning from IC to ML team lead at Lazada. 1-on-1 execution, delegation, culture building, aligning team mission with company goals.",
+    "perspectives": [
+      "IC to manager transition for ML teams",
+      "Culture building for data science teams",
+      "Delegation in ML contexts"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / Algorithms",
+    "event_core": "Bandits for Recommender Systems",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2022 (1415d). https://eugeneyan.com//writing/bandits/\nExploration-exploitation in recsys via multi-armed bandits. Thompson sampling, UCB, contextual bandits. Practical guide for production recsys.",
+    "perspectives": [
+      "Multi-armed bandits for recsys exploration",
+      "Thompson sampling for recommendation",
+      "Contextual bandits in production"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / Bias",
+    "event_core": "How to Measure and Mitigate Position Bias in Recommendations",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2022 (1436d). https://eugeneyan.com//writing/position-bias/\nPosition bias in recsys: measurement via intervention studies, examination modeling, causal relationship between position and engagement.",
+    "perspectives": [
+      "Position bias measurement in recsys",
+      "Examination hypothesis for click modeling",
+      "Debiasing techniques"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Career / Engineering",
+    "event_core": "Unpopular Opinion: Data Scientists Should Be More End-to-End",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2019 (2052d). https://eugeneyan.com//writing/end-to-end-data-science/\nArgues data scientists should own the full pipeline from data engineering to model serving. Advocates full-stack DS capability for real impact.",
+    "perspectives": [
+      "End-to-end ownership of ML systems by data scientists",
+      "DS breadth vs depth tradeoffs",
+      "Breaking down DS/DE/MLE silos"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Testing",
+    "event_core": "How to Test Machine Learning Code and Systems",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2019 (2024d). https://eugeneyan.com//writing/testing-ml/\nComprehensive ML testing: unit testing for data processing, integration testing for ML pipelines, property-based testing for ML invariants.",
+    "perspectives": [
+      "ML-specific testing strategies",
+      "Property-based testing for ML",
+      "Data pipeline testing patterns"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Philosophy",
+    "event_core": "Simplicity is an Advantage but Sadly Complexity Sells Better",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2022 (1317d). https://eugeneyan.com//writing/simplicity/\nTension between ML system simplicity and market preference for complexity. When to choose simple models, why simpler ML often outperforms in production.",
+    "perspectives": [
+      "Simple vs complex model tradeoffs in production",
+      "Why complexity sells even when simplicity works better",
+      "Right-sizing ML complexity"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Career / Leadership",
+    "event_core": "Growing and Running Your Data Science Team",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2020 (1877d). https://eugeneyan.com//writing/data-science-teams/\nManagement guide for data science teams: hiring strategy, team structure, project prioritization, stakeholder management for ML organizations.",
+    "perspectives": [
+      "DS team hiring and structure",
+      "ML project prioritization frameworks",
+      "Stakeholder management for ML"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Testing",
+    "event_core": "Writing Robust Tests for Data and Machine Learning Pipelines",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2022 (1296d). https://eugeneyan.com//writing/testing-pipelines/\nAdvanced pipeline testing: data contract testing, statistical property tests, monitoring-based testing for production ML.",
+    "perspectives": [
+      "Data contract testing for ML pipelines",
+      "Statistical property-based tests",
+      "Monitoring-integrated testing"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Best Practices",
+    "event_core": "How to Write Design Docs for Machine Learning Systems",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2020 (1842d). https://eugeneyan.com//writing/ml-design-docs/\nML design docs: problem statement, success criteria, data requirements, modeling approach, serving architecture, evaluation plan. Standardizes ML design reviews.",
+    "perspectives": [
+      "ML design doc template and process",
+      "Cross-functional ML design communication",
+      "ML system design review framework"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Career / Personal Development",
+    "event_core": "Impostor Syndrome and Decade Reflection for Technical Professionals",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "Impostor Syndrome (1807d): https://eugeneyan.com//writing/imposter-syndrome/ | Decade Review (1835d)\nManaging impostor syndrome in technical careers, resume strategies, reflecting on a decade of professional ML growth.",
+    "perspectives": [
+      "Managing impostor syndrome in technical careers",
+      "DS resume strategies",
+      "Long-term career reflection"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Learning / Education",
+    "event_core": "How Reading Papers Helps You Be a More Effective Data Scientist",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2019 (2031d). https://eugeneyan.com//writing/why-read-papers/\nWhy data scientists should read research papers regularly. How to extract actionable insights from papers and apply them to production problems.",
+    "perspectives": [
+      "Paper reading as a DS skill",
+      "Staying current with ML research",
+      "Translating paper findings to production"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Career / Best Practices",
+    "event_core": "Data Science Project Quick-Start Framework",
+    "tier": "T2",
+    "source": "Eugene Yan",
+    "details_and_data": "2022 (1478d). https://eugeneyan.com//writing/project-quick-start/\nFramework for starting DS projects: problem framing, data exploration, modeling strategy, fast iteration. Condensed methodology for DS execution.",
+    "perspectives": [
+      "DS project methodology condensed",
+      "Problem framing for ML projects",
+      "Fast iteration in data science"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Deep Learning / Fundamentals",
+    "event_core": "Some Intuition on Attention and the Transformer",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-?? (1037d). https://eugeneyan.com//writing/attention/\nIntuitive explanation of attention mechanisms and the Transformer architecture. Visual/intuitive approach to understanding why attention enables large language models.\nTitle: Some Intuition on Attention and the Transformer URL Source: https://eugeneyan.com/writing/attention/ Published Time: 2023-05-21T00:00:00+00:00 Markdown Content: - [x] *   [Start Here](https://eugeneyan.com/start-here/ \"Start Here\") *   [Writing](https://eugeneyan.com/writing/ \"Writing\") *   [Speaking](https://eugeneyan.com/speaking/ \"Speaking\") *   [Prototyping](https://eugeneyan.com/prototyping/ \"Prototyping\") *   [About](https://eugeneyan.com/about/ \"About\") [ [deeplearning](https://eugeneyan.com/tag/deeplearning/)[llm](https://eugeneyan.com/tag/llm/) ]  · 8 min read ChatGPT and other",
+    "perspectives": [
+      "Attention mechanism intuition explained visually",
+      "Transformer architecture fundamentals",
+      "Why attention enables LLMs"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / Fundamentals",
+    "event_core": "Building Baseline Recommender Systems: Graph NLP and Matrix Factorization in PyTorch",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "2019. Graph NLP (2261d): https://eugeneyan.com//writing/recommender-systems-graph-and-nlp-pytorch/ | Serendipity (2157d): https://eugeneyan.com//writing/serendipity-and-accuracy-in-recommender-systems/\nMatrix factorization baseline in PyTorch, graph NLP methods (random walks + word2vec) for recsys, accuracy-serendipity tradeoff.",
+    "perspectives": [
+      "Matrix factorization in PyTorch",
+      "Graph-based recommendation with random walks",
+      "Accuracy vs serendipity tradeoff"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Resources",
+    "event_core": "Open-LLMs — A List of LLMs for Commercial Use",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-?? (1051d). https://eugeneyan.com//writing/open-llms/\nCurated list of open-source LLMs available for commercial use. Model capabilities, license types, practical considerations for deploying open LLMs in production.\nTitle: Open-LLMs - A list of LLMs for Commercial Use URL Source: https://eugeneyan.com/writing/open-llms/ Published Time: 2023-05-07T00:00:00+00:00 Markdown Content: - [x] *   [Start Here](https://eugeneyan.com/start-here/ \"Start Here\") *   [Writing](https://eugeneyan.com/writing/ \"Writing\") *   [Speaking](https://eugeneyan.com/speaking/ \"Speaking\") *   [Prototyping](https://eugeneyan.com/prototyping/ \"Prototyping\") *   [About](https://eugeneyan.com/about/ \"About\") [ [llm](https://eugeneyan.com/",
+    "perspectives": [
+      "Open-source LLMs for commercial deployment",
+      "License and capability comparison",
+      "Practical guide to open LLM selection"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Learning / Education",
+    "event_core": "OMSCS Course Reviews: ML for Trading, HCI, OS, Computer Vision",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "ML4T (2508d) | HCI (2393d) | OS (2290d) | CV (3234d)\nGeorgia Tech OMSCS course reviews: ML for Trading (RL应用到金融), HCI (needfinding), OS (C编程/并发), Computer Vision.",
+    "perspectives": [
+      "OMSCS ML for Trading: RL applied to finance",
+      "OMSCS HCI: needfinding and design",
+      "OMSCS OS: C and concurrent systems"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Productivity / Writing",
+    "event_core": "Note-Taking Systems: Zettelkasten, Obsidian-Copilot, and Writing as Learning",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "Zettelkasten (2178d): https://eugeneyan.com//writing/note-taking-zettelkasten/ | Obsidian-Copilot (1016d): https://eugeneyan.com//writing/obsidian-copilot/\nZettelkasten method for technical knowledge management, and AI-assisted writing with Obsidian and Copilot.",
+    "perspectives": [
+      "Zettelkasten for technical writers",
+      "Obsidian + Copilot AI integration",
+      "Note-taking as thinking tool"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Career / Personal Development",
+    "event_core": "How to Get Started in Data Science and Journey from Psychology to ML Lead",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "Getting Started (3193d): https://eugeneyan.com//writing/how-to-get-started-in-data-science/ | Journey (2216d): https://eugeneyan.com//writing/psych-grad-to-data-science-lead/\nGuide to entering data science: SQL, Python, Spark, statistics, ML, communication. Journey from psychology to ML team lead.",
+    "perspectives": [
+      "SQL, Python, Spark for data science",
+      "Statistics, ML, communication as core skills",
+      "Psychology to ML leadership journey"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "ML Engineering / Production",
+    "event_core": "Building Product Classification and Image APIs (2016-2017)",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "Image API (3403d): https://eugeneyan.com//writing/image-categorization-is-now-live/ | Product API Part 3 (3325d): https://eugeneyan.com//writing/product-categorization-api-part-3-creating-an-api/\nEarly work on ML product APIs: image classification with Keras/Theano, product categorization API, Flask to uWSGI/nginx deployment.",
+    "perspectives": [
+      "Image classification API with Keras/Theano",
+      "Product categorization API pipeline",
+      "Flask to uWSGI/nginx deployment"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Career / Competition",
+    "event_core": "How to Win a Data Hackathon (Hacklytics 2021)",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "2021 (1863d). https://eugeneyan.com//writing/how-to-win-data-hackathon/\nStrategy and tactics for winning data hackathons: problem selection, team coordination, solution design, presentation.",
+    "perspectives": [
+      "Hackathon strategy and team coordination",
+      "Problem selection for hackathons",
+      "Data hackathon presentation tactics"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "LLM Engineering / Prompting",
+    "event_core": "Interacting with LLMs with Minimal Chat",
+    "tier": "T3",
+    "source": "Eugene Yan",
+    "details_and_data": "2023-?? (1058d). https://eugeneyan.com//writing/llm-ux/\nNon-chat interfaces for LLM interaction. Alternative interaction paradigms beyond traditional chat UIs for LLM-powered applications.\nTitle: Interacting with LLMs with Minimal Chat URL Source: https://eugeneyan.com/writing/llm-ux/ Published Time: 2023-04-30T00:00:00+00:00 Markdown Content: - [x] *   [Start Here](https://eugeneyan.com/start-here/ \"Start Here\") *   [Writing](https://eugeneyan.com/writing/ \"Writing\") *   [Speaking](https://eugeneyan.com/speaking/ \"Speaking\") *   [Prototyping](https://eugeneyan.com/prototyping/ \"Prototyping\") *   [About](https://eugeneyan.com/about/ \"About\") [ [llm](https://eugeneyan.com/tag/llm/)",
+    "perspectives": [
+      "Non-chat LLM interaction paradigms",
+      "Alternative interfaces for LLM applications",
+      "Minimal chat LLM interaction design"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / History",
+    "event_core": "Early Recommender Systems and Kaggle Competition History (2015-2020)",
+    "tier": "T4",
+    "source": "Eugene Yan",
+    "details_and_data": "Kaggle (3929d): https://eugeneyan.com//speaking/dssg-kaggle-top-3-percent-talk/ | RecSys 2020 (2003d): https://eugeneyan.com//writing/recsys2020/\nEarly recsys work: Kaggle Otto competition (85th/3514), RecSys 2020 takeaways. Foundational recsys techniques from 2015-2020 era.",
+    "perspectives": [
+      "Kaggle Otto competition 85th/3514",
+      "RecSys 2020 notable papers",
+      "Foundational recsys techniques from 2015-2020"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Learning / Education",
+    "event_core": "OMSCS General: Software Process, Health Informatics, and Program FAQ",
+    "tier": "T4",
+    "source": "Eugene Yan",
+    "details_and_data": "SDP (3144d): https://eugeneyan.com//writing/omscs-cs6300-software-development-process/ | IHI (2423d): https://eugeneyan.com//writing/omscs-cs6440-intro-to-health-informatics/ | OMSCS FAQ (2066d): https://eugeneyan.com//writing/georgia-tech-omscs-faq/\nOMSCS course reviews: Software Development Process (Java/Android), Health Informatics (FHIR/EHR), OMSCS FAQ.",
+    "perspectives": [
+      "OMSCS Software Process: Java/Android development",
+      "OMSCS Health Informatics: FHIR and healthcare standards",
+      "OMSCS program FAQ"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Productivity / Legacy",
+    "event_core": "Legacy: Writing as Learning and Knowledge Management (2018-2019)",
+    "tier": "T4",
+    "source": "Eugene Yan",
+    "details_and_data": "Writing as Learning (2186d): https://eugeneyan.com//writing/reading-note-taking-writing/\nLegacy articles on writing as a learning practice, note-taking for technical work.",
+    "perspectives": [
+      "Writing as a learning practice",
+      "Early productivity systems for technical work",
+      "Note-taking as thinking tool"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / History",
+    "event_core": "Lazada Product Ranking — Strata Hadoop 2016 Talk",
+    "tier": "T4",
+    "source": "Eugene Yan",
+    "details_and_data": "2016 (3391d). https://eugeneyan.com//speaking/shared-about-my-work-in-lazada-at-strata-hadoop-singapore-2016-talk/\nEarly work on e-commerce product ranking at Lazada. Talk at Strata Hadoop 2016 on scaling ML for product ranking in Southeast Asian e-commerce.",
+    "perspectives": [
+      "E-commerce product ranking at Lazada at scale",
+      "Early production recsys from 2016",
+      "Southeast Asian e-commerce ML scaling"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Recommender Systems / Engineering",
+    "event_core": "Real-time Machine Learning for Recommendations",
+    "tier": "T4",
+    "source": "Eugene Yan",
+    "details_and_data": "2020 (1898d). https://eugeneyan.com//writing/real-time-recommendations/\nGuide to real-time ML for recommendation systems. Feature engineering for real-time recsys, online learning, low-latency serving infrastructure.\nTitle: Real-time Machine Learning For Recommendations URL Source: https://eugeneyan.com/writing/real-time-recommendations/ Published Time: 2021-01-10T00:00:00+00:00 Markdown Content: A few weeks ago, Chip compared the state of real-time machine learning in China and US: While many Chinese companies have adopted real-time ML, US companies are still assessing its value. She also wrote about ML going real-time [here](https://huyenchip.com/2020/12/27/real-time-machine-learning.html). This post conti",
+    "perspectives": [
+      "Real-time feature engineering for recsys",
+      "Online learning for recommendations",
+      "Low-latency serving infrastructure for recsys"
+    ],
+    "focus_trace": false
+  },
+  {
+    "category": "Productivity / Writing",
+    "event_core": "Frequently Asked Questions about My Writing Process",
+    "tier": "T4",
+    "source": "Eugene Yan",
+    "details_and_data": "2025-04-?? (358d). https://eugeneyan.com//writing/writing-faq/\nFAQ about Eugene Yan's writing process: how articles are researched, structured, drafted, and edited.\nTitle: Frequently Asked Questions about My Writing Process URL Source: https://eugeneyan.com/writing/writing-faq/ Published Time: 2025-03-30T00:00:00+00:00 Markdown Content: - [x] *   [Start Here](https://eugeneyan.com/start-here/ \"Start Here\") *   [Writing](https://eugeneyan.com/writing/ \"Writing\") *   [Speaking](https://eugeneyan.com/speaking/ \"Speaking\") *   [Prototyping](https://eugeneyan.com/prototyping/ \"Prototyping\") *   [About](https://eugeneyan.com/about/ \"About\") [ [writing](https://eugeneyan.com/tag/writing/) ]  · 13 min read Every month or so, I receive questions about my writing: ",
+    "perspectives": [
+      "Writing process and workflow for technical content",
+      "How to research and structure articles",
+      "Consistency in technical writing"
+    ],
+    "focus_trace": false
+  }
+]

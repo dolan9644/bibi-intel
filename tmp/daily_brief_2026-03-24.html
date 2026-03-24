@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan's 全景内参 | 2026-03-24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e14;
+  --bg-card: #111822;
+  --bg-card-hover: #162030;
+  --border: #1a2a3a;
+  --neon-green: #00ff88;
+  --neon-cyan: #00d4ff;
+  --neon-yellow: #ffd700;
+  --neon-red: #ff3366;
+  --neon-purple: #bf5fff;
+  --neon-orange: #ff8c00;
+  --text: #e0e8f0;
+  --text-dim: #6a7a8a;
+  --text-bright: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
+
+/* HEADER */
+.header {
+  border: 1px solid var(--neon-green);
+  padding: 24px 20px;
+  margin-bottom: 32px;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,255,136,0.05) 0%, transparent 100%);
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+}
+.header-top { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--neon-green);
+  text-shadow: 0 0 20px rgba(0,255,136,0.6), 0 0 40px rgba(0,255,136,0.3);
+  letter-spacing: 2px;
+}
+.logo-en { font-size: 10px; color: var(--text-dim); letter-spacing: 4px; text-transform: uppercase; }
+.date-badge {
+  margin-left: auto;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  padding: 4px 12px;
+  text-shadow: 0 0 10px rgba(0,212,255,0.5);
+}
+.header-divider { font-size: 12px; color: var(--text-dim); margin: 8px 0; overflow: hidden; white-space: nowrap; }
+.header-theme {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--neon-yellow);
+  border-left: 3px solid var(--neon-yellow);
+  padding-left: 12px;
+  line-height: 1.8;
+}
+
+/* SECTION LABEL */
+.section-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border), transparent);
+}
+
+/* RADAR */
+.radar-section { margin-bottom: 32px; }
+.radar-wrap { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+.radar-chart {
+  flex: 0 0 280px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.radar-legend { flex: 1; min-width: 200px; }
+.legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.legend-label { color: var(--text-dim); }
+.legend-value { color: var(--text-bright); font-weight: bold; }
+.score-bars { margin-top: 16px; }
+.score-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 11px; }
+.score-bar-label { color: var(--text-dim); width: 64px; flex-shrink: 0; }
+.score-bar-track { flex: 1; height: 4px; background: var(--border); position: relative; max-width: 160px; }
+.score-bar-fill { height: 100%; box-shadow: 0 0 6px currentColor; }
+.score-bar-val { color: var(--text); width: 26px; text-align: right; }
+
+/* INTEL GRID */
+.intel-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.intel-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 16px;
+  position: relative;
+  transition: background 0.2s, border-color 0.2s;
+}
+.intel-card:hover { background: var(--bg-card-hover); border-color: rgba(0,255,136,0.3); }
+.intel-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+.card-01::before,.card-07::before,.card-13::before{background:var(--neon-green);}
+.card-02::before,.card-08::before,.card-14::before{background:var(--neon-cyan);}
+.card-03::before,.card-09::before,.card-15::before{background:var(--neon-yellow);}
+.card-04::before,.card-10::before{background:var(--neon-orange);}
+.card-05::before,.card-11::before{background:var(--neon-purple);}
+.card-06::before,.card-12::before{background:var(--neon-red);}
+
+.card-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.card-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px; color: var(--bg);
+  padding: 2px 8px; flex-shrink: 0; letter-spacing: 1px;
+}
+.card-01 .card-num,.card-07 .card-num,.card-13 .card-num{background:var(--neon-green);}
+.card-02 .card-num,.card-08 .card-num,.card-14 .card-num{background:var(--neon-cyan);}
+.card-03 .card-num,.card-09 .card-num,.card-15 .card-num{background:var(--neon-yellow);}
+.card-04 .card-num,.card-10 .card-num{background:var(--neon-orange);}
+.card-05 .card-num,.card-11 .card-num{background:var(--neon-purple);}
+.card-06 .card-num,.card-12 .card-num{background:var(--neon-red);}
+
+.card-title { font-size: 14px; color: var(--text-bright); font-weight: bold; line-height: 1.4; }
+.card-summary { font-size: 12px; color: var(--text); margin-bottom: 10px; line-height: 1.7; }
+.card-radar { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 10px; }
+.radar-tag { font-size: 10px; padding: 2px 8px; border: 1px solid var(--border); color: var(--text-dim); letter-spacing: 0.5px; }
+.radar-tag span { color: var(--neon-green); font-weight: bold; }
+.card-insight {
+  border-left: 2px solid var(--neon-yellow);
+  padding-left: 10px;
+  font-size: 12px;
+  color: var(--neon-yellow);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.card-source { font-size: 10px; color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-source a { color: var(--neon-cyan); text-decoration: none; }
+.footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); text-align: center; font-size: 11px; color: var(--text-dim); letter-spacing: 2px; }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .header-top { flex-wrap: wrap; }
+  .logo { font-size: 18px; }
+  .date-badge { margin-left: 0; }
+  .radar-wrap { flex-direction: column; }
+  .radar-chart { flex: none; width: 100%; }
+  .card-title { font-size: 13px; }
+}
+@media (max-width: 400px) { .legend-grid { grid-template-columns: 1fr; } }
+
+/* PRINT */
+@media print {
+  body { background: white; color: black; font-size: 12px; }
+  .container { max-width: 100%; padding: 10px; }
+  .header { border-color: #333; background: none; }
+  .header::before { display: none; }
+  .logo { color: #000; text-shadow: none; }
+  .date-badge { border-color: #000; color: #000; }
+  .header-theme { color: #333; border-color: #333; }
+  .intel-card { background: white; border: 1px solid #ccc; page-break-inside: avoid; box-shadow: none; }
+  .intel-card:hover { background: white; border-color: #ccc; }
+  .card-insight { color: #555; border-color: #555; }
+  .card-source a { color: #000; }
+  .card-num { background: #eee !important; color: #000 !important; }
+  .radar-tag { border-color: #999; }
+  .footer { border-top-color: #ccc; }
+  .section-label { color: #555; }
+  .section-label::after { background: #ccc; }
+  .radar-tag span { color: #333; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-top">
+    <div>
+      <div class="logo">DOLAN'S</div>
+      <div class="logo-en">PANORAMIC INTELLIGENCE</div>
+    </div>
+    <div class="date-badge">2026-03-24</div>
+  </div>
+  <div class="header-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+  <div class="header-theme">端侧AI算力奇点临近 · 供应链安全危机深化 · 垂直场景AI落地成本破局</div>
+</header>
+
+<!-- RADAR -->
+<div class="radar-section">
+  <div class="section-label">综合情绪雷达 · OVERALL SENTIMENT RADAR</div>
+  <div class="radar-wrap">
+    <div class="radar-chart">
+      <svg viewBox="0 0 220 220" width="240" height="240" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#1a2a3a" fill="none">
+          <polygon points="110,20 183,65 183,155 110,200 37,155 37,65" stroke-width="1"/>
+          <polygon points="110,40 167,73 167,147 110,180 53,147 53,73" stroke-width="1"/>
+          <polygon points="110,60 151,81 151,139 110,160 69,139 69,81" stroke-width="1"/>
+          <polygon points="110,80 135,89 135,131 110,140 85,131 85,89" stroke-width="1"/>
+          <polygon points="110,100 119,97 119,123 110,120 101,123 101,97" stroke-width="1"/>
+        </g>
+        <g stroke="#1a2a3a" stroke-width="1" fill="none">
+          <line x1="110" y1="110" x2="110" y2="20"/>
+          <line x1="110" y1="110" x2="183" y2="65"/>
+          <line x1="110" y1="110" x2="183" y2="155"/>
+          <line x1="110" y1="110" x2="110" y2="200"/>
+          <line x1="110" y1="110" x2="37" y2="155"/>
+          <line x1="110" y1="110" x2="37" y2="65"/>
+        </g>
+        <!-- Avg: Tech=5.1, Industry=4.5, Invest=7.5, Debate=2.8, China=1.0, Longterm=5.3 -->
+        <polygon points="110,56.2 194.8,77.5 194.8,142.5 110,163.8 25.2,142.5 25.2,77.5"
+          fill="rgba(0,255,136,0.12)" stroke="#00ff88" stroke-width="1.5"/>
+        <g fill="#6a7a8a" font-family="Share Tech Mono,monospace" font-size="9" text-anchor="middle">
+          <text x="110" y="14">TECH</text>
+          <text x="200" y="60">INDUSTRY</text>
+          <text x="200" y="172">INVEST</text>
+          <text x="110" y="218">DEBATE</text>
+          <text x="20" y="172">CHINA</text>
+          <text x="20" y="60">LONGTERM</text>
+        </g>
+        <g fill="#00ff88">
+          <circle cx="110" cy="56.2" r="3"/>
+          <circle cx="194.8" cy="77.5" r="3"/>
+          <circle cx="194.8" cy="142.5" r="3"/>
+          <circle cx="110" cy="163.8" r="3"/>
+          <circle cx="25.2" cy="142.5" r="3"/>
+          <circle cx="25.2" cy="77.5" r="3"/>
+        </g>
+        <g font-family="Share Tech Mono,monospace" font-size="8" fill="#6a7a8a" text-anchor="middle">
+          <text x="110" y="46">5.1</text>
+          <text x="210" y="70">4.5</text>
+          <text x="210" y="158">7.5</text>
+          <text x="110" y="182">2.8</text>
+          <text x="10" y="158">1.0</text>
+          <text x="10" y="70">5.3</text>
+        </g>
+      </svg>
+      <div style="font-size:10px;color:#6a7a8a;margin-top:8px;letter-spacing:2px;">AVG SCORES · 15 INTELLIGENCE ITEMS</div>
+    </div>
+    <div class="radar-legend">
+      <div style="font-size:11px;color:#6a7a8a;margin-bottom:12px;">DIMENSION AVERAGES</div>
+      <div class="legend-grid">
+        <div class="legend-item"><div class="legend-dot" style="background:#00ff88"></div><span class="legend-label">TECH</span><span class="legend-value">5.1</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#00d4ff"></div><span class="legend-label">INDUSTRY</span><span class="legend-value">4.5</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ffd700"></div><span class="legend-label">INVEST</span><span class="legend-value">7.5</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff3366"></div><span class="legend-label">DEBATE</span><span class="legend-value">2.8</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#bf5fff"></div><span class="legend-label">CHINA</span><span class="legend-value">1.0</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff8c00"></div><span class="legend-label">LONGTERM</span><span class="legend-value">5.3</span></div>
+      </div>
+      <div class="score-bars">
+        <div class="score-bar-row">
+          <span class="score-bar-label">TECH</span>
+          <div class="score-bar-track"><div class="score-bar-fill" style="width:51%;background:#00ff88"></div></div>
+          <span class="score-bar-val" style="color:#00ff88">5.1</span>
+        </div>
+        <div class="score-bar-row">
+          <span class="score-bar-label">INDUSTRY</span>
+          <div class="score-bar-track"><div class="score-bar-fill" style="width:45%;background:#00d4ff"></div></div>
+          <span class="score-bar-val" style="color:#00d4ff">4.5</span>
+        </div>
+        <div class="score-bar-row">
+          <span class="score-bar-label">INVEST</span>
+          <div class="score-bar-track"><div class="score-bar-fill" style="width:75%;background:#ffd700"></div></div>
+          <span class="score-bar-val" style="color:#ffd700">7.5</span>
+        </div>
+        <div class="score-bar-row">
+          <span class="score-bar-label">DEBATE</span>
+          <div class="score-bar-track"><div class="score-bar-fill" style="width:28%;background:#ff3366"></div></div>
+          <span class="score-bar-val" style="color:#ff3366">2.8</span>
+        </div>
+        <div class="score-bar-row">
+          <span class="score-bar-label">CHINA</span>
+          <div class="score-bar-track"><div class="score-bar-fill" style="width:10%;background:#bf5fff"></div></div>
+          <span class="score-bar-val" style="color:#bf5fff">1.0</span>
+        </div>
+        <div class="score-bar-row">
+          <span class="score-bar-label">LONGTERM</span>
+          <div class="score-bar-track"><div class="score-bar-fill" style="width:53%;background:#ff8c00"></div></div>
+          <span class="score-bar-val" style="color:#ff8c00">5.3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTEL CARDS -->
+<div class="section-label">情报全文 · FULL INTELLIGENCE REPORT</div>
+<div class="intel-grid">
+
+<!-- 01 -->
+<div class="intel-card card-01">
+  <div class="card-header">
+    <span class="card-num">01</span>
+    <div class="card-title">iPhone 17 Pro Demonstrated Running a 400B LLM</div>
+  </div>
+  <div class="card-summary">iPhone 17 Pro在演示中实现本地运行4000亿参数大语言模型，端侧AI推理达成历史性里程碑，移动设备算力边界被重新定义。此举意味着无网络连接下高端手机即可执行复杂多模态任务，隐私敏感型应用彻底摆脱云端依赖。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>5</span></span>
+    <span class="radar-tag">Industry <span>3</span></span>
+    <span class="radar-tag">Invest <span>10</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>5</span></span>
+  </div>
+  <div class="card-insight">苹果把"大模型塞进手机"从营销噱头变成工程现实，高端芯片的NPU算力军备竞赛进入白热化阶段。</div>
+  <div class="card-source">Source: <a href="https://twitter.com/anemll/status/2035901335984611412">twitter.com/anemll</a></div>
+</div>
+
+<!-- 02 -->
+<div class="intel-card card-02">
+  <div class="card-header">
+    <span class="card-num">02</span>
+    <div class="card-title">GitHub Struggles with Measly Three Nines Availability</div>
+  </div>
+  <div class="card-summary">GitHub可用性持续承压，多次宕机引发开发者社区强烈不满。作为全球AI编程工具的核心基础设施，GitHub的脆弱性暴露了云端协作工具单点故障的系统性风险，Copilot等AI编程工具的可靠性根基动摇。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>4</span></span>
+    <span class="radar-tag">Industry <span>4</span></span>
+    <span class="radar-tag">Invest <span>10</span></span>
+    <span class="radar-tag">Debate <span>4</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>4</span></span>
+  </div>
+  <div class="card-insight">Copilot依赖GitHub，GitHub宕机=AI编程全行业停摆——"卖铲子"的云厂商正在成为AI时代的脆弱瓶颈。</div>
+  <div class="card-source">Source: <a href="https://www.theregister.com/2026/02/10/github_outages/">theregister.com</a></div>
+</div>
+
+<!-- 03 -->
+<div class="intel-card card-03">
+  <div class="card-header">
+    <span class="card-num">03</span>
+    <div class="card-title">Walmart: ChatGPT Checkout Converted 3x Worse Than Website</div>
+  </div>
+  <div class="card-summary">Walmart测试ChatGPT Checkout，结果转化率仅为传统网站的三分之一。用户习惯路径与AI对话式购物的摩擦远高于预期，AI电商落地遭遇冷现实，零售业AI转型并非简单接入API即可完成。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>5</span></span>
+    <span class="radar-tag">Industry <span>7</span></span>
+    <span class="radar-tag">Invest <span>9</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>6</span></span>
+  </div>
+  <div class="card-insight">硅谷以为AI能颠覆一切，但大妈进超市推购物车这件事，收银台前的人类直觉远比对话框忠诚。</div>
+  <div class="card-source">Source: <a href="https://searchengineland.com/walmart-chatgpt-checkout-converted-worse-472071">searchengineland.com</a></div>
+</div>
+
+<!-- 04 -->
+<div class="intel-card card-04">
+  <div class="card-header">
+    <span class="card-num">04</span>
+    <div class="card-title">"Collaboration" Is Bullshit</div>
+  </div>
+  <div class="card-summary">科技行业过度美化了"协作"概念，实际上大多数所谓协作工具只是制造了更多会议、更多通知和更多上下文切换成本，真正的生产力被淹没在协作噪声中，Remote时代的效率倒退已成结构性现象。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>4</span></span>
+    <span class="radar-tag">Industry <span>3</span></span>
+    <span class="radar-tag">Invest <span>10</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>4</span></span>
+  </div>
+  <div class="card-insight">当Slack把"协作"变成"随时被打断"的代名词，Remote时代的工作效率实际上在倒退。</div>
+  <div class="card-source">Source: <a href="https://www.joanwestenberg.com/collaboration-is-bullshit/">joanwestenberg.com</a></div>
+</div>
+
+<!-- 05 -->
+<div class="intel-card card-05">
+  <div class="card-header">
+    <span class="card-num">05</span>
+    <div class="card-title">Design-OS: Specification-Driven Framework for Engineering System Design</div>
+  </div>
+  <div class="card-summary">Design-OS将规格驱动工作流引入物理工程设计，AI从单纯的解决方案生成渗透到问题定义阶段。该框架为控制系统设计提供了新的方法论范式，AI工程设计从辅助走向主导。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>10</span></span>
+    <span class="radar-tag">Industry <span>6</span></span>
+    <span class="radar-tag">Invest <span>5</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>10</span></span>
+  </div>
+  <div class="card-insight">AI不再只回答"怎么做"，而是开始参与"做什么"和"为什么要做"——工程设计的权力结构正在被AI重构。</div>
+  <div class="card-source">Source: <a href="https://arxiv.org/abs/2603.20151v1">arxiv.org/abs/2603.20151</a></div>
+</div>
+
+<!-- 06 -->
+<div class="intel-card card-06">
+  <div class="card-header">
+    <span class="card-num">06</span>
+    <div class="card-title">New Taxonomy for VLM Image Tampering Detection</div>
+  </div>
+  <div class="card-summary">研究团队提出VLM图像篡改检测的新分类法与基准，从像素级到语义级定位图像伪造。这一标准的确立将深刻影响内容溯源、数字取证与AI生成内容监管的技术生态。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>10</span></span>
+    <span class="radar-tag">Industry <span>6</span></span>
+    <span class="radar-tag">Invest <span>5</span></span>
+    <span class="radar-tag">Debate <span>3</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>10</span></span>
+  </div>
+  <div class="card-insight">Sora和GPT-5狂飙生成能力，监管层和溯源技术的需求比任何时候都更迫切——真假之辨正在成为下一个 trillion-dollar 问题。</div>
+  <div class="card-source">Source: <a href="https://arxiv.org/abs/2603.20193v1">arxiv.org/abs/2603.20193</a></div>
+</div>
+
+<!-- 07 -->
+<div class="intel-card card-07">
+  <div class="card-header">
+    <span class="card-num">07</span>
+    <div class="card-title">Eclip Framework: Autoresearch on Old Research Ideas</div>
+  </div>
+  <div class="card-summary">Eclip自动化研究框架帮助科学家重新发现和激活被忽视的研究想法，AI加速知识发现的路径从"替代人类"进化到"唤醒被遗忘的人类智慧"。科研AI工具化进入深水区，学术界90%的idea死亡问题有望被系统性解决。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>4</span></span>
+    <span class="radar-tag">Industry <span>3</span></span>
+    <span class="radar-tag">Invest <span>9</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>4</span></span>
+  </div>
+  <div class="card-insight">学术界90%的idea死在抽屉里不是因为不够好，而是因为研究者没有时间和精力重拾——AI正在掘墓，把这些尸体复活成金子。</div>
+  <div class="card-source">Source: <a href="https://ykumar.me/blog/eclip-autoresearch/">ykumar.me/blog/eclip-autoresearch</a></div>
+</div>
+
+<!-- 08 -->
+<div class="intel-card card-08">
+  <div class="card-header">
+    <span class="card-num">08</span>
+    <div class="card-title">Bombadil: Property-Based Testing for Web UIs</div>
+  </div>
+  <div class="card-summary">Bombadil将属性化测试（Property-based Testing）引入Web UI自动化测试，突破传统用例覆盖局限，实现测试覆盖度与效率的双重突破，开源社区在AI编程工具链上持续深耕。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>4</span></span>
+    <span class="radar-tag">Industry <span>4</span></span>
+    <span class="radar-tag">Invest <span>8</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>4</span></span>
+  </div>
+  <div class="card-insight">当测试覆盖率从"写多少测多少"变成"随机证明永远测不完"，质量保障的生产力革命才算真正到来。</div>
+  <div class="card-source">Source: <a href="https://github.com/antithesishq/bombadil">github.com/antithesishq/bombadil</a></div>
+</div>
+
+<!-- 09 -->
+<div class="intel-card card-09">
+  <div class="card-header">
+    <span class="card-num">09</span>
+    <div class="card-title">An AI Receptionist for a Mechanic Shop</div>
+  </div>
+  <div class="card-summary">独立开发者为自家兄弟的修理厂构建AI接待员，实现来电预约、问答接待自动化，整套方案成本降至数千美元。垂直行业AI落地门槛正式进入"中小企业可承受"区间，AI赋能传统行业的真实路径浮现。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>6</span></span>
+    <span class="radar-tag">Industry <span>7</span></span>
+    <span class="radar-tag">Invest <span>8</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>6</span></span>
+  </div>
+  <div class="card-insight">不再是"AI替代律师/医生"的宏大叙事，而是街边修理厂老板花3000块解决人手不够的真问题——这才是AI落地的真实模样。</div>
+  <div class="card-source">Source: <a href="https://www.itsthatlady.dev/blog/building-an-ai-receptionist-for-my-brother/">itsthatlady.dev</a></div>
+</div>
+
+<!-- 10 -->
+<div class="intel-card card-10">
+  <div class="card-header">
+    <span class="card-num">10</span>
+    <div class="card-title">Trivy Under Attack: GitHub Actions Tag Compromise Secrets</div>
+  </div>
+  <div class="card-summary">Trivy——知名开源安全扫描工具——再次遭受供应链攻击，攻击者通过篡改GitHub Actions标签大规模窃取开发者密钥。云时代开发工具链的安全性持续亮红灯，安全工具本身的信任问题成为新盲区。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>5</span></span>
+    <span class="radar-tag">Industry <span>7</span></span>
+    <span class="radar-tag">Invest <span>7</span></span>
+    <span class="radar-tag">Debate <span>6</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>6</span></span>
+  </div>
+  <div class="card-insight">安全工具本身成了攻击向量，连"检查锁具是否牢固"的锁匠都被撬锁匠攻破——软件供应链的信任链没有尽头。</div>
+  <div class="card-source">Source: <a href="https://socket.dev/blog/trivy-under-attack-again-github-actions-compromise">socket.dev</a></div>
+</div>
+
+<!-- 11 -->
+<div class="intel-card card-11">
+  <div class="card-header">
+    <span class="card-num">11</span>
+    <div class="card-title">AI Risks "Hypernormal" Science</div>
+  </div>
+  <div class="card-summary">AI系统生成超常态科学知识——看似合理实则无法验证的内容——可能逐渐污染人类科学知识库，导致伪科学与真正科学之间的边界模糊，科学诚信面临结构性挑战，同行评审机制面临被迫进化压力。</div>
+  <div  <div class="card-radar">
+    <span class="radar-tag">Tech <span>4</span></span>
+    <span class="radar-tag">Industry <span>3</span></span>
+    <span class="radar-tag">Invest <span>6</span></span>
+    <span class="radar-tag">Debate <span>4</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>5</span></span>
+  </div>
+  <div class="card-insight">当AI开始"发明科学"，同行评审机制若不进化，未来十年我们将花费大量精力辨别哪些论文是AI幻觉，哪些是真实发现。</div>
+  <div class="card-source">Source: <a href="https://www.asimov.press/p/ai-science">asimov.press</a></div>
+</div>
+
+<!-- 12 -->
+<div class="intel-card card-12">
+  <div class="card-header">
+    <span class="card-num">12</span>
+    <div class="card-title">How I'm Productive with Claude Code</div>
+  </div>
+  <div class="card-summary">开发者系统化分享Claude Code在生产环境中的提效实践，从prompt工程到上下文管理形成完整工作流。AI编程工具已进入生产成熟期而非实验阶段，掌握系统化方法论的开发者正在建立新的效率壁垒。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>4</span></span>
+    <span class="radar-tag">Industry <span>4</span></span>
+    <span class="radar-tag">Invest <span>6</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>4</span></span>
+  </div>
+  <div class="card-insight">Claude Code不是魔法，而是一套可以被学习和复制的生产实践——AI编程工具的护城河正在从"技术领先"转向"工作流优化"。</div>
+  <div class="card-source">Source: <a href="https://neilkakkar.com/productive-with-claude-code.html">neilkakkar.com</a></div>
+</div>
+
+<!-- 13 -->
+<div class="intel-card card-13">
+  <div class="card-header">
+    <span class="card-num">13</span>
+    <div class="card-title">Flipper Zero Gets an AI Upgrade</div>
+  </div>
+  <div class="card-summary">曾因"可能被用于黑客行为"引发争议的硬件工具Flipper Zero获得AI能力升级，硬件安全研究工具进一步平民化，攻防不对等的格局正在加剧。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>4</span></span>
+    <span class="radar-tag">Industry <span>3</span></span>
+    <span class="radar-tag">Invest <span>6</span></span>
+    <span class="radar-tag">Debate <span>3</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>4</span></span>
+  </div>
+  <div class="card-insight">一边是网络安全界呼吁加强防护，一边是开源硬件社区让攻防工具越来越便宜——这场猫鼠游戏里，老鼠的装备升级速度远超猫。</div>
+  <div class="card-source">Source: <a href="https://gizmodo.com/flipper-zero-everyones-favorite-legally-dubious-hacker-tool-gets-an-ai-upgrade-2000736967">gizmodo.com</a></div>
+</div>
+
+<!-- 14 -->
+<div class="intel-card card-14">
+  <div class="card-header">
+    <span class="card-num">14</span>
+    <div class="card-title">America Tells Private Firms to "Hack Back"</div>
+  </div>
+  <div class="card-summary">美国政策制定者授权私人企业针对网络攻击进行"黑客反击"，打破传统网络战由国家主体主导的格局。此举引发法律边界、数据主权与跨国报复升级的广泛争议，网络战争规则正在被改写。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>4</span></span>
+    <span class="radar-tag">Industry <span>3</span></span>
+    <span class="radar-tag">Invest <span>7</span></span>
+    <span class="radar-tag">Debate <span>3</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>4</span></span>
+  </div>
+  <div class="card-insight">政府自己不想脏的手，让私人企业去洗——"hack back"合法化本质上是把网络战外包给了愿意冒险的人。</div>
+  <div class="card-source">Source: <a href="https://www.economist.com/united-states/2026/03/22/america-tells-private-firms-to-hack-back">economist.com</a></div>
+</div>
+
+<!-- 15 -->
+<div class="intel-card card-15">
+  <div class="card-header">
+    <span class="card-num">15</span>
+    <div class="card-title">BIO: The Bao I/O Coprocessor</div>
+  </div>
+  <div class="card-summary">Bunnie Huang设计的BIO I/O协处理器将硬件极客文化与AI边缘计算融合，以定制芯片方式解决特定I/O瓶颈问题。这代表了AI算力下沉趋势下，硬件差异化竞争的新路径。</div>
+  <div class="card-radar">
+    <span class="radar-tag">Tech <span>3</span></span>
+    <span class="radar-tag">Industry <span>3</span></span>
+    <span class="radar-tag">Invest <span>6</span></span>
+    <span class="radar-tag">Debate <span>2</span></span>
+    <span class="radar-tag">China <span>1</span></span>
+    <span class="radar-tag">Longterm <span>4</span></span>
+  </div>
+  <div class="card-insight">当所有人都在讨论"用什么大模型"，Bunnie在问"数据怎么进来"——边缘计算的最后一公里问题，硬件极客给出了自己的答案。</div>
+  <div class="card-source">Source: <a href="https://www.bunniestudios.com/blog/2026/bio-the-bao-i-o-coprocessor/">bunniestudios.com</a></div>
+</div>
+
+</div><!-- end intel-grid -->
+
+<footer class="footer">
+  DOLAN'S 全景内参 · PANORAMIC INTELLIGENCE · 2026-03-24 · 15 INTELLIGENCE ITEMS · ALL RIGHTS RESERVED
+</footer>
+
+</div><!-- end container -->
+</body>
+</html>

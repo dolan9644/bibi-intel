@@ -35,7 +35,7 @@ def get_github_url():
         # 找不到就用当天日期命名
         filename = f"daily_brief_{date_str}.html"
     
-    return f"https://dolan9644.github.io/dolans-brief/{filename}"
+    return f"https://dolan9644.github.io/bibi-intel/{filename}"
 
 def extract_sections(brief_text: str) -> dict:
     """从 brief_content.txt 提取4个板块的内容摘要"""

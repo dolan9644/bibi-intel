@@ -1,0 +1,100 @@
+================================================================================
+ DOLAN'S 全景内参 | DOLAN'S PANORAMIC INTELLIGENCE
+================================================================================
+DATE: 2026-03-24
+CORE THEME: 端侧AI算力奇点临近 · 供应链安全危机深化 · 垂直场景AI落地成本破局
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ SECTION 01 · 情报摘要 | INTELLIGENCE DIGEST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+【01】iPhone 17 Pro Demonstrated Running a 400B LLM
+摘要：iPhone 17 Pro在演示中实现本地运行4000亿参数大语言模型，端侧AI推理达成历史性里程碑，移动设备算力边界被重新定义。此举意味着无网络连接下高端手机即可执行复杂多模态任务，隐私敏感型应用彻底摆脱云端依赖。
+雷达评分：Tech 5 | Industry 3 | Invest 10 | Debate 2 | China 1 | Longterm 5
+一句话洞察：苹果把"大模型塞进手机"从营销噱头变成工程现实，高端芯片的NPU算力军备竞赛进入白热化阶段。
+[Source] https://twitter.com/anemll/status/2035901335984611412
+
+【02】GitHub appears to be struggling with measly three nines availability
+摘要：GitHub可用性持续承压，多次宕机引发开发者社区强烈不满。作为全球AI编程工具的核心基础设施，GitHub的脆弱性暴露了云端协作工具单点故障的系统性风险，Copilot等AI编程工具的可靠性根基动摇。
+雷达评分：Tech 4 | Industry 4 | Invest 10 | Debate 4 | China 1 | Longterm 4
+一句话洞察：Copilot依赖GitHub，GitHub宕机=AI编程全行业停摆——"卖铲子"的云厂商正在成为AI时代的脆弱瓶颈。
+[Source] https://www.theregister.com/2026/02/10/github_outages/
+
+【03】Walmart: ChatGPT checkout converted 3x worse than website
+摘要：Walmart测试ChatGPT Checkout，结果转化率仅为传统网站的三分之一。用户习惯路径与AI对话式购物的摩擦远高于预期，AI电商落地遭遇冷现实，零售业AI转型并非简单接入API即可完成。
+雷达评分：Tech 5 | Industry 7 | Invest 9 | Debate 2 | China 1 | Longterm 6
+一句话洞察：硅谷以为AI能颠覆一切，但大妈进超市推购物车这件事，收银台前的人类直觉远比对话框忠诚。
+[Source] https://searchengineland.com/walmart-chatgpt-checkout-converted-worse-472071
+
+【04】"Collaboration" is bullshit
+摘要：科技行业过度美化了"协作"概念，实际上大多数所谓协作工具只是制造了更多会议、更多通知和更多上下文切换成本，真正的生产力被淹没在协作噪声中，Remote时代的效率倒退已成结构性现象。
+雷达评分：Tech 4 | Industry 3 | Invest 10 | Debate 2 | China 1 | Longterm 4
+一句话洞察：当Slack把"协作"变成"随时被打断"的代名词，Remote时代的工作效率实际上在倒退。
+[Source] https://www.joanwestenberg.com/collaboration-is-bullshit/
+
+【05】Design-OS: A Specification-Driven Framework for Engineering System Design
+摘要：Design-OS将规格驱动工作流引入物理工程设计，AI从单纯的解决方案生成渗透到问题定义阶段。该框架为控制系统设计提供了新的方法论范式，AI工程设计从辅助走向主导。
+雷达评分：Tech 10 | Industry 6 | Invest 5 | Debate 2 | China 1 | Longterm 10
+一句话洞察：AI不再只回答"怎么做"，而是开始参与"做什么"和"为什么要做"——工程设计的权力结构正在被AI重构。
+[Source] https://arxiv.org/abs/2603.20151v1
+
+【06】From Masks to Pixels and Meaning: A New Taxonomy for VLM Image Tampering
+摘要：研究团队提出VLM图像篡改检测的新分类法与基准，从像素级到语义级定位图像伪造。这一标准的确立将深刻影响内容溯源、数字取证与AI生成内容监管的技术生态。
+雷达评分：Tech 10 | Industry 6 | Invest 5 | Debate 3 | China 1 | Longterm 10
+一句话洞察：Sora和GPT-5狂飙生成能力，监管层和溯源技术的需求比任何时候都更迫切——真假之辨正在成为下一个 trillion-dollar 问题。
+[Source] https://arxiv.org/abs/2603.20193v1
+
+【07】Autoresearch on an old research idea (Eclip Framework)
+摘要：Eclip自动化研究框架帮助科学家重新发现和激活被忽视的研究想法，AI加速知识发现的路径从"替代人类"进化到"唤醒被遗忘的人类智慧"。科研AI工具化进入深水区，学术界90%的idea死亡问题有望被系统性解决。
+雷达评分：Tech 4 | Industry 3 | Invest 9 | Debate 2 | China 1 | Longterm 4
+一句话洞察：学术界90%的idea死在抽屉里不是因为不够好，而是因为研究者没有时间和精力重拾——AI正在掘墓，把这些尸体复活成金子。
+[Source] https://ykumar.me/blog/eclip-autoresearch/
+
+【08】Bombadil: Property-based testing for web UIs
+摘要：Bombadil将属性化测试（Property-based Testing）引入Web UI自动化测试，突破传统用例覆盖局限，实现测试覆盖度与效率的双重突破，开源社区在AI编程工具链上持续深耕。
+雷达评分：Tech 4 | Industry 4 | Invest 8 | Debate 2 | China 1 | Longterm 4
+一句话洞察：当测试覆盖率从"写多少测多少"变成"随机证明永远测不完"，质量保障的生产力革命才算真正到来。
+[Source] https://github.com/antithesishq/bombadil
+
+【09】I built an AI receptionist for a mechanic shop
+摘要：独立开发者为自家兄弟的修理厂构建AI接待员，实现来电预约、问答接待自动化，整套方案成本降至数千美元。垂直行业AI落地门槛正式进入"中小企业可承受"区间，AI赋能传统行业的真实路径浮现。
+雷达评分：Tech 6 | Industry 7 | Invest 8 | Debate 2 | China 1 | Longterm 6
+一句话洞察：不再是"AI替代律师/医生"的宏大叙事，而是街边修理厂老板花3000块解决人手不够的真问题——这才是AI落地的真实模样。
+[Source] https://www.itsthatlady.dev/blog/building-an-ai-receptionist-for-my-brother/
+
+【10】Trivy under attack again: Widespread GitHub Actions tag compromise secrets
+摘要：Trivy——知名开源安全扫描工具——再次遭受供应链攻击，攻击者通过篡改GitHub Actions标签大规模窃取开发者密钥。云时代开发工具链的安全性持续亮红灯，安全工具本身的信任问题成为新盲区。
+雷达评分：Tech 5 | Industry 7 | Invest 7 | Debate 6 | China 1 | Longterm 6
+一句话洞察：安全工具本身成了攻击向量，连"检查锁具是否牢固"的锁匠都被撬锁匠攻破——软件供应链的信任链没有尽头。
+[Source] https://socket.dev/blog/trivy-under-attack-again-github-actions-compromise
+
+【11】AI Risks "Hypernormal" Science
+摘要：AI系统生成超常态科学知识——看似合理实则无法验证的内容——可能逐渐污染人类科学知识库，导致伪科学与真正科学之间的边界模糊，科学诚信面临结构性挑战，同行评审机制面临被迫进化压力。
+雷达评分：Tech 4 | Industry 3 | Invest 6 | Debate 4 | China 1 | Longterm 5
+一句话洞察：当AI开始"发明科学"，同行评审机制若不进化，未来十年我们将花费大量精力辨别哪些论文是AI幻觉，哪些是真实发现。
+[Source] https://www.asimov.press/p/ai-science
+
+【12】How I'm Productive with Claude Code
+摘要：开发者系统化分享Claude Code在生产环境中的提效实践，从prompt工程到上下文管理形成完整工作流。AI编程工具已进入生产成熟期而非实验阶段，掌握系统化方法论的开发者正在建立新的效率壁垒。
+雷达评分：Tech 4 | Industry 4 | Invest 6 | Debate 2 | China 1 | Longterm 4
+一句话洞察：Claude Code不是魔法，而是一套可以被学习和复制的生产实践——AI编程工具的护城河正在从"技术领先"转向"工作流优化"。
+[Source] https://neilkakkar.com/productive-with-claude-code.html
+
+【13】Flipper Zero gets an AI upgrade
+摘要：曾因"可能被用于黑客行为"引发争议的硬件工具Flipper Zero获得AI能力升级，硬件安全研究工具进一步平民化，攻防不对等的格局正在加剧。
+雷达评分：Tech 4 | Industry 3 | Invest 6 | Debate 3 | China 1 | Longterm 4
+一句话洞察：一边是网络安全界呼吁加强防护，一边是开源硬件社区让攻防工具越来越便宜——这场猫鼠游戏里，老鼠的装备升级速度远超猫。
+[Source] https://gizmodo.com/flipper-zero-everyones-favorite-legally-dubious-hacker-tool-gets-an-ai-upgrade-2000736967
+
+【14】America tells private firms to "hack back"
+摘要：美国政策制定者授权私人企业针对网络攻击进行"黑客反击"，打破传统网络战由国家主体主导的格局。此举引发法律边界、数据主权与跨国报复升级的广泛争议，网络战争规则正在被改写。
+雷达评分：Tech 4 | Industry 3 | Invest 7 | Debate 3 | China 1 | Longterm 4
+一句话洞察：政府自己不想脏的手，让私人企业去洗——"hack back"合法化本质上是把网络战外包给了愿意冒险的人。
+[Source] https://www.economist.com/united-states/2026/03/22/america-tells-private-firms-to-hack-back
+
+【15】BIO: The Bao I/O Coprocessor
+摘要：Bunnie Huang设计的BIO I/O协处理器将硬件极客文化与AI边缘计算融合，以定制芯片方式解决特定I/O瓶颈问题。这代表了AI算力下沉趋势下，硬件差异化竞争的新路径。
+雷达评分：Tech 3 | Industry 3 | Invest 6 | Debate 2 | China 1 | Longterm 4
+一句话洞察：当所有人都在讨论"用什么大模型"，Bunnie在问"数据怎么进来"——边缘计算的最后一公里问题，硬件极客给出了自己的答案。
+[Source] https://www.bunniestudios.com/blog/2026/bio-the-bao-i-o-coprocessor/
