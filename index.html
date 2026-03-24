@@ -2,10 +2,568 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=bibi-intel/docs/daily_brief_2026-03-23.html">
-<title>Redirect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan's 全景内参：智能体从「玩具」进化到「科学家」</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 17px; }
+body {
+  background-color: #faf9f6;
+  color: #222;
+  font-family: 'Noto Serif SC', serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 32px 100px;
+}
+
+/* Header */
+.masthead {
+  padding-bottom: 48px;
+  border-bottom: 2px solid #222;
+  margin-bottom: 56px;
+}
+.masthead-date {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.masthead-title {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.masthead-subtitle {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Section Header */
+.section-header {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+/* Article Block */
+.article {
+  margin-bottom: 52px;
+}
+.article-title {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.45;
+  margin-bottom: 14px;
+  letter-spacing: -0.005em;
+}
+.article-meta {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.7rem;
+  color: #999;
+  margin-bottom: 14px;
+  letter-spacing: 0.05em;
+}
+.article-meta a { color: #999; text-decoration: none; }
+.article-meta a:hover { color: #555; }
+.article-body p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #222;
+}
+.article-body p:last-child { margin-bottom: 0; }
+
+/* Dolan's 锐评 */
+.quote-block {
+  margin-top: 18px;
+  padding: 18px 22px 18px 20px;
+  background: #f5f0ea;
+  border-left: 3px solid #b30000;
+  border-radius: 0 4px 4px 0;
+}
+.quote-label {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #b30000;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.quote-block p {
+  font-size: 0.92rem !important;
+  line-height: 1.75 !important;
+  color: #333 !important;
+  margin-bottom: 8px !important;
+}
+.quote-block p:last-child { margin-bottom: 0 !important; }
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #e5e0da;
+  margin: 56px 0;
+}
+
+/* 极客雷达 */
+.radar-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ede9e3;
+  align-items: flex-start;
+}
+.radar-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.radar-num {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #bbb;
+  min-width: 20px;
+  padding-top: 3px;
+}
+.radar-content { flex: 1; }
+.radar-title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.radar-desc {
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.6;
+}
+.radar-link {
+  font-size: 0.75rem;
+  color: #aaa;
+  text-decoration: none;
+  margin-top: 4px;
+  display: inline-block;
+}
+.radar-link:hover { color: #777; }
+
+/* Final Section */
+.final-section {
+  margin-top: 56px;
+  padding: 36px;
+  background: #111;
+  border-radius: 6px;
+  color: #f0ece6;
+}
+.final-header {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #b30000;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.final-body p {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: #e0dbd3;
+  margin-bottom: 16px;
+}
+.final-body p:last-child { margin-bottom: 0; }
+.final-body strong { color: #fff; font-weight: 600; }
+
+/* Outro */
+.outro {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid #ddd;
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 1.7;
+  text-align: center;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  .container { padding: 40px 20px 80px; }
+  .masthead-title { font-size: 1.3rem; }
+  .final-section { padding: 24px 20px; }
+  .quote-block { padding: 14px 16px 14px 16px; }
+}
+</style>
 </head>
 <body>
-<p><a href="bibi-intel/docs/daily_brief_2026-03-23.html">Go to Brief</a></p>
+<div class="container">
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="masthead-date">2026 年 3 月 24 日 · 周二</div>
+  <h1 class="masthead-title">Dolan's 全景内参：智能体从「玩具」进化到「科学家」，算力军备从云端下沉到本本</h1>
+  <p class="masthead-subtitle">当 AI 不再需要人类扶着走 · 当 397B 参数跑进你的笔记本</p>
+</header>
+
+<!-- 核心阵地 -->
+<div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
+
+<!-- Article 1 -->
+<div class="article">
+  <h2 class="article-title">■ 当 AI 不再需要人类扶着走：粒子物理实验全自动流水线的里程碑意义</h2>
+  <div class="article-meta">arXiv 2603.20179 | <a href="https://arxiv.org/abs/2603.20179v1">arxiv.org/abs/2603.20179v1</a></div>
+  <div class="article-body">
+    <p>arXiv 2603.20179 这篇论文的标题听起来像是在汇报实验进度——《AI Agents Can Already Autonomously Perform Experimental High Energy Physics》——但它的实质是一个行业宣告：AI 智能体已经可以独立完成从假设形成、数据筛选、分析到解释的全链路科学流程，最小化专家人工干预。</p>
+    <p>这不是夸张。研究者给 Claude Code 接入了高能物理数据集、执行框架和实验文献语料库，然后放手让它自己跑。结果：Claude Code 成功自动化了典型 HEP 分析管线的所有阶段。这条新闻如果放在两年前，标题会写成「AI 在特定任务上取得进展」；今天，它已经是「流水线级自主」。科学实验——这个曾经被认为必须由人类科学家严密把控每一步的高门槛领域——正在被撕开一个口子。</p>
+    <p>为什么重要？因为 HEP（高能物理）代表了科学探索中最高复杂度的一类任务：海量数据、多阶段推理、长链路实验设计。AI 在 HEP 上证明自主能力，等于是在说：科学方法论本身可以被部分自动化。这是一个临界点。它意味着 AI Agent 的能力边界不是「辅助人类」，而是「替代人类执行完整认知任务链路」。实验室里的人类角色将重新定义：从「操作工」变成「监督者」和「提问者」。</p>
+    <p>这个趋势的下一站是什么？生物医学实验、材料发现、药物筛选——这些领域的实验流程比 HEP 更结构化、更容易自动化。AI Agent 在这个方向上的渗透速度，可能比所有人预估的都快。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>当 jailbreak 攻击可以用进化算法批量生产，「对齐」就从一个静态标签变成了动态军备竞赛。谁能更快地生成、更全面地评估、更高频地迭代，谁就占据上风。这本质上是一个 AI 驱动的 AI 安全市场——而需求方是所有部署 LLM 的企业。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 2 -->
+<div class="article">
+  <h2 class="article-title">■ 从 Jailbreak 模板到进化算法：LLM 安全评估的自动化军备竞赛已经开打</h2>
+  <div class="article-meta">arXiv 2603.20122 | <a href="https://arxiv.org/abs/2603.20122v1">arxiv.org/abs/2603.20122v1</a></div>
+  <div class="article-body">
+    <p>传统的 LLM 安全测试靠人工构造 jailbreak prompt，或者用已知模板库做红队。这种方式的致命弱点：攻击空间是静态的，而恶意用户的创造力是动态的。一旦攻击者开始用自动化工具生成新攻击，防御方用模板库做测试就是在用固定靶打移动靶。</p>
+    <p>arXiv 2603.20122 这篇论文干了件本质性的事：用进化算法生成多目标的长尾 jailbreak 攻击。系统性地探索超出已知模板的攻击面不说，还引入了对抗多样性指标。这意味着 LLM 安全评估正式进入了「生成式对抗」时代——防御方必须用机器生成的攻击来测试模型，而不是用人工整理的黑名单。</p>
+    <p>长尾分布在这里是关键词。很多 jailbreak 攻击不来自主流语言或常见场景，而是来自低资源语言、加密数据、特殊编码——这些在传统测试集里覆盖率极低。进化算法的好处是可以在这个长尾空间里做系统性搜索，发现人类红队根本想不到的漏洞。</p>
+    <p>一个隐含的结论：LLM 的安全对齐不是一劳永逸的，它是动态对抗过程。模型升级，攻击手段也跟着升级。对那些宣称「我们的模型已经对齐」的公司，这篇论文是一个提醒：你们的测试集够大吗？够多样吗？</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>当 jailbreak 攻击可以用进化算法批量生产，「对齐」就从一个静态标签变成了动态军备竞赛。谁能更快地生成、更全面地评估、更高频地迭代，谁就占据上风。这本质上是一个 AI 驱动的 AI 安全市场——而需求方是所有部署 LLM 的企业。</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 巨头绞肉机 -->
+<div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
+
+<!-- Article 3 -->
+<div class="article">
+  <h2 class="article-title">■ Flash-MoE：397B 参数模型现在可以在你的笔记本上跑了</h2>
+  <div class="article-meta">HN 329 pts | <a href="https://github.com/danveloper/flash-moe">GitHub · danveloper/flash-moe</a> | <a href="https://news.ycombinator.com/item?id=47476422">HN 讨论区</a></div>
+  <div class="article-body">
+    <p>Hacker News 上这个点炸了社区的项目——一个 397B 参数的混合专家模型，通过某种优化手段可以在消费级笔记本硬件上运行。MoE（Mixture of Experts）的核心逻辑是稀疏激活：每次推理只调用少数「专家」网络，而非全量激活。Flash-MoE 把这个逻辑推到了极致。</p>
+    <p>关键数据：397B 参数，正常情况下单次推理需要数百 GB 显存。能在笔记本上跑，意味着稀疏激活的压缩比已经突破了某个临界点。这是端侧 AI 的一个里程碑——不再是「可以在服务器上跑大模型」，而是「可以在你背包里的设备上跑顶级模型」。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>卖算力显卡的厂商看到这个消息不知道该哭还是该笑。Flash-MoE 证明了一个反直觉的事实：<strong>模型规模不等于算力需求。</strong>只要稀疏激活做得好，笔记本可以跑原来需要数据中心才能支撑的模型。这对云端算力市场的长期需求是个结构性威胁——当然，短期内老黄依然笑得出来。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 4 -->
+<div class="article">
+  <h2 class="article-title">■ AI Coding 的真相：代码的死亡被严重夸大了</h2>
+  <div class="article-meta">HN 320 pts | <a href="https://stevekrouse.com/precision">stevekrouse.com/precision</a> | <a href="https://news.ycombinator.com/item?id=47476315">HN 讨论区 · 243 条评论</a></div>
+  <div class="article-body">
+    <p>HN 上一个帖子直接对「AI 将取代程序员」叙事开炮。作者的论点清晰：软件复杂度在增加而非减少，领域知识要求更高，调试挑战没有减少。AI 编程工具提升的是个人生产力，而不是降低软件工程的总难度。</p>
+    <p>HN 讨论区有 243 条评论，多数在讨论 AI 究竟是在提升还是在贬低编程门槛。一种有代表性的观点：AI 让写代码更简单，但让理解代码、维护代码、debug 代码变得更复杂——而后者的占比在真实工程里才是大头。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>这是 2026 年最需要被戳破的泡泡之一。AI Coding 工具的本质是「加速个体产出」，但软件工程的挑战从来不只是「产出代码」，而是「管理复杂性」「协调多人」「理解遗留系统」。这些 AI 帮不了忙，至少现在帮不了。用 AI 写代码多，不等于软件变简单了——<strong>等于代码变多了，债务也变多了。</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 5 -->
+<div class="article">
+  <h2 class="article-title">■ Bram Cohen 亲自定义：AI 时代版本控制需要什么</h2>
+  <div class="article-meta">HN 467 pts | <a href="https://bramcohen.com/p/manyana">bramcohen.com/p/manyana</a> | <a href="https://news.ycombinator.com/item?id=47478401">HN 讨论区</a></div>
+  <div class="article-body">
+    <p>Bram Cohen——BitTorrent 和 Chialisp 的作者，版本控制领域的老兵——亲自下场讨论 VCS 的未来。他的核心论点是：AI 生成的代码需要全新的版本控制语义，line-based tracking（按行追踪）已经不够用了。</p>
+    <p>他提出三个关键方向：intent tracking（追踪代码意图而非代码变更）、semantic diffs（语义差异而非行差异）、automated review（自动化代码审查）。这个判断的重量级在于：说出这话的人曾经手写了一个被全球使用的版本控制系统，他不是在赶时髦，是在严肃思考技术债务的根源。</p>
+    <p>AI 生成代码的规模增长会让代码库膨胀速度远超人类维护能力。现有的 VCS 工具——Git、SVN——都是为人类代码速率设计的。当 AI 每天生成几十万行代码，commit 历史、代码审查、版本回滚的语义都需要重新定义。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>Git 的诞生是 2005 年，代码主要由人类手写。二十年后的今天，AI 开始大量生产代码，而 VCS 的范式几乎没变。Bram Cohen 指出的问题不是「Git 不够好」，而是「AI 时代的代码生产关系需要全新的上层建筑」。<strong>这是未来五年内必然会有人解决的问题——问题是，谁来解决？</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 6 -->
+<div class="article">
+  <h2 class="article-title">■ Claude 当 QA 工程师：LLM 驱动移动端测试的生产实践</h2>
+  <div class="article-meta">HN 83 pts | <a href="https://christophermeiklejohn.com/ai/zabriskie/development/android/ios/2026/03/22/teaching-claude-to-qa-a-mobile-app.html">Christopher Meiklejohn</a> | <a href="https://news.ycombinator.com/item?id=47480900">HN 讨论区</a></div>
+  <div class="article-body">
+    <p>一个生产级案例：用 Claude 做 Android/iOS 移动端 QA 自动化。具体流程：LLM 生成测试用例、执行测试、分析失败原因——整个链路不需要人工介入。这是一个「LLM 即 QA 工程师」的实际部署案例，而非 demo。</p>
+    <p>这个案例的重量在于它展示了 AI Agent 在软件工程价值链里的渗透路径：不是从最核心的「写功能代码」开始，而是从「测试」这个环节切进去——因为测试是软件开发中最高频、最重复、最容易自动化的任务之一。一旦这个环节被 AI 覆盖，下一步就是代码生成，再下一步是代码审查，然后是架构设计。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>AI 进入软件工程的路径不是「一步到位替代工程师」，而是「从周边任务开始逐层渗透」。测试、部署、监控、文档——这些「非核心但必须做」的任务会最先被 AI 接管，然后 AI 开始往核心区域走。<strong>每一位工程师都应该问自己：我的工作有多少比例是「核心创造性工作」，多少是「必须做的重复性工作」？答案决定了你被替代的速度。</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 7 -->
+<div class="article">
+  <h2 class="article-title">■ Windows 原生开发：一个由历史包袱堆砌的平台困境</h2>
+  <div class="article-meta">HN 368 pts | <a href="https://domenic.me/windows-native-dev/">domenic.me</a> | <a href="https://news.ycombinator.com/item?id=47475938">HN 讨论区 · 366 条评论</a></div>
+  <div class="article-body">
+    <p>一篇关于 Windows 原生应用开发生态的系统性批评：Win32/WinRT/UWP/WinUI/.NET/MAUI/C++17+，这么多抽象层叠在一起，对开发者来说不是「选择丰富」，而是「选择瘫痪」。平台承诺的风险——当你投入多年掌握一个框架，它可能在下个版本被废弃——在 Windows 生态里表现得最为极致。</p>
+    <p>HN 上 366 条评论里有相当一部分是 Windows 开发者的血泪史。有一个评论特别扎心：「在 macOS 上开发，你只需要担心 Apple。在 Windows 上开发，你需要担心 Microsoft、Intel、AMD、NVidia，以及无数第三方 SDK 提供商。」</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>平台碎片化是微软的长期战略失误——或者说，长期战略选择。每一次「统一」的努力（UWP、WinUI、MAUI）都创造了新的碎片，而不是解决旧的。苹果在这一点上做得更好：SwiftUI 和 UIKit 的迁移路径虽然也有坑，但至少是同一个方向。<strong>而 Windows 开发者每次做技术选型，本质上都是在赌微软不会在三年内改变方向。这个赌注越来越难下。</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 8 -->
+<div class="article">
+  <h2 class="article-title">■ 多智能体网络安全：六家伙伴联手干活，每年省下 15K 美元专家费</h2>
+  <div class="article-meta">arXiv 2603.20131 | <a href="https://arxiv.org/abs/2603.20131v1">arxiv.org/abs/2603.20131v1</a></div>
+  <div class="article-body">
+    <p>一个六智能体 AI 系统，每个智能体负责网络安全评估的一个环节：组织画像、资产映射、威胁建模、风险排序。整套系统对准的是中小企业市场——因为一次符合 NIST CSF 标准的安全评估，外部专家收费最低 1.5 万美元，还需要数周时间，而具备资质的从业者严重短缺。</p>
+    <p>这正是 AI Agent 对专业服务业的典型冲击路径：找到「贵」「慢」「人少」的那个环节，然后自动化它。安全评估不是安全防护——它不需要实时反应，不需要最新威胁情报，它需要的是结构化方法论和系统性覆盖。这恰恰是 AI Agent 最擅长的任务类型。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p><strong>1.5 万美元一次的评估现在变成了「每月订阅的 AI 服务」。</strong>这不是网络安全行业被颠覆，这是网络安全咨询行业被颠覆——前者做防御，后者做评估。讽刺的是，AI Agent 替代的不是黑客，而是安全顾问。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 9 -->
+<div class="article">
+  <h2 class="article-title">■ VLM 图像篡改检测：从像素级到语义级的新基准</h2>
+  <div class="article-meta">arXiv 2603.20193 | <a href="https://arxiv.org/abs/2603.20193v1">arxiv.org/abs/2603.20193v1</a></div>
+  <div class="article-body">
+    <p>现有的图像篡改检测基准依赖像素级掩码，但问题在于：掩码内的像素不一定被修改，而掩码外的修改可能才是关键——比如 AI 生成的图像中，语义意图发生了改变，但像素层面几乎看不出 PS 痕迹。这篇论文提出了语义级别的 VLM 图像篡改评估体系，包括新的分类法、数据集和评估指标。</p>
+    <p>这对于内容溯源和 AI 生成内容检测有直接影响。当 VLM 可以生成以假乱真的图像时，检测这些图像的「意图性篡改」就成了一个全新的问题域——传统像素分析在这里失效了。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>VLM 自己造的假，需要比 VLM 更懂语义的分析工具来检测。这是一个猫鼠游戏的升级：每代生成模型变强，检测模型也得跟着升级。这场军备竞赛没有终点——但「可信内容溯源」会成为未来互联网的基础设施需求，<strong>就像 HTTPS 一样。</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 10 -->
+<div class="article">
+  <h2 class="article-title">■ VideoSeek：工具引导的长视频智能体，破解 VLM 上下文窗口限制</h2>
+  <div class="article-meta">arXiv 2603.20185 | <a href="https://arxiv.org/abs/2603.20185v1">arxiv.org/abs/2603.20185v1</a></div>
+  <div class="article-body">
+    <p>大多数视频理解智能体对视频帧做密集采样，计算成本极高。VideoSeek 的解法是让智能体主动「寻找」答案关键证据，而不是穷尽式解析全视频。这本质上是一个信息论驱动的视频稀疏采样策略——让模型像人类一样「跳着看」关键段落，而不是从头到尾一帧不落。</p>
+    <p>长视频理解是 VLM 应用的一个真实瓶颈：上下文窗口有限，视频长度无限。VideoSeek 的思路如果成立，会成为所有长视频理解任务的底层优化策略——不是扩大窗口，而是让模型学会「偷懒」。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>让 AI 学会「偷懒」而不是「硬背」，这是视频理解领域的正确方向。人类看视频不是逐帧记忆，而是选择性注意。<strong>VideoSeek 把这种认知机制形式化了——</strong>这比单纯扩大上下文窗口的工程解法要优雅得多。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Article 11 -->
+<div class="article">
+  <h2 class="article-title">■ Chain-of-Adaptation：强化学习引导的手术刀式 VLM 微调</h2>
+  <div class="article-meta">arXiv 2603.20116 | <a href="https://arxiv.org/abs/2603.20116v1">arxiv.org/abs/2603.20116v1</a></div>
+  <div class="article-body">
+    <p>传统微调会把 VLM 在预训练中学到的多模态先验破坏掉——你优化了一个领域的性能，却损失了其他领域的泛化能力。Chain-of-Adaptation（CoA）通过 RL 引导的路由机制，选择性地只更新与新领域相关的参数，保留模型原有的推理和感知能力。</p>
+    <p>这本质上是「参数高效微调」的 RL 版本：不是手动设计 adapter，而是让 RL 自己发现哪些参数需要更新。</p>
+    <div class="quote-block">
+      <div class="quote-label">Dolan's 锐评</div>
+      <p>LLM 微调正在从「全量更新」演进到「精准手术」。RL 引导的参数路由是这一步的自然延伸——它把微调从「调参」变成了「学习如何调参」。<strong>2026 年的 LLM 微调赛道，这个方向值得关注。</strong></p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 算力总锐评 -->
+<div class="final-section">
+  <div class="final-header">## Dolan's 锐评：算力迁移</div>
+  <div class="final-body">
+    <p>算力正在从「集中云端」向「分散边缘」快速迁移。Flash-MoE 让 397B 模型跑在笔记本上不是孤例，它是整个推理优化浪潮的缩影。当端侧可以承载越来越大、越来越强的模型，云端算力的溢价逻辑将被结构性破坏。与此同时，AI Agent 在科学发现（HEP 实验）、专业服务（安全评估）、工程自动化（QA 测试）领域的渗透速度远超预期。</p>
+    <p><strong>2026 年的主旋律不是「AI 更强了」，而是「AI 可以独立完成完整任务链路了」——这是质变，不是量变。</strong></p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 极客雷达 -->
+<div class="section-header">📡 极客雷达：高潜开源与暗流</div>
+<div class="radar-section">
+  <div class="radar-item">
+    <div class="radar-num">01</div>
+    <div class="radar-content">
+      <div class="radar-title">GrapheneOS 去谷歌化再次确认可用性</div>
+      <div class="radar-desc">隐私强化安卓 fork 在无需 Google 账户前提下保持全功能。对抗主流移动 OS 监控架构的开源替代方案持续健康迭代。</div>
+      <a class="radar-link" href="https://grapheneos.social/@GrapheneOS/116261301913660830">→ grapheneos.social</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">02</div>
+    <div class="radar-content">
+      <div class="radar-title">Project Nomad：离线优先的个人知识管理系统</div>
+      <div class="radar-desc">所有数据本地存储。知识管理工具正在从「云端协作」回归「本地主权」。</div>
+      <a class="radar-link" href="https://www.projectnomad.us">→ projectnomad.us</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">03</div>
+    <div class="radar-content">
+      <div class="radar-title">MAUI 即将登陆 Linux</div>
+      <div class="radar-desc">.NET 跨平台 UI 框架通过 Avalonia 合作实现 Linux 支持，C# 开发者可一次开发横跨 Windows/macOS/iOS/Android/Linux 的全平台 UI。.NET 生态大一统时代来临。</div>
+      <a class="radar-link" href="https://avaloniaui.net/blog/maui-avalonia-preview-1">→ avaloniaui.net</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">04</div>
+    <div class="radar-content">
+      <div class="radar-title">RollerCoaster Tycoon 性能优化内幕</div>
+      <div class="radar-desc">1999 年游戏的路径规划和模拟优化技术至今仍被用作实时系统性能研究的标杆。约束条件下的极致优化依然是最好的工程教材。</div>
+      <a class="radar-link" href="https://larstofus.com/2026/03/22/the-gold-standard-of-optimization-a-look-under-the-hood-of-rollercoaster-tycoon/">→ larstofus.com</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">05</div>
+    <div class="radar-content">
+      <div class="radar-title">AI 生成营销垃圾邮件爆发</div>
+      <div class="radar-desc">「vibe coding」正在被用于批量生产 AI 营销邮件，最小化人工审核。AI 生成商业通信的监管空白已经出现实用层面的滥用。</div>
+      <a class="radar-link" href="https://tedium.co/2026/02/25/vibe-coded-email-spam/">→ tedium.co</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">06</div>
+    <div class="radar-content">
+      <div class="radar-title">如何吸引 AI BOT 参与你的开源项目</div>
+      <div class="radar-desc">机器可读文档、结构化元数据、一致的 CLI 接口成为 OSS 项目的 AI 开发者友好标准。开源项目维护者的新 KPI：让你的项目对 AI agent 可读。</div>
+      <a class="radar-link" href="https://nesbitt.io/2026/03/21/how-to-attract-ai-bots-to-your-open-source-project.html">→ nesbitt.io</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">07</div>
+    <div class="radar-content">
+      <div class="radar-title">NixOS 声明式系统配置的长期价值</div>
+      <div class="radar-desc">可复现构建、原子升级、回滚能力在 AI 开发环境可复现性需求下获得新关注。可复现性不只是 DevOps 需求，正在成为 AI 系统开发的基础设施要求。</div>
+      <a class="radar-link" href="https://www.birkey.co/2026-03-22-why-i-love-nixos.html">→ birkey.co</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">08</div>
+    <div class="radar-content">
+      <div class="radar-title">微软内部系统论文阅读组 5 年经验</div>
+      <div class="radar-desc">持续性技术学习的组织方法论——论文筛选、讨论格式、知识迁移。大型工程组织如何对抗技术退化。</div>
+      <a class="radar-link" href="https://armaansood.com/posts/systems-reading-group/">→ armaansood.com</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">09</div>
+    <div class="radar-content">
+      <div class="radar-title">Answer Engine Optimization 崛起</div>
+      <div class="radar-desc">随着 AI 搜索（ChatGPT、Perplexity、AI Overviews）替代传统网页搜索，内容优化策略从 SEO 向 AEO 迁移——不是优化页面排名，而是优化「被 AI 选为答案」的命中率。</div>
+      <a class="radar-link" href="https://juliasolorzano.com/blog/2026/03/16/answer-engine-optimization/">→ juliasolorzano.com</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">10</div>
+    <div class="radar-content">
+      <div class="radar-title">LumosX 身份-属性解耦视频生成</div>
+      <div class="radar-desc">扩散模型在主体一致性和属性控制之间的解耦取得进展，解决多主体视频生成中面部-属性对齐问题。个性化视频生成的核心技术瓶颈正在被逐个突破。</div>
+      <a class="radar-link" href="https://arxiv.org/abs/2603.20192v1">→ arxiv.org/abs/2603.20192v1</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">11</div>
+    <div class="radar-content">
+      <div class="radar-title">动态信念图谱提升 LLM 心智理论</div>
+      <div class="radar-desc">高风险场景（灾难响应、急诊医学、人在回路自主系统）中追踪多智能体信念演化。AI 需要在高风险决策场景中建模人类动态心智状态。</div>
+      <a class="radar-link" href="https://arxiv.org/abs/2603.20170v1">→ arxiv.org/abs/2603.20170v1</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">12</div>
+    <div class="radar-content">
+      <div class="radar-title">语义 Token 聚类高效 LLM 不确定性量化</div>
+      <div class="radar-desc">全 token 不确定性估计成本极高，语义分组实现高效估计而不牺牲精度。LLM 输出的可靠性度量在关键场景中的应用路径。</div>
+      <a class="radar-link" href="https://arxiv.org/abs/2603.20161v1">→ arxiv.org/abs/2603.20161v1</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">13</div>
+    <div class="radar-content">
+      <div class="radar-title">适应式贪婪帧选择长视频理解</div>
+      <div class="radar-desc">信息论驱动而非均匀采样，选择最关键帧而非最多帧。VLM 处理长视频的效率优化范式转变。</div>
+      <a class="radar-link" href="https://arxiv.org/abs/2603.20180v1">→ arxiv.org/abs/2603.20180v1</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">14</div>
+    <div class="radar-content">
+      <div class="radar-title">多模态对比学习改善网络安全 ML 泛化</div>
+      <div class="radar-desc">对比学习减少 ML 在网络安全任务中对表层捷径的依赖，提升跨模态威胁检测的泛化能力。</div>
+      <a class="radar-link" href="https://arxiv.org/abs/2603.20181v1">→ arxiv.org/abs/2603.20181v1</a>
+    </div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-num">15</div>
+    <div class="radar-content">
+      <div class="radar-title">CoT 忠诚度评估的分类器敏感性问题</div>
+      <div class="radar-desc">不同分类器对同一 Chain-of-Thought 给出不同的忠诚度评估——「忠诚度」不是模型的客观属性，而是测量工具的函数。这对推理系统评估方法论有根本性影响。</div>
+      <a class="radar-link" href="https://arxiv.org/abs/2603.20172v1">→ arxiv.org/abs/2603.20172v1</a>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="final-section" style="background:#1a1a2e;">
+  <div class="final-header">## Dolan's 锐评：暗流涌动</div>
+  <div class="final-body">
+    <p>极客雷达的暗流在 2026 年 3 月格外清晰——AI 正在从「工具」变成「协作者」。开源社区开始为 AI agent 优化文档格式，版本控制系统开始重新设计以追踪 AI 代码意图，营销人员开始批量生产 AI 生成邮件。</p>
+    <p>真正的暗流不是某项具体技术突破，而是<strong>「AI 作为生产主体」这个事实正在被各行各业以各种方式接受</strong>——有的是主动拥抱，有的是被动适应，有的是无知无觉。</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section-header">💡 终局研判</div>
+
+<div class="final-section" style="background:#111;">
+  <div class="final-header">## Dolan's 致命锐评</div>
+  <div class="final-body">
+    <p>2026 年 3 月的情报汇总指向一个结论：<strong>AI 行业正在从「能力竞赛」转向「部署竞赛」。</strong>Flash-MoE 让大模型跑在笔记本上，HEP 智能体独立完成科学实验，Claude 独自做移动 QA——这些不是孤立的技术突破，它们共同说明一件事：推理能力已经不是瓶颈，真正的竞争在「谁能把 AI 放进真实工作流里」。</p>
+    <p>大厂继续卷参数规模，但边际收益在递减。真正的价值正在向两个方向转移：向下是推理优化和边缘部署（谁能把大模型塞进小设备），向上是工作流集成（谁能让 AI agent 真正替代某个完整岗位）。中间层——模型本身——的护城河会越来越薄。</p>
+    <p>安全领域的军备竞赛在两条线上同时展开：一条是 Jailbreak 进化（攻击方自动化），一条是内容溯源体系（防御方基础设施化）。这两条线最终会像 TLS 和 HTTPS 一样，形成互联网的标配——但在那之前，会有漫长的猫鼠游戏。</p>
+    <p>最后，有一个被低估的趋势：AI 生成内容（代码、邮件、视频、论文）的大规模渗透，正在倒逼所有「信任基础设施」重建。版本控制要追踪意图而非代码行，内容溯源要区分真实和生成，评估体系要校准测量工具而非假设测量对象是客观的。<strong>这些「信任重建」工作，是未来五年的隐形金矿。</strong></p>
+  </div>
+</div>
+
+<p class="outro">今天的内参到此为止。明天的战场，已经在今天的情报里埋下了种子。</p>
+
+</div>
 </body>
 </html>
