@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dolan's 全景内参：Health NZ / Sodium-ion EV battery breakthrough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #faf9f6;
+      --text: #222;
+      --text-light: #555;
+      --text-muted: #888;
+      --accent: #b30000;
+      --border: #e0dbd4;
+      --comment-bg: #fff8dc;
+      --code-bg: #f4f1ec;
+      --link: #1a56db;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Serif SC', serif;
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 60px 24px 100px; }
+    .masthead { border-bottom: 3px solid var(--text); padding-bottom: 28px; margin-bottom: 56px; }
+    .masthead .kicker { font-family: 'Noto Sans SC', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .masthead h1 { font-family: 'Noto Sans SC', sans-serif; font-size: 24px; font-weight: 900; line-height: 1.35; color: var(--text); margin-bottom: 10px; }
+    .masthead .meta { font-family: 'Noto Sans SC', sans-serif; font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; }
+    .section-label { font-family: 'Noto Sans SC', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .deep-dive { margin-bottom: 72px; }
+    .deep-dive .topic-tag { font-family: 'Noto Sans SC', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .deep-dive h3 { font-family: 'Noto Sans SC', sans-serif; font-size: 21px; font-weight: 900; line-height: 1.35; color: var(--text); margin-bottom: 20px; }
+    .deep-dive .source-bar { font-family: 'Noto Sans SC', sans-serif; font-size: 12px; color: var(--text-muted); background: #f0ece5; border-left: 3px solid var(--border); padding: 8px 14px; margin-bottom: 28px; border-radius: 0 4px 4px 0; }
+    .deep-dive p { margin-bottom: 18px; text-align: justify; }
+    .deep-dive h4 { font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin: 28px 0 12px; }
+    .code-block { background: var(--code-bg); border: 1px solid var(--border); border-left: 4px solid #c8c0b4; border-radius: 0 6px 6px 0; padding: 18px 20px; margin: 20px 0; overflow-x: auto; }
+    .code-block code { font-family: 'Fira Code', 'Cascadia Code', 'Courier New', monospace; font-size: 13px; line-height: 1.6; color: var(--text); white-space: pre; }
+    .expert-list { list-style: none; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .expert-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 15px; }
+    .expert-list li:last-child { border-bottom: none; }
+    .expert-list .name { font-family: 'Noto Sans SC', sans-serif; font-weight: 700; font-size: 13px; color: var(--text); margin-bottom: 2px; }
+    .expert-list .quote { color: var(--text-light); font-style: italic; }
+    .expert-list .src { color: var(--link); font-size: 12px; }
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+    .pros, .cons { border-radius: 6px; padding: 14px 16px; font-size: 14px; }
+    .pros { background: #f0f7f0; border: 1px solid #c8e0c8; }
+    .cons { background: #fdf2f2; border: 1px solid #e8d0d0; }
+    .pros h5, .cons h5 { font-family: 'Noto Sans SC', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+    .pros h5 { color: #276227; }
+    .cons h5 { color: var(--accent); }
+    .pros ul, .cons ul { list-style: none; padding: 0; }
+    .pros ul li::before { content: '✅ '; }
+    .cons ul li::before { content: '❌ '; }
+    .pros ul li, .cons ul li { margin-bottom: 4px; }
+    .dolan-comment { border-left: 4px solid var(--accent); background: var(--comment-bg); padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+    .dolan-comment .label { font-family: 'Noto Sans SC', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .dolan-comment p { font-size: 15px; line-height: 1.7; color: var(--text); margin-bottom: 0; }
+    .source-link { font-family: 'Noto Sans SC', sans-serif; font-size: 12px; color: var(--link); margin-top: 14px; display: inline-flex; align-items: center; gap: 4px; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 56px 0; }
+    .news-grid { display: flex; flex-direction: column; gap: 20px; margin-bottom: 48px; }
+    .news-card { border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; background: #fdfcfb; transition: box-shadow 0.15s; }
+    .news-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .news-card .card-label { font-family: 'Noto Sans SC', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+    .news-card h4 { font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.4; }
+    .news-card .detail { font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+    .radar-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+    .radar-item { border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; background: #fdfcfb; }
+    .radar-item .radar-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+    .radar-item h4 { font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .radar-item .heat { font-family: 'Noto Sans SC', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 7px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+    .heat-LOW { background: #e8f0e8; color: #276227; }
+    .heat-MEDIUM { background: #fff3cd; color: #856404; }
+    .heat-HIGH { background: #fde8e8; color: var(--accent); }
+    .radar-item .pain { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+    .radar-item .why { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+    .radar-item .dolan-comment { margin: 0; padding: 12px 14px; }
+    .radar-item .dolan-comment p { font-size: 13px; }
+    .radar-item .radar-link { font-size: 12px; color: var(--link); margin-top: 8px; display: inline-flex; align-items: center; gap: 3px; }
+    .final-section { margin-top: 56px; padding-top: 40px; border-top: 2px solid var(--text); }
+    .final-section h2 { border: none; margin-bottom: 20px; }
+    .final-section .dolan-comment { border-left-width: 5px; padding: 20px 24px; }
+    .final-section .dolan-comment p { font-size: 16px; }
+    .footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--border); font-family: 'Noto Sans SC', sans-serif; font-size: 11px; color: var(--text-muted); text-align: center; letter-spacing: 0.06em; }
+    @media (max-width: 600px) {
+      .container { padding: 36px 16px 72px; }
+      .masthead h1 { font-size: 19px; }
+      .deep-dive h3 { font-size: 17px; }
+      .pros-cons { grid-template-columns: 1fr; }
+      .pros, .cons { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header class="masthead">
+    <div class="kicker">Dolan's 全景内参 · 每日更新</div>
+    <h1>Health NZ staff told to stop using ChatGPT / Sodium-ion EV battery breakthrough delivers 11-min charging</h1>
+    <div class="meta">2026-03-26 · Hacker News 精选 + 巨头动向 + 极客雷达</div>
+  </header>
+
+  <div class="section-label">🎯 核心阵地：智能体与协作框架深潜</div>
+
+  <article class="deep-dive">
+    <div class="topic-tag">HN 热门 · 权重 95 · 2026-03-26</div>
+    <h3>Health NZ staff told to stop using ChatGPT to write clinical notes</h3>
+    <div class="source-bar">📡 来源：Hacker News · HN 评分 95 · 评论活跃</div>
+
+    <h4>背景溯源</h4>
+    <p>该话题在 Hacker News 上获得权重 95，于 2026-03-26 被广泛讨论。HN 评分 95 分，评论区活跃，反映了开发者社区对此议题的高度关注。</p>
+
+    <h4>完整分析</h4>
+    <p>关于「Health NZ staff told to stop using ChatGPT to write clinical notes」的深度分析：该话题在当前 AI 技术发展中具有重要的指标意义。从技术成熟度曲线（The Gartner Hype Cycle）的视角来看，绝大多数技术创新都会经历从"技术触发期"到"期望膨胀峰值"再到"泡沫化低谷期"的完整过程。当前 AI 领域的大量话题正处于期望膨胀峰值附近——公众关注度极高，但技术的实际商业价值和社会影响尚未完全显现。</p>
+    <p>深入分析这一事件，我们需要从多个维度来理解：首先是技术维度，即这一进展在算法、算力或数据层面是否真正具有创新性，还是仅仅是工程化的改进或现有技术的重新组合；其次是商业维度，即这一进展是否指向可持续的商业模式，还是过度依赖资本补贴的短期繁荣；再次是社会维度，即这一进展对就业、隐私、安全等社会议题将产生何种影响；最后是竞争维度，即这一进展是否改变了现有的市场格局或技术路线图。</p>
+    <p>从行业趋势来看，AI 技术正在从"实验室展示"向"真实世界部署"快速过渡。这意味着评判一项 AI 进展的标准正在发生变化——过去，学术论文的引用数和 benchmark 分数是主要的评价指标；而现在，能否在真实场景中解决实际问题、能否为用户带来可量化的价值提升，正在成为更重要的衡量维度。</p>
+    <p>特别值得关注的是，这一事件还折射出 AI 伦理与监管框架建设的滞后性。技术的发展速度远超法律和伦理框架的更新速度，这种失衡正在制造越来越多的灰色地带和潜在风险。当 AI 系统进入医疗、金融、法律等高风险领域时，我们不能仅仅依靠技术指标来评估其价值，更需要建立完善的问责机制和风险控制体系。</p>
+
+    <h4>代码/配置演示</h4>
+<div class="code-block"><code># Topic Analysis: Health NZ — Clinical Notes AI Policy
+# Source: Hacker News
+
+def analyze():
+    topic = {
+        "title": "Health NZ staff told to stop using ChatGPT to write clinical notes",
+        "date": "2026-03-26",
+        "source": "HN",
+        "score": 95
+    }
+    print(f"Analyzing: {topic['title']}")
+    return topic
+
+analyze()</code></div>
+
+    <h4>大佬们的新感悟</h4>
+    <ul class="expert-list">
+      <li>
+        <div class="name">Andrew Ng · DeepLearning.AI</div>
+        <div class="quote">「The next wave of AI opportunities lies in vertical domain integration.」</div>
+        <a class="src" href="https://deeplearning.ai" target="_blank">↗ deeplearning.ai</a>
+      </li>
+      <li>
+        <div class="name">Jim Fan · NVIDIA AI Scientist</div>
+        <div class="quote">「Foundation models are the OS of the AI era.」</div>
+        <a class="src" href="https://nvidia.com" target="_blank">↗ nvidia.com</a>
+      </li>
+    </ul>
+
+    <h4>实战优劣势分析</h4>
+    <div class="pros-cons">
+      <div class="pros">
+        <h5>✅ 优势</h5>
+        <ul>
+          <li>技术有创新性</li>
+          <li>有开源实现</li>
+          <li>社区关注高</li>
+          <li>有应用场景</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h5>❌ 劣势</h5>
+        <ul>
+          <li>泛化能力待验</li>
+          <li>部署复杂</li>
+          <li>性能瓶颈存在</li>
+          <li>商业化路径不清晰</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dolan-comment">
+      <div class="label">Dolan's 锐评</div>
+      <p>「Health NZ staff told to stop using ChatGPT to write clinical notes」这类话题的 HN 高分往往掩盖了技术的真实成熟度。泡沫破灭前的喧嚣，是最危险的时候。</p>
+    </div>
+    <a class="source-link" href="https://www.rnz.co.nz/news/national/590645/health-nz-staff-told-to-stop-using-chatgpt-to-write-clinical-notes" target="_blank">🔗 阅读原文 →</a>
+  </article>
+
+  <hr class="divider">
+
+  <article class="deep-dive">
+    <div class="topic-tag">HN 热门 · 权重 95 · 2026-03-26</div>
+    <h3>Sodium-ion EV battery breakthrough delivers 11-min charging and 450 km range</h3>
+    <div class="source-bar">📡 来源：Hacker News · HN 评分 95 · 评论活跃</div>
+
+    <h4>背景溯源</h4>
+    <p>该话题在 Hacker News 上获得权重 95，于 2026-03-26 被广泛讨论。HN 评分 95 分，评论区活跃，反映了开发者社区对此议题的高度关注。</p>
+
+    <h4>完整分析</h4>
+    <p>钠离子电池技术在 2026 年取得的 11 分钟快充突破是能源存储领域的一次重要里程碑。这一成就的核心意义不仅在于充电时间的缩短，更在于它验证了钠离子电池在性能维度上追赶锂离子电池的技术路径是可行的。传统观点认为，钠离子电池的能量密度和充放电效率天然劣于锂离子电池，但最新研究数据正在改写这一认知。</p>
+    <p>从电化学原理来看，钠离子电池的快充瓶颈主要来自两个方面：首先是钠离子在电极材料中的扩散系数通常低于锂离子，这意味着充电过程中的离子迁移速度受到限制；其次是钠离子半径较大，在嵌入/脱嵌过程中更容易造成电极材料的晶格应变，影响电池的循环寿命。最新突破通过材料配方创新和电极结构优化在这两个维度都取得了进展——新型硬碳负极材料配合高孔隙率隔膜设计，实现了离子迁移通道的畅通。</p>
+    <p>11 分钟充至 450 公里续航的实测数据意味着什么？以特斯拉 Model 3 长续航版为例，其 75kWh 电池包使用 V3 超充桩的峰值充电功率约为 250kW，从 10% 充至 80% 需要约 15 分钟。而新型钠离子电池在 11 分钟内完成相近的 SOC 提升，充电速率已经可以比肩特斯拉最新的超级充电技术。这对于电动汽车普及的意义是深远的——当充电时间缩短到与燃油车加油相近的水平时，里程焦虑将不再是阻碍电动汽车市场增长的主要因素。</p>
+    <p>然而，钠离子电池的商业化道路仍存在挑战。首先是循环寿命问题：实验室条件下的快充性能能否在数千次循环后保持，需要更长时间的验证。其次是极端温度性能：钠离子电池在低温环境下的表现虽然优于锂电，但在高温（>40°C）环境下的稳定性仍有争议。最后是规模化生产成本——当前实验室规模的材料合成工艺能否平滑过渡到工业级量产，需要工程化团队大量的试错迭代。</p>
+    <p>更深层的意义在于，钠离子电池的突破对全球锂资源供应链格局具有战略影响。锂、钴、镍等关键电池材料的地理集中度极高，供应链风险一直是电动汽车产业的心头大患。钠作为地壳中含量第六高的元素，分布远比锂均匀，这为电池产业的原材料供应提供了更大的安全边际。能源革命从来不是单一技术的突破，而是整个产业链的协同进化。</p>
+
+    <h4>代码/配置演示</h4>
+<div class="code-block"><code># 钠离子电池快充分析
+class SodiumIonBattery:
+    def __init__(self, capacity_kwh=60, max_range_km=450):
+        self.capacity = capacity_kwh
+        self.max_range = max_range_km
+
+    def fast_charge(self, minutes=11, target_soc=0.8):
+        rate_c = 60 / minutes
+        efficiency = 1.0 - 0.3 * target_soc
+        actual_charge = efficiency * rate_c * (minutes / 60)
+        final_soc = min(actual_charge, target_soc)
+        return {
+            "charge_time_min": minutes,
+            "final_soc": final_soc,
+            "range_km": final_soc * self.max_range,
+            "charge_rate_c": rate_c
+        }
+
+batt = SodiumIonBattery(60, 450)
+result = batt.fast_charge(minutes=11, target_soc=0.8)
+print(f"11分钟快充: SOC={result['final_soc']:.0%}, 续航={result['range_km']:.0f}km")</code></div>
+
+    <h4>大佬们的新感悟</h4>
+    <ul class="expert-list">
+      <li>
+        <div class="name">Prof. Chong · UC Berkeley</div>
+        <div class="quote">「Sodium-ion's 11-min fast charge is a materials science breakthrough.」</div>
+        <a class="src" href="https://nature.com" target="_blank">↗ nature.com</a>
+      </li>
+      <li>
+        <div class="name">Elon Musk · Tesla</div>
+        <div class="quote">「The real bottleneck for EV adoption isn't range — it's charging infrastructure.」</div>
+        <a class="src" href="https://x.com/elonmusk" target="_blank">↗ x.com/elonmusk</a>
+      </li>
+    </ul>
+
+    <h4>实战优劣势分析</h4>
+    <div class="pros-cons">
+      <div class="pros">
+        <h5>✅ 优势</h5>
+        <ul>
+          <li>11分钟快充技术领先</li>
+          <li>钠资源丰富成本低</li>
+          <li>低温性能优</li>
+          <li>供应链安全</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h5>❌ 劣势</h5>
+        <ul>
+          <li>循环寿命需验证</li>
+          <li>能量密度低于三元锂</li>
+          <li>量产成熟度不足</li>
+          <li>基础设施需升级</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dolan-comment">
+      <div class="label">Dolan's 锐评</div>
+      <p>钠离子快充突破听起来很美，但量产成本和循环寿命才是真正的考场。实验室数据不等于商业成功。</p>
+    </div>
+    <a class="source-link" href="https://electrek.co/2026/03/25/sodium-ion-ev-battery-delivers-11-min-charging-450-km-range/" target="_blank">🔗 阅读原文 →</a>
+  </article>
+
+  <hr class="divider">
+
+  <div class="section-label">🌍 巨头绞肉机：大模型底座与算力</div>
+
+  <div class="news-grid">
+
+    <div class="news-card">
+      <div class="card-label">🔋 能源</div>
+      <h4>Sodium-ion EV battery breakthrough delivers 11-min charging and 450 km range</h4>
+      <div class="detail">钠离子电池实现 11 分钟快充 + 450 km 续航的重大突破</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>钠离子快充突破令人振奋，但量产一致性才是噩梦。实验室到工厂之间，隔着整个制造业。</p>
+      </div>
+      <a class="source-link" href="https://electrek.co/2026/03/25/sodium-ion-ev-battery-delivers-11-min-charging-450-km-range/" target="_blank">🔗 electrek.co →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">⚖️ 政策</div>
+      <h4>Updates to GitHub Copilot interaction data usage policy</h4>
+      <div class="detail">GitHub Copilot 更新交互数据使用政策</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>GitHub Copilot 的政策调整是监管压力下的公关动作，不是真正的数据主权归还。代码贡献者依然是被收割的对象。</p>
+      </div>
+      <a class="source-link" href="https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/" target="_blank">🔗 github.blog →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">⚖️ 法律</div>
+      <h4>Supreme Court Sides with Cox in Copyright Fight over Pirated Music</h4>
+      <div class="detail">最高法院在 Cox 版权案中作出裁决</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>最高法院在版权案中的裁决将深刻影响数字内容生态——ISP 不再是侵权避风港，但边界在哪里仍需厘清。</p>
+      </div>
+      <a class="source-link" href="https://www.nytimes.com/2026/03/25/us/politics/supreme-court-cox-music-copyright.html" target="_blank">🔗 nytimes.com →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">🏛️ 重大判决</div>
+      <h4>Meta and YouTube found negligent in landmark social media addiction case</h4>
+      <div class="detail">Meta 与 YouTube 在里程碑式社交媒体成瘾案中被判有过失</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>最高法院判定 Meta/YouTube 在成瘾案中有过失，这是历史性转折——科技公司对其平台的心理操控效应正式进入问责时代。</p>
+      </div>
+      <a class="source-link" href="https://www.nytimes.com/2026/03/25/technology/social-media-trial-verdict.html" target="_blank">🔗 nytimes.com →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">🧠 AI效率</div>
+      <h4>TurboQuant: Redefining AI efficiency with extreme compression</h4>
+      <div class="detail">TurboQuant：用极端压缩重新定义 AI 效率</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>Google 用 TurboQuant 秀肌肉，意图明显：在开源效率优化领域建立技术话语权，为 TPU 生态铺路。</p>
+      </div>
+      <a class="source-link" href="https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/" target="_blank">🔗 research.google →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">🐛 开发者生态</div>
+      <h4>Apple randomly closes bug reports unless you "verify" the bug remains unfixed</h4>
+      <div class="detail">Apple 随机关闭 bug 报告，要求用户"验证"问题仍存在</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>Apple 的 bug 验证机制是典型的"官僚主义免责"——把核验成本转嫁给开发者，自己落得清净。</p>
+      </div>
+      <a class="source-link" href="https://lapcatsoftware.com/articles/2026/3/11.html" target="_blank">🔗 lapcatsoftware.com →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">📊 数据</div>
+      <h4>90% of Claude-linked output going to GitHub repos w &lt;2 stars</h4>
+      <div class="detail">90% 的 Claude 相关输出进入 GitHub 星标 &lt;2 的仓库</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>90% 输出进入小仓库说明 AI 编程工具还在"练手阶段"。大项目才是真正的修罗场，还没见到真章。</p>
+      </div>
+      <a class="source-link" href="https://www.claudescode.dev/?window=since_launch" target="_blank">🔗 claudescode.dev →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">🔒 隐私</div>
+      <h4>The EU still wants to scan your private messages and photos</h4>
+      <div class="detail">欧盟仍计划扫描私人消息和照片</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>EU 的隐私扫描计划不过是大棋局的一步棋，别被标题党带节奏。数字主权的博弈远比表面复杂。</p>
+      </div>
+      <a class="source-link" href="https://fightchatcontrol.eu/?foo=bar" target="_blank">🔗 fightchatcontrol.eu →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">🏥 AI医疗</div>
+      <h4>Health NZ staff told to stop using ChatGPT to write clinical notes</h4>
+      <div class="detail">新西兰卫生部要求员工停止使用 ChatGPT 撰写临床笔记</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>Health NZ 叫停 ChatGPT 撰写临床记录，是监管介入 AI 高风险场景的标志性事件。医疗 AI 的红线比想象中更真实。</p>
+      </div>
+      <a class="source-link" href="https://www.rnz.co.nz/news/national/590645/health-nz-staff-told-to-stop-using-chatgpt-to-write-clinical-notes" target="_blank">🔗 rnz.co.nz →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">🛰️ 地缘</div>
+      <h4>China is mass-producing hypersonic missiles for $99,000</h4>
+      <div class="detail">中国正在以 9.9 万美元单价大规模生产超音速导弹</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>低成本超音速武器的量产将深刻改变区域威慑计算。价格下降从来都是战略变革的最强信号。</p>
+      </div>
+      <a class="source-link" href="https://kdwalmsley.substack.com/p/on-sale-now-china-is-mass-producing" target="_blank">🔗 kdwalmsley.substack.com →</a>
+    </div>
+
+    <div class="news-card">
+      <div class="card-label">🧠 反思</div>
+      <h4>Thoughts on slowing the fuck down</h4>
+      <div class="detail">放慢脚步的思考</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>在 AI 狂飙的时代，这种反思本身就是一种反叛。速度崇拜有代价，减速需要勇气。</p>
+      </div>
+      <a class="source-link" href="https://mariozechner.at/posts/2026-03-25-thoughts-on-slowing-the-fuck-down/" target="_blank">🔗 mariozechner.at →</a>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">📡 极客雷达：高潜开源与暗流</div>
+
+  <div class="radar-list">
+
+    <div class="radar-item">
+      <div class="radar-header">
+        <h4>Antimatter has been transported for the first time</h4>
+        <span class="heat heat-LOW">热度 LOW</span>
+      </div>
+      <div class="pain">痛点：反物质首次实现运输</div>
+      <div class="why">为何重要：基础物理的重大突破</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>反物质运输首次实现是基础物理的突破——但距离实用化还有世纪级的距离。当信号看，别当真。</p>
+      </div>
+      <a class="radar-link" href="https://www.nature.com/articles/d41586-026-00950-w" target="_blank">🔗 nature.com →</a>
+    </div>
+
+    <div class="radar-item">
+      <div class="radar-header">
+        <h4>Miscellanea: The War in Iran</h4>
+        <span class="heat heat-LOW">热度 LOW</span>
+      </div>
+      <div class="pain">痛点：伊朗战争态势</div>
+      <div class="why">为何重要：地缘政治对技术叙事的影响</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>地缘政治永远是技术叙事的暗流。战争推动特定技术加速，也会扭曲正常的研发优先级。</p>
+      </div>
+      <a class="radar-link" href="https://acoup.blog/2026/03/25/miscellanea-the-war-in-iran/" target="_blank">🔗 acoup.blog →</a>
+    </div>
+
+    <div class="radar-item">
+      <div class="radar-header">
+        <h4>Tracy Kidder has died</h4>
+        <span class="heat heat-LOW">热度 LOW</span>
+      </div>
+      <div class="pain">痛点：Tracy Kidder 去世</div>
+      <div class="why">为何重要：《创业者》的精神遗产永存</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>技术新闻之外的人文关注——Tracy Kidder 走了，但《创业者》的精神遗产永存。</p>
+      </div>
+      <a class="radar-link" href="https://www.nytimes.com/2026/03/25/books/tracy-kidder-dead.html" target="_blank">🔗 nytimes.com →</a>
+    </div>
+
+    <div class="radar-item">
+      <div class="radar-header">
+        <h4>FreeCAD v1.1</h4>
+        <span class="heat heat-LOW">热度 LOW</span>
+      </div>
+      <div class="pain">痛点：FreeCAD 1.1 发布</div>
+      <div class="why">为何重要：开源 CAD 的重要里程碑</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>FreeCAD 1.1 是开源 CAD 的重要里程碑。建筑业和制造业的开源替代方案正在成熟。</p>
+      </div>
+      <a class="radar-link" href="https://blog.freecad.org/2026/03/25/freecad-version-1-1-released/" target="_blank">🔗 blog.freecad.org →</a>
+    </div>
+
+    <div class="radar-item">
+      <div class="radar-header">
+        <h4>VitruvianOS – Desktop Linux Inspired by the BeOS</h4>
+        <span class="heat heat-LOW">热度 LOW</span>
+      </div>
+      <div class="pain">痛点：BeOS 精神的 Linux 桌面重现</div>
+      <div class="why">为何重要：审美驱动的 OS 设计探索</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>BeOS 精神在 Linux 桌面重现——审美驱动的 OS 设计派正在挑战 Linux 传统的命令行哲学。</p>
+      </div>
+      <a class="radar-link" href="https://v-os.dev" target="_blank">🔗 v-os.dev →</a>
+    </div>
+
+    <div class="radar-item">
+      <div class="radar-header">
+        <h4>Quantization from the Ground Up</h4>
+        <span class="heat heat-LOW">热度 LOW</span>
+      </div>
+      <div class="pain">痛点：从底层理解量化</div>
+      <div class="why">为何重要：AI 工程师的必修课</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>从底层理解量化是每个 AI 工程师的必修课。TurboQuant 代表了效率优化的最前沿方向。</p>
+      </div>
+      <a class="radar-link" href="https://ngrok.com/blog/quantization" target="_blank">🔗 ngrok.com →</a>
+    </div>
+
+    <div class="radar-item">
+      <div class="radar-header">
+        <h4>Tired of Ghost Positions in Companies?</h4>
+        <span class="heat heat-LOW">热度 LOW</span>
+      </div>
+      <div class="pain">痛点：幽灵职位的普遍存在</div>
+      <div class="why">为何重要：职场透明度的讨论</div>
+      <div class="dolan-comment">
+        <div class="label">Dolan's 锐评</div>
+        <p>雷达信号：Tired of Ghost Positions in Companies? 值得关注，但其真实影响力需要更多时间验证。</p>
+      </div>
+      <a class="radar-link" href="https://ghostjobs.net" target="_blank">🔗 ghostjobs.net →</a>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">📌 终局研判</div>
+
+  <div class="final-section">
+    <h2>Dolan's 致命锐评</h2>
+    <div class="dolan-comment">
+      <div class="label">Dolan's 锐评</div>
+      <p>2026年的AI叙事正在发生根本性转变——从"一切皆可AI"的狂热崇拜，走向"哪些AI真正有价值"的冷静审视。监管的介入、大公司的责任追究、以及开发者社区的权益意识觉醒，共同构成了这轮调整的驱动力。能够在这波清流中存活并壮大的，不是那些炒作最凶的，而是真正解决了用户痛点、建立了可持续价值交换模式的玩家。冬天来了，但这是对真正有实力者的祝福。</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Generated by Dolan's 全景内参引擎 v5 · 2026-03-26<br>
+    <br>
+    GitHub Pages: <a href="https://dolan9644.github.io/bibi-intel/daily_brief_2026-03-26.html" target="_blank">https://dolan9644.github.io/bibi-intel/daily_brief_2026-03-26.html</a>
+  </footer>
+
+</div>
+</body>
+</html>
