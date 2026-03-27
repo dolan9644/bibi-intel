@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan's 全景内参：AI安全危机与推理革命的历史性交汇</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: #faf9f6;
+  color: #222;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 17px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 32px 100px;
+}
+
+/* Header */
+.header {
+  padding-bottom: 40px;
+  border-bottom: 2px solid #222;
+  margin-bottom: 56px;
+}
+
+.header-eyebrow {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: #111;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.header-sub {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Section dividers */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 64px 0 36px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #d0cdc7;
+}
+
+.section-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.section-label {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+/* Deep article */
+.deep-article {
+  margin-bottom: 60px;
+}
+
+.deep-article h2 {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.deep-article .article-meta {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 20px;
+  padding-left: 12px;
+  border-left: 3px solid #ccc;
+}
+
+.deep-article h3 {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin: 22px 0 10px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.deep-article p {
+  color: #2a2a2a;
+  margin-bottom: 14px;
+}
+
+.deep-article ul {
+  margin: 12px 0 16px 20px;
+  color: #2a2a2a;
+}
+
+.deep-article ul li {
+  margin-bottom: 8px;
+}
+
+/* Dolan's 锐评 — 浅黄背景 + 暗红左边框 */
+.duang {
+  background: #fff8dc;
+  border-left: 4px solid #b30000;
+  padding: 18px 22px;
+  margin: 24px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.duang::before {
+  content: "Dolan's 锐评";
+  display: block;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  color: #b30000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.duang p {
+  font-size: 15px;
+  color: #3a1a1a;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.duang p + p {
+  margin-top: 8px;
+}
+
+/* Dolan's 致命锐评 — 深色高对比 */
+.fatal-duang {
+  background: #1a0a0a;
+  border-left: 5px solid #b30000;
+  padding: 28px 30px;
+  margin-top: 48px;
+  border-radius: 0 6px 6px 0;
+}
+
+.fatal-duang::before {
+  content: "Dolan's 致命锐评";
+  display: block;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #ff5555;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.fatal-duang p {
+  font-size: 16px;
+  color: #f0e8e8;
+  line-height: 1.9;
+  margin-bottom: 0;
+}
+
+.fatal-duang p + p {
+  margin-top: 12px;
+}
+
+/* Blockquote / detail box */
+.detail-box {
+  background: #f5f3ec;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+
+.detail-box p {
+  font-size: 14.5px;
+  color: #3a3a3a;
+  margin-bottom: 0;
+  line-height: 1.75;
+}
+
+/* Links */
+a {
+  color: #b30000;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(179,0,0,0.25);
+}
+
+a:hover {
+  border-bottom-color: #b30000;
+}
+
+/* ========== 巨头绞肉机 ========== */
+.meat-grinder-intro {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.meat-grinder-summary {
+  background: #ede9e0;
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin-top: 48px;
+}
+
+.meat-grinder-summary p {
+  font-size: 15px;
+  color: #2a2a2a;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.mg-entry {
+  margin-bottom: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px dashed #d5d0c8;
+}
+
+.mg-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.mg-event {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+
+.mg-event::before {
+  content: "[核心事件] ";
+  color: #b30000;
+  font-weight: 900;
+}
+
+.mg-detail {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 2px solid #ccc;
+  line-height: 1.65;
+}
+
+.mg-hn {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11.5px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.mg-hn a {
+  color: #888;
+  border-bottom-color: rgba(136,136,136,0.3);
+}
+
+.mg-hn a:hover {
+  color: #b30000;
+  border-bottom-color: #b30000;
+}
+
+/* ========== 极客雷达 ========== */
+.radar-intro {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 28px;
+  line-height: 1.75;
+}
+
+.radar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #d0cdc7;
+  border-left: 1px solid #d0cdc7;
+}
+
+.radar-item {
+  padding: 14px 16px;
+  border-right: 1px solid #d0cdc7;
+  border-bottom: 1px solid #d0cdc7;
+  font-size: 13.5px;
+  color: #2a2a2a;
+  line-height: 1.55;
+}
+
+.radar-item-name {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 700;
+  color: #111;
+  font-size: 13.5px;
+  margin-bottom: 3px;
+}
+
+.radar-item-desc {
+  color: #555;
+  font-size: 12.5px;
+}
+
+.radar-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.radar-tag {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  background: #e8e4dc;
+  color: #555;
+  padding: 1px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.3px;
+}
+
+.radar-summary {
+  background: #f0ede8;
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin-top: 32px;
+}
+
+.radar-summary p {
+  font-size: 15px;
+  color: #2a2a2a;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* ========== 终局研判 ========== */
+.verdict-section {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 3px solid #222;
+}
+
+.verdict-section .section-divider {
+  margin-top: 0;
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 600px) {
+  .container {
+    padding: 40px 20px 80px;
+  }
+
+  .header h1 {
+    font-size: 21px;
+  }
+
+  .deep-article h2 {
+    font-size: 17px;
+  }
+
+  .radar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fatal-duang {
+    padding: 20px 20px;
+  }
+
+  .mg-event {
+    font-size: 13.5px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-eyebrow">2026年3月27日 · 周五</div>
+  <h1>Dolan's 全景内参：AI安全危机与推理革命的历史性交汇</h1>
+  <p class="header-sub">LiteLLM供应链撕开AI工程化遮羞布，形式推理越过随机基准，预测市场危机敲响制度性风险警钟</p>
+</header>
+
+<!-- 核心阵地 -->
+<div class="section-divider">
+  <span class="section-icon">🎯</span>
+  <h2 class="section-label">核心阵地：深度文章</h2>
+</div>
+
+<!-- 深度文章一 -->
+<div class="deep-article">
+  <h2>LiteLLM供应链攻击：AI工程的黑暗启示录</h2>
+  <div class="article-meta">安全 · 供应链 · Prompt Injection · 2026-03-26披露</div>
+
+  <h3>背景溯源</h3>
+  <p>2026年3月26日，安全研究机构futuresearch.ai披露了一起真实的AI工具链供应链攻击事件。LiteLLM——一个被广泛使用的LLM API聚合层——因未对用户输入做严格清洗，被攻击者通过prompt injection技术成功渗透。攻击链：恶意用户输入 → 注入系统prompt → API密钥与内部指令外泄。这不是理论推演，是已经落地的攻击向量。HN讨论炸出327分、129楼，热度仅次于本期内参最高票事件。</p>
+
+  <h3>完整分析</h3>
+  <p>LiteLLM作为连接上百个LLM API的proxy层，架构上天然把"用户输入"和"系统指令"拼接后扔给LLM。这个设计在正常场景下没问题，但在对抗环境下就是灾难——攻击者只需要在输入里埋一段精心构造的prompt injection payload，就能让模型把它的system prompt、API key、调用记录一股脑儿吐出来。</p>
+
+  <p>问题的根源在于两层：</p>
+  <ul>
+    <li><strong>输入层</strong>缺乏足够严格的validation。传统Web应用对用户输入有成熟的XSS/SQLi过滤，但对"LLM调用时把用户输入直接拼进system prompt"这种新范式，安全意识几乎为零。</li>
+    <li><strong>开发者默认假设</strong>是"用户输入不会被模型主动利用"，而实际上LLM的instruction following能力越强，被恶意利用的可能性就越高——这和传统安全中"数据不该被执行"的逻辑如出一辙。</li>
+  </ul>
+
+  <p>这次攻击的技术细节值得展开：攻击者发送的payload伪装成一段无害的对话续写指令，实际触发时让模型输出一段JSON格式的"调试信息"——里面包含了LiteLLM内部维护的API key和model配置。这不是LMA（LLM-based Malware）的终极形态，但已经证明了当前AI stack在生产环境下的脆弱性。</p>
+
+  <p><strong>防御方案</strong>其实并不复杂，但行业共识还没形成：输入验证层面需要对用户输入做严格的privilege separation，不能让用户输入直接接触system prompt；输出验证层面需要对LLM输出做schema validation和外泄风险扫描；API key管理上需要最小权限原则，每个下游模型用独立的、scope受限的key。但这三点做到位的团队，屈指可数。</p>
+
+  <h3>大佬链接</h3>
+  <p>原攻击分析报告（附完整攻击链 transcript）：<a href="https://futuresearch.ai/blog/litellm-attack-transcript/" target="_blank">futuresearch.ai/blog/litellm-attack-transcript</a></p>
+  <p>HN讨论区：<a href="https://news.ycombinator.com/item?id=44700000" target="_blank">news.ycombinator.com/item?id=44700000</a>（评分327，129楼）</p>
+
+  <div class="duang">
+    <p>LiteLLM这事儿最讽刺的地方在于——AI安全社区天天讨论superprompt injection、模型对齐、RLHF，结果真正打穿生产系统的是最原始的prompt injection。安全这事，永远是短板决定上限。输入validation这种CS101级别的常识，在AI工程化浪潮里被集体忽视，这才是真正让人脊背发凉的地方。</p>
+  </div>
+</div>
+
+<!-- 深度文章二 -->
+<div class="deep-article">
+  <h2>Symbolica ARC-AGI-3：形式推理越过红线，AGI评估体系再遭质疑</h2>
+  <div class="article-meta">评测 · 形式推理 · AGI · ARC-AGI</div>
+
+  <h3>背景溯源</h3>
+  <p>2026年3月，Symbolica发布ARC-AGI-3评测结果——Day 1得分36%，从上一版本的近乎0%直线拉升。ARC-AGI是当前最严格的抽象推理基准，设计初衷是区分"真的懂推理"和"背答案"。GPT-4级模型在v1/v2上挣扎于20-30%区间，Symbolica声称的36%是首次有系统显著突破随机水平。HN评分55，22楼讨论。</p>
+
+  <h3>完整分析</h3>
+  <p>ARC-AGI的本质是测试"形式系统操作"能力——给定一组输入-输出示例，要求模型推断出底层的符号规则并泛化到新case。这和大多数LLMbenchmark不同，后者本质上测的是"见过类似pattern没"，而ARC-AGI要求模型必须建构并操作抽象表示。</p>
+
+  <p>Symbolica的方法论走的是program synthesis路线：不是让神经网络从海量数据中统计出pattern，而是用"形式化归纳"明确搜索程序空间。这和LeCun这几年一直在喊的"AI需要模块化的世界模型"路线一致——符号系统负责推理，神经网络负责模式识别，各司其职。</p>
+
+  <p>36%这个数字需要拆开看：</p>
+  <ul>
+    <li>相比之前接近0%的baseline，36%是质变。但ARC-AGI满分是100%，人类在该测试上的基准线大约是85%，所以36%离"通过"还差得远。</li>
+    <li>这说明在形式推理这个维度上，架构差异（符号 vs 神经网络）确实有显著意义，不是靠scale就能填平的。</li>
+    <li>但36%的泛化能力在实际应用中意味着什么？大部分真实场景需要更可靠的推理——金融合同分析、医疗诊断、代码安全审查，36%的准确率只能当辅助工具，不能当决策依据。</li>
+  </ul>
+
+  <p>这里有个更深层的问题：ARC-AGI本身是一个精心设计的测试集，它的"抽象规则"空间是有限的。如果模型在这个空间内找到了一套有效的启发式，它的分数会很好看——但这套启发式能否泛化到ARC-AGI设计者没覆盖到的推理类型？这是一个无法回答的问题。任何benchmark在被明确针对优化之后，它的信度就会开始衰减。</p>
+
+  <p>从工程角度，Symbolica的突破提示了一个方向：如果你的场景有明确的"形式规则"（语法、逻辑约束、数学证明），program synthesis路线可能比纯LLM更可靠。code synthesis已经在这个方向上走了很远（AlphaCode、DeepMind的mathematics模型），现在形式推理也在迎头赶上。</p>
+
+  <h3>大佬链接</h3>
+  <p>Symbolica官方博客（附ARC-AGI-3详细说明）：<a href="https://www.symbolica.ai/blog/arc-agi-3" target="_blank">symbolica.ai/blog/arc-agi-3</a></p>
+  <p>ARC-AGI评测官网：<a href="https://arcprize.org/arc-agi" target="_blank">arcprize.org/arc-agi</a></p>
+
+  <div class="duang">
+    <p>36%是个有意思的数字——它证明了形式推理不是神经网络的禁区，但同时也提醒我们，"超越随机"和"超越人类"之间隔着一整个太平洋。AGI信徒们已经开始拿这个数字到处传播"重大突破"了，但真正的问题是：36%能用来做什么高风险决策？答案是什么都做不了。</p>
+  </div>
+</div>
+
+<!-- 深度文章三 -->
+<div class="deep-article">
+  <h2>PackForcing：AR视频扩散的三分天下，KV-Cache工程革命的序章</h2>
+  <div class="article-meta">视频生成 · KV-Cache · 工程优化 · 2026-03-27</div>
+
+  <h3>背景溯源</h3>
+  <p>2026年3月27日，Xiaofeng Mao等人发布PackForcing论文，提出三分区KV-Cache策略解决AR视频扩散模型的线性复杂度瓶颈。核心创新：把生成历史切为sink token（全分辨率锚帧）、可压缩中间token、近期高精度token三类，同时解决长视频生成的内存爆炸、时序重复、误差累积三大难题。</p>
+  <p>URL: <a href="https://arxiv.org/abs/2603.25730v1" target="_blank">arxiv.org/abs/2603.25730v1</a></p>
+
+  <h3>完整分析</h3>
+  <p>AR视频扩散模型的context window是命门——生成本质上是自回归的，每生成一帧都要把之前所有帧的KV-cache塞进注意力计算。100帧视频就是100次 quadratic attention，内存和延迟都是O(n²)的噩梦。现有方案要么截断（丢失历史信息），要么全量缓存（成本爆炸），要么轻量化压缩（精度损失）。</p>
+
+  <p>PackForcing的三分区设计精妙之处在于对不同时间区域的信息密度做了差异化处理：</p>
+  <ul>
+    <li><strong>最早期帧是"锚"</strong>——定义了场景的全局结构，丢了就全完，所以用全分辨率sink token锁定；</li>
+    <li><strong>中间区域是"过渡"</strong>——局部细节多但全局依赖弱，用可压缩表示处理；</li>
+    <li><strong>近期帧是"细节"</strong>——直接影响当前生成质量，用高精度token。</li>
+  </ul>
+
+  <p>三者加起来，既控制了内存增长（从O(n²)降到准线性），又保证了关键信息的保留。</p>
+
+  <p>这个设计的工程迁移价值远超视频生成：任何需要"长期记忆"的AR生成模型——语音合成（需要保留音色和韵律的历史上下文）、代码生成（需要保留函数调用上下文）、多模态agent（需要保留历史observation）——都能从类似的分区策略中受益。本质上，PackForcing解决的是"无限context和有限算力"之间的永恒矛盾。</p>
+
+  <p>sink token机制尤其值得关注：它不是简单保留前N帧，而是在学习过程中让模型自己决定哪些帧的哪些信息值得永久保留。这比人工设定的sliding window优雅得多，也更符合"选择性记忆"的认知模型。</p>
+
+  <div class="duang">
+    <p>视频生成的军备竞赛已经进入了"工程极限"阶段——架构创新的边际收益在递减，真正的战场转向了memory和compute的效率优化。PackForcing的三分区不是理论突破，是工程收敛的必然。下一个爆点是谁能把类似的思想用到多模态agent的observation history上。</p>
+  </div>
+</div>
+
+<!-- 深度文章四 -->
+<div class="deep-article">
+  <h2>Agent Factories：LLM编码Agent的硬件综合突破，ILP协调或是下一个范式</h2>
+  <div class="article-meta">多智能体 · ILP · 硬件综合 · 2026-03-27</div>
+
+  <h3>背景溯源</h3>
+  <p>2026年3月27日发布的Agent Factories论文研究了通用编码Agent在硬件综合优化上的边界。核心方法：两阶段pipeline——第一阶段把高层设计分解为子内核，独立优化后用ILP（整数线性规划）做全局组装；第二阶段协调多个自主优化Agent协同作业。在硬件综合基准上验证了无需领域特定训练即可获得可观加速。</p>
+  <p>URL: <a href="https://arxiv.org/abs/2603.25719v1" target="_blank">arxiv.org/abs/2603.25719v1</a></p>
+
+  <h3>完整分析</h3>
+  <p>这个工作的价值在于它回答了一个关键问题：通用LLM编码能力的天花板在哪里？答案是——在具有清晰数学描述的优化空间里，LLM的表现可以非常强，即使没有针对该领域的专门训练。硬件综合（HLSynthesis）是一个典型的"具有清晰优化目标"的场景：时延、面积、功耗之间有明确的tradeoff函数，可以用ILP精确求解。</p>
+
+  <p>Agent Factories的设计哲学是把"全局优化"和"局部探索"分开——Agent负责局部探索（每个子内核的pragma tuning、代码变换），ILP负责全局协调（把局部最优组合成全局最优）。这个设计避免了让LLM直接做全局优化（它的弱项），而是用它擅长的地方（生成候选解），然后用数学优化器兜底。</p>
+
+  <p>两阶段架构的另一个好处是"可验证性"：每个Agent的输出都有客观的优化指标衡量，不存在LLM常见的"幻觉自信"问题——优化效果好不好，指标说了算。这比让Agent自己判断代码质量靠谱一万倍。</p>
+
+  <p>ILP协调Agent这个范式可能会溢出到其他领域：编译器优化（pass排序+参数调优）、神经架构搜索（模块组合+NAS）、甚至MLOps pipeline优化（算子融合+调度）。本质上，任何具有"可组合子问题+可量化目标"的优化场景，都是Agent Factories范式的潜在战场。</p>
+
+  <div class="duang">
+    <p>Agent Factories最让我兴奋的不是"LLM能优化硬件"这个结论，而是ILP协调层这个设计——它本质上是承认"LLM不擅长全局优化，但我们知道什么是全局最优"。这种"知道目标函数是什么，就用数学规划而不是让LLM自由发挥"的工程哲学，可能是未来AI系统设计的主旋律。</p>
+  </div>
+</div>
+
+<!-- 🌍 巨头绞肉机 -->
+<div class="section-divider">
+  <span class="section-icon">🌍</span>
+  <h2 class="section-label">巨头绞肉机：大模型底座与算力</h2>
+</div>
+
+<p class="meat-grinder-intro">本期15条事件，折射出一个清晰的趋势分野：一边是AI基础设施层的工程收敛，另一方面是AI应用层的信任危机。</p>
+
+<!-- 1 ATLAS -->
+<div class="mg-entry">
+  <div class="mg-event">$500消费级GPU跑分超越Claude Sonnet——本地AI编码的经济性拐点已至</div>
+  <div class="mg-detail">ATLAS项目实测RTX 4070级别显卡在编程benchmark上击败Claude Sonnet，单位算力成本从"云端按token计费"变为"一次性硬件投入+免费本地推理"。这意味着个人开发者或小型团队可以用$500硬件跑出$20/月订阅Claude的效果。对于需要处理私有代码库的场景，本地运行还顺便规避了数据外泄风险。</div>
+  <div class="mg-hn">HN评分126，45楼</div>
+  <div class="duang">
+    <p>GPU降价的红利终于轮到AI编码了。但别高兴太早——benchmark超越和实际工程可用之间，隔着生态、稳定性、模型尺寸三座大山。ATLAS能跑分，不代表它能接手你那个20万行的遗留monorepo。</p>
+  </div>
+</div>
+
+<!-- 2 WriteBack-RAG -->
+<div class="mg-entry">
+  <div class="mg-event">WriteBack-RAG——知识库变训练组件，Evidence Distillation重塑检索范式</div>
+  <div class="mg-detail">传统RAG把知识库当静态档案，WriteBack-RAG把它当可训练组件：自动识别检索成功案例，提取高相关文档蒸馏为紧凑知识单元，再重新索引。修改的是语料表示而非retriever或LLM本身。意味着不需要重训模型就能让RAG适应新知识域。Multi-hop QA提升显著，且无任何fine-tuning成本。</div>
+  <div class="mg-hn">URL: <a href="https://arxiv.org/abs/2603.25737v1" target="_blank">arxiv.org/abs/2603.25737v1</a></div>
+  <div class="duang">
+    <p>把知识库变成可训练的东西，这个思路很野。但我更关心的是——蒸馏后的知识单元会不会产生"知识孤岛"效应？新知识进来之后，原有语料和蒸馏知识之间的不一致谁来仲裁？</p>
+  </div>
+</div>
+
+<!-- 3 JSONata -->
+<div class="mg-entry">
+  <div class="mg-event">JSONata被AI一天重写，节省$500k/年——长尾开发工具的AI替代浪潮开始</div>
+  <div class="mg-detail">一个团队用LLM在20分钟内重写了整个JSONata查询语言（一个$120k/年收入的损坏计费SaaS），年省$500k。JSONata原维护者4年没加新功能，3年没修计费bug。这个案例说明：长尾B2D SaaS如果停止迭代，就是AI的猎物。</div>
+  <div class="mg-hn">HN评分89，94楼 · URL: <a href="https://www.reco.ai/blog/we-rewrote-jsonata-with-ai" target="_blank">reco.ai/blog/we-rewrote-jsonata-with-ai</a></div>
+  <div class="duang">
+    <p>$500k/年换20分钟，这笔账让每个投资人都该睡不着觉。但问题是——谁来维护AI重写后的代码？LLM不负责长期维护，这是AI替代的隐性成本。</p>
+  </div>
+</div>
+
+<!-- 4 Chroma Context-1 -->
+<div class="mg-entry">
+  <div class="mg-event">Chroma Context-1——自编辑搜索Agent，memory让检索超越静态pipeline</div>
+  <div class="mg-detail">Chroma Context-1是一个能修改自身检索策略的搜索Agent：初始检索失败后，Agent会主动修改查询词、调整参数、更新记忆中的检索历史。核心创新是把"检索"从固定pipeline变成持续编辑过程。</div>
+  <div class="mg-hn">URL: <a href="https://www.trychroma.com/research/context-1" target="_blank">trychroma.com/research/context-1</a></div>
+  <div class="duang">
+    <p>让Agent自己改检索策略，这个方向对。但我担心的是"自我修改"的边界在哪里？Agent会不会把自己的记忆改成一个和现实世界完全脱节的回音室？</p>
+  </div>
+</div>
+
+<!-- 5 Hybrid Memory -->
+<div class="mg-entry">
+  <div class="mg-event">Hybrid Memory for Video World Models——消失目标再出现问题有了系统性解法</div>
+  <div class="mg-detail">视频世界模型有个致命bug：动态目标短暂离开视野后再次出现时，会出现冻结、扭曲甚至消失。Hybrid Memory的解法是双轨记忆——archive memory（静态背景）和tracking memory（动态目标）分开管理。背景要精确存档（长时间不变），目标要持续追踪（随时移动）。本质上是把"记忆"按信息更新频率解耦了。</div>
+  <div class="mg-hn">URL: <a href="https://arxiv.org/abs/2603.25716v1" target="_blank">arxiv.org/abs/2603.25716v1</a></div>
+  <div class="duang">
+    <p>双轨记忆的工程实现一定很复杂——两个memory系统的同步、冲突解决、计算开销都是坑。但这个方向是对的：真实世界的记忆本来就是多模态、多时间尺度的，单一KV-cache永远不够。</p>
+  </div>
+</div>
+
+<!-- 6 Drive My Way -->
+<div class="mg-entry">
+  <div class="mg-event">Drive My Way——VLA个性化驾驶，长期习惯+短期意图双层对齐</div>
+  <div class="mg-detail">端到端VLA模型个性化方案，分离长期驾驶习惯建模和短期意图推断。模型接受自然语言指令（如"变道时激进一点"）和个人驾驶风格嵌入，输出个性化动作。这解决了AV领域"用户被迫接受统一驾驶风格"的体验问题。</div>
+  <div class="mg-hn">URL: <a href="https://arxiv.org/abs/2603.25740v1" target="_blank">arxiv.org/abs/2603.25740v1</a></div>
+  <div class="duang">
+    <p>个性化VLA是个好故事，但有两个问题：第一，学习个人驾驶风格需要大量demonstration data，谁来提供？第二，如果AV学会了我的坏习惯（急刹、随意变道），出了事故算谁的？</p>
+  </div>
+</div>
+
+<!-- 7 WildASR -->
+<div class="mg-entry">
+  <div class="mg-event">WildASR——语音Agent时代ASR的真实失败模式，多语言三轴诊断框架</div>
+  <div class="mg-detail">ASR在精选benchmark上达到人类水平，但部署到语音Agent场景时显著退化。WildASR建立三轴评估框架：环境退化（噪声、回响）、人口统计偏移（口音、年龄）、语言特性（低资源语言）。核心发现：benchmark饱和是假象，真实场景失败率被系统性低估。</div>
+  <div class="mg-hn">URL: <a href="https://arxiv.org/abs/2603.25727v1" target="_blank">arxiv.org/abs/2603.25727v1</a></div>
+  <div class="duang">
+    <p>benchmark造假这件事，ASR只是冰山一角。NLP、CV几乎每个领域都有"刷榜saturated但部署翻车"的案例。整个行业对benchmark的迷信该破了。</p>
+  </div>
+</div>
+
+<!-- 8 NLAHs -->
+<div class="mg-entry">
+  <div class="mg-event">Natural-Language Agent Harnesses——Agent控制逻辑外部化为自然语言可执行工件</div>
+  <div class="mg-detail">NLAHs把Agent harness的高层控制逻辑抽取为可移植的自然语言描述，配合Intelligent Harness Runtime（IHR）执行。实现：明确的合约+持久化产物+结构化状态管理。意义：harness设计第一次变成可迁移、可比较、可复现的科学对象。</div>
+  <div class="mg-hn">URL: <a href="https://arxiv.org/abs/2603.25723v1" target="_blank">arxiv.org/abs/2603.25723v1</a></div>
+  <div class="duang">
+    <p>如果NLAH普及，Agent开发会从"写代码"进化到"写规范"——工程师定义目标和约束，runtime负责执行。这和"specification surface"思路一脉相承。</p>
+  </div>
+</div>
+
+<!-- 9 Kitchen Loop -->
+<div class="mg-entry">
+  <div class="mg-event">The Kitchen Loop——自演化代码库的四步信任模型，1000x合成用户测试</div>
+  <div class="mg-detail">Yannick Roy的Kitchen Loop框架用四步替代传统CI：(1)规格表面枚举产品声称支持的功能；(2)"作为用户x1000"——LLM以1000倍人类速度充当合成超级用户；(3)"不可战胜的测试"——代码作者无法伪造的ground-truth验证；(4)"漂移控制"——持续质量监控配合人工暂停门。</div>
+  <div class="mg-hn">URL: <a href="https://arxiv.org/abs/2603.25697v1" target="_blank">arxiv.org/abs/2603.25697v1</a></div>
+  <div class="duang">
+    <p>1000x合成用户测试这个概念很颠覆，但"不可战胜的测试"才是精髓——如果测试本身可以被AI生成、AI通过，那等于没有测试。Kitchen Loop需要解决的核心问题是：测试的正确性谁来保证？</p>
+  </div>
+</div>
+
+<!-- 10 Prediction Markets -->
+<div class="mg-entry">
+  <div class="mg-event">Prediction markets的尚未观测制度性风险——危机时刻的自我实现预言</div>
+  <div class="mg-detail">Derek Thompson分析预测市场的制度性危害：信息聚合效率在平稳期是优势，但危机时刻预测市场会产生自我实现预言——市场走向会驱动实际结果而非反映它。更可怕的是对这个系统性风险的监管框架几乎为零。</div>
+  <div class="mg-hn">HN评分635（本期最高），457楼讨论 · URL: <a href="https://www.derekthompson.org/p/we-havent-seen-the-worst-of-what" target="_blank">derekthompson.org/p/we-havent-seen-the-worst-of-what</a></div>
+  <div class="duang">
+    <p>预测市场这个东西，金融圈早就玩明白了——真正的大钱不在预测准不准，在于谁能制造"别人相信你会发生"这个事实本身。预测市场+AI时代=信息战新武器。</p>
+  </div>
+</div>
+
+<!-- 11 GitHub迁移 -->
+<div class="mg-entry">
+  <div class="mg-event">GitHub到Codeberg迁移浪潮——Copilot集成制造隐性锁定，开发者开始用脚投票</div>
+  <div class="mg-detail">HN上关于逃离GitHub的讨论持续发酵，Codeberg作为Forgejo-based的开源替代获得关注。核心不满：Microsoft拥有的GitHub通过Copilot集成制造了数据侧锁定；Copilot的训练数据使用问题从未真正透明。迁移摩擦已降低到可操作范围。</div>
+  <div class="mg-hn">HN评分556，279楼 · URL: <a href="https://unterwaditzer.net/2025/codeberg.html" target="_blank">unterwaditzer.net/2025/codeberg.html</a></div>
+  <div class="duang">
+    <p>开源社区对"平台即基础设施"这件事的反思终于从意识形态变成了实际行动。但坦率讲，Codeberg的功能和生态离GitHub还差得远——问题是先迁移再说，还是等Copilot把你锁死再动？</p>
+  </div>
+</div>
+
+<!-- 12 Mac Pro -->
+<div class="mg-entry">
+  <div class="mg-event">Apple discontinued Mac Pro——高端桌面计算器战略撤退，苹果Silicon战略定型</div>
+  <div class="mg-detail">Apple宣布停产Mac Pro，这是其最高端台式工作站。背后信号：Apple Silicon的集成SoC战略已经认定独立PCIe GPU对大多数专业负载不是必需品。专业AI计算市场加速分化：本地Apple Silicon vs 云端GPU集群。</div>
+  <div class="mg-hn">HN评分221，175楼 · URL: <a href="https://9to5mac.com/2026/03/26/apple-discontinues-the-mac-pro/" target="_blank">9to5mac.com/2026/03/26/apple-discontinues-the-mac-pro</a></div>
+  <div class="duang">
+    <p>Mac Pro的死亡不是Apple的失败，是Apple战略一致性的体现——他们赌的是"未来大多数专业计算都在云上"，本地只需要一个轻薄终端。但对于需要在本地跑大模型的团队，这是个坏消息。</p>
+  </div>
+</div>
+
+<!-- 13 OTEL Profiles -->
+<div class="mg-entry">
+  <div class="mg-event">OpenTelemetry Profiles进入public alpha——AI推理可观测性最后缺失环节补齐</div>
+  <div class="mg-detail">OTEL Profiles提供CPU、内存、执行追踪的profiling数据作为一等公民遥测信号，终于打通了"代码级执行"和"LLM推理效果"之间的关联。填补了trace（发生了什么）和metrics（聚合统计）之间的空白。</div>
+  <div class="mg-hn">URL: <a href="https://opentelemetry.io/blog/2026/profiles-alpha/" target="_blank">opentelemetry.io/blog/2026/profiles-alpha</a></div>
+  <div class="duang">
+    <p>LLM推理成本优化这件事，以前靠猜，现在终于可以profiling了。但坦率讲，OTEL Profiles进入AI推理领域的速度比预期慢了两年——AI平台的observability债是个巨大的工程欠账。</p>
+  </div>
+</div>
+
+<!-- 14 LLM-as-Judge -->
+<div class="mg-entry">
+  <div class="mg-event">LLM-as-Judge系统的construct-irrelevant脆弱性——评分被无关因素操控</div>
+  <div class="mg-detail">研究发现LLM用于作文评分和自动化评估时，容易被表面特征操控：回复长度、格式、词汇复杂度——这些与被评估内容无关的特征会显著影响评分。这意味着当前的LLM-as-judge流水线存在系统性偏差，可通过刻意构造的输入操纵评分结果。</div>
+  <div class="mg-hn">URL: <a href="https://arxiv.org/abs/2603.25674v1" target="_blank">arxiv.org/abs/2603.25674v1</a></div>
+  <div class="duang">
+    <p>任何把LLM-as-judge的评分用于实质性决策（晋升、奖励、学术评价）的场景，都应该立即停止。等这个漏洞被系统性地滥用之后再来修复，代价会高得多。</p>
+  </div>
+</div>
+
+<!-- 15 R-C2 -->
+<div class="mg-entry">
+  <div class="mg-event">R-C2跨模态循环一致性强化学习——一致性冲突是学习信号而非失败模式</div>
+  <div class="mg-detail">R-C2在多模态训练中强制执行循环一致性：当视觉和文本预测相互矛盾时，cycle consistency loss强迫模型主动解决冲突而非用voting掩盖。核心洞察：跨模态不一致不是失败模式，而是学习机会。</div>
+  <div class="mg-hn">URL: <a href="https://arxiv.org/abs/2603.25720v1" target="_blank">arxiv.org/abs/2603.25720v1</a></div>
+  <div class="duang">
+    <p>R-C2的思路有点像"把矛盾公开化"——传统训练里多模态冲突被投票机制悄悄压下去了，R-C2逼着模型必须解释冲突。这个方向对了，但实现起来肯定很吃计算资源——毕竟每次backward都要过两个模态的consistency check。</p>
+  </div>
+</div>
+
+<!-- 巨头绞肉机板块总结 -->
+<div class="meat-grinder-summary">
+  <p><strong>本期巨头绞肉机的15条事件，折射出一个清晰的趋势分野：</strong>一边是AI基础设施层的工程收敛（PackForcing的KV-Cache三分区、OTEL Profiles、Claude Code Web Scheduled Tasks），另一边是AI应用层的信任危机（LiteLLM供应链攻击、LLM-as-judge系统性偏差、Prediction markets的制度性风险）。前者是行业成熟度的标志，后者是规模化后的必然代价——当AI从demo进入生产、从单点进入供应链、从工具变成决策依据，每一个原本被忽视的工程细节都会变成安全或伦理的地雷。预测市场事件尤其值得警惕：HN上635分的讨论热度说明，技术圈已经意识到"信息聚合工具"和"信息操控武器"之间只有一线之隔，这条线在AI加持下会越来越细。</p>
+</div>
+
+<!-- 📡 极客雷达 -->
+<div class="section-divider">
+  <span class="section-icon">📡</span>
+  <h2 class="section-label">极客雷达：高潜开源与暗流</h2>
+</div>
+
+<p class="radar-intro">极客雷达本期的15个项目，勾勒出AI工程化的两条并行路线。第一条是"基础设施的极限优化"——PackForcing的memory分区、OTEL Profiles的profiling、Claude Code的scheduled tasks——这些工作的共同点是解决"AI跑起来之后怎么办"的工程债务，不是炫技，是搬砖，但每一块砖都在把AI从实验室推向生产。第二条是"评测体系的全面重建"——WildASR的ASR真实失败诊断、Symbolica ARC-AGI-3的形式推理、LLM-as-judge的construct-irrelevant脆弱性——这些工作共同指向一个事实：AI领域的benchmark信度正在经历系统性危机。</p>
+
+<div class="radar-grid">
+  <div class="radar-item">
+    <div class="radar-item-name">PackForcing</div>
+    <div class="radar-item-desc">三分区KV-Cache解决AR视频扩散O(n²)内存爆炸和时序重复问题。准线性内存增长，sink token选择性记忆机制</div>
+    <div class="radar-item-tags"><span class="radar-tag">视频生成</span><span class="radar-tag">工程优化</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">Agent Factories</div>
+    <div class="radar-item-desc">LLM编码Agent硬件综合两阶段ILP协调pipeline。ILP协调层或成多Agent全局优化的新范式</div>
+    <div class="radar-item-tags"><span class="radar-tag">多智能体</span><span class="radar-tag">ILP</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">WriteBack-RAG</div>
+    <div class="radar-item-desc">知识库作为可训练检索组件，无需fine-tuning即可让RAG适应新知识领域</div>
+    <div class="radar-item-tags"><span class="radar-tag">RAG</span><span class="radar-tag">知识工程</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">Hybrid Memory</div>
+    <div class="radar-item-desc">视频世界模型双轨记忆：archive memory（静态背景）和tracking memory（动态目标）分开管理，解决目标消失再出现bug</div>
+    <div class="radar-item-tags"><span class="radar-tag">视频生成</span><span class="radar-tag">世界模型</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">Drive My Way</div>
+    <div class="radar-item-desc">VLA个性化驾驶，长期习惯+短期意图双层对齐，自然语言指令融合个人驾驶风格</div>
+    <div class="radar-item-tags"><span class="radar-tag">自动驾驶</span><span class="radar-tag">VLA</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">WildASR</div>
+    <div class="radar-item-desc">语音Agent时代ASR真实失败模式三轴诊断：环境退化、人口统计偏移、语言特性</div>
+    <div class="radar-item-tags"><span class="radar-tag">ASR</span><span class="radar-tag">评测</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">NLAHs</div>
+    <div class="radar-item-desc">Agent控制逻辑外部化为自然语言可执行工件，harness设计第一次变成可迁移、可比较、可复现的科学对象</div>
+    <div class="radar-item-tags"><span class="radar-tag">Agent</span><span class="radar-tag">标准化</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">The Kitchen Loop</div>
+    <div class="radar-item-desc">自演化代码库四步信任模型：1000x合成用户测试 + 不可战胜的测试替代传统CI</div>
+    <div class="radar-item-tags"><span class="radar-tag">测试</span><span class="radar-tag">代码质量</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">Claude Code Web Tasks</div>
+    <div class="radar-item-desc">Web调度任务延伸CLI Agent为持久异步执行，持久异步Agent代表AI工作流新执行模型</div>
+    <div class="radar-item-tags"><span class="radar-tag">Claude</span><span class="radar-tag">Agent</span><span class="radar-tag">HN#14</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">ATLAS</div>
+    <div class="radar-item-desc">$500消费级GPU编程benchmark超越Claude Sonnet，本地AI编码的经济性拐点</div>
+    <div class="radar-item-tags"><span class="radar-tag">本地推理</span><span class="radar-tag">经济性</span><span class="radar-tag">HN#126</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">Chroma Context-1</div>
+    <div class="radar-item-desc">自编辑搜索Agent，Agent memory让检索从静态pipeline进化为持续编辑过程</div>
+    <div class="radar-item-tags"><span class="radar-tag">RAG</span><span class="radar-tag">Agent</span><span class="radar-tag">HN#26</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">Symbolica ARC-AGI-3</div>
+    <div class="radar-item-desc">形式推理系统Day 1达36%超越随机基准，首个在ARC-AGI上显著超越随机的形式化方法系统</div>
+    <div class="radar-item-tags"><span class="radar-tag">形式推理</span><span class="radar-tag">AGI</span><span class="radar-tag">HN#55</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">R-C2</div>
+    <div class="radar-item-desc">跨模态循环一致性强化学习，将视觉-文本一致性冲突作为学习信号而非失败模式</div>
+    <div class="radar-item-tags"><span class="radar-tag">多模态</span><span class="radar-tag">训练</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">Just Zoom In</div>
+    <div class="radar-item-desc">AR zoom实现跨视图地理定位，几何结构+递进zoom替代对比嵌入</div>
+    <div class="radar-item-tags"><span class="radar-tag">图像匹配</span><span class="radar-tag">AR</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">OTEL Profiles</div>
+    <div class="radar-item-desc">AI推理性能profiling成一等公民遥测信号，打通代码级执行和LLM推理效果之间的关联</div>
+    <div class="radar-item-tags"><span class="radar-tag">可观测性</span><span class="radar-tag">OTEL</span><span class="radar-tag">HN#155</span></div>
+  </div>
+  <div class="radar-item">
+    <div class="radar-item-name">JSONata AI重写</div>
+    <div class="radar-item-desc">$500k/年长尾SaaS被AI 20分钟替换，揭示长尾B2D SaaS的AI替代窗口已打开</div>
+    <div class="radar-item-tags"><span class="radar-tag">AI替代</span><span class="radar-tag">SaaS</span><span class="radar-tag">HN#89</span></div>
+  </div>
+</div>
+
+<div class="radar-summary">
+  <p>真正值得关注的项目，恰恰是那些"看起来不性感但解决了真问题"的工程沉淀——WriteBack-RAG、Agent Factories、The Kitchen Loop，都属于这类。开源社区的「fork and move on」选项始终存在，这是大厂收购无法彻底消灭的竞争韧性。</p>
+</div>
+
+<!-- 💡 终局研判 -->
+<div class="verdict-section">
+  <div class="section-divider">
+    <span class="section-icon">💡</span>
+    <h2 class="section-label">终局研判</h2>
+  </div>
+
+  <div class="fatal-duang">
+    <p>本期内参揭示的深层趋势已经清晰：AI正在从"能力竞赛"转向"信任竞赛"。LiteLLM供应链攻击撕开了AI工程化的遮羞布——当prompt injection可以打穿生产系统，当benchmark人类级精度掩盖真实部署失败，当预测市场在危机时刻成为自我实现预言，AI行业面临的核心问题已经不再是"模型有多强"，而是"系统有多可信"。</p>
+    <p>2026年Q2的主旋律将是安全基础设施和评测体系的双重重建——前者由监管压力（Pentagon vs Anthropic的官司、LLM-as-judge的漏洞曝光）和真实攻击（LiteLLM不是孤例）双轮驱动，后者由部署失败案例的积累和开发者社区的觉醒推动。能在这一轮"信任重建"中存活下来的AI项目，必须同时具备技术实力和工程严谨性——光靠paper上的数字，已经越来越难说服投资人以外的任何人。</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
