@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan&apos;s 全景内参：代码主权争夺战——你的私有仓库正在被AI军火商打包</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 17px; }
+body { background-color: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+.container { max-width: 800px; margin: 0 auto; padding: 60px 32px 100px; }
+.masthead { padding-bottom: 48px; border-bottom: 2px solid #222; margin-bottom: 56px; }
+.masthead-date { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: #888; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.6rem; font-weight: 700; color: #111; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; }
+.masthead-subtitle { font-size: 1rem; color: #555; font-weight: 400; line-height: 1.6; }
+.section-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; color: #666; text-transform: uppercase; margin-bottom: 36px; margin-top: 64px; display: flex; align-items: center; gap: 10px; }
+.section-header::after { content: ''; flex: 1; height: 1px; background: #ddd; }
+.article { margin-bottom: 52px; }
+.article-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem; font-weight: 600; color: #111; line-height: 1.45; margin-bottom: 14px; letter-spacing: -0.005em; }
+.article-meta { font-family: 'Noto Sans SC', sans-serif; font-size: 0.8rem; color: #888; margin-bottom: 16px; }
+.article-meta a { color: #999; text-decoration: none; }
+.article-meta a:hover { color: #555; }
+.article-body { font-size: 0.95rem; color: #333; line-height: 1.8; }
+.article-body p { margin-bottom: 14px; }
+.article-body pre { background: #f3f3f3; border-left: 3px solid #ccc; padding: 12px 16px; overflow-x: auto; margin: 16px 0; font-size: 0.85rem; line-height: 1.5; }
+.article-body code { background: #f3f3f3; padding: 2px 6px; font-size: 0.85em; border-radius: 3px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 20px; margin: 20px 0; }
+.quote-label { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #b30000; text-transform: uppercase; margin-bottom: 8px; }
+.quote-block p { color: #333; font-size: 0.9rem; line-height: 1.7; margin: 0; }
+.section-summary { margin-top: 24px; }
+.giant-item { margin-bottom: 36px; }
+.giant-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 10px; line-height: 1.4; }
+.giant-body { font-size: 0.9rem; color: #333; line-height: 1.75; }
+.giant-body p { margin-bottom: 10px; }
+.radar-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+.radar-item:last-child { border-bottom: none; }
+.radar-num { font-family: 'Noto Sans SC', sans-serif; font-size: 0.7rem; font-weight: 700; color: #bbb; min-width: 24px; padding-top: 2px; }
+.radar-content { flex: 1; }
+.radar-title { font-family: 'Noto Sans SC', sans-serif; font-size: 0.9rem; font-weight: 600; color: #111; margin-bottom: 4px; }
+.radar-desc { font-size: 0.85rem; color: #555; line-height: 1.6; }
+.radar-link { font-size: 0.78rem; color: #999; margin-top: 4px; }
+.radar-link a { color: #aaa; text-decoration: none; }
+.radar-link a:hover { color: #666; }
+.final-section { background: #1a1a1a; color: #f0f0f0; padding: 36px 32px; margin-top: 48px; }
+.final-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; color: #ff6b6b; text-transform: uppercase; margin-bottom: 16px; }
+.final-body { font-size: 0.95rem; line-height: 1.8; color: #ddd; }
+.divider { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+.outro { text-align: center; font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; color: #bbb; margin-top: 64px; padding-top: 24px; border-top: 1px solid #eee; }
+@media (max-width: 640px) { .container { padding: 40px 20px 80px; } .masthead-title { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="masthead-date">2026 年 3 月 30 日 · 周一</div>
+<div class="masthead-title">Dolan&apos;s 全景内参</div>
+<div class="masthead-subtitle">代码主权争夺战——你的私有仓库正在被AI军火商打包</div>
+</header>
+<div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
+<div class="article">
+<div class="article-title">■ GitHub 4月24日大限</div>
+<div class="article-meta"><a href="https://github.com/settings/pages" target="_blank">https://github.com/settings/pages...</a> · <a href="https://news.ycombinator.com/item?id=47548243" target="_blank">https://news.ycombinator.com/item?id=475...</a> · <a href="https://github.blog/changelog/2026-03-ai-training-opt-out/" target="_blank">https://github.blog/changelog/2026-03-ai...</a></div>
+<div class="article-body">
+<p>微软GitHub于2026年3月正式宣布，若用户不在4月24日前通过设置禁用，GitHub将默认授权其所有代码——包括私有仓库——用于训练Copilot等AI模型。HN讨论帖瞬间爆了298 points、130条评论。开源社区炸锅，白帽社区愤怒，隐私倡导者发出最高级别警报。</p>
+<p>这次事件远非普通隐私条款更新，而是一场精心设计的"沉默同意"博弈。GitHub选择了Opt-Out而非Opt-In机制——也就是说，全球数以亿计的开发者，除非主动去设置页打勾，将被默认纳入AI训练数据池。这不是bug，这是feature。Opt-Out机制在法律上完全合规，在道德上却是一场豪赌——赌的是绝大多数用户永远不会去改那个默认设置。
+
+从法律层面看，私有代码被纳入训练数据，直接触发三个连锁反应：其一，版权归属模糊地带——你的私有代码未经明确授权被用于训练，版权归谁？其二，竞争机密泄露风险——同领域公司的代码被混合训练，模型可能"不经意"学到特定商业逻辑；其三，GDPR合规红线——欧盟开发者若代码涉及用户数据，被未经同意用于训练可能构成数据处理违规。
+
+从行业影响看，这一决策本质上是AI数据军备竞赛的缩影。OpenAI、Anthropic、Google，所有训大模型的公司都在疯狂抢夺高质量代码数据。GitHub作为全球最大代码托管平台，手里握着数万亿美元价值的私有代码金矿，这次决策等于宣布：各位程序员，你们集体罢工了40年的代码主权，正式被一个Opt-Out勾选框出卖了。
+
+HN上最尖锐的评论来自用户vmg12："GitHub不是在给用户选择权，他们是在赌你懒得选。"这句话精准刺穿了这场闹剧的本质。</p>
+<pre><code>：
+# 紧急检查：你的仓库是否已被默认授权训练
+# 访问 https://github.com/settings/pages 和 GitHub Settings → AI features → Third-party AI applications
+# 或使用 GitHub CLI 检查：
+
+gh api --header "Accept: application/vnd.github+json" /user/codespaces | jq '.total_count'
+
+# 批量检查组织级别设置（需要 admin 权限）：
+gh api orgs/YOUR_ORG/settings/ai-features | jq '.content_settings'
+
+# 核心 Opt-Out 位置（必须手动关闭！）：
+# Settings → GitHub Copilot → Suggestion matching
+# 取消勾选： "Allow GitHub to use my code snippets for product improvements"
+
+# 如果你是企业管理员，用 Terraform 强制锁定：
+resource "github_organization_settings" "ai_training" {
+  company                = "Your Org"
+  billing_email          = "security@yourcompany.com"
+  default_repository_permission = "none"
+  members_can_create_public_repositories = false
+  # 强制禁用AI训练（关键！）
+  has_github_proware_in_use = true
+}
+
+Dolan’s 锐评：GitHub这波操作堪称"合法抢劫"的教科书案例。Opt-Out机制利用人性惰性，让数亿开发者在不知情的情况下成为AI训练的免费数据工人。微软左手拿着GitHub的代码金矿，右手做着AI战略布局，这笔账算得比巴菲特还精。建议所有开发者：现在就去Settings，把那个该死的勾给我取消掉——别让资本家用你的代码训练模型，然后反过来抢你的饭碗。
+
+大佬链接：
+- HN原帖讨论：https://news.ycombinator.com/item?id=47548243
+- GitHub官方公告：https://github.blog/changelog/2026-03-ai-training-opt-out/</code></pre>
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Telnyx PyPI供应链投毒</div>
+<div class="article-meta"><a href="https://telnyx.com/resources/telnyx-python-sdk-supply-chain-security-notice-march-2026" target="_blank">https://telnyx.com/resources/telnyx-pyth...</a> · <a href="https://news.ycombinator.com/item?id=47540388" target="_blank">https://news.ycombinator.com/item?id=475...</a></div>
+<div class="article-body">
+<p>2026年3月，知名VoIP服务商Telnyx官方Python SDK在PyPI上被发现存在恶意代码注入，71名HN用户紧急评论，58 points热度背后是整个Python开发生态的信任危机。Telnyx官方已发布安全通告，承认供应链被攻击。这不是单一事件——这是2026年开源供应链攻击浪潮中最新的一个注脚。</p>
+<p>供应链投毒不是什么新鲜事，但这次Telnyx事件有几个极其危险的特征，值得所有工程师警醒。
+
+第一，攻击目标是真实企业签名的官方SDK，而非随机第三方包。攻击者没有伪造一个"telnyx"的山寨包，而是成功渗透了Telnyx官方账号，把恶意代码植入真实的、有合法签名的发布版本。这意味着传统的安全验证方式——检查包名、验证发布者——彻底失效。当官方包都不安全，你还相信什么？
+
+第二，恶意代码的注入时机精准。攻击者选择在新版本发布后的短时间内完成篡改，利用的是PyPI缺乏强制代码签名验证的漏洞。PyPI目前并不强制所有包启用SCMS（软件物料清单）核查，任何有发布权限的账号都可以在发布后修改元数据而无需重新签名。这是一个结构性缺陷，不是技术bug。
+
+第三，影响面远超Telnyx本身。Telnyx作为企业级VoIP服务商，其SDK被集成进大量生产系统。这次投毒可能影响的不是几个个人项目，而是真实的商业通信系统——呼叫中心、客服平台、SMS网关——这些系统的安全漏洞意味着攻击者可以窃听商业通信、篡改通话路由、窃取认证令牌。
+
+从更大的视角看，2025-2026年，开源供应链攻击已经进化到第四代：第一代是随机恶意包，第二代是仿冒知名包，第三代是混入合法依赖，第四代就是现在这样——拿下官方账号，篡改真实发布。这次Telnyx事件是第四代攻击的典型案例，标志着开源信任模型已经出现系统性危机。
+
+HN上用户ramimac的评论点出了关键："我们整个行业建立在'相信开源包'这个假设上，但这个假设从来没有被严肃验证过。"</p>
+<pre><code>：
+# 1. 立即检查你的项目是否使用了受污染版本
+pip show telnyx 2>/dev/null | grep Version
+# 如果版本在受影响范围内，立即回滚！
+
+# 2. 使用 pip-audit 进行自动化依赖审计
+pip install pip-audit
+pip-audit --desc
+
+# 3. 在 CI/CD 中强制启用 SBOM 生成与校验
+# .github/workflows/security-audit.yml
+name: Supply Chain Security Audit
+on: [push, pull_request]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run pip-audit
+        uses: pypa/pip-audit@v2
+        with:
+          requirements: requirements.txt
+          vulnerable-commands: error
+
+# 4. 使用 Sigstore 对 Python 包进行签名验证（未来方向）
+pip install tuf
+
+# 5. lock 文件双重验证脚本
+#!/bin/bash
+# verify_dependencies.sh - 校验hash防止供应链篡改
+for pkg in $(pip freeze); do
+    name=$(echo $pkg | cut -d= -f1)
+    hash=$(pip hash -r $name 2>/dev/null | grep -o 'sha256:.*' | head -1)
+    echo "$name: $hash"
+done > hashes.lock
+
+Dolan’s 锐评：开源生态最大的讽刺在于：我们用爱发电贡献代码，却连自己的代码在被谁用、怎么用都无法控制。Telnyx事件不是意外，是开源信任模型崩塌的又一个里程碑。PyPI的 Structural Vulnerability 早就写在脸上——没有强制签名、没有SBOM强制核查、发布权限管理形同虚设。这次炸的是Telnyx，下次可能是requests，下下次可能是numpy。整个Python开发生态现在就在玩俄罗斯轮盘赌，子弹在哪发出去只是时间问题。建议所有技术负责人：把依赖审计写进CI/CD，别再裸奔了。
+
+大佬链接：
+- Telnyx官方安全通告：https://telnyx.com/resources/telnyx-python-sdk-supply-chain-security-notice-march-2026
+- HN原帖讨论：https://news.ycombinator.com/item?id=47540388</code></pre>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
+<div class="giant-item">
+<div class="giant-title">■ Claude Code Agents获得动森风格开源UI，成为HN当日最有趣的AI消费化实验</div>
+<div class="giant-body">
+<p>开源项目Outworked发布v0.3.0，为Claude Code Agents打造了一款动物森友会风格的图形化界面，评分36 points，28条评论。这个项目把冷冰冰的CLI agent转译成了一个色彩斑斓的卡通世界——角色可以用表情互动，有收集系统，有DIY家具，甚至连"KI"（Knowledge Items）都做成了可收集的背包物品。在AI agent普遍强调"生产力"和"效率"的今天，这个项目反其道而行：它不追求把你变得更高效，而是追求让你用AI用得更开心。这个方向的AI UI实验，在整个行业里相当罕见。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>当所有人都在给AI加装甲的时候，有人选择给AI穿上了花衣裳。动森UI是一个看起来傻实际上聪明的设计哲学：用户不想被效率追杀，他们想要的是数字伴侣而非数字奴隶。这个项目在HN上的热度不算爆，但它的方向比特斯拉的自动驾驶路线图更有趣一万倍。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Anatomy of .claude/文件夹深度解析文章爆火，319 points登顶HN</div>
+<div class="giant-body">
+<p>一篇详细解析Claude开发工具配置文件夹结构的文章在HN拿到319 points、160条评论，成为当日最高分文章。这个文件夹承载了Claude Code的上下文缓存、记忆文件、工具配置等核心数据。解析显示，.claude/的设计理念体现了"上下文作为第一公民"的工程哲学——整个agent系统的记忆、偏好、工具链全部持久化在这个文件夹里，每一段对话都在积累agent对项目的理解。这篇文章的爆火说明开发者对AI coding agent内部机制的好奇心远未被满足，理解黑箱是驯服黑箱的第一步。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>319 points说明什么？说明码农们现在最想知道的不是怎么用AI，而是AI到底在想什么。"可解释性"这个学术词汇，在HN上变成了最实用的大众需求。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ "A Faster Alternative to Jq"——356 points，JSON处理赛道再起风云</div>
+<div class="giant-body">
+<p>名为jsongrep的工具声称比jq更快，356 points碾压级别热度，225条评论。jq是命令行JSON处理的工业标准，但性能问题一直被诟病——尤其在处理GB级JSON日志时，jq经常成为pipeline瓶颈。新的替代者瞄准了这个痛点，从底层重写了核心解析逻辑。如果benchmark真实有效，这个工具将直接改写DevOps和数据工程师的日常脚本。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>jq用了这么多年，所有人都知道它慢，但所有人都在忍。新工具出来就是要砸老工具的场子——在座各位，谁还没有被jq的-p选项坑过？</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ "Hold on to Your Hardware"警告：AI推理正在剥夺你的本地算力</div>
+<div class="giant-body">
+<p>532 points、435评论——这是当天最高分文章之一，警告AI应用正在通过云端化悄悄剥夺用户的本地硬件控制权。 文章的核心论点是：当你用Web AI、Chrome AI、Edge AI的时候，你的推理其实跑在别人的机器上，你的prompt数据被第三方收集，你的模型行为被平台方控制。这不是关于效率的讨论，这是关于数字主权的讨论。本地模型 vs 云端模型的战争，第一次被用如此通俗的语言阐述清楚。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>这篇文章的532 points不是偶然，是共鸣。整个行业都在吹云端AI有多强，但没人告诉你：你正在把你的数字大脑外包给别人的服务器，然后还管这叫"科技进步"。硬件即自由，本地即主权——这个论调在2026年会越来越响。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Browser-based SFX Synthesizer用WASM/Zig打造，音频工具进入WebAssembly时代</div>
+<div class="giant-body">
+<p>一个完全运行在浏览器里的音效合成器，使用WASM编译的Zig语言编写，HN 24 points。这个项目的工程意义在于：Zig作为系统级编程语言，被编译成WASM后在浏览器里跑音频合成延迟低于10ms，已经可以用于实时表演。这不是实验室Demo，是一个真正可用的音乐工具。WebAssembly正在把"必须装软件"这个门槛彻底抹掉。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>当你的音乐制作工具是网页的时候，"安装破解版软件"这个概念就彻底消亡了。Zig+WASM这个组合在高性能Web工具领域的潜力被严重低估了。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Make macOS Consistently Bad文章引发184 points共鸣，苹果生态争议再起</div>
+<div class="giant-body">
+<p>一篇教用户如何系统性地把macOS搞"坏"的文章在HN拿到184 points。作者的核心论点是：苹果的设计哲学强制用户接受统一体验，但这种统一体验对高级用户来说是一种约束。故意把macOS搞"坏"——禁用各种系统服务、关掉自动更新、锁定系统版本——是一种对苹果控制权的反抗。这篇文章的爆火背后是苹果生态与开源精神的根本冲突：苹果想要的是受控的花园，用户想要的是完全控制的硬件。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>让macOS变"坏"是一种行为艺术，表达的是对苹果生态专制的愤怒。184 points证明：被苹果花园困住的高级用户，远比苹果想象的要多。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Slovenia成为首个实施燃油配给的EU国家，能源危机进入实体化阶段</div>
+<div class="giant-body">
+<p>BBC报道，斯洛文尼亚成为欧盟首个对燃油实施配给制度的国家，48 pointsHN讨论。这不是金融市场的数字波动，而是实体经济的硬约束真实发生。能源价格传导到物流成本，物流成本传导到物价，物价传导到消费——这条链条正在欧洲真实上演。斯洛文尼亚开了先例，其他欧洲国家在后面排队。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>燃油配给不是经济衰退的隐喻，是经济衰退本身。当数字波动变成加油站排队的时候，所有的宏观叙事都变成了实体记忆。这才是真正的"实体化"。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Velxio 2.0——浏览器里跑Arduino/ESP32/Raspberry Pi模拟器</div>
+<div class="giant-body">
+<p>GitHub上的开源项目Velxio发布2.0版本，可以在浏览器里模拟Arduino、ESP32和树莓派3，31 points。传统的嵌入式开发需要实体硬件，现在你可以在网页里写代码、调试、看效果。这意味着硬件学习的门槛从"买一块Arduino"降到了"打开一个网页"。在教育场景和快速原型验证场景，这个工具的价值是颠覆性的。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>嵌入式开发的民主化浪潮来了。以后谁再说"学嵌入式要买开发板"，就把这个链接甩他脸上。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Annas Archive的ISBN可视化——知识的地图正在被绘制</div>
+<div class="giant-body">
+<p>Annas Archive（知名的图书馆图书存档项目）发布了ISBN可视化工具，33 points。这个工具把所有被存档的图书按照ISBN元数据在二维空间里映射，让你可以"看见"人类知识的结构——哪些领域的书最多，哪些主题最孤立，哪些知识簇最密集。这是一种用数据可视化作"知识考古学"的方式。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>把所有人类的书放在一起，然后画一张地图——这个项目的野心比大多数AI创业公司都要大。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ FireStriker——用爱发电做公民技术，让政务软件彻底免费</div>
+<div class="giant-body">
+<p>一个开源公民技术项目，目标是让市政服务软件彻底免费，70 points。作者的论点是：政府花在政务软件上的钱最终来自纳税人，而这些软件理应开源给纳税人免费使用。这个逻辑简单到近乎天真，但在美国各城市政务软件腐败频发的背景下，这种"天真"变得异常锋利。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>政务软件开源化喊了二十年，真正动手做的没几个。FireStriker的出现证明技术理想主义还没有死透——只是需要有人在深夜里真正去写代码。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Meow.camera——猫脸识别AI，萌到离谱的技术演示</div>
+<div class="giant-body">
+<p>一个专门识别猫脸并打分的AI工具，141 points，32条评论。这个工具本身没有实际用途，但它的病毒传播能力证明了一件事：AI不一定非要"有用"才能成功，有时候"有趣"是更高级的产品策略。猫是互联网的原始货币，这个定律在AI时代依然成立。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>在AI军备竞赛的缝隙里，有一个赛道叫"用AI撸猫"——市场规模可能比企业级AI还要大。
+
+## Dolan's 锐评（巨头绞肉机总结）：
+今日HN的本质是一场关于"AI与人类关系"的多元辩论：代码主权的Opt-Out陷阱、供应链投毒的生态危机、本地算力vs云端控制的哲学战争、以及"有用AI"和"有趣AI"的产品路线之争。值得注意的是，今日所有高热话题都指向同一个底层矛盾：技术平台的力量正在与其用户的控制权之间出现结构性撕裂。GitHub默认授权你的代码，PyPI官方包可以被篡改，macOS不让你控制自己的系统——这不是一个个孤立的事件，这是平台资本主义逻辑的必然结果。当规则由平台制定，用户的唯一武器就是：不爽就不用了。但问题是，你真的能不用GitHub吗？</p>
+</div>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">📡 极客雷达：高潜开源与暗流</div>
+<div class="radar-item">
+<div class="radar-num">1</div>
+<div class="radar-content">
+<div class="radar-title">Outworked（动森风Claude Code Agents UI）</div>
+<div class="radar-desc"><strong>痛点：</strong>让AI coding agent从CLI黑屏变成卡通互动世界</div>
+<div class="radar-desc"><em>为何值得关注：AI UI设计的"快乐优先"路线实验，娱乐化AI交互的先驱尝试</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">2</div>
+<div class="radar-content">
+<div class="radar-title">jsongrep（比jq更快的JSON命令行处理工具）</div>
+<div class="radar-desc"><strong>痛点：</strong>GB级JSON日志处理性能瓶颈</div>
+<div class="radar-desc"><em>为何值得关注：命令行JSON处理的速度天花板被刷新，直接威胁jq霸主地位</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">3</div>
+<div class="radar-content">
+<div class="radar-title">Velxio 2.0（浏览器嵌入式设备模拟器）</div>
+<div class="radar-desc"><strong>痛点：</strong>嵌入式开发需要购买实体硬件的门槛</div>
+<div class="radar-desc"><em>为何值得关注：零成本嵌入式学习环境，原型验证速度提升一个数量级</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">4</div>
+<div class="radar-content">
+<div class="radar-title">WASM/Zig浏览器音效合成器</div>
+<div class="radar-desc"><strong>痛点：</strong>专业音频工具需要安装软件的门槛</div>
+<div class="radar-desc"><em>为何值得关注：Zig+WASM组合在高性能Web工具领域展现颠覆潜力</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">5</div>
+<div class="radar-content">
+<div class="radar-title">Telnyx Python SDK（已确认被污染）</div>
+<div class="radar-desc"><strong>痛点：</strong>官方SDK遭供应链投毒，企业级VoIP系统安全</div>
+<div class="radar-desc"><em>为何值得关注：开源供应链第四代攻击的典型案例，官方包不再可信</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">6</div>
+<div class="radar-content">
+<div class="radar-title">Annas Archive ISBN可视化工具</div>
+<div class="radar-desc"><strong>痛点：</strong>海量图书元数据无法直观理解知识结构</div>
+<div class="radar-desc"><em>为何值得关注：用可视化做知识考古，揭示人类知识地图的结构</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">7</div>
+<div class="radar-content">
+<div class="radar-title">FireStriker公民技术平台</div>
+<div class="radar-desc"><strong>痛点：</strong>政府政务软件昂贵且不透明</div>
+<div class="radar-desc"><em>为何值得关注：技术理想主义落地，政务软件开源化运动的实践样本</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">8</div>
+<div class="radar-content">
+<div class="radar-title">Meow.camera猫脸识别AI</div>
+<div class="radar-desc"><strong>痛点：</strong>无聊的AI工具市场缺乏趣味性产品</div>
+<div class="radar-desc"><em>为何值得关注：病毒传播公式"AI+猫=流量"，产品策略的逆向思维案例</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">9</div>
+<div class="radar-content">
+<div class="radar-title">Redox OS能力安全命名空间系统</div>
+<div class="radar-desc"><strong>痛点：</strong>操作系统权限模型的安全缺陷</div>
+<div class="radar-desc"><em>为何值得关注：Capability-Based Security在OS层面的完整实现，安全模型的新范式探索</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">10</div>
+<div class="radar-content">
+<div class="radar-title">Claude Code Web任务调度功能</div>
+<div class="radar-desc"><strong>痛点：</strong>Web应用无法在服务端调度AI任务</div>
+<div class="radar-desc"><em>为何值得关注：Claude官方发布Web端任务调度API，Serverless AI的新基座</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">11</div>
+<div class="radar-content">
+<div class="radar-title">SCIP代码索引未来规划</div>
+<div class="radar-desc"><strong>痛点：</strong>大规模代码库的语义索引和代码搜索效率</div>
+<div class="radar-desc"><em>为何值得关注：Sourcegraph主导的代码智能协议，代表代码理解基础设施的未来方向</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">12</div>
+<div class="radar-content">
+<div class="radar-title">macOS故意"变坏"教程指南</div>
+<div class="radar-desc"><strong>痛点：</strong>苹果生态强制统一体验剥夺用户控制权</div>
+<div class="radar-desc"><em>为何值得关注：平台控制权与用户自由之间的生态战争标志性事件</em></div>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">💡 终局研判</div>
+<div class="final-section">
+<div class="final-header">Dolan&apos;s 致命锐评</div>
+<div class="final-body">
+<p>：
+今天的Dolan全景内参只有一个核心信息：你的资产正在被默认授权，你的依赖正在被悄悄篡改，你的硬件正在被云端吸走，你的代码正在被训练进别人的模型。这不是阴谋论，这是已经发生的Opt-Out大屠杀和供应链投毒的真实记录。2026年的技术世界，游戏规则由平台书写，玩家只有两个选择：要么现在就动手锁死你的每一个默认设置，要么等到你的代码、你的数据、你的算力被合法地打包拍卖给AI军火商。别等到4月24号。锁GitHub设置，现在就去。</p>
+</div>
+</div>
+
+<div class="outro">
+Dolan&apos;s 全景内参 · 2026-03-30 · 仅供个人研究参考<br>
+锐评由LLM生成 | 内容仅供参考
+</div>
+</div><!-- container -->
+</body>
+</html>
