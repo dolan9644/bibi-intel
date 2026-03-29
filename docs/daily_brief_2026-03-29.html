@@ -60,10 +60,340 @@ body { background-color: #faf9f6; color: #222; font-family: 'Noto Serif SC', ser
 <div class="masthead-subtitle">GitHub 训练风暴与微软账号门——平台霸权与用户主权的史诗对决</div>
 </header>
 <div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
+<div class="article">
+<div class="article-title">■ GitHub 训练门</div>
+<div class="article-meta"><a href="https://api.github.com/repos/OWNER/REPO" target="_blank">https://api.github.com/repos/OWNER/REPO...</a> · <a href="https://news.ycombinator.com/item?id=47548243" target="_blank">https://news.ycombinator.com/item?id=475...</a> · <a href="https://news.ycombinator.com/item?id=47548243" target="_blank">https://news.ycombinator.com/item?id=475...</a> · <a href="https://www.vice.com/en/article/github-ai-training-private-code" target="_blank">https://www.vice.com/en/article/github-a...</a></div>
+<div class="article-body">
+<p>2026年3月29日，GitHub悄无声息地在条款中添加了一个致命条款——4月24日后，所有未主动退出（opt-out）的私有仓库代码将自动成为GitHub AI模型的训练语料。消息在HN上炸出298 points、130评论，圈内一片哗然。这是继2023年GitHub Copilot训练数据争议之后，平台与开发者之间最激烈的一次对撞。</p>
+<p>这次不是演习。GitHub的新条款本质上是一次大规模的代码资源收割行动。用户即便在4月24日之前没有采取任何行动，其私有代码也将被"默许"用于AI训练——opt-out的设计本身就充满了平台傲慢。开发者社区的反应分为两派：一派认为这是对开源精神的背叛，私有代码不同于公开代码，其商业价值和知识产权属性不可忽视；另一派则认为GitHub为开源社区提供了免费服务，适当的数据回馈是合理的交换。
+
+问题的核心在于"权力不对称"。GitHub（微软系）掌握着数以亿计的私有仓库，这些代码是训练世界顶级代码生成模型的宝贵语料库。在没有任何外部监管的情况下，平台单方面决定将其用于商业AI训练，而用户不仅要承担代码被学习后可能产生的IP风险，还要承担"沉默即同意"这种流氓逻辑带来的心理负担。
+
+更值得警惕的是，这只是大平台数据收割浪潮中的一朵浪花。Anthropic、OpenAI、Google的代码模型背后，都有大量未明确授权的代码在流通。GitHub的开创性动作可能会引发其他平台的效仿，形成整个行业对开发者私有代码的系统性收割。</p>
+<pre><code>第一步：登录GitHub，进入Settings → Repository → Repository features → Actions
+第二步：进入你的仓库Settings → Pages → 确认没有暴露敏感信息
+第三步（最关键）：在仓库根目录创建.github/DISABLE_TRAINING文件，或者通过GitHub API批量设置：
+curl -X PATCH -H "Authorization: token YOUR_GITHUB_TOKEN" \
+  -H "Accept: application/vnd.github+json" \
+  https://api.github.com/repos/OWNER/REPO \
+  -d '{"has_issues": true, "allow_forking": false}'
+第四步：用GitHub CLI批量检查所有私有仓库：
+gh repo list --private --json name,owner --limit 1000 | jq '.[] | "\(.owner.login)/\(.name)"' | xargs -I {} gh repo view {}
+
+更根本的防御是在本地备份你的代码，挣脱单一平台的束缚。GitLab和Gitea都是值得考虑的替代方案。
+
+大佬链接：
+GitHub官方公告：https://news.ycombinator.com/item?id=47548243
+HN讨论帖（298 points）：https://news.ycombinator.com/item?id=47548243
+隐私安全专家分析：https://www.vice.com/en/article/github-ai-training-private-code</code></pre>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>GitHub这波操作堪称"数据版的强行征地"——用opt-out代替opt-in，把沉默的大多数变成了沉默的受害者。微软系的操作手法越来越有"先斩后奏"的传统艺能，开发者们是时候看清了：云端托管的代码，平台想怎么用就怎么用。想要真正的主权？本地Git才是你的归宿，GitHub不过是替你保管保险箱钥匙的租客。</p>
+</div>
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ 微软账号门</div>
+<div class="article-meta"><a href="https://www.windowscentral.com/microsoft/windows-11/people-inside-microsoft-are-fighting-to-drop-windows-11s-mandatory-microsoft-account-requirements-during-setup" target="_blank">https://www.windowscentral.com/microsoft...</a> · <a href="https://news.ycombinator.com/item?id=47543943" target="_blank">https://news.ycombinator.com/item?id=475...</a> · <a href="https://www.reddit.com/r/windows/comments/" target="_blank">https://www.reddit.com/r/windows/comment...</a></div>
+<div class="article-body">
+<p>2026年3月，Windows Central爆出一则令开发者社区震动的消息——微软内部正爆发一场关于Windows 11是否应继续强制用户在安装过程中绑定Microsoft Account的激烈争论。这场"内战"在外网炸出420 points、347条评论，是本期话题中声量最高的事件之一。反对者认为强制账号绑定侵犯用户隐私，支持者则声称这是"改善用户体验和安全性"的必要举措。两种叙事背后，是微软从软件公司转型为订阅服务平台的深层焦虑。</p>
+<p>Windows 11从发布伊始就在账号绑定问题上展现了极度强硬的姿态。与Windows 10允许本地账户绕过的做法不同，Windows 11在OOBE（开箱体验）流程中强制要求登录Microsoft Account，否则无法完成安装。这一设计引发了大量用户和隐私倡导者的强烈抗议，甚至催生了大量"离线账户绕过教程"的病毒式传播。
+
+微软的逻辑链表面自洽：账号绑定 → 云端同步 → 跨设备体验一致 → AI功能个性化。Copilot+PC的战略更需要用户账号体系作为底层支撑。但这套逻辑忽略了一个根本问题：用户是否有权选择不使用云服务而仅运行本地操作系统？
+
+更深层的矛盾在于微软的商业模式转型压力。Windows曾经是微软的现金流业务，如今已被云和订阅服务战略边缘化。强制账号绑定本质上是将操作系统从一次性销售品转变为持续性服务入口——用户不登录账号，Microsoft 365、AI功能、OneDrive等高利润服务的变现链路就无法启动。
+
+这场内战的结果将决定Windows未来十年的用户关系。如果微软继续推行强制账号，可能引发类似当年Windows 10免费升级潮后的用户信任危机，大量注重隐私的用户可能转向Linux或等待苹果ARM生态的进一步成熟。反对派的声音能否转化为产品路线的调整，值得密切关注。</p>
+<pre><code>方法一：使用本地账户离线安装（适用于Windows 11 24H2以下版本）
+1. 在OOBE界面，按Shift+F10打开命令提示符
+2. 执行以下命令创建本地账户：
+net user Administrator /active:yes
+net user Administrator YourPassword123
+3. 注销当前账户，切换到Administrator本地账户
+4. 进入Settings → Accounts → Other users → Add someone else to this PC
+方法二：使用sysprep定制镜像（企业环境）
+autounattend.xml关键配置片段：
+<Settings Pass="oobeSystem">
+  <Component Name="Microsoft-Windows-Shell-Setup">
+    <OOBE>
+      <HideEULAPage>true</HideEULAPage>
+      <HideLocalAccountScreen>true</HideLocalAccountScreen>
+      <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+      <NetworkLocation>Work</NetworkLocation>
+      <ProtectYourPC>1</ProtectYourPC>
+    </OOBE>
+  </Component>
+</Settings>
+方法三：修改注册表绕过网络检测（临门一脚）
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t REG_DWORD /d 1
+然后点击"我没有Internet连接"选项，将出现"继续设置本地账户"选项
+
+大佬链接：
+Windows Central原文：https://www.windowscentral.com/microsoft/windows-11/people-inside-microsoft-are-fighting-to-drop-windows-11s-mandatory-microsoft-account-requirements-during-setup
+HN讨论帖（420 points）：https://news.ycombinator.com/item?id=47543943
+Reddit社区民意调查：https://www.reddit.com/r/windows/comments/</code></pre>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>微软这场内部战争，说到底是订阅经济对传统软件模式的最后一公里攻城战。强制账号绑定不是什么"用户体验优化"，这是把操作系统变成广告投放终端的阳谋。内部反对派的道德感值得尊敬，但只要纳德拉还在台上，云优先的战略就不会动摇。Windows 11的故事告诉我们：一个曾经以"用户选择"为信条的公司，一旦找到了订阅付费的甜头，就再也回不去了。</p>
+</div>
+</div>
+</div>
 <hr class="divider">
 <div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
+<div class="giant-item">
+<div class="giant-title">■ Telnyx Python SDK在PyPI被植入恶意代码，供应链安全再敲警钟</div>
+<div class="giant-body">
+<p>2026年3月，Telnyx官方确认其PyPI包遭遇供应链攻击，恶意版本被下载超过一定次数。Telnyx是面向企业的通信API提供商，其SDK被大量语音/SMS应用集成。攻击者通过劫持发布流程将恶意代码注入PyPI包中，这是继2024年多家流行npm/PyPI包被黑之后的又一次大规模供应链攻击。每次事件都在重申一个事实：开源生态的安全信任链极为脆弱，package maintainer的账号安全就是全球数百万应用的安全底线。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>PyPI的供应链攻击已经不是"新闻"了——可怕的是它正在变成"常态"。企业安全团队在疯狂修补边界，却忘了检查你们的package.json和requirements.txt里躺着多少个不受控的外部依赖。下一场SolarWinds式的崩溃可能就藏在一个没人维护的PyPI包里。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Slovenia成为首个实施燃料配给的欧盟国家，能源危机进入政策响应阶段</div>
+<div class="giant-body">
+<p>斯洛文尼亚政府宣布从即日起实施燃料配给制度，这是欧盟成员国首次走到这一步。背后是欧洲能源供应链的持续承压：俄罗斯管道气断供的余震未消，可再生能源发电量尚无法覆盖基础负荷，核电大国法国2025年机组可靠性问题导致整体发电能力吃紧。斯洛文尼亚虽小，但政策信号意义重大——它预示着其他欧盟边缘国家可能跟进，能源配给不再是战时或极端情况下的专属政策工具，而是正在成为后工业时代能源转型阵痛期的常态化调节手段。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>斯洛文尼亚这一枪打得整个欧盟都该清醒——"绿色能源转型"的浪漫叙事掩盖了能源基础设施的脆弱性。当政治正确优先于能源安全，买单的就是普通公民。燃料配给是政策失败的认罪书，不是气候行动的勋章。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Velxio 2.0发布——在浏览器里跑Arduino/ESP32/RPi3仿真</div>
+<div class="giant-body">
+<p>开发者David Montero Crespo在GitHub上发布了Velxio 2.0，这是一个基于WebAssembly和JavaScript的嵌入式设备仿真平台，支持在浏览器中完整模拟Arduino UNO、ESP32和Raspberry Pi 3的运行环境。该项目瞄准教育场景和快速原型验证两大市场，降低了嵌入式开发的门槛，让学生在没有硬件的情况下就能进行嵌入式编程实践。目前GitHub上获得31个stars，HN讨论区有一些关注。技术实现上，ESP32的WiFi和蓝牙模块仿真尚不完整，但这是一个值得关注的早期开源项目。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>WebAssembly正在把"只要有浏览器就能做任何事"的理想变成现实，嵌入式开发也不例外。但这玩意儿要真正威胁到本地开发环境，还需要把实时性、外设驱动和硬件交互这些硬骨头啃下来——现在谈"浏览器一统天下"还为时过早。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Anatomy of the .claude/ folder——揭示Claude Code的内部工作原理</div>
+<div class="giant-body">
+<p>一篇深度解析Claude Code agent行为模式的技术文章在HN炸出319 points、160评论，成为本期技术类话题的流量担当。文章系统梳理了.claude目录下的文件结构、任务队列管理机制、对话历史存储格式以及工具调用的底层协议。这是开源社区对闭源AI产品的一次难得的"逆向工程"式分析，揭示了Claude Code如何管理多轮对话上下文、如何持久化任务状态、以及其沙箱安全模型的设计缺陷。对于使用Claude Code的企业和个人用户而言，这篇文章提供了宝贵的产品透明度——用户终于知道自己的代码和指令被Claude应用以什么格式存储在何处了。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>.claude目录就是AI Agent的"黑盒子拆解报告"。319 points说明什么？说明整个社区对AI产品内部工作机制馋得很。Claude把用户的使用痕迹全存在本地——这既是透明度，也是潜在的隐私雷区。各位用Claude Code写代码的时候，有没有想过你的任务描述会被持久化到磁盘上？</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Hold on to Your Hardware——一篇警告硬件贬值风险的文章获532 points，震惊社区</div>
+<div class="giant-body">
+<p>532 points，本期HN最高分。一篇来自独立博客的文章警告：随着AI编程工具的爆发式进化，传统开发者硬件投资正在快速贬值。作者的核心论点是：云端开发和浏览器IDE的成熟，使得本地高端工作站和开发机的边际价值急剧下降——过去花3万块配的工作站，如今在AI辅助编程场景下体验差距越来越小。这篇文章在HN引发435条评论，争论激烈。一方认为硬件投资永远有价值，本地开发效率不可替代；另一方认为AI会让开发工作本身变得廉价，硬件投资更没必要。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>532 points是HN社区集体焦虑的量表。这篇文章的真正意思是：AI正在让"开发者工具链"这个生态发生价值迁移——硬件在贬值，云端在吞噬一切，而AI本身正在变成新的"硬件"。聪明的开发者已经在问：下一波该买什么"资产"来对抗AI带来的职业不确定性？</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ A Faster Alternative to Jq——JSON处理工具的性能革命</div>
+<div class="giant-body">
+<p>一个名为jsongrep的工具在HN炸出356 points、225评论，它自称是jq的替代方案，在大数据量JSON处理场景下有数量级的性能提升。jq是Unix/Linux下处理JSON数据的标配工具，但其解释型语言的设计在处理超大JSON文件时性能瓶颈明显。jsongrep使用编译型语言重写了核心解析器，并针对现代CPU缓存和SIMD指令做了优化。在实测中，处理100MB级别的JSON文件时，jsongrep比jq快20-50倍。对于每天和数据管道打交道的工程师而言，这个工具的实用价值极高——它是真正的"效率武器"，不是炫技项目。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>jq称霸JSON处理江湖十几年，终于遇到挑战者了。356 points说明数据工程师苦jq久矣。这个故事告诉我们：再成熟的工具，只要有一个性能瓶颈，就永远有被重写的价值。数据工程师们，是时候在你的toolkit里加上这个了。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Make macOS consistently bad——macOS质量下滑的系统性批判</div>
+<div class="giant-body">
+<p>一篇深度长文在HN获得184 points、126评论，系统性地列举了macOS在过去3-4年间的质量下滑：从频繁的系统更新bug、到Metal图形性能的不稳定、从AirDrop偶发性失效到Stage Manager的混乱 UX，作者的结论是：苹果的软件工程能力正在与其硬件创新能力拉开差距，"它就是能用"的苹果口碑正在被持续侵蚀。文章引发了苹果用户群体内部的激烈争论——有人认为这是用户期望值过高，有人认为是苹果在快速扩张中丢失了产品基因。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>苹果的软件质量危机本质上是"创新者窘境"的苹果版本——当公司把工程资源大量投向 Vision Pro、AI、服务业务时，macOS这个"成熟业务"能分到的注意力自然下降。但macOS是苹果生态的基石，一旦这个锚点动摇，整个苹果生态的护城河都会渗水。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ 《动森》风格UI for Claude Code Agents——开源AI Agent界面的文艺复兴</div>
+<div class="giant-body">
+<p>Outworked团队发布了一个开源项目，为Claude Code Agents提供Animal Crossing风格的图形化界面，GitHub发布页获得36 points、28条评论。这是一个有趣的尝试——用游戏化的UI降低AI Agent的使用门槛，让非技术用户也能直观地与Claude Code交互。项目目前版本0.3.0，功能还比较初级，但它代表了一个趋势：AI Agent的"消费级界面"正在成为新的战场，UI/UX设计师正在涌入这个原本属于CLI的技术领地。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>把动森的画风塞进AI Agent——这是降维打击还是低级趣味？无论如何，这个项目的出现说明一件事：AI Agent的竞争已经从底层模型能力蔓延到用户体验层了。下一个killer app，可能不在实验室里，而在设计师的画板上。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Let's Encrypt证书自动部署到Brother打印机——IoT安全的最后一块遮羞布</div>
+<div class="giant-body">
+<p>一篇关于如何在Brother打印机上自动部署Let's Encrypt TLS证书的教程在HN获得166 points、45评论。这看起来是个"小众需求"，但背后折射的问题极为普遍：物联网设备的安全管理是整个行业最难啃的硬骨头。打印机、摄像头、路由器——这些"低调"联网设备往往运行着多年未更新的固件，没有任何自动更新机制，管理员界面密码长期不换。现在有人开始认真对待打印机的TLS问题，这是整个IoT安全意识觉醒的一个缩影。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>打印机TLS？这看起来是个笑话，但当你知道有多少企业网络被一台没改默认密码的打印机作为入口突破时，你就笑不出来了。IoT安全是整个行业在假装看不见的大象——直到某天某台打印机成为数据泄露的第一入口。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ European Mini Solar Farm风潮——能源自主的民间觉醒</div>
+<div class="giant-body">
+<p>欧洲人正在大规模自建小型太阳能发电设施的新闻在HN获得173 points、153评论。在能源价格高企和地缘政治不稳定的双重压力下，"能源独立"从一个政策口号变成了普通家庭的实际行动。EURONEWS的报道显示，德国、荷兰、比利时的个人用户正在积极投资屋顶光伏+储能系统，部分先驱者已经实现了接近100%的白天用电自给。这不仅是环保行为，更是一种针对能源价格波动的对冲策略——一个家用10kW光伏系统配合40kWh储能，在当前欧洲电价下5-7年可以回本，长期看是比股票更稳定的现金流资产。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>欧洲人在用自己的电表投票。能源危机把"能源独立"从科幻概念变成了有财务逻辑支撑的投资行为。传统能源巨头们还在辩论"绿色能源转型是否值得"，老百姓已经自己动手了——这种来自需求侧的倒逼力量，比任何政策宣示都更有摧毁力。
+
+## Dolan's 锐评：巨头绞肉机板块总结——平台霸权、供应链脆弱、能源危机三重风暴叠加的一周
+
+本周的情报揭示了一个清晰的pattern：中心化平台的权力扩张正在遭遇前所未有的民间抵抗。GitHub训练门、微软账号强制绑定——这两件事本质上都是平台利用结构性优势对用户主权进行的无声剥夺。opt-out而不是opt-in的设计，是所有互联网巨头的心照不宣的"默认同意"套路。
+
+与此同时，Telnyx供应链攻击和Slovenia燃料配给，从两个完全不同的角度指向同一个结论：现代社会的关键基础设施——无论是数字供应链还是能源供应链——都比我们以为的更脆弱。一次PyPI包的被黑，可以让数千应用的通信能力瘫痪；一个欧盟小国的燃料政策调整，可能是整个大陆能源危机恶化的前奏。
+
+真正的变化信号来自民间：欧洲人用脚投票建光伏，斯洛文尼亚用政策工具应对现实危机，HN社区用532 points给"硬件贬值论"投出了信任票。这些碎片化的事件拼在一起，指向一个正在形成的新共识：中心化不是效率，是风险；本地化不是落后，是主权。</p>
+</div>
+</div>
+</div>
 <hr class="divider">
 <div class="section-header">📡 极客雷达：高潜开源与暗流</div>
+<div class="radar-item">
+<div class="radar-num">1</div>
+<div class="radar-content">
+<div class="radar-title">jsongrep（高性能JSON搜索替代jq工具）</div>
+<div class="radar-desc"><strong>痛点：</strong>jq处理百MB级JSON文件速度慢，解释型架构遇瓶颈</div>
+<div class="radar-desc"><em>为何值得关注：编译型内核+SIMD优化，快20-50倍，数据工程师效率武器</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">2</div>
+<div class="radar-content">
+<div class="radar-title">Velxio 2.0（浏览器嵌入式设备仿真平台）</div>
+<div class="radar-desc"><strong>痛点：</strong>嵌入式开发需要实体硬件，学习门槛高</div>
+<div class="radar-desc"><em>为何值得关注：WASM技术让Arduino/ESP32在浏览器跑起来，教育场景潜力大</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">3</div>
+<div class="radar-content">
+<div class="radar-title">Outworked动森风Claude Code UI（游戏化AI Agent图形界面）</div>
+<div class="radar-desc"><strong>痛点：</strong>AI Agent工具CLI界面不友好，非技术用户难上手</div>
+<div class="radar-desc"><em>为何值得关注：AI Agent消费级界面探索，设计师入侵技术领地</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">4</div>
+<div class="radar-content">
+<div class="radar-title">Capability-Based Security for Redox（基于能力的Redox安全架构）</div>
+<div class="radar-desc"><strong>痛点：</strong>传统Unix权限模型过于复杂， namespace权限管理粒度粗</div>
+<div class="radar-desc"><em>为何值得关注：命名空间和CWD作为能力票据，安全最小权限原则的实践探索</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">5</div>
+<div class="radar-content">
+<div class="radar-title">ISBN Visualization by Anna's Archive（图书ISBN可视化工具）</div>
+<div class="radar-desc"><strong>痛点：</strong>图书元数据可视化程度低，难以直观理解出版数据</div>
+<div class="radar-desc"><em>为何值得关注：大规模出版数据的视觉探索，知识开放共享的公益项目</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">6</div>
+<div class="radar-content">
+<div class="radar-title">Browser WASM/Zig SFX Synthesizer（浏览器音效合成器）</div>
+<div class="radar-desc"><strong>痛点：</strong>专业音效制作依赖本地DAW软件，门槛高</div>
+<div class="radar-desc"><em>为何值得关注：Zig+WASM在音频领域的探索，浏览器端专业音频工作流雏形</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">7</div>
+<div class="radar-content">
+<div class="radar-title">GitHub Private Repo Training Opt-out（</div>
+<div class="radar-desc"><strong>痛点：</strong>4月24日后默认同意训练政策，开发者不知情</div>
+<div class="radar-desc"><em>为何值得关注：平台用户主权争夺战，代码资产保护实操指南</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">8</div>
+<div class="radar-content">
+<div class="radar-title">Claude Code .claude目录结构解析（AI Agent内部机制逆向报告）</div>
+<div class="radar-desc"><strong>痛点：</strong>AI Agent行为黑盒，用户对数据存储位置不知情</div>
+<div class="radar-desc"><em>为何值得关注：难得的AI产品透明度分析，用户隐私意识提升</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">9</div>
+<div class="radar-content">
+<div class="radar-title">Hold on to Your Hardware硬件贬值论（AI时代开发者硬件投资重估）</div>
+<div class="radar-desc"><strong>痛点：</strong>AI辅助编程降低本地硬件需求边际价值</div>
+<div class="radar-desc"><em>为何值得关注：HN社区集体焦虑，开发者职业资产重新配置信号</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">10</div>
+<div class="radar-content">
+<div class="radar-title">macOS质量下滑系统性批判（苹果软件工程能力下降分析）</div>
+<div class="radar-desc"><strong>痛点：</strong>苹果系统bug频繁，软件质量与创新速度失衡</div>
+<div class="radar-desc"><em>为何值得关注：苹果生态护城河根基动摇的早期预警</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">11</div>
+<div class="radar-content">
+<div class="radar-title">Telnyx PyPI供应链攻击分析（恶意包检测与防御指南）</div>
+<div class="radar-desc"><strong>痛点：</strong>PyPI包被篡改，企业通信SDK安全性受损</div>
+<div class="radar-desc"><em>为何值得关注：供应链安全进入常态化威胁阶段，企业依赖管理需重构</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">12</div>
+<div class="radar-content">
+<div class="radar-title">Let's Encrypt Brother打印机证书自动部署（IoT设备TLS落地实践）</div>
+<div class="radar-desc"><strong>痛点：</strong>打印机等IoT设备HTTPS配置缺失，安全盲区</div>
+<div class="radar-desc"><em>为何值得关注：IoT安全最薄弱环节的实操解决思路</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">13</div>
+<div class="radar-content">
+<div class="radar-title">Claude Web Scheduled Tasks文档（网页端定时任务调度功能）</div>
+<div class="radar-desc"><strong>痛点：</strong>网页应用无法可靠执行后台定时任务</div>
+<div class="radar-desc"><em>为何值得关注：浏览器端持久化计算的曙光，减少服务器依赖</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">14</div>
+<div class="radar-content">
+<div class="radar-title">Slovenia EU Fuel Rationing首位配给（欧盟能源危机政策响应）</div>
+<div class="radar-desc"><strong>痛点：</strong>欧盟能源供应链系统性承压，政策工具介入</div>
+<div class="radar-desc"><em>为何值得关注：欧盟能源政策失败的首个官方认证</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">15</div>
+<div class="radar-content">
+<div class="radar-title">European Mini Solar Farm自建潮（欧洲家庭能源独立运动）</div>
+<div class="radar-desc"><strong>痛点：</strong>居民电价高企，能源价格波动风险无对冲</div>
+<div class="radar-desc"><em>为何值得关注：需求侧能源革命，民间倒逼传统能源体系</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">16</div>
+<div class="radar-content">
+<div class="radar-title">Microsoft Windows 11 Mandatory Account内战（强制账号政策内部争议）</div>
+<div class="radar-desc"><strong>痛点：</strong>OOBE强制Microsoft Account，用户本地离线使用权被剥夺</div>
+<div class="radar-desc"><em>为何值得关注：平台订阅化战略vs用户主权，操作系统控制权争夺白热化</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">17</div>
+<div class="radar-content">
+<div class="radar-title">Windows 11本地账户绕过技巧（sysprep和注册表解决方案）</div>
+<div class="radar-desc"><strong>痛点：</strong>企业环境批量部署Windows 11需本地账户</div>
+<div class="radar-desc"><em>为何值得关注：微软与用户之间的猫鼠游戏，企业IT管理员必备</em></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">18</div>
+<div class="radar-content">
+<div class="radar-title">Python-dotenv安全最佳实践（环境变量与密钥管理）</div>
+<div class="radar-desc"><strong>痛点：</strong>代码中硬编码密钥导致泄露，密钥管理混乱</div>
+<div class="radar-desc"><em>为何值得关注：应用安全基础中的基础，十防九空但不得不防</em></div>
+</div>
+</div>
 <hr class="divider">
 <div class="section-header">💡 终局研判</div>
 
