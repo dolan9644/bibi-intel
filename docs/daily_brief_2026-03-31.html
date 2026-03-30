@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan&apos;s 全景内参：AI Agent 接管 GUI——从 terminal 士兵到操作系统玩家的跃迁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 17px; }
+body { background-color: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+.container { max-width: 800px; margin: 0 auto; padding: 60px 32px 100px; }
+.masthead { padding-bottom: 48px; border-bottom: 2px solid #222; margin-bottom: 56px; }
+.masthead-date { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: #888; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.6rem; font-weight: 700; color: #111; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; }
+.masthead-subtitle { font-size: 1rem; color: #555; font-weight: 400; line-height: 1.6; }
+.section-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; color: #666; text-transform: uppercase; margin-bottom: 36px; margin-top: 64px; display: flex; align-items: center; gap: 10px; }
+.section-header::after { content: ''; flex: 1; height: 1px; background: #ddd; }
+.article { margin-bottom: 52px; }
+.article-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem; font-weight: 600; color: #111; line-height: 1.45; margin-bottom: 14px; letter-spacing: -0.005em; }
+.article-meta { font-family: 'Noto Sans SC', sans-serif; font-size: 0.8rem; color: #888; margin-bottom: 16px; }
+.article-meta a { color: #999; text-decoration: none; }
+.article-meta a:hover { color: #555; }
+.article-body { font-size: 0.95rem; color: #333; line-height: 1.8; }
+.article-body p { margin-bottom: 14px; }
+.article-body pre { background: #f3f3f3; border-left: 3px solid #ccc; padding: 12px 16px; overflow-x: auto; margin: 16px 0; font-size: 0.85rem; line-height: 1.5; }
+.article-body code { background: #f3f3f3; padding: 2px 6px; font-size: 0.85em; border-radius: 3px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 20px; margin: 20px 0; }
+.quote-label { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #b30000; text-transform: uppercase; margin-bottom: 8px; }
+.quote-block p { color: #333; font-size: 0.9rem; line-height: 1.7; margin: 0; }
+.section-summary { margin-top: 24px; }
+.giant-item { margin-bottom: 36px; }
+.giant-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 10px; line-height: 1.4; }
+.giant-body { font-size: 0.9rem; color: #333; line-height: 1.75; }
+.giant-body p { margin-bottom: 10px; }
+.radar-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+.radar-item:last-child { border-bottom: none; }
+.radar-num { font-family: 'Noto Sans SC', sans-serif; font-size: 0.7rem; font-weight: 700; color: #bbb; min-width: 24px; padding-top: 2px; }
+.radar-content { flex: 1; }
+.radar-title { font-family: 'Noto Sans SC', sans-serif; font-size: 0.9rem; font-weight: 600; color: #111; margin-bottom: 4px; }
+.radar-desc { font-size: 0.85rem; color: #555; line-height: 1.6; }
+.radar-link { font-size: 0.78rem; color: #999; margin-top: 4px; }
+.radar-link a { color: #aaa; text-decoration: none; }
+.radar-link a:hover { color: #666; }
+.final-section { background: #1a1a1a; color: #f0f0f0; padding: 36px 32px; margin-top: 48px; }
+.final-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; color: #ff6b6b; text-transform: uppercase; margin-bottom: 16px; }
+.final-body { font-size: 0.95rem; line-height: 1.8; color: #ddd; }
+.divider { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+.outro { text-align: center; font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; color: #bbb; margin-top: 64px; padding-top: 24px; border-top: 1px solid #eee; }
+@media (max-width: 640px) { .container { padding: 40px 20px 80px; } .masthead-title { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="masthead-date">2026 年 3 月 31 日 · 周二</div>
+<div class="masthead-title">Dolan&apos;s 全景内参</div>
+<div class="masthead-subtitle">AI Agent 接管 GUI——从 terminal 士兵到操作系统玩家的跃迁</div>
+</header>
+<div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
+<div class="article">
+<div class="article-title">■ Claude Code Computer Use</div>
+<div class="article-meta"><a href="https://x.com/claudeai/status/2038663014098899416" target="_blank">https://x.com/claudeai/status/2038663014...</a></div>
+<div class="article-body">
+<p>2026年3月30日，Anthropic 官方账号 @claudeai 宣布 Claude Code 新功能 Computer Use 上线。Claude 可通过 CLI 直接打开本地应用、点击 UI 元素、执行构建物测试，实现端到端开发流程闭环。当前为 Research Preview 阶段，仅向 Pro 和 Max 计划用户开放。这是继 OpenAI Operator、OpenClaw 之后，AI Agent 领域最具野心的 GUI 操控尝试——也是最具争议的一次。</p>
+<p>Computer Use 的技术原理并不神秘：本机安装 Claude Code 客户端后，Claude 通过截取屏幕区域（screenshot）感知 GUI 状态，结合 OS X Accessibility API 模拟鼠标点击和键盘输入。这套"看屏幕→做动作"的循环，本质上是多模态大模型的视觉输入输出在 GUI 场景的工程落地。但它的战略意义远比技术细节更值得深挖。
+
+第一层是"最后一公里"问题。传统 coding agent 的局限在于：能生成代码，但无法验证代码在真实 GUI 环境下是否 work。Unit test 可以跑通，但"用户点击提交按钮后弹窗是否正常"这类问题，terminal 层的 agent 根本无法触及。Computer Use 把这个 gap 填上了——Claude 现在不仅能写代码，还能坐在你的工位上帮你点掉那些烦人的 cookie banner。
+
+第二层是"代理层战争"的升维。OpenAI 的 Operator 走的是浏览器插件路线，专注于 web 自动化；OpenClaw 在终端层做了深度集成。Anthropic 则选择了操作系统级集成——直接在 macOS 上跑 GUI 测试。这是一个更激进的路线：它要求用户授予 Accessibility 权限（这在 macOS 里是受保护的能力），意味着只有信任 agent 的用户才会开启这个功能。这不是技术问题，是信任问题，而 Anthropic 选择用 Research Preview 来慢慢建立这种信任。
+
+第三层是安全边界的新挑战。传统沙箱防不住一个拥有屏幕读取+鼠标操控权限的 AI Agent——它理论上可以帮你点"同意"，也可以帮自己授权更多权限。Anthropic 在 Computer Use 上的安全设计（截断的 screenshot、多层确认机制）是工程层面的妥协，但真正的安全范式还没建立。这为 red team 研究者提供了一个新的攻击面，也为一个新行业——AI Agent 安全审计——埋下了伏笔。</p>
+<pre><code>：
+安装 Anthropic 官方 CLI 并启用 Computer Use（Research Preview 模式）：
+npm install -g @anthropic-ai/claude-code
+claude-code computer-use enable
+claude-code --computer-use
+
+测试任务示例（自动打开 Safari 并搜索关键词）：
+claude-code << 'EOF'
+Open Safari and search for "Anthropic Claude Computer Use"
+Click on the first result
+EOF
+
+在 Claude Code 配置文件（~/.claudeirc.json）中启用截图精度设置：
+{
+  "computer_use": {
+    "screenshot_mode": "retina",
+    "click_precision": "high",
+    "max_retries": 3,
+    "preview_only": true
+  }
+}</code></pre>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Computer Use 是 AI 编程的"登月"时刻——但不是登月火箭，是登月电梯。技术 demo 让人兴奋，工程落地让人焦虑，安全问题让人失眠。Anthropic 选了 Research Preview 这个"灰度发布"策略来给自己留退路，聪明。但别忘了：用户一旦习惯点击自动化，下次遇到需要人工操作的复杂场景，第一反应就是"让 Claude 来点"。Agent 依赖症正在形成，比任何 model 都更难戒。
+
+原文链接：https://x.com/claudeai/status/2038663014098899416</p>
+</div>
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Claude Cowork GA vs OpenClaw</div>
+<div class="article-meta"><a href="https://www.latent.space/p/felix-anthropic" target="_blank">https://www.latent.space/p/felix-anthrop...</a> · <a href="https://www.latent.space/p/ainews-claude-cowork-dispatch-anthropics" target="_blank">https://www.latent.space/p/ainews-claude...</a> · <a href="https://simonwillison.net/2026/Mar/17/mini-and-nano/" target="_blank">https://simonwillison.net/2026/Mar/17/mi...</a> · <a href="https://www.latent.space/p/ainews-nvidia-gtc-jensen-goes-hard" target="_blank">https://www.latent.space/p/ainews-nvidia...</a> · <a href="https://www.latent.space/p/ainews-context-drought" target="_blank">https://www.latent.space/p/ainews-contex...</a> · <a href="https://www.latent.space/p/ainews-replit-agent-4-the-knowledge" target="_blank">https://www.latent.space/p/ainews-replit...</a> · <a href="https://www.latent.space/p/ainews-yann-lecuns-ami-labs-launches" target="_blank">https://www.latent.space/p/ainews-yann-l...</a> · <a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">https://simonwillison.net/2026/Mar/4/qwe...</a> · <a href="https://simonwillison.net/2026/Mar/5/chardet/" target="_blank">https://simonwillison.net/2026/Mar/5/cha...</a> · <a href="https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive" target="_blank">https://www.latent.space/p/ainews-autore...</a> · <a href="https://www.latent.space/p/turbopuffer" target="_blank">https://www.latent.space/p/turbopuffer...</a> · <a href="https://x.com/thenanyu/status/2038602288957202941" target="_blank">https://x.com/thenanyu/status/2038602288...</a></div>
+<div class="article-body">
+<p>2026年3月17-18日，Anthropic 发布 Claude Cowork 正式版（GA），并宣布支持远程控制功能。Claude Cowork 是 Anthropic 继 Claude Code Desktop 之后推出的多 Agent 协作产品，允许用户同时运行多个 Claude 实例协同工作。更重要的是：这是 Anthropic 对 OpenClaw（NVIDIA 在 GTC 上高调宣布的产品）的直接回应。战场从"谁有最强模型"转移到了"谁有最好的 Agent 部署平台"。</p>
+<p>理解 Claude Cowork 的战略价值，需要回到一个被低估的信号：2026年1月，Anthropic 的 Felix Rieseberg 发推透露，非技术用户正在用 Claude Code 做各种"非编码工作"，而技术用户则在用它处理非技术任务。这条推文获得了 1.72K likes——说明这个现象是广泛共识，而非个例。
+
+这个观察直接催生了 Claude Cowork。它本质上是一个多实例 Agent 编排层：用户不再是和单个 Claude 对话，而是同时调度多个 Claude 实例，每个实例负责不同的子任务。以"准备一份融资材料"为例：一个 Claude 负责收集竞品数据，一个负责写财务模型，一个负责设计 PPT——三者之间通过共享上下文协调，最终由人类汇总。Felix 透露，这个产品"在一周半内自己写好了自己"，完全由多个 Claude Code 实例协作完成开发。
+
+这就是"Agentic Engineering"的工程化落地——不再是单 agent 的 prompt 工程，而是多 agent 的 workflow 编排。Simon Willison 在 Pragmatic Summit 的炉边对话中把这个问题讲得更清楚：AI coding adoption 分四个阶段，从 ChatGPT 问答，到 coding agent 写代码，到 agentic engineering 多 agent 协作，最后是 AI 原生（vibe coding，非程序员主导）。Claude Cowork 把第三阶段直接产品化了。
+
+现在来看 OpenClaw——NVIDIA 在 GTC 2026 上高调宣布的产品，Jensen 在 keynote 里用了大量篇幅介绍它与 NVIDIA 整个生态（CUDA、TensorRT、NeMo）的深度集成。这里出现了一个有趣的分叉：Anthropic 的 Cowork 走的是"轻量协作层"路线，易用性强；OpenClaw 走的是"深度硬件绑定"路线，性能最强但迁移成本高。两者的竞争，本质上是"AI native 的 macOS"和"AI native 的 Linux"之间的路线之争。
+
+更深层的问题是：谁来控制 Agent 的执行层？Anthropic 的答案是"人类的 hypervisor"（Cowork），NVIDIA 的答案是"NVIDIA 的 CUDA 层"（OpenClaw）。前者更灵活但护城河浅，后者更强大但生态锁定深。这场竞争的结果，将决定未来 5 年 AI Agent 的基础设施标准。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Claude Cowork GA 释放了一个明确信号：Anthropic 不再只是一家模型公司，而是一个想做 AI 操作系统的玩家。Felix 那句"Coming soon"回应远程控制的克制，和 Jensen 在 GTC 上卖力吆喝 OpenClaw 的高调，形成了鲜明对比。但别被营销带偏——Cowork 的真正护城河不是功能，是 Anthropic 的模型质量和上下文窗口。当 context 足够长，多 agent 协作才能真正work，而 Anthropic 的 1M context 正好卡在这个甜点位置。
+
+原文链接：https://www.latent.space/p/felix-anthropic
+https://www.latent.space/p/ainews-claude-cowork-dispatch-anthropics</p>
+</div>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
+<hr class="divider">
+<div class="section-header">📡 极客雷达：高潜开源与暗流</div>
+<hr class="divider">
+<div class="section-header">💡 终局研判</div>
+
+<div class="outro">
+Dolan&apos;s 全景内参 · 2026-03-31 · 仅供个人研究参考<br>
+锐评由LLM生成 | 内容仅供参考
+</div>
+</div><!-- container -->
+</body>
+</html>
