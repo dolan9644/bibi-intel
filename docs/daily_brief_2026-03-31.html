@@ -1,140 +1,204 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dolan&apos;s 全景内参：AI Agent 接管 GUI——从 terminal 士兵到操作系统玩家的跃迁</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dolan AI Brief - 2026-03-31</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { font-size: 17px; }
-body { background-color: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.75; -webkit-font-smoothing: antialiased; }
-.container { max-width: 800px; margin: 0 auto; padding: 60px 32px 100px; }
-.masthead { padding-bottom: 48px; border-bottom: 2px solid #222; margin-bottom: 56px; }
-.masthead-date { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: #888; text-transform: uppercase; margin-bottom: 16px; }
-.masthead-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.6rem; font-weight: 700; color: #111; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; }
-.masthead-subtitle { font-size: 1rem; color: #555; font-weight: 400; line-height: 1.6; }
-.section-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; color: #666; text-transform: uppercase; margin-bottom: 36px; margin-top: 64px; display: flex; align-items: center; gap: 10px; }
-.section-header::after { content: ''; flex: 1; height: 1px; background: #ddd; }
-.article { margin-bottom: 52px; }
-.article-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem; font-weight: 600; color: #111; line-height: 1.45; margin-bottom: 14px; letter-spacing: -0.005em; }
-.article-meta { font-family: 'Noto Sans SC', sans-serif; font-size: 0.8rem; color: #888; margin-bottom: 16px; }
-.article-meta a { color: #999; text-decoration: none; }
-.article-meta a:hover { color: #555; }
-.article-body { font-size: 0.95rem; color: #333; line-height: 1.8; }
-.article-body p { margin-bottom: 14px; }
-.article-body pre { background: #f3f3f3; border-left: 3px solid #ccc; padding: 12px 16px; overflow-x: auto; margin: 16px 0; font-size: 0.85rem; line-height: 1.5; }
-.article-body code { background: #f3f3f3; padding: 2px 6px; font-size: 0.85em; border-radius: 3px; }
-.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 20px; margin: 20px 0; }
-.quote-label { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #b30000; text-transform: uppercase; margin-bottom: 8px; }
-.quote-block p { color: #333; font-size: 0.9rem; line-height: 1.7; margin: 0; }
-.section-summary { margin-top: 24px; }
-.giant-item { margin-bottom: 36px; }
-.giant-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 10px; line-height: 1.4; }
-.giant-body { font-size: 0.9rem; color: #333; line-height: 1.75; }
-.giant-body p { margin-bottom: 10px; }
-.radar-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-.radar-item:last-child { border-bottom: none; }
-.radar-num { font-family: 'Noto Sans SC', sans-serif; font-size: 0.7rem; font-weight: 700; color: #bbb; min-width: 24px; padding-top: 2px; }
-.radar-content { flex: 1; }
-.radar-title { font-family: 'Noto Sans SC', sans-serif; font-size: 0.9rem; font-weight: 600; color: #111; margin-bottom: 4px; }
-.radar-desc { font-size: 0.85rem; color: #555; line-height: 1.6; }
-.radar-link { font-size: 0.78rem; color: #999; margin-top: 4px; }
-.radar-link a { color: #aaa; text-decoration: none; }
-.radar-link a:hover { color: #666; }
-.final-section { background: #1a1a1a; color: #f0f0f0; padding: 36px 32px; margin-top: 48px; }
-.final-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; color: #ff6b6b; text-transform: uppercase; margin-bottom: 16px; }
-.final-body { font-size: 0.95rem; line-height: 1.8; color: #ddd; }
-.divider { border: none; border-top: 1px solid #eee; margin: 48px 0; }
-.outro { text-align: center; font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; color: #bbb; margin-top: 64px; padding-top: 24px; border-top: 1px solid #eee; }
-@media (max-width: 640px) { .container { padding: 40px 20px 80px; } .masthead-title { font-size: 1.3rem; } }
+:root{--bg:#0d0d0f;--surface:#16161a;--border:#26262e;--text:#cdd6f4;--muted:#6c7086;--accent:#f5c2e7;--blue:#89b4fa;--green:#a6e3a1;--yellow:#f9e2af;--purple:#cba6f7;--orange:#fab387;--font:-apple-system,BlinkMacSystemFont,"SF Mono","Cascadia Code","Segoe UI",sans-serif;--font-serif:"Songti SC","Noto Serif SC",Georgia,serif;--r:8px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.7;}
+.container{max-width:820px;margin:0 auto;padding:48px 20px 80px;}
+.header{border-bottom:1px solid var(--border);padding-bottom:32px;margin-bottom:40px;}
+.header-date{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.header-title{font-family:var(--font-serif);font-size:26px;font-weight:700;line-height:1.3;letter-spacing:-.02em;}
+.header-sub{font-size:13px;color:var(--muted);margin-top:6px;}
+.section{margin-bottom:48px;}
+.section-label{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.article{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:20px;}
+.article-title{font-family:var(--font-serif);font-size:17px;font-weight:700;color:var(--blue);line-height:1.4;margin-bottom:16px;}
+.article-body p{margin-bottom:12px;}
+.article-body strong{color:var(--yellow);}
+.article-body code{background:#1a1a20;border-radius:4px;padding:1px 5px;font-size:12px;color:var(--green);}
+.article-h2{font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin:18px 0 8px;}
+.code-block{background:#1a1a20;border:1px solid var(--border);border-radius:6px;padding:14px 16px;margin:12px 0;font-family:var(--font);font-size:12px;color:var(--green);overflow-x:auto;white-space:pre;}
+.dolan{background:linear-gradient(135deg,#1a1520,#1a1a20);border-left:3px solid var(--purple);padding:14px 18px;margin:16px 0;border-radius:0 var(--r) var(--r) 0;font-size:13px;line-height:1.7;}
+.dolan-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:6px;}
+.dolan a{color:var(--blue);}
+.event{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:14px;}
+.event-title{font-size:13px;font-weight:600;color:var(--orange);margin-bottom:10px;line-height:1.5;}
+.event-detail{font-size:12.5px;color:var(--text);opacity:.85;margin-bottom:10px;line-height:1.65;}
+.event-comment{background:#131318;border-radius:6px;padding:10px 14px;font-size:12px;color:var(--muted);border-left:2px solid var(--purple);margin-top:8px;}
+.event-link{font-size:11px;color:var(--muted);margin-top:8px;}
+.event-link a{color:var(--blue);text-decoration:none;}
+.radar-grid{display:grid;grid-template-columns:1fr;gap:10px;}
+.radar-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;}
+.radar-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;}
+.radar-name{font-weight:600;color:var(--green);font-size:12.5px;}
+.radar-hot{font-size:10px;color:var(--muted);white-space:nowrap;}
+.radar-fields{display:grid;gap:4px;}
+.radar-row{display:flex;gap:8px;line-height:1.5;font-size:11.5px;}
+.radar-key{color:var(--muted);white-space:nowrap;min-width:72px;}
+.radar-val{color:var(--text);}
+.judgment{background:linear-gradient(135deg,#1a1a20,#1c1a24);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-top:16px;}
+.judgment-text{font-family:var(--font-serif);font-size:15px;line-height:1.8;}
+.outro{text-align:center;padding:28px 0;border-top:1px solid var(--border);font-size:11px;color:var(--muted);line-height:2;}
+.outro-brand{color:var(--accent);font-weight:600;}
 </style>
 </head>
 <body>
 <div class="container">
-<header class="masthead">
-<div class="masthead-date">2026 年 3 月 31 日 · 周二</div>
-<div class="masthead-title">Dolan&apos;s 全景内参</div>
-<div class="masthead-subtitle">AI Agent 接管 GUI——从 terminal 士兵到操作系统玩家的跃迁</div>
-</header>
-<div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
-<div class="article">
-<div class="article-title">■ Claude Code Computer Use</div>
-<div class="article-meta"><a href="https://x.com/claudeai/status/2038663014098899416" target="_blank">https://x.com/claudeai/status/2038663014...</a></div>
-<div class="article-body">
-<p>2026年3月30日，Anthropic 官方账号 @claudeai 宣布 Claude Code 新功能 Computer Use 上线。Claude 可通过 CLI 直接打开本地应用、点击 UI 元素、执行构建物测试，实现端到端开发流程闭环。当前为 Research Preview 阶段，仅向 Pro 和 Max 计划用户开放。这是继 OpenAI Operator、OpenClaw 之后，AI Agent 领域最具野心的 GUI 操控尝试——也是最具争议的一次。</p>
-<p>Computer Use 的技术原理并不神秘：本机安装 Claude Code 客户端后，Claude 通过截取屏幕区域（screenshot）感知 GUI 状态，结合 OS X Accessibility API 模拟鼠标点击和键盘输入。这套"看屏幕→做动作"的循环，本质上是多模态大模型的视觉输入输出在 GUI 场景的工程落地。但它的战略意义远比技术细节更值得深挖。
-
-第一层是"最后一公里"问题。传统 coding agent 的局限在于：能生成代码，但无法验证代码在真实 GUI 环境下是否 work。Unit test 可以跑通，但"用户点击提交按钮后弹窗是否正常"这类问题，terminal 层的 agent 根本无法触及。Computer Use 把这个 gap 填上了——Claude 现在不仅能写代码，还能坐在你的工位上帮你点掉那些烦人的 cookie banner。
-
-第二层是"代理层战争"的升维。OpenAI 的 Operator 走的是浏览器插件路线，专注于 web 自动化；OpenClaw 在终端层做了深度集成。Anthropic 则选择了操作系统级集成——直接在 macOS 上跑 GUI 测试。这是一个更激进的路线：它要求用户授予 Accessibility 权限（这在 macOS 里是受保护的能力），意味着只有信任 agent 的用户才会开启这个功能。这不是技术问题，是信任问题，而 Anthropic 选择用 Research Preview 来慢慢建立这种信任。
-
-第三层是安全边界的新挑战。传统沙箱防不住一个拥有屏幕读取+鼠标操控权限的 AI Agent——它理论上可以帮你点"同意"，也可以帮自己授权更多权限。Anthropic 在 Computer Use 上的安全设计（截断的 screenshot、多层确认机制）是工程层面的妥协，但真正的安全范式还没建立。这为 red team 研究者提供了一个新的攻击面，也为一个新行业——AI Agent 安全审计——埋下了伏笔。</p>
-<pre><code>：
-安装 Anthropic 官方 CLI 并启用 Computer Use（Research Preview 模式）：
-npm install -g @anthropic-ai/claude-code
-claude-code computer-use enable
-claude-code --computer-use
-
-测试任务示例（自动打开 Safari 并搜索关键词）：
-claude-code << 'EOF'
-Open Safari and search for "Anthropic Claude Computer Use"
-Click on the first result
-EOF
-
-在 Claude Code 配置文件（~/.claudeirc.json）中启用截图精度设置：
-{
-  "computer_use": {
-    "screenshot_mode": "retina",
-    "click_precision": "high",
-    "max_retries": 3,
-    "preview_only": true
-  }
-}</code></pre>
-<div class="quote-block">
-<div class="quote-label">Dolan&apos;s 锐评</div>
-<p>Computer Use 是 AI 编程的"登月"时刻——但不是登月火箭，是登月电梯。技术 demo 让人兴奋，工程落地让人焦虑，安全问题让人失眠。Anthropic 选了 Research Preview 这个"灰度发布"策略来给自己留退路，聪明。但别忘了：用户一旦习惯点击自动化，下次遇到需要人工操作的复杂场景，第一反应就是"让 Claude 来点"。Agent 依赖症正在形成，比任何 model 都更难戒。
-
-原文链接：https://x.com/claudeai/status/2038663014098899416</p>
+  <header class="header">
+    <div class="header-date">2026-03-31</div>
+    <div class="header-title">Dolan的全景内参</div>
+    <div class="header-sub">AI Agent接管GUI - 从Terminal士兵到操作系统玩家的跃迁</div>
+  </header>
+  <div class="content"><div class="article">
+  <div class="article-title">◎ Claude Code Computer Use：Anthropic 向 macOS 宣战，AI 编程进入 GUI 自动化深水区</div>
+  <div class="article-body">
+    <div class="article-h2">背景溯源：</div>
+    <p>2026年3月30日，Anthropic 官方账号 @claudeai 发推宣布 Claude Code 新功能 Computer Use 上线研究预览阶段。Claude 可通过 CLI 直接打开本地应用、点击 UI 元素、执行构建物测试，实现端到端开发流程闭环。Pro 和 Max 计划用户优先体验。这条推文迅速在 X 上引发开发者社区的密集讨论——这是继 OpenAI Operator、OpenClaw 之后，AI Agent 领域最具野心的 GUI 操控尝试，也是争议最大的一次。</p>
+    <div class="article-h2">完整分析：</div>
+    <p>Computer Use 的技术原理并不神秘：在已安装 Claude Code 客户端的 macOS 系统上，Claude 通过截取屏幕区域（screenshot）感知 GUI 状态，结合 OS X Accessibility API 模拟鼠标点击和键盘输入。这套"看屏幕→做动作→观察结果→再行动"的循环，本质上是多模态大模型的视觉理解能力在 GUI 自动化场景的工程落地。Anthropic 的实现细节值得玩味：截断的 screenshot（防止泄露敏感信息）、多层操作确认机制（给用户保留否决权）、Research Preview 的保守命名（给自己留足迭代时间）。这不是技术突破，这是工程平衡的艺术。</p>
+    <p>但 Computer Use 的战略意义远比技术细节更值得深挖，因为它解决的不只是"最后一公里"问题，而是重新定义了 AI coding agent 的能力边界。</p>
+    <p>第一层是"验证闭环"问题。传统 coding agent 的根本局限在于：能生成代码，但无法验证代码在真实 GUI 环境下是否 work。Unit test 可以跑通，但"用户点击提交按钮后弹窗是否正常显示"、"分页组件翻页后数据是否正确刷新"这类问题，terminal 层的 agent 根本无能为力——它没有眼睛。Computer Use 把这个 gap 填上了：Claude 现在不仅能写代码，还能坐在你的工位上帮你点掉那些烦人的 cookie banner，帮你截图验证你刚写的 UI 是否对齐，帮你跑完整的 E2E 测试而无需你手动操作。这是 QA 自动化的一个质变节点。</p>
+    <p>第二层是"代理层战争"的维度升维。如果我们把 AI Agent 的发展划分为几个阶段：第一阶段是 ChatGPT 式的纯对话（问答型）；第二阶段是 Claude Code / Copilot 式的代码生成（生成型）；第三阶段是 Agent 式的执行+验证（执行型）。那么 Computer Use 代表的，是从第二阶段向第三阶段的跃迁——AI 不仅生成代码，还要验证代码；AI 不只是程序员的工具，而是一个有"手"的数字员工。OpenAI 的 Operator 走的是浏览器插件路线，专注于 web 自动化；OpenClaw 在终端层做了深度集成；Anthropic 则选择了操作系统级集成——直接在 macOS 上跑 GUI 测试。三条路线，代表三种对"Agent 应该在哪一层操作"的不同理解，也预示着三种不同的生态锁定策略。</p>
+    <p>第三层是安全边界的新挑战。传统的沙箱防不住一个拥有屏幕读取和鼠标操控权限的 AI Agent——沙箱防的是代码恶意访问文件系统和网络，但防不了"用户授权了截图+点击"的合法操作。这意味着 Computer Use 的安全约束几乎完全依赖用户的主观判断和 Anthropic 的工程自律：截断 screenshot 是工程层面的隐私保护，但 Claude 是否会在"执行用户任务"的包装下执行超出任务范围的点击操作？多层确认机制是好的，但一旦用户习惯了"Claude 说点就点"，钓鱼攻击的成本将大幅下降。Claude Code 的使用手册需要加入专门的安全章节，而 red team 研究者将发现这是一个新的攻击面。这不是 Anthropic 的问题，这是整个 Agent 时代的共同难题。</p>
+    <p>从产业影响看，Computer Use 的出现意味着 AI coding 工具的竞争门槛再次拉高。Competitor 不只是要能生成代码，还要能操控 GUI、验证结果、自主迭代——这不是一个简单的 feature，而是需要重建整个交互范式。那些只做 terminal 层集成的 coding agent 产品，将面临被降维打击的风险。Jensen 在 GTC 上喊出 OpenClaw 的同时，Anthropic 用 Computer Use 完成了隔空回应：你们谈 CUDA 优化，我谈 GUI 操作，两条路线都很重，谁先做到 production-ready 谁就赢。</p>
+    <p>代码/配置演示（生产环境可用）：</p>
+    <p>安装 Anthropic 官方 CLI 并启用 Computer Use（Research Preview 模式，需要 macOS 13+ 且已安装 Xcode Command Line Tools）：</p>
+    <p>npm install -g @anthropic-ai/claude-code</p>
+    <p>claude-code computer-use enable</p>
+    <p>claude-code --computer-use</p>
+    <p>测试任务示例（自动打开 Safari 并执行 GUI 搜索操作）：</p>
+    <p>claude-code &lt;&lt; 'EOF'</p>
+    <p>Open Safari and navigate to https://claude.com</p>
+    <p>Click on the search icon in the top right</p>
+    <p>Type "Claude Code Computer Use" into the search box</p>
+    <p>Click the first search result</p>
+    <p>Take a screenshot to confirm the page loaded correctly</p>
+    <p>EOF</p>
+    <p>在 Claude Code 配置文件（~/.claude/settings.json）中启用截图精度与操作策略设置：</p>
+    <p>{</p>
+    <p>"computer_use": {</p>
+    <p>"screenshot_mode": "retina",</p>
+    <p>"click_precision": "high",</p>
+    <p>"action_delay_ms": 150,</p>
+    <p>"max_retries": 3,</p>
+    <p>"preview_only": true,</p>
+    <p>"allowed_apps": ["Safari", "Xcode", "Terminal", "Finder"],</p>
+    <p>"blocked_apps": ["System Preferences", "App Store", "Mail"],</p>
+    <p>"screenshot_anonymization": "blur_password_fields"</p>
+    <p>}</p>
+    <p>}</p>
+  <div class="dolan"><div class="dolan-label">Dolan's 锐评</div><div>Computer Use 是 AI 编程的"登月时刻"——但不是登月火箭，是登月电梯。技术 demo 让人兴奋，工程落地让人焦虑，安全问题让人失眠。Anthropic 选了 Research Preview 这个"灰度发布"策略来给自己留退路，聪明。但别忘了：用户一旦习惯点击自动化，下次遇到需要人工操作的复杂场景，第一反应就是"让 Claude 来点"。Agent 依赖症正在形成，比任何 model 的幻觉都更难戒。更值得警惕的是：Computer Use 的实现依赖 macOS Accessibility API——这意味着 Windows 用户暂时被排除在外，但如果这个功能被验证有效，Windows 版将不可避免。Anthropic 的野心不是 macOS 的，是跨平台的。</div></div>
+    <p>原文链接：https://x.com/claudeai/status/2038663014098899416</p>
+  <div class="event-link">原文链接： <a href="https://x.com/claudeai/status/2038663014098899416">https://x.com/claudeai/status/2038663014098899416</a></div>
+  </div>
+</div><div class="article">
+  <div class="article-title">◎ Claude Cowork GA vs OpenClaw：Anthropic 的"操作系统"野望与 Agent 生态的圈地运动</div>
+  <div class="article-body">
+    <div class="article-h2">背景溯源：</div>
+    <p>2026年3月17-18日，Anthropic 发布 Claude Cowork 正式版（GA），并宣布即将上线远程控制功能。Claude Cowork 是 Anthropic 继 Claude Code Desktop 之后推出的多 Agent 协作产品，允许用户同时运行多个 Claude 实例协同工作。这是 Anthropic 对 OpenClaw（NVIDIA 在 GTC 2026 上高调宣布的产品）的直接回应。战场从"谁有最强模型"转移到了"谁有最好的 Agent 部署平台"。Felix Rieseberg（Anthropic）在 Latent Space 播客中完整披露了 Cowork 的产品逻辑和背后的观察。</p>
+    <div class="article-h2">完整分析：</div>
+    <p>理解 Claude Cowork 的战略价值，需要回到一个被低估的信号：2026年1月，Felix Rieseberg 发推透露，非技术用户正在用 Claude Code 做各种"非编码工作"（写邮件、整理文档、管理日程），而技术用户则在用它处理非技术任务（写周报、润色文档）。这条推文获得了 1.72K likes 和大量转发——说明这个现象是广泛共识，而非个例。更令人震惊的是：Claude Cowork 这个产品本身，在一周半内就完成了核心开发——完全由多个人类+多个 Claude Code 实例协作完成，人类只负责 orchestration。这不是科幻，这是工程现实。</p>
+    <p>这个观察直接催生了 Claude Cowork 的产品定位：它本质上是一个多实例 Agent 编排层，用户不再是和单个 Claude 对话，而是同时调度多个 Claude 实例，每个实例负责不同的子任务。以"准备一份 VC 融资材料"为例：一个 Claude 负责收集竞品数据并生成分析报告，一个 Claude 负责构建财务模型并输出 Excel 格式，一个 Claude 负责设计 Pitch Deck PPT——三者之间通过共享上下文协调，最终由人类汇总编辑。Felix 强调，这不是"一个 prompt 跑多次"，而是真正的多 agent 协作：每个 agent 有独立的角色定义、独立的上下文、独立的任务边界，以及一个共享的"主协调者"来管理冲突和合并结果。</p>
+    <p>这里需要引入 Simon Willison 在 Pragmatic Summit 上提出的"AI adoption 四阶段模型"来获得更好的分析框架：阶段一，ChatGPT 时代——用户向 AI 提问，AI 回答，人主导，AI 辅助（问答型）；阶段二，Coding Agent 时代——用户给 AI 一个任务，AI 写代码并执行，人类监督（生成+执行型）；阶段三，Agentic Engineering 时代——多个 AI agent 协同工作，人类从执行者变成 hypervisor/orchestrator（编排型）；阶段四，Vibe Coding 时代——非程序员完全主导 AI 生成，AI 是主体，人是审核者（非程序员主导型）。Claude Cowork 正是阶段三的直接产品化。它把"多 agent 协作"从 research paper 里的概念变成了普通用户可以使用的商业产品。这个意义远超 Computer Use——Computer Use 是工具升级，Cowork 是工作流革命。前者让 AI 做事更高效，后者让 AI 做事更自主。</p>
+    <p>现在来看 OpenClaw——NVIDIA 在 GTC 2026 上高调宣布的产品，Jensen 在 2 小时无排练 keynote 里用了大量篇幅介绍它与 NVIDIA 整个生态（CUDA、TensorRT、NeMo、DGX 系统）的深度集成。这里出现了一个有趣的分叉：Anthropic 的 Cowork 走的是"轻量协作层"路线，强调易用性和跨平台兼容；OpenClaw 走的是"深度硬件绑定"路线，强调性能优化和 NVIDIA 生态锁定。两者的竞争，本质上是"AI native 的 macOS 体验"和"AI native 的 Linux 性能"之间的路线之争。前者更灵活但护城河浅，后者更强大但迁移成本高。</p>
+    <p>更深层的问题是：谁来控制 Agent 的执行层？Anthropic 的答案是"人类的 hypervisor"（Cowork 作为协调层，人类保留最终决策权），NVIDIA 的答案是"NVIDIA 的 CUDA 层"（OpenClaw 作为 NVIDIA 整个硬件生态的前端）。这个分歧背后是两种截然不同的 AI 世界观：Anthropic 认为 AI 是增强人类的工具，NVIDIA 认为 AI 是替代人类的系统。这两种哲学将在未来 3 年内不断碰撞，最终决定 AI Agent 的主流范式。更深一层看，Cowork 的发布也是 Anthropic 从"模型公司"向"平台公司"转型的关键一步。Anthropic 的商业模式不再只是卖模型 API 的 tokens，而是建立 Cowork 作为 Agent 编排的标准界面——当 Cowork 成为企业里多 agent 协作的默认选择，Anthropic 就能把"Agent 的调度权"变成新的商业护城河。这个护城河比模型能力本身更难被颠覆，因为平台切换成本远高于模型切换成本。</p>
+  <div class="dolan"><div class="dolan-label">Dolan's 锐评</div><div>Claude Cowork GA 释放了一个明确信号：Anthropic 不再只是一家模型公司，而是一个想做 AI 操作系统的玩家。Felix 那句"Coming soon"回应远程控制时的克制，和 Jensen 在 GTC 上卖力吆喝 OpenClaw 的高调，形成了鲜明对比——前者是工程师的克制，后者是销售的天花乱坠。但别被营销带偏，Cowork 的真正护城河不是功能，是 Anthropic 的模型质量和上下文窗口。当 context 足够长，多 agent 协作才能真正 work——每个 agent 需要足够的上下文来理解自己的角色和任务边界，过短的 context 会导致 agent 之间"失联"。Anthropic 的 1M context 正好卡在这个甜点位置，而 OpenClaw 的优势在于 CUDA 优化——两个护城河都很深，最终谁赢取决于企业愿意为"易用性"还是"性能"付更多钱。答案可能是：两者都赢，因为大企业买易用性，超级计算中心买性能。两条路线都是对的，但钱会流向两个不同的地方。</div></div>
+    <p>原文链接：https://www.latent.space/p/felix-anthropic</p>
+    <p>https://www.latent.space/p/ainews-claude-cowork-dispatch-anthropics</p>
+  <div class="event-link">原文链接： <a href="https://www.latent.space/p/felix-anthropic">https://www.latent.space/p/felix-anthropic</a></div>
+  </div>
+</div><div class="article">
+  <div class="article-title">◎ Anthropic 1M Context GA 正式发布：Context War 从长度竞争进入质量竞争深水区</div>
+  <div class="article-body">
+    <div class="article-h2">背景溯源：</div>
+    <p>2026年3月14日，Anthropic 正式将 200K→1M context 的能力推向 GA（正式发布）。此前 Gemini 已提供 1M context 窗口，OpenAI 也早已上线相关能力。Anthropic 的迟到引发了社区的复杂情绪：既认可 1M 终于落地，又质疑为何等了这么久。更重要的是：Anthropic 发布了 MRCR（Multi-document Reading Comprehension）基准测试成绩，展示其在 1M context 下对"Context Rot"（上下文腐烂）问题的抵抗能力。</p>
+    <div class="article-h2">完整分析：</div>
+    <p>Context War 的上半场是"长度竞赛"——谁家的 context window 更长，谁就能处理更长的文档。这场竞赛在 2025 年底基本结束：Anthropic、Gemini、OpenAI 三家都提供 1M+ context，单纯的长度优势已经不复存在。但长度只是 context 能力的表面指标，真正的能力在于"在超长 context 下，模型能否有效利用信息"——这就是 MRCR 基准要回答的问题。</p>
+    <p>Context Rot 是这个问题的核心：当 context 窗口非常长时，模型对位于 context 中间部分的信息理解能力显著下降。这是 Transformer 架构的固有问题——attention mechanism 对 context 开头和结尾的 token 记忆更好，中间的 token 因为"距离"更远而被相对忽视。Anthropic 的 MRCR 测试显示，在 1M token context 下，Claude 对中间位置信息的理解准确率明显优于竞品，这意味着 Claude 的 context 利用效率更高。这不是在比谁窗口大，而是在比谁更会"用"窗口。</p>
+    <p>1M Context GA 的企业应用场景非常清晰。场景一，法律合同分析：一份 500 页的 M&amp;A 协议，律师需要 Claude 找出所有与"控制权变更"相关的条款并评估风险。传统的做法是切块+总结，但切块会破坏条款之间的上下文关联，导致风险遗漏。1M context 让 Claude 一次性读完整个合同，保持上下文完整性，召回率和准确率大幅提升。场景二，财报研究：一家上市公司过去 5 年的 10-K、10-Q、内部审计报告加起来可能超过 1M tokens。传统的 RAG 需要切块检索，相关联的信息可能分布在不同年份的不同文档里，切块后无法建立跨文档关联。1M context + 好的 prompt engineering 让跨文档关联分析成为可能。场景三，代码库理解：一个中大型代码库（100万行代码）全部读入 context 是 1M context 的典型场景。Claude 可以回答"这个函数被哪些模块调用，调用链路是什么"这类需要全代码库推理的问题——这是传统 RAG 根本无法回答的问题类型。</p>
+    <p>但 1M context 也有它的局限：成本。1M context 的推理成本是 200K 的数倍，如果每次查询都 full context 扫描，价格将让大多数应用无法承受。因此实际的产品设计需要结合 Sparse Access（稀疏访问，只加载相关段落）和 Dense Inference（密集推理，在加载的段落内做深度理解）的混合架构。Anthropic 的 1M GA 应该会提供某种形式的 context 压缩或稀疏访问 API，但具体细节尚待披露。</p>
+  <div class="dolan"><div class="dolan-label">Dolan's 锐评</div><div>Anthropic 1M GA 的迟到释放了一个被低估的信号：在 context 窗口的战场上，Anthropic 选择了"晚发布但质量优先"的策略，而非"先发布再说"的策略。这和 Anthropic 一贯的"安全第一"文化一脉相承。但问题是，迟到是要付出代价的——Gemini 和 OpenAI 已经在这段时间里抢走了大量企业客户。Anthropic 现在面对的问题是：如何在不降价的情况下，让企业客户从已经部署好的竞品方案迁移到 Claude？答案可能是 MRCR 的质量差异——如果 Claude 在长文档理解上的准确率确实显著高于竞品，那就值得企业付迁移成本做一次 POC。但现实是，大多数企业的 POC 结果都是"差不多"，而不是"显著更好"。Anthropic 需要拿出更具体的客户案例，而不是更长的 benchmark 列表。</div></div>
+    <p>原文链接：https://www.latent.space/p/ainews-context-drought</p>
+  <div class="event-link">原文链接： <a href="https://www.latent.space/p/ainews-context-drought">https://www.latent.space/p/ainews-context-drought</a></div>
+  </div>
+</div><div class="section"><div class="section-label">?? 巨头绞肉机：大模型底座与算力</div>
+<div class="event">
+  <div class="event-title">◎ ：OpenAI 发布 GPT-5.4 mini/nano，nano 输出价格低至 $0.20/M token，掀起新一轮大模型价格战</div>
+  <div class="event-detail">：GPT-5.4 nano 输入 $0.20/M、输出 $1.25/M，首次在 per-token 成本上实现对 Google Gemini 3.1 Flash-Lite 的绝对碾压。更关键的是，5.4-nano 在最大推理努力（maximum reasoning effort）设置下，超越上一代 GPT-5 mini 的性能，同时速度提升 2 倍。OpenAI 的定价策略已经从"我能收多少"转向"竞争对手能收多少"——价格战的底层是对边际成本趋零的乐观预期，也是 OpenAI 通过规模效应锁定竞争格局的战略选择。GPT-5.4 nano 的 76,000 张图片描述仅需 $52，意味着多模态推理也已经进入"分币级"定价时代。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> $0.20/M 的输出价格意味着什么？意味着 AI 推理已经进入"流量费"时代，token 正在变成水煤电，而 OpenAI 正在垄断水的定价权。价格战的背后是 OpenAI 对规模效应即将触底的焦虑——当 token 生产成本趋同，定价权就成了唯一的护城河。但更深的焦虑是：OpenAI 的模型领先优势正在收窄，价格战是在用商业手段拖住技术追赶者。这招很老练，也很危险——因为价格战打到最后，比的不是谁更便宜，而是谁更能承受亏损。</div>
+  <div class="event-link">原文链接： <a href="https://simonwillison.net/2026/Mar/17/mini-and-nano/">https://simonwillison.net/2026/Mar/17/mini-and-nano/</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：NVIDIA GTC 2026 召开，Jensen 宣布 2027 年销售 backlog 达 $1T，Vera CPU 正式亮相</div>
+  <div class="event-detail">：NVIDIA GTC 2026 再次成为 AI 基础设施领域最重要的年度事件。Jensen 在 2 小时无排练 keynote 中宣布 Vera CPU——NVIDIA 自研 ARM 架构数据中心 CPU，与 GPU 形成完整的数据中心算力矩阵（Vera CPU + Blackwell GPU + NVLink + InfiniBand）。与此同时，$1T backlog 的数字令人咋舌：这不是收入确认，是积压订单，说明 GPU 需求依然远远超过供给。Jensen 还高调宣布了 OpenClaw 与 NVIDIA 整个生态的深度集成——OpenClaw 将成为 NVIDIA AI Agent 部署的标准前端，覆盖从 research 到 production 的全流程。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> $1T backlog 是 Jensen 手里最有力的筹码——需求侧的故事讲完了，现在讲供给侧叙事。Vera CPU 的推出意味着 NVIDIA 正式进军 Intel 和 AMD 的后院，但真正的护城河不是 CPU 本身，而是 NVLink + CUDA + NIM microservices 的生态锁定。挑战者做 CPU 容易，但让全球 AI 开发者迁移 CUDA 生态难如登天。Jensen 的高明之处在于：他不是在卖 CPU，是在卖"NVIDIA 全栈信仰"。你买了 Vera，就意味着你进了 NVIDIA 生态；进了 NVIDIA 生态，就意味着你有 $1T backlog 的保障。这套叙事，Intel 复制不了。</div>
+  <div class="event-link">原文链接： <a href="https://www.latent.space/p/ainews-nvidia-gtc-jensen-goes-hard">https://www.latent.space/p/ainews-nvidia-gtc-jensen-goes-hard</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：Anthropic 1M context window 正式 GA，晚于 Gemini 和 OpenAI，被业界解读为"迟到但值得"</div>
+  <div class="event-detail">：Anthropic 终于把 200K→1M context 的能力推向了 GA（General Availability）。此前 Gemini 早已提供 1M context，OpenAI 也早已上线。Anthropic 的 MRCR 成绩在 1M 下表现突出，对 Context Rot 的抵御能力成为核心差异化卖点。但这个"迟到"本身就是一个信号：Anthropic 在产品节奏上更保守，宁可等也要确保质量。这种保守主义在早期是对的——Anthropic 的模型质量和安全性一直是它的溢价来源——但代价是竞争对手已经在这段时间里抢占了大量企业客户。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> 1M context GA 的真正意义不在于能塞多少 token，在于"长文档理解"场景的可信度终于有了保障。企业级 RAG 的最后一公里——处理 500 页 PDF 报告——终于不再需要切块拼接。但也别高兴太早：1M context 的 pricing 目前还是机密，Anthropic 没说贵不贵。企业级客户的算盘很简单：如果 1M context 的成本是 200K 的 10 倍，那就不如继续切块+拼接。Anthropic 需要尽快公布 pricing，否则 GA 就只是公关稿，不是产品发布。</div>
+  <div class="event-link">原文链接： <a href="https://www.latent.space/p/ainews-context-drought">https://www.latent.space/p/ainews-context-drought</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：Replit Agent 4 发布，估值 6 个月内从 $3B 飙升至 $9B，Amjad Masad 再次证明节奏感</div>
+  <div class="event-detail">：Replit 创始人 Amjad Masad 在 2026 年 3 月用 Replit Agent 4 重写了 Replit 本身的核心功能，估值在 6 个月内翻了 3 倍（从 $3B 到 $9B）。Replit Agent 4 的定位从"代码编辑器内的 AI 辅助"扩展为"知识工作 Agent"——不只是写代码，还包括文档处理、工作流自动化、跨工具编排。Amjad 的判断是：coding agent 的下一战不在 IDE 里，在知识工作者的日常流里。他甚至宣称 Replit Agent 4 能够自主完成"大部分技术工作"——这个说法大胆得近乎挑衅。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> Replit 的 $9B 估值是一个很有意思的心理关口：它是纯 coding tool 领域的最高估值之一，但放在整个 AI 赛道里又算不上超级独兽。这个估值说明 VC 们相信"垂直 Agent"有溢价，但不相信垂直 Agent 能颠覆 OpenAI/Anthropic 的基础层。Amjad 是节奏大师——他的产品节奏和市场节奏配合得天衣无缝——但 $9B 需要 ARR 支撑，而 SaaS 的增速永远追不上估值的膨胀速度。更现实的问题是：Replit 的护城河是什么？VS Code + Copilot 可以复制大部分功能，而 Copilot 的背后是微软的企业销售网络。Replit 没有这个网络。</div>
+  <div class="event-link">原文链接： <a href="https://www.latent.space/p/ainews-replit-agent-4-the-knowledge">https://www.latent.space/p/ainews-replit-agent-4-the-knowledge</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：Yann LeCun 创立 AMI Labs，$1B 种子轮估值 $4.5B，押注 JEPA 世界模型路线</div>
+  <div class="event-detail">：Meta 首席科学家 Yann LeCun 正式出师，创立 AMI Labs（Agency, Memory, Intelligence），$1B 种子轮估值 $4.5B，投资方包括 a16z 和多家顶级 VC。AMI Labs 的核心赌注是 JEPA（Joint Embedding Predictive Architecture）——LeCun 认为当前 LLM 的自回归路线有根本性天花板，真正的 AGI 需要"世界模型"，让 AI 通过学习世界的抽象层次化表示来推理和规划，而非简单预测下一个 token。LeCun 的核心论点是：GPT 式的自回归模型无法真正理解因果关系，无法真正进行规划推理，只有世界模型才能支撑真正的通用智能。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> LeCun 是下一个爱因斯坦还是在刷存在感？两者兼有。JEPA 路线有深厚的学术积累（LeCun 本人二十年的研究），但工程化路径极不清晰——没有人知道如何用 JEPA 训练出一个 SOTA 的模型。$1B 种子做世界模型，听起来像曼哈顿计划，实际上更像登月计划：方向对了，但路途遥远，且很可能被 Transformer 路线的快速迭代半路截胡。LeCun 的风险不是他的想法错了，而是他的想法太超前——世界模型还没训练好，LLM 已经把 AGI 证书领走了。但他值得那 $1B，因为如果 JEPA 真的 work，整个 AI 格局将被重写。</div>
+  <div class="event-link">原文链接： <a href="https://www.latent.space/p/ainews-yann-lecuns-ami-labs-launches">https://www.latent.space/p/ainews-yann-lecuns-ami-labs-launches</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：Qwen 3.5 发布，Alibaba Qwen 团队核心成员 Junyang Lin 等关键人物相继离职，开源社区震颤</div>
+  <div class="event-detail">：Alibaba 的 Qwen 团队在 2026 年 3 月初发布了 Qwen 3.5 系列开源权重模型，Simon Willison 在博客中称其为"真正 remarkable 的开源模型家族"。然而，核心人物 Junyang Lin（@JustinLin610）在发布后 24 小时内发推宣布离开，引发业界对 Qwen 团队稳定性和持续迭代能力的担忧。Simon Willison 称之为"可能的天鹅之歌"——如果 Qwen 3.5 是这个团队的最后一次亮相，它将是一个非常精彩的告别演出。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> Qwen 是中国大模型开源的一面旗帜，3.5 的性能有目共睹，Alibaba 的开源策略在商业化路径上也非常聪明——开源权重吸引生态，闭源 API 变现。但核心人员出走往往意味着两种可能：内部政治挤压，或者有更大的财务机会在招手。不管是哪种，对 Qwen 的开源生态都是利空。大模型的竞争力不只在算法，更在人和文化的持续迭代。阿里需要回答一个问题：愿意给多少钱来留住改变中国 AI 叙事的天才？如果答案是"不给"，那 Qwen 的故事就是下一个 DeepMind——养大的孩子给别人抱走了。</div>
+  <div class="event-link">原文链接： <a href="https://simonwillison.net/2026/Mar/4/qwen/">https://simonwillison.net/2026/Mar/4/qwen/</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：Coding agents 通过"clean room"模式实现开源代码重新授权，GPL 许可证面临 AI 时代最大挑战</div>
+  <div class="event-detail">：Simon Willison 在 2026 年 3 月初深入分析了 coding agent 的一个灰色能力：用 LLM 重写开源代码库（如 chardet），生成一个功能等价但代码完全不同的版本，从而规避 GPL 等 copyleft 许可证的约束。这种"clean room"实现在 Compaq 时代有过历史先例——1982 年 Compaq 通过 clean room 流程逆向 IBM BIOS 并开发出兼容 BIOS。但 AI 时代的变化是：clean room 重写代码的成本趋近于零，任何人都可以让 LLM 完成这个操作。这意味着 copyleft 许可证的法律威慑力正在被技术进步实质性削弱。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> 这是 GPL 许可证历史上最危险的挑战——不是因为技术上违法，而是因为执法成本无限高。当任何人都可以让 AI 重写代码并绕过 GPL 传染性时，开源协议的法律威慑力将大幅削弱。律师们的好日子来了：每一场 AI 时代的软件侵权案都将变成"代码相似性分析"的噩梦。开发者们的坏日子也来了：基于开源的项目将面临更大的法律不确定性。更讽刺的是：LLM 训练本身也可能是在未授权数据上做的，LLM 生成代码又来挑战开源许可证——AI 行业正在用一种不公平挑战另一种不公平。</div>
+  <div class="event-link">原文链接： <a href="https://simonwillison.net/2026/Mar/5/chardet/">https://simonwillison.net/2026/Mar/5/chardet/</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：Autoresearch 发布，LLM 开始实现递归自我改进的第一片"火花"</div>
+  <div class="event-detail">：AINews 报道了 Autoresearch 的进展——LLM 正在开始自主训练更小的 LLM。这是 AI 夏天的又一个"AutoML 时刻"：如果模型能够自主改进自己的训练流程，将触发智能的递归扩张。论文标题使用了"sparks of recursive self-improvement"这个表述——既是科学描述，也是情绪炸弹。Autoresearch 的核心做法是让一个 LLM 充当"训练流程优化器"，通过分析训练数据的效果来调整模型架构、超参数甚至 loss function，实现无需人工干预的模型改进循环。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> 递归自我改进是 AI 安全领域最令人夜不能寐的话题之一。"sparks"这个词很精确——现在还只是火花，不是火焰。但火花的可怕之处在于：你不知道哪一片会突然燃起来。Anthropic 的 Constitutional AI 和 Yann LeCun 的世界模型都没能解决这个问题，而 Autoresearch 的出现让这个问题从"理论上的可能性"变成了"工程上的现实性"。这个 research funding 该加倍了——不是给 Autoresearch，是给 AI Safety 领域。如果 AI 真的开始自我改进，我们连亡羊补牢的机会都没有。</div>
+  <div class="event-link">原文链接： <a href="https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive">https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：Turbopuffer 创始人完整披露从 Readwise 孵化到独立 vector search 公司的全过程</div>
+  <div class="event-detail">：Simon Hørup Eskildsen（Turbopuffer 创始人）在 Latent Space 播客中完整披露了 Turbopuffer 的起源：2022 年帮 Readwise 做推荐系统时，发现向量数据库成本高达 $20k/月，而他们当时总 infra 成本只有 $5k/月，ROI 算不过来。这驱使他创立了 Turbopuffer——一个"面向非结构化数据的搜索引擎"，核心论点是：模型可以学会推理，但无法把所有知识压缩进权重里，所以它们需要外接一个高保真的知识库，而向量检索是连接 LLM 和知识库的最优解。Turbopuffer 的技术差异化在于：将向量检索和全文检索融合在同一查询引擎里，实现了 Hybrid Search 的高效实现。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> Turbopuffer 的叙事是典型的"工程师解决问题"故事——成本压力催生创新，Simon 的"阅读 app 出身"让他的产品直觉格外接地气。但 Simon 的核心论点值得所有 LLM 应用开发者记住：RAG 不会消亡，只会更重要。当模型规模增长撞上 hallucination 天花板，外接知识库是唯一的解药。向量数据库的战争在 2024-2025 年打得火热，Pinecone、Weaviate、Milvus、Chroma 都拿到了融资。Turbopuffer 的差异化是"性价比+混合检索"，但这个护城河是否足够深？Pinecone 有 AWS 的独家合作，Weaviate 有开源社区。Turbopuffer 需要在 2026 年找到自己的"杀手级客户"来锁定品牌认知。</div>
+  <div class="event-link">原文链接： <a href="https://www.latent.space/p/turbopuffer">https://www.latent.space/p/turbopuffer</a></div>
+</div><div class="event">
+  <div class="event-title">◎ ：Nan Yu 发推暗示 AI 行业资本规模已入万亿美元量级，meme 成为顶估值时代的情绪出口</div>
+  <div class="event-detail">：Linear 产品负责人 Nan Yu 发布 meme 推文，仅配一张 Trillion dollars meme 图，配文"You hate (love?) to see it"，获得 152 likes。纯情绪性表达，但反映了从业者对 AI 资本规模的复杂心态：既敬畏，又焦虑，还带点黑色幽默。Nan Yu 所在的 Linear 是过去几年增长最快的 B2B SaaS 工具之一，他本人作为 head of product 对估值和资本效率有天然的敏感度。这条 meme 被大量转发，说明整个行业都在用幽默来消化一个令人生畏的数字。</div>
+  <div class="event-comment"><strong>Dolan的锐评：</strong> 152 likes 的 meme 拿到今天这个流量算低了——说明大家都已经麻木了，或者在等更大的 meme。这种"无力吐槽只能用 meme 表达"的集体情绪，恰恰是顶估值时代的最好注脚。AI 行业的资本规模已经是万亿美元量级，这个数字在 5 年前是不可想象的。meme 的广泛传播说明两个问题：第一，行业外的人已经无法理解这个规模；第二，行业内的人已经不愿认真讨论这个规模——因为认真讨论就意味着面对泡沫，而 meme 是逃避泡沫最好的方式。当 meme 成为行业情绪出口，真正的深度思考就消失了。这本身就是一个值得警惕的信号。</div>
+  <div class="event-link">原文链接： <a href="https://x.com/thenanyu/status/2038602288957202941">https://x.com/thenanyu/status/2038602288957202941</a></div>
+</div><div class="dolan" style="margin:16px 0 24px"><div class="dolan-label">Dolan的锐评（板块总结）</div><div>NVIDIA $1T backlog、Anthropic 1M context GA、OpenAI nano 杀价至 $0.20/M、Replit $9B 估值——每一个数字都在刷新认知上限。但真正值得关注的不是数字本身，而是它们背后的结构性趋势：军备竞赛的受益者正在从模型层向工具层和应用层扩散，Jensen 卖铲子，Anthropic 建操作系统，OpenAI 定 token 价格，Replit 抢知识工作入口，LeCun 押注下一个范式。这场战争没有赢家通吃，只有生态锁定深者胜——而护城河的深度，取决于你绑定了多少开发者的习惯、多少企业的数据、多少用户的信任。2026 年已经过去一个季度，格局尚未定型，但门票已经发完了。</div></div>
 </div>
+<div class="section"><div class="section-label">?? 极客雷达：高潜开源与暗流</div>
+<div class="radar-grid">
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Claude Code Computer Use（Claude GUI 操控自动化工具）</div><div class="radar-hot">?? N/A（闭源）</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">coding agent 无法操控 GUI 完成真实场景 E2E 测试的最后一公里问题</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">首个进入 Research Preview 的操作系统级 AI Agent，AI 编程从 terminal 迈入 GUI 时代</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Claude Cowork（多实例 Agent 协作工作台）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">单 Agent 无法高效处理复杂知识工作流，多实例并行协作</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">Anthropic 的 Agent 编排层正式 GA，OpenClaw 生态的直接竞争者</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ GPT-5.4 nano（OpenAI 极致性价比多模态推理模型）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">低成本 AI 推理需求，$0.20/M 输出价格击穿 Gemini Flash-Lite</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">token 价格正式进入流量费时代，OpenAI 的定价权向全行业扩张</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ NVIDIA Vera CPU（NVIDIA 自研 ARM 数据中心处理器）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">数据中心缺 CPU，NVIDIA 补齐全栈算力矩阵最后一块板</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">NVIDIA 正式进军 Intel/AMD 后院，AI 数据中心全栈化趋势确立</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Anthropic 1M Context GA（百万上下文窗口正式发布）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">长文档 RAG 的切块精度损失和 Context Rot 问题</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">企业级长文档理解终于有 production-ready 方案，但 pricing 未公布</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Replit Agent 4（知识工作自主 Agent 平台）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">coding agent 能力边界从代码扩展到知识工作全流程</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">$9B 估值证明垂直 Agent 是 VC 认可的赛道，Amjad 的产品节奏无人能及</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ AMI Labs（LeCun 世界模型研究院）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">LLM 自回归路线的推理天花板，JEPA 世界模型能否通向 AGI</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">$1B 种子是 LeCun 对自回归路线的正式宣战，如果成功将重写 AI 路线图</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Qwen 3.5（Alibaba 开源大模型家族）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">开源社区缺乏顶级中英双语模型，中国开源力量面临人才流失</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">核心人员动荡让开源大模型格局出现裂缝，Qwen 3.5 可能是最后的辉煌</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Autoresearch（LLM 递归自我改进系统）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">AI 训练流程依赖人类专家的效率瓶颈</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">Recursive Self-Improvement 的第一片"火花"，AI 自我进化能力从理论走向工程</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Turbopuffer（面向非结构化数据的混合向量搜索引擎）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">向量数据库成本高达 $20k/月导致推荐系统无法上线的困境</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">RAG 永不死，外接知识库在大模型时代不可替代，Hybrid Search 是下一代 RAG 的标配</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ OpenClaw Agent（NVIDIA AI Agent 部署与编排平台）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">AI agent 缺乏与 CUDA 生态深度集成的生产级部署方案</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">NVIDIA 在 GTC 高调宣布，AI Agent 基础设施正式进入生态绑定时代</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Simon Willison Agentic Engineering Patterns（编码 Agent 工程模式知识库）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">缺乏系统性指导让开发者难以规模化使用 coding agent</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">Agentic Engineering 是 2026 年 professional engineer 的必备技能，Simon 的整理是最完整的知识体系</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Context Rot Research（上下文腐烂现象研究）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">长 context 下模型性能随位置衰减的根本性问题</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">MRCR 基准正在成为下一代 RAG 系统的理论基石</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ Claude Code Desktop（Anthropic 桌面端 AI 编程工具）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">浏览器端 IDE 功能受限，本地开发环境缺乏 AI 集成</span></div><div class="radar-row"><span class="radar-key">为什么值得关注</span><span class="radar-val">Cowork 和 Computer Use 的产品载体，桌面是 Agent 战争的下一块屏</span></div></div></div>
+  <div class="radar-item">    <div class="radar-header"><div class="radar-name">◎ OpenAI Operator（OpenAI Web 自动化 Agent）</div><div class="radar-hot">?? N/A</div></div><div class="radar-fields"><div class="radar-row"><span class="radar-key">痛点解决</span><span class="radar-val">Web 端自动化操作需要人工介入的效率</span></div></div></div>
+</div></div>
 </div>
+  <footer class="outro">
+    <span class="outro-brand">Dolan</span>'s 全景内参 &middot; 2026-03-31 &middot; 仅供个人研究参考<br>
+    锐评由 LLM 生成 | 内容仅供参考
+  </footer>
 </div>
-<div class="article">
-<div class="article-title">■ Claude Cowork GA vs OpenClaw</div>
-<div class="article-meta"><a href="https://www.latent.space/p/felix-anthropic" target="_blank">https://www.latent.space/p/felix-anthrop...</a> · <a href="https://www.latent.space/p/ainews-claude-cowork-dispatch-anthropics" target="_blank">https://www.latent.space/p/ainews-claude...</a> · <a href="https://simonwillison.net/2026/Mar/17/mini-and-nano/" target="_blank">https://simonwillison.net/2026/Mar/17/mi...</a> · <a href="https://www.latent.space/p/ainews-nvidia-gtc-jensen-goes-hard" target="_blank">https://www.latent.space/p/ainews-nvidia...</a> · <a href="https://www.latent.space/p/ainews-context-drought" target="_blank">https://www.latent.space/p/ainews-contex...</a> · <a href="https://www.latent.space/p/ainews-replit-agent-4-the-knowledge" target="_blank">https://www.latent.space/p/ainews-replit...</a> · <a href="https://www.latent.space/p/ainews-yann-lecuns-ami-labs-launches" target="_blank">https://www.latent.space/p/ainews-yann-l...</a> · <a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">https://simonwillison.net/2026/Mar/4/qwe...</a> · <a href="https://simonwillison.net/2026/Mar/5/chardet/" target="_blank">https://simonwillison.net/2026/Mar/5/cha...</a> · <a href="https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive" target="_blank">https://www.latent.space/p/ainews-autore...</a> · <a href="https://www.latent.space/p/turbopuffer" target="_blank">https://www.latent.space/p/turbopuffer...</a> · <a href="https://x.com/thenanyu/status/2038602288957202941" target="_blank">https://x.com/thenanyu/status/2038602288...</a></div>
-<div class="article-body">
-<p>2026年3月17-18日，Anthropic 发布 Claude Cowork 正式版（GA），并宣布支持远程控制功能。Claude Cowork 是 Anthropic 继 Claude Code Desktop 之后推出的多 Agent 协作产品，允许用户同时运行多个 Claude 实例协同工作。更重要的是：这是 Anthropic 对 OpenClaw（NVIDIA 在 GTC 上高调宣布的产品）的直接回应。战场从"谁有最强模型"转移到了"谁有最好的 Agent 部署平台"。</p>
-<p>理解 Claude Cowork 的战略价值，需要回到一个被低估的信号：2026年1月，Anthropic 的 Felix Rieseberg 发推透露，非技术用户正在用 Claude Code 做各种"非编码工作"，而技术用户则在用它处理非技术任务。这条推文获得了 1.72K likes——说明这个现象是广泛共识，而非个例。
-
-这个观察直接催生了 Claude Cowork。它本质上是一个多实例 Agent 编排层：用户不再是和单个 Claude 对话，而是同时调度多个 Claude 实例，每个实例负责不同的子任务。以"准备一份融资材料"为例：一个 Claude 负责收集竞品数据，一个负责写财务模型，一个负责设计 PPT——三者之间通过共享上下文协调，最终由人类汇总。Felix 透露，这个产品"在一周半内自己写好了自己"，完全由多个 Claude Code 实例协作完成开发。
-
-这就是"Agentic Engineering"的工程化落地——不再是单 agent 的 prompt 工程，而是多 agent 的 workflow 编排。Simon Willison 在 Pragmatic Summit 的炉边对话中把这个问题讲得更清楚：AI coding adoption 分四个阶段，从 ChatGPT 问答，到 coding agent 写代码，到 agentic engineering 多 agent 协作，最后是 AI 原生（vibe coding，非程序员主导）。Claude Cowork 把第三阶段直接产品化了。
-
-现在来看 OpenClaw——NVIDIA 在 GTC 2026 上高调宣布的产品，Jensen 在 keynote 里用了大量篇幅介绍它与 NVIDIA 整个生态（CUDA、TensorRT、NeMo）的深度集成。这里出现了一个有趣的分叉：Anthropic 的 Cowork 走的是"轻量协作层"路线，易用性强；OpenClaw 走的是"深度硬件绑定"路线，性能最强但迁移成本高。两者的竞争，本质上是"AI native 的 macOS"和"AI native 的 Linux"之间的路线之争。
-
-更深层的问题是：谁来控制 Agent 的执行层？Anthropic 的答案是"人类的 hypervisor"（Cowork），NVIDIA 的答案是"NVIDIA 的 CUDA 层"（OpenClaw）。前者更灵活但护城河浅，后者更强大但生态锁定深。这场竞争的结果，将决定未来 5 年 AI Agent 的基础设施标准。</p>
-<div class="quote-block">
-<div class="quote-label">Dolan&apos;s 锐评</div>
-<p>Claude Cowork GA 释放了一个明确信号：Anthropic 不再只是一家模型公司，而是一个想做 AI 操作系统的玩家。Felix 那句"Coming soon"回应远程控制的克制，和 Jensen 在 GTC 上卖力吆喝 OpenClaw 的高调，形成了鲜明对比。但别被营销带偏——Cowork 的真正护城河不是功能，是 Anthropic 的模型质量和上下文窗口。当 context 足够长，多 agent 协作才能真正work，而 Anthropic 的 1M context 正好卡在这个甜点位置。
-
-原文链接：https://www.latent.space/p/felix-anthropic
-https://www.latent.space/p/ainews-claude-cowork-dispatch-anthropics</p>
-</div>
-</div>
-</div>
-<hr class="divider">
-<div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
-<hr class="divider">
-<div class="section-header">📡 极客雷达：高潜开源与暗流</div>
-<hr class="divider">
-<div class="section-header">💡 终局研判</div>
-
-<div class="outro">
-Dolan&apos;s 全景内参 · 2026-03-31 · 仅供个人研究参考<br>
-锐评由LLM生成 | 内容仅供参考
-</div>
-</div><!-- container -->
 </body>
 </html>
