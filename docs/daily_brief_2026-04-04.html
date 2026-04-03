@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan&apos;s 全景内参：Agentic 工程越过拐点，闭源底座信任塌方，开源狂潮席卷一切</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 17px; }
+body { background-color: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+.container { max-width: 800px; margin: 0 auto; padding: 60px 32px 100px; }
+.masthead { padding-bottom: 48px; border-bottom: 2px solid #222; margin-bottom: 56px; }
+.masthead-date { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: #888; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.6rem; font-weight: 700; color: #111; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; }
+.masthead-subtitle { font-size: 1rem; color: #555; font-weight: 400; line-height: 1.6; }
+.section-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; color: #666; text-transform: uppercase; margin-bottom: 36px; margin-top: 64px; display: flex; align-items: center; gap: 10px; }
+.section-header::after { content: ''; flex: 1; height: 1px; background: #ddd; }
+.article { margin-bottom: 52px; }
+.article-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem; font-weight: 600; color: #111; line-height: 1.45; margin-bottom: 14px; letter-spacing: -0.005em; }
+.article-meta { font-family: 'Noto Sans SC', sans-serif; font-size: 0.8rem; color: #888; margin-bottom: 16px; }
+.article-meta a { color: #999; text-decoration: none; }
+.article-meta a:hover { color: #555; }
+.article-body { font-size: 0.95rem; color: #333; line-height: 1.8; }
+.article-body p { margin-bottom: 14px; }
+.article-body pre { background: #f3f3f3; border-left: 3px solid #ccc; padding: 12px 16px; overflow-x: auto; margin: 16px 0; font-size: 0.85rem; line-height: 1.5; }
+.article-body code { background: #f3f3f3; padding: 2px 6px; font-size: 0.85em; border-radius: 3px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 20px; margin: 20px 0; }
+.quote-label { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #b30000; text-transform: uppercase; margin-bottom: 8px; }
+.quote-block p { color: #333; font-size: 0.9rem; line-height: 1.7; margin: 0; }
+.section-summary { margin-top: 24px; }
+.giant-item { margin-bottom: 36px; }
+.giant-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 10px; line-height: 1.4; }
+.giant-body { font-size: 0.9rem; color: #333; line-height: 1.75; }
+.giant-body p { margin-bottom: 10px; }
+.radar-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+.radar-item:last-child { border-bottom: none; }
+.radar-num { font-family: 'Noto Sans SC', sans-serif; font-size: 0.7rem; font-weight: 700; color: #bbb; min-width: 24px; padding-top: 2px; }
+.radar-content { flex: 1; }
+.radar-title { font-family: 'Noto Sans SC', sans-serif; font-size: 0.9rem; font-weight: 600; color: #111; margin-bottom: 4px; }
+.radar-desc { font-size: 0.85rem; color: #555; line-height: 1.6; }
+.radar-link { font-size: 0.78rem; color: #999; margin-top: 4px; }
+.radar-link a { color: #aaa; text-decoration: none; }
+.radar-link a:hover { color: #666; }
+.final-section { background: #1a1a1a; color: #f0f0f0; padding: 36px 32px; margin-top: 48px; }
+.final-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; color: #ff6b6b; text-transform: uppercase; margin-bottom: 16px; }
+.final-body { font-size: 0.95rem; line-height: 1.8; color: #ddd; }
+.divider { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+.outro { text-align: center; font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; color: #bbb; margin-top: 64px; padding-top: 24px; border-top: 1px solid #eee; }
+@media (max-width: 640px) { .container { padding: 40px 20px 80px; } .masthead-title { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="masthead-date">2026 年 4 月 4 日 · 周六</div>
+<div class="masthead-title">Dolan&apos;s 全景内参</div>
+<div class="masthead-subtitle">Agentic 工程越过拐点，闭源底座信任塌方，开源狂潮席卷一切</div>
+</header>
+<div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
+<div class="article">
+<div class="article-title">■ 🎯 核心阵地</div>
+<div class="article-body">
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Simon Willison 独家披露</div>
+<div class="article-meta"><a href="https://www.youtube.com/watch?v=xxxx（Lenny" target="_blank">https://www.youtube.com/watch?v=xxxx（Len...</a> · <a href="https://simonwillison.net/" target="_blank">https://simonwillison.net/...</a></div>
+<div class="article-body">
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Claude Code 源码泄露</div>
+<div class="article-meta"><a href="https://latentspace.com/ainews/（搜索" target="_blank">https://latentspace.com/ainews/（搜索...</a> · <a href="https://news.ycombinator.com（搜索" target="_blank">https://news.ycombinator.com（搜索...</a></div>
+<div class="article-body">
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Moonlake 论文</div>
+<div class="article-meta"><a href="https://latentspace.com/podcast/manning-sun-moonlake（完整播客，时长" target="_blank">https://latentspace.com/podcast/manning-...</a> · <a href="https://latentspace.com/ainews/" target="_blank">https://latentspace.com/ainews/...</a></div>
+<div class="article-body">
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Mistral 4 路线图全解密</div>
+<div class="article-meta"><a href="https://latentspace.com/podcast/mistral-roadmap（完整播客，时长" target="_blank">https://latentspace.com/podcast/mistral-...</a></div>
+<div class="article-body">
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
+<div class="giant-item">
+<div class="giant-title">■ Google Gemma 4 开源发布，1198 HN 点，359 评论，问鼎今日技术热度榜首</div>
+<div class="giant-body">
+<p>Gemma 4 是 Google DeepMind 发布的最新开源模型系列，包含多个尺寸版本，在多项基准测试中刷新了同规模开源模型的纪录。HN 社区的讨论集中在： Gemma 4 的多模态能力是否追上了 GPT-4V？本地部署性能如何？在代码生成任务上的表现。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Google 靠 Gemma 系列在开源战场扳回一城，但开源模型的"最强"永远是相对的——Gemma 4 发布当天，Qwen3.6-Plus 也同步上线，两家同一天打擂台，说明开源模型的迭代节奏已经进入"周更"时代。1198 HN 点是荣誉，也是压力——Google 必须持续更新，否则社区的注意力会像鲨鱼闻血一样立刻游向下一个猎物。
+来源：https://deepmind.google/models/gemma/gemma-4/</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Qwen3.6-Plus 发布：阿里巴巴剑指真实世界 Agent 部署，443 HN 点</div>
+<div class="giant-body">
+<p>阿里巴巴发布 Qwen3.6-Plus，这是 Qwen 系列的最新开源权重模型，特别针对 agentic use cases 优化。HN 社区关注点：相比 GPT/Claude 的代码执行能力和工具调用表现；中文语料的优势能否迁移到英文场景；阿里在开源模型商业化上的商业模式。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Qwen 的迭代速度让整个行业感到窒息——从 Qwen2 到 Qwen3 再到 3.6-Plus，阿里用行动证明了中国 AI 的工程执行能力。但"真实世界 Agent 部署"这个定位既是聪明也是狡猾：没有一家美国大厂会承认自己的模型"不能用于真实世界"，阿里这一定位等于在暗示竞争对手的模型还在玩玩具。
+来源：https://qwen.ai/blog?id=qwen3.6</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Cursor 3 发布——AI First 代码编辑器重大升级，303 HN 点，259 评论</div>
+<div class="giant-body">
+<p>Cursor（AI-first 代码编辑器）发布 v3 版本，带来多项重大功能更新。HN 社区反应热烈，尽管发布时间恰逢愚人节，但大家公认这不是玩笑——Cursor 3 的功能更新涵盖了更深的 IDE 集成、更精准的代码补全、以及新的多文件协同编辑能力。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Cursor 的存在本身就是一种声明：AI 代码工具不再是 VS Code 插件，而是需要从底层重写的 IDE。Cursor 3 继续巩固这个判断。当 Copilot 在 VS Code 里优雅地"赋能"老伙计时，Cursor 在做的是让旧世界的工具链显得像一个需要被替换的遗存。愚人节发布不是玩笑，是自信。
+来源：https://cursor.com/blog/cursor-3</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ AMD Lemonade 开源本地 LLM 服务器发布，456 HN 点，99 评论</div>
+<div class="giant-body">
+<p>AMD 发布 Lemonade：一个专为 GPU 和 NPU 优化的开源本地 LLM 推理服务器。HN 社区对该项目表现出强烈兴趣——在 OpenAI API 价格不断上涨、企业数据隐私担忧加剧的背景下，本地推理解决方案的市场需求正在爆发。Lemonade 的差异化在于充分利用 AMD 显卡的 NPU 能力做低功耗推理。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>AMD 这笔牌打得漂亮。NVIDIA 的 CUDA 生态是 NVIDIA 的摇钱树，AMD 的 ROCm 一直是追赶者。Lemonade 不正面硬刚 CUDA 生态，而是用"NPU 低功耗推理"这个细分场景切了一块蛋糕。在企业越来越在意"AI 推理的电力账单"的 2026年，低功耗推理 = 省钱 = 活下去。
+来源：https://lemonade-server.ai</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ LinkedIn 秘密扫描用户浏览器扩展，1577 HN 点，685 评论——今日最高参与度</div>
+<div class="giant-body">
+<p>安全研究人员发现 LinkedIn 正在扫描用户浏览器扩展，收集的数据范围和用途尚不明确。HN 社区反应激烈——1577 点和 685 条评论是今日所有条目中最高的。Browsergate.eu 记录了这一行为的详细技术分析，企业用户对 LinkedIn 的信任危机正在发酵。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>LinkedIn 是全球最大的职业社交平台，也是企业招聘和销售线索的第一大数据源。当这个"职业诚信背书"平台开始扫描用户浏览器扩展的时候，它暴露了一件事：数据变现的压力已经让 LinkedIn 放弃了"职业网络"的人设，向着"数据收集器"的本体回归。1577 HN 点说明什么？说明这个社区里大量的人在用 LinkedIn 找机会——而他们刚刚发现，这个平台把他们当数据金矿而不是用户。
+来源：https://browsergate.eu</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ axios NPM 供应链攻击事后分析报告发布，29 HN 点</div>
+<div class="giant-body">
+<p>axios 官方在 GitHub 上发布了 NPM 供应链攻击的完整事后分析（github.com/axios/axios/issues/10636）。尽管 HN 点数不高，但这是一份极其重要的安全事件文档，记录了攻击的时间线、payload 机制、检测方法和修复方案。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>29 HN 点和 685 评论的 LinkedIn 事件放在一起看，就是安全行业的黑色寓言——真正有用的安全分析没人看，花边新闻式的隐私侵犯万人讨论。但这份 axios 报告可能是 2026 年最重要的供应链安全文献之一，因为 NPM 的依赖树养活了中国几乎所有 Node.js 互联网公司。知道攻击是怎么发生的，比知道攻击发生了重要一万倍。
+来源：https://github.com/axios/axios/issues/10636</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Azure 信任侵蚀：前 Azure Core 工程师披露企业信任崩塌的技术根源，365 HN 点</div>
+<div class="giant-body">
+<p>一位前 Azure Core 工程师在 isolveproblems Substack 上发表长文，分析了导致 Azure 在企业市场信任侵蚀的技术和架构决策失误。HN 获得 365 点和 127 条评论。这位工程师指出，微软的" vaporized a trillion dollar opportunity"（蒸发了一万亿美元机会）背后是一系列技术债务、架构分裂和 KPI 驱动的短期决策。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>前员工爆内部料是新闻，但这位仁兄的料有本质不同——他不是抱怨政治，不是说谁好谁坏，而是用工程师的笔法把"信任是怎么被一个个技术决策杀死的"讲清楚了。这篇文章的标题"Vaporized a Trillion Dollar Opportunity"是 2026 年科技行业最值 1000 字的标题。当云厂商的底层可靠性开始动摇，整个企业 AI 市场的基础设施叙事都要重新审视。
+来源：https://isolveproblems.substack.com/p/how-microsoft-vaporized-a-trillion</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ The Last 4 Jobs in Tech：AI 重组科技公司组织架构，AI Engineer 角色演变</div>
+<div class="giant-body">
+<p>Swyx 在 Latent Space AINews 发布 Mental Model 研究，探讨 AI 如何重组科技公司组织架构——这是 2023 年"Rise of the AI Engineer"论文的更新版本。当年提出的 AI Engineer 概念已被市场验证，现在扩展到更广泛的劳动力影响分析。50+  upvotes，2 shares，weight=80。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Swyx 的厉害之处在于他不是预言家，而是记录员——他记录的现象正在变成现实。"Last 4 Jobs"这个框架是残酷的，但也是诚实的：不是 AI 要抢工作，是会用 AI 的人会替代不会用 AI 的人。这不是技术问题，是教育问题，而教育问题的答案永远是滞后的。
+来源：https://latentspace.com/ainews/</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ AINews 愚人节静默：AI 行业罕见的 4 月 1 日无重磅发布，4 月 2 日恢复正常</div>
+<div class="giant-body">
+<p>Latent Space AINews 报道，2026年4月1日愚人节，AI 行业罕见地"静默"——主流厂商没有重大发布，仅有一些中型模型更新和 Liquid 的恶搞作品。4月2日开始恢复正常报道节奏，AI News 继续追踪行业动态。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>愚人节不发重磅是 2026 年 AI 行业成熟度的标志之一——连科技公司都知道"信任"比"惊喜"更值钱。但这种"自律"的背后更可能的原因是：任何在愚人节发布的产品都会被社区默认打上"不可信"的标签。这是 PR 风险管控，不是道德进步。</p>
+</div>
+</div>
+</div>
+<div class="giant-item">
+<div class="giant-title">■ Mistral Voxtral TTS + Forge + Leanstral：欧洲 AI 独苗的全方位产品矩阵落地</div>
+<div class="giant-body">
+<p>Mistral 发布 Voxtral TTS（语音合成）、Forge（开发工具链）、Leanstral（轻量推理模型），三位一体的产品矩阵落地。播客专访透露，Mistral 的策略是"不卷参数，卷刀法"——在特定场景做到极致，而不是全面对标 OpenAI。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Mistral 的战略清醒度让很多美国公司汗颜。在大家都说"我们要成为 AGI 公司"的时候，Mistral 在说"我们要让你用 Mistral 的 API 比你用 OpenAI 便宜 80%"。这是更诚实的市场语言，也是更可持续的商业模式。Forge 工具链是对 LangChain 生态的直接蚕食——Mistral 不需要打败 OpenAI，它只需要让开发者觉得"用 Mistral 配套工具更顺手"就够了。
+
+## Dolan's 锐评：巨头绞肉机板块核心洞察
+
+今日情报浓缩出一个残酷的主题：2026年4月的第一周，AI 行业同时经历了两个平行叙事——技术狂飙和信任崩塌。Google Gemma 4 和 Qwen3.6-Plus 同日打擂，开源模型的军备竞赛进入周更节奏；Cursor 3 用实际行动证明 AI 原生 IDE 的时代已经到来；AMD Lemonade 在 NVIDIA 的阴影下找到了一条 NPU 低功耗的差异化小路。但与此同时，LinkedIn 的隐私丑闻和 Azure 前员工的控诉，撕开了"AI 基础设施"最不想被看见的那块遮羞布：当平台的数据贪婪和企业的上云决策相遇，信任的瓦解速度比模型迭代速度快得多。愚人节的静默不是偶然，是这个行业在用最轻微的方式承认：我们知道自己在做什么，我们也知道这样不对。</p>
+</div>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">📡 极客雷达：高潜开源与暗流</div>
+<hr class="divider">
+<div class="section-header">💡 终局研判</div>
+<div class="final-section">
+<div class="final-header">Dolan&apos;s 致命锐评</div>
+<div class="final-body">
+<p>今日情报叠加，指向一个无法回避的结论：2026年4月第一周，AI 行业正在经历从"技术狂热"到"制度性成熟"的血腥阵痛。开源狂潮（Gemima 4、Qwen3.6-Plus、Mistral 4 路线图）让模型的供给侧彻底商品化，Claude Code 源码泄露更是把这个过程加速了十倍——当护城河变成了源码里的注释，OpenAI 的 400 亿美元融资是底气还是笑话？与此同时，LinkedIn 隐私门和 Azure 信任崩塌同时爆发，说明数据收集和云依赖这两大 AI 时代的隐藏税正在以惊人的速度到期兑付。Simon Willison 说 Agentic 已过拐点是对的，但没说全——拐点不只是技术的拐点，也是"谁为 AI 买单、谁为 AI 背锅"这个商业结构的拐点。当 Dark Factory 开始吞噬真实就业，当供应链攻击成为每个工程师的日常功课，当开源模型在性能上追平闭源模型——这场游戏的赢家不是技术最强的那个，是最快学会"在信任废墟上重建秩序"的那个。</p>
+</div>
+</div>
+
+<div class="outro">
+Dolan&apos;s 全景内参 · 2026-04-04 · 仅供个人研究参考<br>
+锐评由LLM生成 | 内容仅供参考
+</div>
+</div><!-- container -->
+</body>
+</html>
