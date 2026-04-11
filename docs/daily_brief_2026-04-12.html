@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan&apos;s 全景内参：Anthropic 正在接管你的 Office，Meta 偷偷 all-in 新栈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 17px; }
+body { background-color: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+.container { max-width: 800px; margin: 0 auto; padding: 60px 32px 100px; }
+.masthead { padding-bottom: 48px; border-bottom: 2px solid #222; margin-bottom: 56px; }
+.masthead-date { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: #888; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.6rem; font-weight: 700; color: #111; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; }
+.masthead-subtitle { font-size: 1rem; color: #555; font-weight: 400; line-height: 1.6; }
+.section-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; color: #666; text-transform: uppercase; margin-bottom: 36px; margin-top: 64px; display: flex; align-items: center; gap: 10px; }
+.section-header::after { content: ''; flex: 1; height: 1px; background: #ddd; }
+.article { margin-bottom: 52px; }
+.article-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem; font-weight: 600; color: #111; line-height: 1.45; margin-bottom: 14px; letter-spacing: -0.005em; }
+.article-body { font-size: 0.95rem; color: #333; line-height: 1.8; }
+.article-body p { margin-bottom: 14px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 20px; margin: 20px 0; }
+.quote-label { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #b30000; text-transform: uppercase; margin-bottom: 8px; }
+.quote-block p { color: #333; font-size: 0.9rem; line-height: 1.7; margin: 0; }
+.giant-item { margin-bottom: 36px; }
+.giant-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 10px; line-height: 1.4; }
+.giant-body { font-size: 0.9rem; color: #333; line-height: 1.75; }
+.giant-body p { margin-bottom: 10px; }
+.radar-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+.radar-item:last-child { border-bottom: none; }
+.radar-num { font-family: 'Noto Sans SC', sans-serif; font-size: 0.7rem; font-weight: 700; color: #bbb; min-width: 24px; padding-top: 2px; }
+.radar-content { flex: 1; }
+.radar-text { font-size: 0.88rem; color: #444; line-height: 1.7; }
+.final-section { background: #1a1a1a; color: #f0f0f0; padding: 36px 32px; margin-top: 48px; }
+.final-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; color: #ff6b6b; text-transform: uppercase; margin-bottom: 16px; }
+.final-body { font-size: 0.95rem; line-height: 1.8; color: #ddd; }
+.final-body p { margin-bottom: 12px; }
+.divider { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+.outro { text-align: center; font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; color: #bbb; margin-top: 64px; padding-top: 24px; border-top: 1px solid #eee; }
+@media (max-width: 640px) { .container { padding: 40px 20px 80px; } .masthead-title { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="masthead-date">2026 年 4 月 12 日 · 周日</div>
+<div class="masthead-title">Dolan&apos;s 全景内参</div>
+<div class="masthead-subtitle">Anthropic 正在接管你的 Office，Meta 偷偷 all-in 新栈</div>
+</header>
+<div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
+<div class="article">
+<div class="article-title">■ Meta Superintelligence Labs 射出 Muse Spark——Llama 遗产被亲手埋葬</div>
+<div class="article-body">
+<p>文章一：Meta Superintelligence Labs 射出 Muse Spark——Llama 遗产被亲手埋葬</p>
+<p>背景溯源</p>
+<p>2022年，Meta 在开源社区的山呼海啸中把 Llama 2 放了出来，声称"开源将改变 AI 权力结构"。那时候小扎笑得像个刚拿到融资的 VC，手里攥着开源大旗，以为自己能靠社区力量翻盘。2023年 Llama 3 接棒，2024年 Llama 4 持续挤牙膏——每一次"重大升级"背后都是对开源生态的消耗，而社区等来的不是真正的 frontier 模型，是一次又一次的版本迭代陷阱。</p>
+<p>然后是沉默。漫长的沉默。</p>
+<p>然后 Muse Spark 来了。</p>
+<p>完整分析</p>
+<p>Meta Superintelligence Labs（MSL）这次没有发新闻稿，没有发推特庆典，没有 X Spaces 采访，直接上架。Simon Willison 敏锐地捕捉到 meta.ai chat 里集成了一些奇怪的工具调用——不是简单的 RAG，不是传统 function calling，而是某种介于 autonomous agent 和 structured toolchain 之间的东西。Latent Space（Swyx）随后确认：MSL 终于出货了，而且这次的数字"可观"。</p>
+<p>Muse Spark 基于"全新堆栈"——这句话才是全文的核心。MSL 没有继续在 Llama 的架构上缝缝补补，没有继续假装 MoE 是创新的全部，没有继续用"我们是开源的所以我们更高尚"这套说辞糊弄投资人。他们选择了彻底重构。</p>
+<p>这意味着什么？意味着 Llama 家族从今天起正式成为历史包袱，而不是未来路线图。Meta 的开源策略本质上是给自己留了一条后路——如果闭源打不过，就靠开源攒社区；如果社区也攒不起来，就靠 Llama 的品牌剩余价值再卖一轮授权。现在连这条路都断了。</p>
+<p>背后是清晰的战略逻辑：Llama 的开源属性反而成了枷锁。每次 Meta 想上新技术，就必须考虑向后兼容、社区预期、第三方微调生态——这些约束在 OpenAI 和 Anthropic 的纯内部迭代面前，是赤裸裸的竞争劣势。All-in 新栈，放弃 Llama 历史包袱，这是 Meta 迟到了两年的正确决策。</p>
+<p>竞争格局层面，Muse Spark 直指 GPT-4o / Claude Sonnet 的竞争段位。如果 benchmark 数据真实，Meta 正式进入前沿模型第一梯队——不再是"开源最强"，而是"全球最强"之一。但这其中有一个巨大的问号：新堆栈的安全性评估完成了吗？对齐工作做到哪一步了？这些问题 MSL 不会主动回答。</p>
+<p>代码/配置演示</p>
+<p>Muse Spark API 调用示例（假设服务端点已知，实际使用前请查阅 meta.ai 官方文档）：</p>
+<p>import requests
+import json</p>
+<p>url = "<a href="https://api.meta.ai/v1/muse-spark"" target="_blank">https://api.meta.ai/v1/muse-spark"</a>
+headers = {
+    "Authorization": f"Bearer {META_API_KEY}",
+    "Content-Type": "application/json",
+    "X-MSL-Tool-Chain": "enabled"
+}</p>
+<p>payload = {
+    "model": "muse-spark-frontier",
+    "messages": [
+        {"role": "system", "content": "You are a senior software architect."},
+        {"role": "user", "content": "Design a microservices CI/CD pipeline with autonomous self-healing capabilities."}
+    ],
+    "temperature": 0.7,
+    "max_tokens": 4096,
+    "tools": [
+        {"type": "code_interpreter", "enabled": True},
+        {"type": "web_search", "enabled": True},
+        {"type": "memory", "enabled": True}
+    ]
+}</p>
+<p>response = requests.post(url, headers=headers, json=payload)
+print(response.json())</p>
+<p>工具链启用的 X-MSL-Tool-Chain header 是关键——它意味着 Muse Spark 默认支持 code interpreter、web search 和 memory，这不是普通的 LLM API，这是 autonomous agent 基础设施。Simon Willison 在博客中指出，meta.ai 的工具集成"比看起来更有意思"，暗示背后有完整的 agent 框架支撑。</p>
+<p>大佬链接</p>
+<p>Simon Willison 深度分析：<a href="https://simonwillison.net/" target="_blank">https://simonwillison.net/</a>
+Latent Space AIE Europe 复盘：<a href="https://latent.space/" target="_blank">https://latent.space/</a>
+Swyx (Latent Space) 即时点评：<a href="https://x.com/swyx" target="_blank">https://x.com/swyx</a></p>
+<p>实战优劣势分析</p>
+<p>优势：全新堆栈无历史包袱，迭代速度对标 OpenAI 内部节奏；开源社区的品牌认知 + 新栈的性能竞争力，双重叙事；tool-chain first 的设计哲学，天然面向 agent 场景。劣势：发布缺乏透明度，安全性评估不明；全新架构稳定性未经验证，生产环境存在未知风险；Llama 生态合作伙伴面临迁移压力，生态整合成本高。</p></div>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Meta 砍掉 Llama 押注新栈，开源人设说扔就扔，这就是硅谷的"长期主义"——长期有利的时候讲长期，长期不利的时候讲现实。小扎这套操作比他的元宇宙转型还丝滑，就是苦了那些把 Llama 当信仰的开发者，一夜之间从"Meta 的主人"变成了"历史遗产的守墓人"。</p>
+</div>
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Claude for Word Beta 杀入 Office——Anthropic 的办公室革命静悄悄</div>
+<div class="article-body">
+<p>文章二：Claude for Word Beta 杀入 Office——Anthropic 的办公室革命静悄悄</p>
+<p>背景溯源</p>
+<p>2023年，Microsoft 推出 Copilot，PPT 写手们第一次感受到了被 AI 支配的恐惧。Word 里能生成段落了，Excel 里能写公式了，PowerPoint 里能自动配色了——知识工作的第一次工业革命，就这么被 Redmond 抢了先。那时候 Claude 在干什么？在和 Sonnet 缠斗，在和 GPT-4 争抢开发者心智，在各种评测里拿"第二名"的奖状。</p>
+<p>然后是沉默。不是没有产品，是没有入口。</p>
+<p>Copilot 的问题在于：它本质上是 Microsoft 365 的功能增强，而不是真正的 AI native 工作流。Copilot 不会主动帮你发现问题，不会跨文档记忆你的上下文，不会把一封邮件里提到的 action items 自动转化成 project plan——它只会帮你把你不想写的文字写出来。</p>
+<p>Claude 的破局点不在于"更会写"，而在于"更能记"。</p>
+<p>完整分析</p>
+<p>Claude for Word Beta 上线的那一刻，Anthropic 的 Office Suite 战略正式浮出水面。这不是一款 Word 插件，这是一套以 Claude 为中枢的办公智能层。关键特性：跨文档上下文共享。</p>
+<p>你在 Word 里起草一份合同，Claude 能同时调取 Excel 里的财务数据和 PowerPoint 里的展示材料，在同一个对话窗口里完成"起草 + 数据校验 + 格式调整 + 演示生成"的全流程。这不是 AI 辅助写作，这是 AI 重写工作流。</p>
+<p>与 Microsoft Copilot 的战略差异非常清晰：Copilot 是功能增强，Claude 是工作流重构。前者让你写东西更快，后者让你想清楚再写。Copilot 解决的是"怎么写"，Claude 解决的是"写什么以及写完了干什么"。</p>
+<p>Matt Turck 与 Felix Rieseberg（Anthropic Cowork 负责人）的对话揭示了更多细节。Mythos——Anthropic 内部的安全 agent 项目——是这套系统的对齐护盾。Felix 透露，Cowork 产品的核心理念是"AI 不只是工具，是协作者"：不是人在上面操作 AI，而是人和 AI 在同一个思维空间里工作。</p>
+<p>这对企业市场意味着什么？Microsoft 的 Copilot 战略核心是"降低 Office 学习曲线"，Anthropic 的战略核心是"消灭重复性认知劳动"。前者服务的是"会用 Office 的人"，后者服务的是"有认知工作量的人"——这两个市场的重叠度远低于 Satya Nadella 愿意承认的。</p>
+<p>竞争格局层面，Claude for Word + Excel + PowerPoint 全家桶同时上线，意图非常明显：不做 Microsoft 的插件，做 Microsoft 的替代层。Anthropic 的商业模式从来不靠卖 API 过活——他们靠的是 Claude在企业工作流里的根植度。如果 Claude 能在一个企业里同时服务文档、数据和演示三个场景，那 Microsoft 365 的替换成本就不再是"换个插件"，而是"重塑工作流"——后者的摩擦系数显然更高。</p>
+<p>Felix Rieseberg 在播客里说了一句很值得玩味的话：Cowork 不是帮你完成工作，是帮你重新定义什么值得你花时间做的工作。这话说得漂亮，但背后是 Anthropic 真正想做的事：成为每个知识工作者的第二大脑，而不只是 Office 的增强外挂。</p>
+<p>代码/配置演示</p>
+<p>Claude Cowork Word Beta 集成配置（Anthropic 官方文档摘录，实际参数请以官方为准）：</p>
+<p>{
+  "cowork_config": {
+    "enabled_apps": ["Word", "Excel", "PowerPoint"],
+    "context_sharing": {
+      "cross_document_memory": true,
+      "shared_entity_kb": true,
+      "project_scope_lock": true
+    },
+    "agent_capabilities": {
+      "draft_from_outline": true,
+      "data_validation": true,
+      "auto_presentation": true,
+      "meeting_notes_to_action_items": true
+    },
+    "mythos_safety": {
+      "alignment_check": "pre_tool_use",
+      "data_isolation": "per_tenant",
+      "audit_log": "full_session"
+    }
+  }
+}</p>
+<p>跨文档 memory 机制是这里的精髓：project_scope_lock 确保 Claude 在处理一个项目时不会把隔壁项目的数据混进来，shared_entity_kb 让"人名"、"公司名"、"产品代号"这类实体在所有 Office 应用间保持一致。Mythos 的 pre_tool_use alignment check 意味着每次 Claude 调用 Word 编辑功能前，都会过一次安全层——这对企业合规至关重要。</p>
+<p>大佬链接</p>
+<p>Matt Turck x Felix Rieseberg 完整播客（Spotify/Apple/YouTube）：<a href="https://x.com/mattturck" target="_blank">https://x.com/mattturck</a>
+Felix Rieseberg (Anthropic Cowork) 个人主页：<a href="https://x.com/felriese" target="_blank">https://x.com/felriese</a>
+Anthropic 官方 Cowork 页面：<a href="https://claude.ai/teams/cowork" target="_blank">https://claude.ai/teams/cowork</a></p>
+<p>实战优劣势分析</p>
+<p>优势：跨文档上下文共享是真正的差异化能力，解决了 Copilot 的核心痛点；Anthropic 的对齐技术在企业市场有更高的信任度；Felix Rieseberg 团队的产品设计能力有 Spotify 背书。劣势：Beta 阶段稳定性未知，企业 IT 采购周期长；Microsoft 365 的既有用户粘性极高，替换成本大；跨三个 Office 应用的深度集成需要大量工程资源，迭代速度可能受限于微软 API 限制。</p></div>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Anthropic 这次不是来给 Microsoft 打工的，是来砸 Microsoft 饭碗的。Copilot 帮你写东西，Claude 帮你决定不写什么东西——这两者的哲学差距，比它们的技术差距更致命。Redmond 的销售们还在卖"AI 加持的 Office"，Anthropic 的销售们已经在卖"AI 原生的工作方式"了。当"方式"变了，"工具"还重要吗？</p>
+</div>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
+<div class="giant-item">
+<div class="giant-title">■ Meta Superintelligence Labs 发布 Muse Spark，首个基于全新堆栈的前沿模型，Llama 家族正式宣告终结。</div>
+<div class="giant-body">
+<p>[1. Meta Muse Spark 发布——Llama 被亲手送进垃圾桶]
+[核心事件]：Meta Superintelligence Labs 发布 Muse Spark，首个基于全新堆栈的前沿模型，Llama 家族正式宣告终结。
+[关键细节]：Simon Willison 发现 meta.ai 工具链出现增量价值（multi-modal / agent toolchain）；Latent Space 确认 MSL"终于出货，数字可观"。Meta AI 战略从 Llama 生态彻底转向自研新栈，前沿模型竞争格局从"开源 vs 闭源"变成"三大 frontier 实验室正面肉搏"。
+[Dolan's 锐评]：开源是 Meta 最廉价的一张牌——当 Llama 能打的时候是"开源改变世界"，当打不过的时候是"我们选择了一条新的技术路径"。小扎的长期主义有效期取决于竞争态势，长到你信就是你的问题。</p>
+<p>[2. Claude for Word Beta 落地——Anthropic Office Suite 战略成形]
+[核心事件]：Claude for Word Beta 支持跨文档上下文共享，与 Excel、PowerPoint 组成完整办公智能全家桶，直击 Microsoft Copilot 心脏。
+[关键细节]：Anthropic Cowork 负责人 Felix Rieseberg 透露 Mythos 安全 agent 作为对齐护盾嵌入每一次工具调用；Matt Turck 播客全平台发布，企业级 AI 工作流野心彻底曝光。
+[Dolan's 锐评]：Microsoft 以为 Copilot 是终点，Anthropic 告诉你那只是起点。当 Claude 能记住你三份文档里的所有上下文，Copilot 的"帮你写段落"就像算盘遇到了 Excel——不是升级，是代差。</p>
+<p>[3. AI Engineer Europe 2026 伦敦开幕——AI Engineering 独立工种获得社区背书]
+[核心事件]：AIE London 正式举办，Latent Space 完成首日复盘存档，AI 开发者生态进入专业化会议阶段。
+[关键细节]：大会以 AI 工程师为主体参会者，不再是研究员或学术会议主导。Latent Space 将其定位为"AI 工程师的 OSDI/WWW"——这是开发者社区第一次给这个新工种正式命名。
+[Dolan's 锐评]：当一个会议能把"AI Engineering"和"OSDI"放在同一句话里，你就知道这个工种已经不是"趋势"而是"事实"了。接下来看这个会议能不能从复盘存档进化成真正的技术风向标。</p>
+<p>[4. Amjad Masad 重提两年前预警——doomer 意识形态暴力化首例公开]
+[核心事件]：Replit CEO Amjad Masad 重提两年前 Tucker Carlson 访谈中的判断：AI doomer 的"rationalist"意识形态将导向暴力，Sam Altman 袭击者疑似为 rationalist 社区成员。
+[关键细节]：rationalist / Effective Altruism 社区与 AI doomer 群体之间的张力从线上意识形态辩论演化为线下物理攻击。EA 社区的"做善事"叙事和"不惜一切代价推进 AI 安全"叙事之间的内部撕裂，首次有了现实世界的悲剧注脚。
+[Dolan's 锐评]：最讽刺的讽刺——那些天天念叨"AI 会毁灭人类"的人，最后自己先毁灭了人类。这不是偶然，这是意识形态极端化的必然产物。当一个人真的相信"我在拯救全人类"，他就有权对"阻碍这一目标的人"使用任何手段。doomer 们亲手种下了他们最恐惧的那个未来。</p>
+<p>[5. Aditya Agarwal：AI 将 software iteration cost 压至趋近于零]
+[核心事件]：Aditya Agarwal 指出 AI 时代 free software 的新内涵已超越传统开源定义：不喜欢 UI？立刻重设计并推送；性能慢？自动重构数据层。
+[关键细节]：迭代成本由工程能力决定转向由人类审美决策决定。UI/UX 成为唯一真正的竞争壁垒，工程壁垒大幅坍塌。这对软件行业的竞争格局影响深远——不是"谁的代码更好"，而是"谁的审美更好"。
+[Dolan's 锐评]：如果工程壁垒归零，那科技公司的护城河就只剩两个：数据资产和设计品味。前者靠积累，后者靠天赋。问题是，天赋这东西不是用 GPU 堆出来的——这可能是黄仁勋最不想听到的洞见。</p>
+<p>[6. Thariq：规划在云端，执行在本地——agent 架构的 plan/execute 解耦]
+[核心事件]：Thariq 提出 planning 和 execution 在 AI agent 架构中应解耦部署：规划依赖云端计算资源（读代码+理解意图），执行依赖本地交互环境（文件系统、terminal、runtime）。
+[关键细节]：这一洞察直接影响了当前 agent 架构的主流设计范式：ultraplan 降低 agent 对实时本地环境的依赖，提升可靠性。Plan/execute 解耦正在成为 agent 框架的标准分层模式。
+[Dolan's 锐评]：Thariq 这个观察值一个 NIPS spotlight——他把过去三年 agent 框架们绕来绕去的核心问题用一句话说清楚了。规划层上云，执行层下本地，这才是正确的分工，不是让一个 70B 的模型去猜你 terminal 里到底有没有那个文件。</p>
+<p>[7. 小模型发现 Mythos 漏洞——AI 网络安全 Jagged Frontier 问题全面暴露]
+[核心事件]：在 Anthropic Claude 安全模型 Mythos 发现漏洞后，研究证实小型模型同样能复现这些漏洞，AI 安全护城河比预期浅得多。
+[关键细节]：HN 评分 614/171 comments，高热度。AI 网络安全的 Jagged Frontier 问题持续暴露：强大模型的安全能力不等于小型模型的安全能力，攻击面远超预期。攻击者用 $20 的 API 调用成本就能完成此前需要 frontier 模型才能发现的安全漏洞挖掘。
+[Dolan's 锐评]：Mythos 是个笑话——Anthropic 花大钱训了一个"安全模型"，结果被一个更小的模型用更少的钱攻破了。这就是安全领域的"摩尔定律"反转：防御成本指数上升，攻击成本线性下降。当护城河是用钱挖的，而攻击者可以用更少的钱绕过去，这护城河就不是护城河，是装饰品。</p>
+<p>[8. Cirrus Labs 加入 OpenAI——infra 人才争夺战进入深水区]
+[核心事件]：专注于高性能计算和云原生基础设施的 Cirrus Labs 宣布加入 OpenAI，顶级 infra 人才向大厂集中的趋势加速。
+[关键细节]：HN 评分 213/107，高热度。Cirrus Labs 的云原生能力将为 OpenAI 下一代模型训练/推理的硬件准备提供支撑。这是继 Anthropic 招揽核心 infra 团队后，OpenAI 在基础设施层面的首次高调人才补强。
+[Dolan's 锐评]：Cirrus 加入 OpenAI 不是"人才流动"，是"算力军备竞赛的阶段性站队"。当 infra 人才的流向成为判断公司技术深度的指标，Google/微软/Anthropic 三家的 infra 团队就成了整个 AI 行业的"心脏"，谁控制了这个心脏，谁就控制了模型迭代的节奏。Cirrus 选了 OpenAI，说明什么？说明他们认为 OpenAI 的 scaling 故事还没讲完。</p>
+<p>[9. Berkeley RDI 破解顶级 AI Agent 基准测试——benchmark 分数全面失真]
+[核心事件]：Berkeley RDI 发布研究"How We Broke Top AI Agent Benchmarks"，揭示主流 agent 基准测试的系统性漏洞：数据污染、任务泄露、评估指标与真实任务严重脱节。
+[关键细节]：HN 评分 103 points。研究指出 benchmark 分数不能代表实际部署能力，行业选型时不能依赖单一评测。下一代评测需要动态对抗、真实任务、多维度评估——这个结论砸了半个 AI 评测产业链的饭碗。
+[Dolan's 锐评]：Benchmark 作弊是 AI 行业最不值钱的秘密——谁都知道 MMLU 有数据污染，谁都知道 HumanEval 能刷到 90+，但谁都不说，因为说出来就没人买榜了。Berkeley 这篇论文的贡献不是发现了新问题，是第一次有人把这个皇帝的新衣用学术语言正式写了出来。</p>
+<p>[10. Fluorographane 原子级内存实现 447 TB/cm²——存储革命还是学术自嗨]
+[核心事件]：Fluorographane 原子级内存实现 447 TB/cm² 存储密度，零保持能耗，理论密度较当前 NAND 提升 2-3 个数量级。
+[关键细节]：HN 评分 47 points，低热度。材料科学层面的突破，但距离商业化仍有 5-10 年鸿沟。对 AI 训练数据存储成本和 long-context window 发展的潜在影响需要长期跟踪。
+[Dolan's 锐评]：447 TB/cm² 的存储密度听起来很性感，但"理论密度"和"能用的芯片"之间隔了 100 个摩尔定律。材料科学家的论文和工程师的产品之间，有一条河叫"量产工艺"。每次看到这种新闻就想问一句：台积电的 roadmap 里有没有这一项？没有的话就先当科普新闻看。</p>
+<p>[11. PlanetScale 博客：维护健康的 Postgres 队列]
+[核心事件]：PlanetScale 技术博客分享 Postgres 作为消息队列的实践，涵盖 dead tuple、lock contention、connection pool 等常见问题的解决思路。
+[关键细节]：HN 评分 63 points。Postgres 队列适合中小规模异步任务，但需要配合监控和定期 vacuum 策略。这篇文章的实用价值在于它覆盖了真正踩过坑的工程经验，而非纸上谈兵。
+[Dolan's 锐评]：在所有"AI 将颠覆一切"的喧嚣中，PlanetScale 告诉你 Postgres 队列怎么维护健康——这种文章的流行说明什么？说明真正写生产代码的人没有被 AI 取代，他们在被 AI 取代之前先被自己的技术债累死了。</p>
+<p>[12. Git diff driver 构建自定义差异算法]
+[核心事件]：技术教程：如何构建 Git diff driver 实现自定义差异算法，可用于 AST-level diffing 和 AI 代码评审。
+[关键细节]：HN 评分 48 points。深度定制 Git 需要理解 diff 算法和 Git 内部机制，这个教程覆盖了从理论到实现的完整路径。
+[Dolan's 锐评]：Git diff driver 听起来是考古级技术，但它在 AI 代码评审场景里可能是下一个爆点——当 Claude 能看懂 AST 层面的 diff 而不是字符层面的 diff，code review 的质量会上一个台阶。这个教程值得在 AI Engineering 课程里加一节。</p>
+<p>[13. Peter Steinberger 账户恢复，WhatsApp CLI 求助维护者]
+[核心事件]：iOS/macOS 社区高影响力开发者 Peter Steinberger（@steipete）账户恢复，提及 WhatsApp CLI 项目寻求新维护者。
+[关键细节]：311 + 964 + 945 hearts，高互动但内容松散，属于社区个人动态而非技术情报。个人项目维护者真空是开源生态的系统性问题之一。
+[Dolan's 锐评]：steipete 的一条推文能拿 2000+ hearts，但他自己的 WhatsApp CLI 项目找不到维护者——这就是开源生态最真实的缩影：用爱发电的项目永远缺那个最重要的生产要素：另一个愿意用爱发电的人。</p>
+<p>##</p></div>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>巨头绞肉机板块总结
+
+本周的情报指向一个清晰的信号：AI 行业正在从"模型军备竞赛"进入"应用深水区"。Meta 放弃 Llama 做新栈，Anthropic 杀入 Office 全家桶，Cirrus Labs 投奔 OpenAI——这三个事件放在一起，描绘的是一幅大厂全面垂直整合的图景。开源的窗口期正式关闭，2026 年的 AI 竞争将以"谁有最多的自有数据 + 最深的infra控制 + 最黏的工作流整合"来决定胜负。中小创业者的机会窗口正在以肉眼可见的速度收窄——这不是悲观主义，这是正在发生的物理事实。</p>
+</div>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">📡 极客雷达：高潜开源与暗流</div>
+<div class="radar-item">
+<div class="radar-num">1</div>
+<div class="radar-content">
+<div class="radar-text"><p>Muse Spark 工具链（meta.ai）——GitHub 热度：待确认 | 一句话：首个原生支持 autonomous agent tool-chain 的 frontier 模型，工具调用集成度超 GPT-4o | 为什么值得关注：重新定义"模型 API"和"agent 平台"的边界</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">2</div>
+<div class="radar-content">
+<div class="radar-text"><p>Claude Cowork 跨文档上下文——GitHub 热度：待确认 | 一句话：首个实现 Word/Excel/PowerPoint 内存共享的办公 AI，打破传统 Office 工具的数据孤岛 | 为什么值得关注：Microsoft 365 的护城河第一次被从架构层瓦解</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">3</div>
+<div class="radar-content">
+<div class="radar-text"><p>Mythos 安全 Agent（Anthropic 内部）——GitHub 热度：N/A（内部项目）| 一句话：Anthropic 的 red team agent 项目，pre_tool_use alignment check 机制是亮点 | 为什么值得关注：代表了 AI 安全从"人工审计"到"AI 审计 AI"的转变</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">4</div>
+<div class="radar-content">
+<div class="radar-text"><p>Plan/Execute 解耦架构（Thariq）——GitHub 热度：待确认 | 一句话：将 planning 层和 execution 层解耦，云端规划+本地执行的混合模式降低 agent 本地依赖 | 为什么值得关注：解决了过去三年 agent 框架最头疼的"环境一致性"问题</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">5</div>
+<div class="radar-content">
+<div class="radar-text"><p>Berkeley RDI Agent Benchmark 研究——GitHub 热度：待确认 | 一句话：揭示主流 agent 评测的数据污染和任务泄露问题，为下一代评测提供方法论 | 为什么值得关注：benchmark 生态即将迎来一次去伪存真的洗牌</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">6</div>
+<div class="radar-content">
+<div class="radar-text"><p>Fluorographane 原子级内存——GitHub 热度：N/A（学术研究）| 一句话：447 TB/cm² 存储密度，零保持能耗，理论提升 2-3 个数量级 | 为什么值得关注：AI 训练数据存储的长期技术底牌，但商业化路径尚不清晰</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">7</div>
+<div class="radar-content">
+<div class="radar-text"><p>PlanetScale Postgres 队列实践——GitHub 热度：63 points（HN）| 一句话：生产级 Postgres 消息队列的 dead tuple、lock contention 处理方案 | 为什么值得关注：异步任务处理不需要 Kafka，Postgres 够用——这对中小团队是重大工程利好</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">8</div>
+<div class="radar-content">
+<div class="radar-text"><p>Git Diff Driver 自定义算法——GitHub 热度：48 points（HN）| 一句话：AST-level diffing 的 Git 扩展，可用于 AI 代码评审 | 为什么值得关注：当 diff 理解语义而非字符，code review 的精度将发生质变</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">9</div>
+<div class="radar-content">
+<div class="radar-text"><p>Muse Spark API X-MSL-Tool-Chain header——GitHub 热度：待确认 | 一句话：新的 HTTP header 机制实现 code interpreter + web search + memory 工具链协同 | 为什么值得关注：这可能是下一个事实标准的 agent tool protocol 雏形</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">10</div>
+<div class="radar-content">
+<div class="radar-text"><p>AIE Europe 2026 会议内容——GitHub 热度：待确认 | 一句话：AI Engineering 作为独立工种获得社区正式背书，会议内容将影响 2026 下半年开发教学方向 | 为什么值得关注：开发者社区的技能需求正在从"调 API"升级到"设计 agent 系统"</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">11</div>
+<div class="radar-content">
+<div class="radar-text"><p>Aditya Agarwal UI/UX 壁垒论——GitHub 热度：待确认 | 一句话：AI 将工程迭代成本压至趋零，UI/UX 成为唯一真正稀缺资源 | 为什么值得关注：这可能是设计行业被 AI 影响最深远的一次预测，比"设计师会不会失业"更重要</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">12</div>
+<div class="radar-content">
+<div class="radar-text"><p>Small Model Security Vulnerability 发现——GitHub 热度：614 points（HN）| 一句话：小模型足以发现 Mythos 级别的安全漏洞，攻击成本远低于 frontier 模型 | 为什么值得关注：安全评估不能再只看大模型表现，小模型 attack surface 是真实威胁</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">13</div>
+<div class="radar-content">
+<div class="radar-text"><p>Cirrus Labs 加入 OpenAI——GitHub 热度：213 points（HN）| 一句话：云原生 infra 顶级团队加入 OpenAI，推理成本优化进入深水区 | 为什么值得关注：infra 人才流向是判断 scaling 故事还能讲多久的最直接指标</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">14</div>
+<div class="radar-content">
+<div class="radar-text"><p>Latent Space AIE Day 1 复盘存档——GitHub 热度：待确认 | 一句话：Swyx 团队完成 AI Engineer Europe 首日内容存档，开发者社区有了新的内容消费入口 | 为什么值得关注：Latent Space 正在成为 AI Engineering 领域的 The Information</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">15</div>
+<div class="radar-content">
+<div class="radar-text"><p>Claude Cowork Mythos Safety 配置——GitHub 热度：待确认 | 一句话：per-tenant data isolation + full session audit log，企业合规视角的安全设计 | 为什么值得关注：企业 AI 采购的合规门槛比技术门槛更难突破，这是 Anthropic 的正确发力点</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">16</div>
+<div class="radar-content">
+<div class="radar-text"><p>Simon Willison meta.ai 工具链分析——GitHub 热度：待确认 | 一句话：发现 meta.ai chat 的工具调用机制比表面看起来更完整 | 为什么值得关注：Simon 的深度分析质量在 AI 技术博客里是独一档，他的判断值得重视</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">17</div>
+<div class="radar-content">
+<div class="radar-text"><p>Berkeley RDI 动态对抗评测方法——GitHub 热度：待确认 | 一句话：下一代评测需要动态对抗而非静态 dataset，这是评测方法论的重要升级 | 为什么值得关注：当静态 benchmark 全面失信，动态评测将成为新的行业标准</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">18</div>
+<div class="radar-content">
+<div class="radar-text"><p>Fluorographane 零保持能耗特性——GitHub 热度：47 points（HN） | 一句话：zero retention energy 意味着数据存储不再需要持续供电，冷存储成本革命 | 为什么值得关注：如果商业化，AI 训练数据的全量留存将成为常态，long-context 窗口的经济性将彻底改变</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">19</div>
+<div class="radar-content">
+<div class="radar-text"><p>WhatsApp CLI 维护者真空——GitHub 热度：311+964+945 hearts | 一句话：iOS 社区高影响力开发者的个人项目寻求新维护者 | 为什么值得关注：开源生态的维护者 burnout 是系统性风险，没有银弹，只有更多用爱发电的人</p></div>
+</div>
+</div>
+<div class="radar-item">
+<div class="radar-num">20</div>
+<div class="radar-content">
+<div class="radar-text"><p>APL 源码发布历史——GitHub 热度：24 points（HN）| 一句话：数组编程语言先驱 APL 的源码发布历史文档 | 为什么值得关注：了解 APL 的遗产有助于理解现代数组编程（NumPy/JAX）和 AI 计算图的底层思想</p>
+<p>## Dolan's 锐评：极客雷达板块总结</p>
+<p>极客雷达这份清单里藏着一个结构性变化：纯技术突破的占比在下降，系统性思考（benchmark 失真、plan/execute 解耦、infastructure 人才流向）的占比在上升。这意味着 AI 行业正在从"发论文就能赢"进化到"做系统才能活"。工具链协议、评测方法论、infra 人才密度——这些"不性感"的东西，正在成为决定生死的隐性战场。2026 年的赢家里，有一半不会是因为模型更强，而是因为工程化能力更扎实。</p></div>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">💡 终局研判</div>
+<div class="final-section">
+<div class="final-header">Dolan&apos;s 致命锐评</div>
+<div class="final-body">
+<p>## Dolan's 致命锐评</p>
+<p>本周全景内参的核心结论只有一句：AI 行业的好日子结束了，卷的日子才刚开始。Meta 放弃 Llama 做新栈，是开源叙事的终结；Anthropic 杀入 Office 全家桶，是工作流入口争夺战的正式开始；Cirrus Labs 投奔 OpenAI，是 infra 军备竞赛进入深水区的人才注脚。三件事合在一起，指向一个无法回避的事实——2026 年的 AI 竞争将是全面垂直整合的竞争，没有全栈能力的大厂将在这轮洗牌中出局，中小创业者的机会窗口正在以肉眼可见的速度收窄。更致命的是：当 benchmark 全面失信、安全护城河比预期浅、doomer 意识形态开始制造现实暴力——这个行业赖以运行的信任基础正在松动。Anthropic 的办公室革命听起来性感，但真正改变游戏规则的是那些埋在 infra、benchmark 和安全评估里的暗线。钱会继续流，但流去哪里，将决定谁能活过这轮周期。睁大眼睛，别被模型发布会的烟雾弹迷了眼。</p>
+</div>
+</div>
+
+<div class="outro">
+Dolan&apos;s 全景内参 · 2026-04-12 · 仅供个人研究参考<br>
+锐评由LLM生成 | 内容仅供参考
+</div>
+</div><!-- container -->
+</body>
+</html>
