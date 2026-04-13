@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan&apos;s 全景内参：多智能体系统从实验室杀进生产环境，AI 认知鸿沟正在撕裂整个行业</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 17px; }
+body { background-color: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+.container { max-width: 800px; margin: 0 auto; padding: 60px 32px 100px; }
+.masthead { padding-bottom: 48px; border-bottom: 2px solid #222; margin-bottom: 56px; }
+.masthead-date { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: #888; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.6rem; font-weight: 700; color: #111; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; }
+.masthead-subtitle { font-size: 1rem; color: #555; font-weight: 400; line-height: 1.6; }
+.section-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; color: #666; text-transform: uppercase; margin-bottom: 36px; margin-top: 64px; display: flex; align-items: center; gap: 10px; }
+.section-header::after { content: ''; flex: 1; height: 1px; background: #ddd; }
+.article { margin-bottom: 52px; }
+.article-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem; font-weight: 600; color: #111; line-height: 1.45; margin-bottom: 14px; letter-spacing: -0.005em; }
+.article-meta { font-family: 'Noto Sans SC', sans-serif; font-size: 0.8rem; color: #888; margin-bottom: 16px; }
+.article-meta a { color: #999; text-decoration: none; }
+.article-meta a:hover { color: #555; }
+.article-body { font-size: 0.95rem; color: #333; line-height: 1.8; }
+.article-body p { margin-bottom: 14px; }
+.article-body pre { background: #f3f3f3; border-left: 3px solid #ccc; padding: 12px 16px; overflow-x: auto; margin: 16px 0; font-size: 0.85rem; line-height: 1.5; }
+.article-body code { background: #f3f3f3; padding: 2px 6px; font-size: 0.85em; border-radius: 3px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 20px; margin: 20px 0; }
+.quote-label { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #b30000; text-transform: uppercase; margin-bottom: 8px; }
+.quote-block p { color: #333; font-size: 0.9rem; line-height: 1.7; margin: 0; }
+.section-summary { margin-top: 24px; }
+.giant-item { margin-bottom: 36px; }
+.giant-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 10px; line-height: 1.4; }
+.giant-body { font-size: 0.9rem; color: #333; line-height: 1.75; }
+.giant-body p { margin-bottom: 10px; }
+.radar-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+.radar-item:last-child { border-bottom: none; }
+.radar-num { font-family: 'Noto Sans SC', sans-serif; font-size: 0.7rem; font-weight: 700; color: #bbb; min-width: 24px; padding-top: 2px; }
+.radar-content { flex: 1; }
+.radar-title { font-family: 'Noto Sans SC', sans-serif; font-size: 0.9rem; font-weight: 600; color: #111; margin-bottom: 4px; }
+.radar-desc { font-size: 0.85rem; color: #555; line-height: 1.6; }
+.radar-link { font-size: 0.78rem; color: #999; margin-top: 4px; }
+.radar-link a { color: #aaa; text-decoration: none; }
+.radar-link a:hover { color: #666; }
+.final-section { background: #1a1a1a; color: #f0f0f0; padding: 36px 32px; margin-top: 48px; }
+.final-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; color: #ff6b6b; text-transform: uppercase; margin-bottom: 16px; }
+.final-body { font-size: 0.95rem; line-height: 1.8; color: #ddd; }
+.divider { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+.outro { text-align: center; font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; color: #bbb; margin-top: 64px; padding-top: 24px; border-top: 1px solid #eee; }
+@media (max-width: 640px) { .container { padding: 40px 20px 80px; } .masthead-title { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="masthead-date">2026 年 4 月 14 日 · 周二</div>
+<div class="masthead-title">Dolan&apos;s 全景内参</div>
+<div class="masthead-subtitle">多智能体系统从实验室杀进生产环境，AI 认知鸿沟正在撕裂整个行业</div>
+</header>
+<div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
+<div class="article">
+<div class="article-title">■ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+<div class="article-meta"><a href="https://x.com/kevinweil/status/2043510607736189193" target="_blank">https://x.com/kevinweil/status/204351060...</a> · <a href="https://arxiv.org/abs/2604.09521v1" target="_blank">https://arxiv.org/abs/2604.09521v1...</a> · <a href="https://github.github.com/gh-stack/" target="_blank">https://github.github.com/gh-stack/...</a></div>
+<div class="article-body">
+<p>2026年4月，OpenAI VP of Science Kevin Weil 在 X 平台扔出一颗理论核弹：人类智能与计算机智能并非同一空间中的不同点位，而是存在于高维空间中，AI 发展的真正方向不是沿单一维度追赶人类，而是探索更广阔的空间区域。这不是公关话术，Weil 同时担任 Cisco 和 Nature 董事会成员，他的每一次公开表态都带着资本和学术的双重背书。这条推文拿下 93 个点赞，在当下这个 AI 叙事被营销号垄断的时代，这个数字背后的质量密度值得细品。</p>
+<p>Weil 的框架戳破了一层窗户纸：当前整个行业沉迷于 LLM Benchmarks 的军备竞赛，本质上是在一条线上爬坡。GPT-5 比 GPT-4 好 15%，Claude 3.5 比 Claude 3 强 10%——这些数字游戏玩的都是同一维度的位移。但 Weil 指出，高维空间里有无数正交方向，每一个都可能解锁完全不同的能力象限。这与当前多智能体系统（Multi-Agent Systems）的爆发形成了诡异的共振：LangChain Agents、AutoGen、Co-work 等框架之所以崛起，不是因为它们沿单一维度更强，而是因为它们引入了新的探索方向——协作、工具调用、长期记忆、动态规划。
+
+问题是：如何系统性地探索这个高维空间？Weil 没有给出答案，但 arXiv 上同日出现的另一篇 T0 论文恰好补完了这个拼图。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Kevin Weil 这番话翻译成人话就是："兄弟们，我们现在低头爬的这座山可能根本不在主峰上。"这话值钱，但整个行业听进去没有？看看 Stanford 同一天发的 AI Index Report 吧——从业者跟普通人的认知鸿沟正在以肉眼可见的速度扩张。内部人知道自己在爬一座不知道是不是正确的山，但外部投资人还在算 GPT-5 比 GPT-4 强百分之几。这才是真正的风险：方向错了，效率越高，死得越快。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+▶ 阵地二：GitHub Stacked PRs 官方工具发布——AI Code Generation 的最后一块工程短板被补上了
+
+背景溯源：
+
+2026年4月13日，GitHub 官方正式发布 Stacked PRs 工具，HN 评分 222，评论数 133，双高。这不是一个新概念——Google 自2016年起就在内部使用 Critique 代码审查平台，Meta 的 Arcanus 系统处理着每天数千次 stacked diff，Stripe、Airbnb 都有各自的内部实现。这次的突破是：GitHub 把它官方化了，意味着整个开源生态和中小型团队终于能用上原本只有大厂内部才有的工程实践。
+
+完整分析：
+
+Stacked PRs 解决的是 AI 时代代码协作的核心矛盾：当 AI 开始大规模生成代码，单次 PR 的体积暴增，审查难度同比飙升。一个 GPT-4 生成的完整功能可能包含 30 个文件改动，传统的"一个 PR 一审查"模式直接瘫痪。Stacked PRs 的思路是：把大功能拆成多个小 PR 串成一条依赖链，每次审查只面对一个原子变更，AI 的批量输出被优雅地切分为人类可审查的颗粒度。
+
+这与 GitHub Copilot、Claude Code、Cursor 的 AI 代码生成生态形成了完美的闭环：AI 负责生成，人类负责审查，Stacked PRs 负责让审查流程不被 AI 生成的洪流冲垮。Microsoft 内部已经在大规模使用类似工作流（由 Azure 团队推动），这次开源是技术外溢。
+
+大佬链接：
+
+GitHub Stacked PRs 官方文档：https://github.github.com/gh-stack/
+
+实战优劣势分析：
+
+优势：
+- 将大厂内部最佳实践民主化，降低中小团队采纳门槛
+- 直接提升 AI Code Generation 的工程可落地性
+- 与现有 GitHub PR 工作流无缝集成，迁移成本低
+
+劣势：
+- 依赖链的复杂性随 PR 数量线性增长，需要配套的审查培训
+- 对于只有几个人的 startup，overhead 可能大于收益
+- GitHub 官方工具意味着强绑定单一平台，开源 self-hosted 团队暂时无缘
+
+Dolan's 锐评：整个 AI 代码生成的叙事在过去两年都在吹"AI 替代程序员"，但真正在工程一线的人早就知道瓶颈不在生成速度，在审查效率。Stacked PRs 的官方发布等于承认了这一点——GitHub 自己在给自己找台阶下。更有意思的是，这玩意本质上是在给 AI 生成的代码打补丁提供合法性：你看，AI 一次生成太多我们人类没法审，所以我们要拆分。翻译过来就是："AI 你慢点生成，我们人类脑子不够用了。"这算 AI 开发的第一次主动限速。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+</div>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
+<hr class="divider">
+<div class="section-header">📡 极客雷达：高潜开源与暗流</div>
+<hr class="divider">
+<div class="section-header">💡 终局研判</div>
+
+<div class="outro">
+Dolan&apos;s 全景内参 · 2026-04-14 · 仅供个人研究参考<br>
+锐评由LLM生成 | 内容仅供参考
+</div>
+</div><!-- container -->
+</body>
+</html>
