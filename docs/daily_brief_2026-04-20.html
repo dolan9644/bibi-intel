@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolan&apos;s 全景内参：Anthropic 公开系统提示词黑箱，大厂透明度的遮羞布被撕了</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 17px; }
+body { background-color: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+.container { max-width: 800px; margin: 0 auto; padding: 60px 32px 100px; }
+.masthead { padding-bottom: 48px; border-bottom: 2px solid #222; margin-bottom: 56px; }
+.masthead-date { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: #888; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.6rem; font-weight: 700; color: #111; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; }
+.masthead-subtitle { font-size: 1rem; color: #555; font-weight: 400; line-height: 1.6; }
+.section-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; color: #666; text-transform: uppercase; margin-bottom: 36px; margin-top: 64px; display: flex; align-items: center; gap: 10px; }
+.section-header::after { content: ''; flex: 1; height: 1px; background: #ddd; }
+.article { margin-bottom: 52px; }
+.article-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem; font-weight: 600; color: #111; line-height: 1.45; margin-bottom: 14px; letter-spacing: -0.005em; }
+.article-meta { font-family: 'Noto Sans SC', sans-serif; font-size: 0.8rem; color: #888; margin-bottom: 16px; }
+.article-meta a { color: #999; text-decoration: none; }
+.article-meta a:hover { color: #555; }
+.article-body { font-size: 0.95rem; color: #333; line-height: 1.8; }
+.article-body p { margin-bottom: 14px; }
+.article-body pre { background: #f3f3f3; border-left: 3px solid #ccc; padding: 12px 16px; overflow-x: auto; margin: 16px 0; font-size: 0.85rem; line-height: 1.5; }
+.article-body code { background: #f3f3f3; padding: 2px 6px; font-size: 0.85em; border-radius: 3px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 20px; margin: 20px 0; }
+.quote-label { font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #b30000; text-transform: uppercase; margin-bottom: 8px; }
+.quote-block p { color: #333; font-size: 0.9rem; line-height: 1.7; margin: 0; }
+.section-summary { margin-top: 24px; }
+.giant-item { margin-bottom: 36px; }
+.giant-title { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 10px; line-height: 1.4; }
+.giant-body { font-size: 0.9rem; color: #333; line-height: 1.75; }
+.giant-body p { margin-bottom: 10px; }
+.radar-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+.radar-item:last-child { border-bottom: none; }
+.radar-num { font-family: 'Noto Sans SC', sans-serif; font-size: 0.7rem; font-weight: 700; color: #bbb; min-width: 24px; padding-top: 2px; }
+.radar-content { flex: 1; }
+.radar-title { font-family: 'Noto Sans SC', sans-serif; font-size: 0.9rem; font-weight: 600; color: #111; margin-bottom: 4px; }
+.radar-desc { font-size: 0.85rem; color: #555; line-height: 1.6; }
+.radar-link { font-size: 0.78rem; color: #999; margin-top: 4px; }
+.radar-link a { color: #aaa; text-decoration: none; }
+.radar-link a:hover { color: #666; }
+.final-section { background: #1a1a1a; color: #f0f0f0; padding: 36px 32px; margin-top: 48px; }
+.final-header { font-family: 'Noto Sans SC', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; color: #ff6b6b; text-transform: uppercase; margin-bottom: 16px; }
+.final-body { font-size: 0.95rem; line-height: 1.8; color: #ddd; }
+.divider { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+.outro { text-align: center; font-family: 'Noto Sans SC', sans-serif; font-size: 0.75rem; color: #bbb; margin-top: 64px; padding-top: 24px; border-top: 1px solid #eee; }
+@media (max-width: 640px) { .container { padding: 40px 20px 80px; } .masthead-title { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="masthead-date">2026 年 4 月 20 日 · 周一</div>
+<div class="masthead-title">Dolan&apos;s 全景内参</div>
+<div class="masthead-subtitle">Anthropic 公开系统提示词黑箱，大厂透明度的遮羞布被撕了</div>
+</header>
+<div class="section-header">🎯 核心阵地：智能体与协作框架深潜</div>
+<div class="article">
+<div class="article-title">■ 🎯 核心阵地：智能体与协作框架深潜</div>
+<div class="article-body">
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Anthropic 系统提示词透明度</div>
+<div class="article-meta"><a href="https://simonwillison.net/" target="_blank">https://simonwillison.net/...</a></div>
+<div class="article-body">
+<p>Anthropic 是目前唯一一家公开系统提示词的前沿实验室，这件事本身就够讽刺的——其他家把系统提示词当核弹发射密码捂着，Anthropic 倒是大大方方把源码贴出来。Simon Willison 这位 T0 级独立 AI 实践者，第一时间做了 4.6 和 4.7 的 delta 分析，结果一出来整个 AI 工程师圈都在偷偷对账。</p>
+<p>系统提示词不是简单的"你是一个有帮助的 AI"，它直接决定了 Claude 的拒绝阈值、指令遵循模式、agentic 循环中的默认行为。Minor version 的小改动往往比大版本升级更能坑死人——因为没人会为 4.6→4.7 这种版本号尖叫，但你的 agent 行为可能已经悄悄变了个底朝天。
+
+Simon 的分析揭示了几个关键变化：
+- 拒绝边界发生了微调，某些以前会拒绝的场景现在放行了
+- Agentic 任务中的默认追问深度被削弱了，可能是为了减少 token 消耗
+- 代码生成质量在边界情况下的偏好发生了漂移
+
+这意味着什么？意味着所有在生产环境跑 Claude 4.6 agent 的团队，升级到 4.7 之后行为可能不一致，但你根本不知道为什么。传统软件有 changelog，AI 模型的行为 changelog 在哪儿？</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>Anthropic 贴系统提示词是良心，但也是最高明的营销——贴出来显得透明，实际你们用 4.6 还是 4.7 根本不知道自己在赌什么。Simon Willison 一个人干翻了整个 AI 圈的信息不对称，这活儿本该是监管机构干的。
+
+大佬链接：
+Simon Willison 完整分析：https://simonwillison.net/
+Twitter: @simonwillison
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+</div>
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ AI 编码工具定价体系崩塌</div>
+<div class="article-meta"><a href="https://x.com/steipete/status/" target="_blank">https://x.com/steipete/status/...</a></div>
+<div class="article-body">
+<p>CodexBar 0.21 发布，亮点只有一个：Codex Pro $100/月档位正式落地。这不是孤例——Cursor $100/月、GitHub Copilot $100/月（传说中）、Windsurf $100/月……AI 编码工具的定价正在完成从"开发者玩具"到"企业级SaaS"的身份转换。Peter Steinberger（@steipete）发推说"CPU 占用过大的问题还没修完"，但这不影响 Pro 套餐的推出。</p>
+<p>$100/月是什么概念？一个中级工程师的时薪roughly $50-80，$100/月 相当于每月 2 小时的人类工时。AI 编码工具的定价逻辑已经不是"替代多少工时"，而是"这个工具在不在报销额度内"。企业版图已经画完——个人开发者爱用不用，企业 CFO 只要算得过来账就一键采购。
+
+CodexBar 0.21 的关键更新：
+- Abacus AI provider 加入：多供应商战争正式开打
+- Codex Pro $100 档位：企业采购的门槛价
+- OpenAI web extras 更安全了：说明之前有安全漏洞被悄悄修了
+- Antigravity/Cursor/Ollama 修复：兼容性问题在快速收敛
+- z.ai 5小时配额：长上下文任务的配额机制在成型
+
+CPU 占用问题没修完这件事值得玩味——AI 工具的工程质量和商业化进度条从来不同步，这是行业惯例。</p>
+<div class="quote-block">
+<div class="quote-label">Dolan&apos;s 锐评</div>
+<p>$100/月是 AI 编码工具的"企业税"——过了这道坎，厂商就知道你有钱，续费涨价的时候到了。CodexBar 修 CPU bug 拖了这么久，说明做产品的和写代码的根本不是一拨人，这种割裂在所有 AI 工具公司都存在，别以为你家那个最特殊。
+
+大佬链接：
+Peter Steinberger (@steipete) 推文：https://x.com/steipete/status/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+</div>
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Amanda Askell 退出 AI discourse</div>
+<div class="article-meta"><a href="https://x.com/AmandaAskell/status/" target="_blank">https://x.com/AmandaAskell/status/...</a></div>
+<div class="article-body">
+<p>Amanda Askell——Anthropic 的哲学家/伦理学家，专注 AI alignment——发推说要暂停发 AI 相关推文，"回归洗澡水灵感初心"，并补了一句"这里的人已经把所有 AI 观点都覆盖了"。这条推拿 871 个赞。</p>
+</div>
+</div>
+<div class="article">
+<div class="article-title">■ Amjad Masad 和 Replit 的隐秘心事</div>
+<div class="article-meta"><a href="https://x.com/amasad/status/" target="_blank">https://x.com/amasad/status/...</a></div>
+<div class="article-body">
+<p>Replit CEO Amjad Masad（@amasad）发了一条神秘推文："重要的学习机会。可能是你业务/职业的变革时刻。"115 个赞。</p>
+</div>
+</div>
+<hr class="divider">
+<div class="section-header">🌍 巨头绞肉机：大模型底座与算力</div>
+<hr class="divider">
+<div class="section-header">📡 极客雷达：高潜开源与暗流</div>
+<hr class="divider">
+<div class="section-header">💡 终局研判</div>
+<div class="final-section">
+<div class="final-header">Dolan&apos;s 致命锐评</div>
+<div class="final-body">
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+今日情报指向一个清醒的结论：AI 泡沫不是需求泡沫，是基础设施泡沫。内存、 bromine 、托管安全、协作工具数据泄露——这些事件单独看都是"个案"，串起来看是一张完整的风险地图：软件应用层在疯狂冒进，硬件和基础设施层在悄悄承压，而中间层的信任（Vercel、Notion、微软依赖）正在被一桩桩事故凿沉。
+
+Anthropic 的透明度是异类，不是常态；Simon Willison 一个人干的审计活儿，本该是整个行业的基础设施。Amanda Askell 累了，说明 discourse 和实质进步之间的距离已经大到让内部人都厌倦。
+
+终局是什么？算力贵、数据脏、供应链脆、监管蠢——四个事情同时发生，AI 的下一阶段不是"继续狂飙"，是"系好安全带，颠簸开始"。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+</div>
+</div>
+
+<div class="outro">
+Dolan&apos;s 全景内参 · 2026-04-20 · 仅供个人研究参考<br>
+锐评由LLM生成 | 内容仅供参考
+</div>
+</div><!-- container -->
+</body>
+</html>
