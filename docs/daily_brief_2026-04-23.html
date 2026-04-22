@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-04-23 | Dolan's 全景内参 | Agent 工作台开始吃掉聊天订阅，开源底座与多模态入口同时改写估值锚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.82; }
+a { color: #7a1d1d; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 800px; margin: 0 auto; padding: 56px 28px 84px; }
+.masthead { padding-bottom: 34px; border-bottom: 2px solid #222; margin-bottom: 42px; }
+.kicker { font: 700 12px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8a8a; margin-bottom: 16px; }
+.title { font: 900 34px/1.25 'Noto Sans SC', sans-serif; color: #111; margin: 0 0 12px; }
+.subtitle { font-size: 18px; color: #4e4e4e; }
+.section-header { margin: 56px 0 28px; font: 800 13px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.2em; text-transform: uppercase; color: #666; display: flex; align-items: center; gap: 12px; }
+.section-header::after { content: ''; height: 1px; flex: 1; background: #ddd; }
+.article { margin-bottom: 42px; }
+.article-title { font: 800 24px/1.4 'Noto Sans SC', sans-serif; color: #111; margin-bottom: 14px; }
+.article-body p, .giant-body p, .radar-body p, .summary p, .final-body p { margin: 0 0 14px; font-size: 17px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 18px; margin-top: 16px; }
+.quote-label { font: 800 12px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #b30000; margin-bottom: 8px; }
+.divider { border: none; border-top: 1px solid #e7e2da; margin: 42px 0; }
+.giant-item { margin-bottom: 28px; }
+.giant-title { font: 800 20px/1.45 'Noto Sans SC', sans-serif; margin-bottom: 10px; color: #111; }
+.radar-item { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid #eee; }
+.radar-num { font: 800 12px/1.6 'Noto Sans SC', sans-serif; color: #bbb; padding-top: 3px; }
+.radar-title { font: 700 18px/1.45 'Noto Sans SC', sans-serif; color: #111; margin-bottom: 6px; }
+.final-section { margin-top: 16px; background: #171717; padding: 30px 28px; color: #ededed; }
+.final-title { font: 800 13px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: #ff7a7a; margin-bottom: 14px; }
+.outro { margin-top: 58px; padding-top: 24px; border-top: 1px solid #ece7df; text-align: center; font: 500 12px/1.8 'Noto Sans SC', sans-serif; color: #999; }
+@media (max-width: 640px) { .container { padding: 36px 18px 72px; } .title { font-size: 28px; } .article-title { font-size: 22px; } .giant-title { font-size: 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="kicker">2026 年 4 月 23 日 · 周四</div>
+<h1 class="title">Dolan's 全景内参</h1>
+<div class="subtitle">Agent 工作台开始吃掉聊天订阅，开源底座与多模态入口同时改写估值锚</div>
+</header>
+<section>
+<div class="section-header">🎯 核心阵地</div>
+<article class="article"><div class="article-title">一、聊天框退位，工作台上桌：Claude Cowork 和 ChatGPT Images 2.0 正在把入口战争从模型参数表，狠狠干成工作流税表</div><div class="article-body"><p>过去一年，AI 圈最廉价的叙事，就是拿一堆 benchmark 截图当圣经，再配上几句“能力全面提升”就开始四处画大饼。现在这套戏法开始不够用了。真正值钱的，不再是某次榜单上多刷了 1.7 分，而是谁先把模型塞进用户每天都回来的工作台。Anthropic 这次把 Cowork 下沉到所有付费档，再加上 Live Artifacts 标签页和版本历史，本质上不是功能加法，而是把 Claude 从一次性聊天消耗品，改造成有记忆、有留存、有回访理由的项目容器。OpenAI 这边的 ChatGPT Images 2.0 则是另一条线，它把图像生成从独立玩具房拖回主聊天流，把“出图”重新定义成“对话中的一段可迭代操作”。这两个动作看着像不同赛道，实际上是同一件事：入口从问答，升级成持续生产。</p>
+<p>Simon Willison 的测试最有参考价值，不是因为他替 OpenAI 吹喇叭，而是他没玩花活，直接拿高约束提示词去拷打可控性，验证“浣熊和业余电台”这种具体场景能不能听懂人话。原文链接：<a href="https://simonwillison.net/2026/Apr/21/gpt-image-2/#atom-entries" target="_blank">https://simonwillison.net/2026/Apr/21/gpt-image-2/#atom-entries</a><br>Anthropic 官方关于 Cowork 与 Live Artifacts 的发布链接：<a href="https://x.com/claudeai/status/2046328622869344429" target="_blank">https://x.com/claudeai/status/2046328622869344429</a></p>
+<p>这里面的真钱逻辑很简单。第一，持久化意味着留存。用户过去在聊天框里今天问完明天就散伙，现在项目、文稿、表格、原型、脚本都能留在原地，版本还能回滚，SaaS 味一下就上来了。第二，原生多模态意味着调用频次变高。以前图像生成像“逢年过节开一次”的烟花功能，现在它进入连续编辑循环，等于把生成成本和用户黏性一起绑定。第三，工作台化会重排估值锚。资本以前爱按 token、月活、推理成本讲故事，接下来更愿意看项目驻留时长、回访率、团队席位扩张率，因为那才像真钱生意。</p>
+<p>更狠的是，这一波还会改变团队协作方式。过去很多人把模型当“高级搜索框”，问一嘴，复制一点，回 IDE 继续自己撸袖子单干。现在如果 Artifact 可以跨会话存活，图像、文本、原型都能在同一个界面里来回修，那么 AI 工具就不只是副驾驶，而是在偷偷吃掉文档系统、原型工具、轻量知识库，甚至部分低配 IDE 的饭碗。谁先把这些碎片收编进一个低摩擦工作台，谁就先把用户锁进自己账本。所谓“模型能力领先”，如果不能沉淀成工作流资产，最后也只是高成本烟火秀。</p>
+<p>这对开发团队意味着什么？意味着你不能再用“试用一下模型效果不错”这种幼儿园级评估标准。你得盯四个指标：一是会话恢复能力，二是产物可追踪性，三是多模态编辑链路的失真率，四是权限和审计。没有这四样，所谓 AI 工作台只是把草台班子搬进浏览器。尤其是图像链路，一旦进入聊天原生流程，敏感素材、设计稿、客户图像就会被大面积喂进系统，没有审计和脱敏，后面出一次事故，法务就会教你什么叫真钱回撤。</p>
+<p>生产配置示意如下，可直接给内部 AI 工作台当最小可用基线：<br>APP_MODE=agent_workspace<br>SESSION_MEMORY=enabled<br>ARTIFACT_PERSIST=true<br>ARTIFACT_VERSIONING=enabled<br>ARTIFACT_BACKEND=s3<br>ARTIFACT_BUCKET=dolan-ai-prod<br>ARTIFACT_RETENTION_DAYS=30<br>IMAGE_PROVIDER=openai-gpt-image-2<br>IMAGE_EDIT_LOOP=chat_native<br>PROMPT_AUDIT_LOG=enabled<br>PII_REDACTION=pre_store<br>RBAC=enabled<br>SSO_REQUIRED=true</p>
+<p>如果要再往前走一步，工作流路由建议这样拆：<br>workflow:<br>  ideation:<br>    provider: claude_cowork<br>    persist_artifact: true<br>  image_iteration:<br>    provider: chatgpt_images_2<br>    max_rounds: 5<br>  legal_review:<br>    provider: internal_llm_gateway<br>    human_approval: required<br>  publish:<br>    audit_log: immutable<br>    export_target: notion_or_git</p>
+<p>实战优势很清楚。第一，团队协作成本降低，尤其是产品、设计、运营之间来回扔截图和文档的低效动作会被砍掉一截。第二，版本历史把“刚才那版更好”这种废话变成可回滚事实。第三，多模态原生编辑会显著提升提示词的上下文连续性，少一点“重新开题”的脑裂。第四，工作台一旦形成组织习惯，工具切换成本会大幅抬升，供应商就有了续费筹码。</p>
+<p>但坑也很实在。第一，持久化带来数据责任，存得越多，雷越大。第二，多模态工作台看起来炫，实际上对权限、存储、审计、成本控制提出更高要求，小团队很容易被表面效率骗进去，最后被账单和合规反杀。第三，工作台型产品会天然追求平台化，平台化一旦过头，性能、透明度和可迁移性就会开始掉链子。第四，图像能力并不自动等于生产能力，很多“好看”的 demo 在真实需求里一碰到品牌规范、版式约束、法务水印，立刻原形毕露。</p>
+<p>Dolan&#x27;s 锐评：这波不是谁的模型更聪明，而是谁先把聊天框包装成收费地皮。Cowork 和原生图像编辑都在干同一件脏活，把一次性问答改造成可计费、可锁仓、可复购的工作流资产。谁还盯着排行榜高潮，谁就是拿实验室成绩单给 SaaS ARR 做法事。</p></div></article>
+<article class="article"><div class="article-title">二、开源底座开始掀桌：Kimi K2.6、Claude Code 提价和平台安全税，其实是同一张利润表上的三列数字</div><div class="article-body"><p>如果说前一条主线讲的是入口，那么今天更值得盯的是底座定价权。Latent Space 把 Moonshot Kimi K2.6 直接抬到“对打 Claude Opus 4.6，顺手盯防 DeepSeek 下一轮”的位置，信号非常硬。原文链接：<a href="https://www.latent.space/p/ainews-moonshot-kimi-k26-the-worlds" target="_blank">https://www.latent.space/p/ainews-moonshot-kimi-k26-the-worlds</a><br>这不是媒体嘴炮，而是全球开发者心智已经默认中国开源模型不再只是性价比替补，而是有资格轮流冲击前排席位。与此同时，Anthropic 把 Claude Code 从 Pro 档拿掉，定价页面摆明了告诉市场：代码代理不是慈善，重度编程推理要么单独付费，要么滚去更高客单价。相关链接：<a href="https://claude.com/pricing" target="_blank">https://claude.com/pricing</a><br>再补上一刀，Vercel OAuth 与环境变量暴露风险被拉出来公开鞭尸，说明模型能力越强，连接真实系统越深，安全税就越不可能装死。相关讨论入口：<a href="https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html" target="_blank">https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html</a></p>
+<p>把这三件事放一起看，逻辑一下就透了。第一，开源模型把底价打下来，逼闭源厂商重新切套餐、拆能力、搞分层收费，不然毛利率会被重型用户狠狠干穿。第二，代码代理这种高调用、高上下文、高容错要求的场景，本来就是推理成本黑洞，任何一家厂商只要还想维持漂亮财报，就一定会把它从“通用订阅福利”中剥离出去。第三，安全问题把“低价可用”再砍一刀，因为真正落到企业生产里，除了模型费，还有权限隔离、密钥管理、审计、回滚、合规这些看不见的硬成本。</p>
+<p>Swyx 这次给 Kimi 的定位，最值得咀嚼的不是“世界最强”这种媒体辣条标题，而是它把竞赛规则改成了迭代速度和开发者心智争夺。今天开源模型真正厉害的地方，不是一次评测爆种，而是发布频率快、生态接入快、开发者试错成本低。只要一款模型能在真实项目里达到八成以上可用，市场就会立刻拿它去给闭源高价模型压估值。换句话说，闭源厂商以后卖的不只是智商税，而是稳定性税、品牌税、法律责任税、以及企业采购安心税。</p>
+<p>这对团队采购策略的启示非常直接。别再问“最强模型是谁”，那是论坛键盘侠的问题。真正该问的是：哪些任务能用开源或低价模型吃掉，哪些任务必须留给高安全、高可靠的闭源端点，哪些任务干脆应该在隔离环境本地跑。尤其是代码代理，别被演示视频催眠。只要代理开始碰仓库写权限、CI 密钥、生产环境变量，它就不再是聊天机器人，而是半自动运维刀具。刀锋够快是优点，砍到自己手也是现实。</p>
+<p>生产路由建议直接按任务和风险分层，而不是按厂商品牌崇拜分层：<br>MODEL_ROUTER=enabled<br>PRIMARY_MODEL=kimi_k2_6<br>SECONDARY_MODEL=claude_opus<br>LOCAL_MODEL=qwen_or_other_local<br>TASK_CLASSIFIER=enabled<br>SECRETS_PROVIDER=vault<br>OIDC_REQUIRED=true<br>EPHEMERAL_RUNTIME=true<br>STATIC_ANALYSIS_REQUIRED=true<br>HUMAN_APPROVAL_ON_WRITE=true<br>MAX_COST_PER_JOB_USD=0.15<br>AUDIT_LOG_IMMUTABLE=true</p>
+<p>进一步的任务编排可以这样配：<br>routes:<br>  research_and_summarize:<br>    provider: kimi_k2_6<br>    approval: none<br>  safety_critical_reasoning:<br>    provider: claude_opus<br>    approval: required<br>  repo_write_action:<br>    provider: isolated_code_agent<br>    approval: maintainer_required<br>  secret_touching_workflow:<br>    runtime: ephemeral_container<br>    network_egress: allowlist_only<br>  batch_low_value_tasks:<br>    provider: local_model<br>    concurrency: controlled</p>
+<p>实战优势非常明显。第一，开源和低价模型可以把大批中等价值任务的边际成本狠狠干下来，让团队别再用法拉利去买菜。第二，闭源高端模型只保留给真正需要稳定性和复杂推理的场景，成本结构更健康。第三，安全与审批前置后，代码代理至少不会一脚把你送进事故复盘会。第四，多模型路由还能反向压供应商，让你不至于被一家平台当韭菜反复收割。</p>
+<p>但缺点也不能装看不见。第一，多模型治理复杂度高，监控、评测、回退机制没搭好，最后可能比单一厂商更乱。第二，开源模型的速度和性价比虽猛，但在长链路可靠性、合规责任、企业支持上仍可能掉链子。第三，安全隔离一旦做真，短期内会拖慢交付节奏，很多业务老板会嫌麻烦，可一旦不做，迟早要用事故补课。第四，提价和套餐切割会持续发生，任何把供应商宣传页当合同附件的团队，后面都会被财务部追着问责。</p>
+<p>Dolan&#x27;s 锐评：Kimi K2.6 掀的是底价，Claude Code 提的是客单价，Vercel 漏的是隐藏成本。三者拼起来就一句话，AI 基建从来不是比谁最会讲故事，而是比谁在利润、性能、安全这三根钢丝上摔得更晚。还把“便宜又全能”当真理的团队，基本等于拿预算给别人交学费。</p></div></article>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">🌍 巨头绞肉机</div>
+<div class="giant-item"><div class="giant-title">ChatGPT Images 2.0 上线，图像生成正式并入聊天主流程。</div><div class="giant-body"><p>关键细节：Simon Willison 用高约束提示词实测，核心亮点不是艺术滤镜，而是更强的提示遵循和可连续迭代。链接：<a href="https://simonwillison.net/2026/Apr/21/gpt-image-2/#atom-entries" target="_blank">https://simonwillison.net/2026/Apr/21/gpt-image-2/#atom-entries</a><br>Dolan&#x27;s 锐评：这不是模型更会画，而是 OpenAI 更会收入口税，把“偶尔玩一次”改造成“天天顺手用一次”。</p></div></div>
+<div class="giant-item"><div class="giant-title">Moonshot Kimi K2.6 被 Latent Space 抬进全球开源前排。</div><div class="giant-body"><p>关键细节：Swyx 直接把它放到 Opus 4.6 和 DeepSeek 下一轮的对抗语境里，重点是发布节奏和开发者心智，不只是单点跑分。链接：<a href="https://www.latent.space/p/ainews-moonshot-kimi-k26-the-worlds" target="_blank">https://www.latent.space/p/ainews-moonshot-kimi-k26-the-worlds</a><br>Dolan&#x27;s 锐评：中国开源模型现在不是追赶剧，是轮番抢镜。谁还用“国产平替”四个字概括，谁就落后一个财季。</p></div></div>
+<div class="giant-item"><div class="giant-title">Claude Cowork 下沉到所有付费计划，并新增 Live Artifacts 持久化页签。</div><div class="giant-body"><p>关键细节：版本历史、跨会话回访、持续保存三件套一起上，Claude 从聊天窗口变成轻工作台。链接：<a href="https://x.com/claudeai/status/2046328622869344429" target="_blank">https://x.com/claudeai/status/2046328622869344429</a><br>Dolan&#x27;s 锐评：Anthropic 终于不装清高了，开始狠狠干 SaaS 的脏活累活，因为真正值钱的是留存，不是神性。</p></div></div>
+<div class="giant-item"><div class="giant-title">Claude Code 从 Pro 套餐消失。</div><div class="giant-body"><p>关键细节：定价页变化说明代码代理的成本结构不能再被普通订阅兜底，重度用户被明确切去更贵档位。链接：<a href="https://claude.com/pricing" target="_blank">https://claude.com/pricing</a><br>Dolan&#x27;s 锐评：这不是功能调整，这是利润表开口说人话，编程代理太烧钱，羊毛必须从重度用户身上薅。</p></div></div>
+<div class="giant-item"><div class="giant-title">Vercel 相关安全事件把 OAuth 链和环境变量风险拖到聚光灯下。</div><div class="giant-body"><p>关键细节：HN 210 点、84 评论，焦点是平台级凭证和环境变量一旦被拿下，爆炸半径远超单服务漏洞。链接：<a href="https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html" target="_blank">https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html</a><br>Dolan&#x27;s 锐评：一堆团队嘴上喊 AI Native，手上还在把密钥像纸钱一样往托管平台撒，真出事就知道什么叫供应链连坐。</p></div></div>
+<div class="giant-item"><div class="giant-title">Cal.diy 把 cal.com 社区版重新包装成更直白的自托管日程栈。</div><div class="giant-body"><p>关键细节：HN 108 点、33 评论，自托管诉求说明用户开始对 SaaS 锁仓和定价策略耐心见底。链接：<a href="https://github.com/calcom/cal.diy" target="_blank">https://github.com/calcom/cal.diy</a><br>Dolan&#x27;s 锐评：当用户开始自己搭日程系统，说明 SaaS 厂商的套餐设计已经把人逼到机房门口了。</p></div></div>
+<div class="giant-item"><div class="giant-title">我不想再要你的 PR 了，一篇文章引爆开源维护者疲劳。</div><div class="giant-body"><p>关键细节：HN 95 点、71 评论，问题不是没人写代码，而是没人愿意无限承担审查、兼容和支持义务。链接：<a href="https://dpc.pw/posts/i-dont-want-your-prs-anymore/" target="_blank">https://dpc.pw/posts/i-dont-want-your-prs-anymore/</a><br>Dolan&#x27;s 锐评：AI 把补丁生成成本打到地板，审稿人却没法批量复制，开源真正稀缺的是信任，不是代码。</p></div></div>
+<div class="giant-item"><div class="giant-title">Laws of Software Engineering 在 HN 爆红。</div><div class="giant-body"><p>关键细节：759 点、381 评论，说明工程圈在工具爆炸和 AI 写码泛滥后，反而更渴望稳定的判断法则。链接：<a href="https://lawsofsoftwareengineering.com" target="_blank">https://lawsofsoftwareengineering.com</a><br>Dolan&#x27;s 锐评：代码越来越便宜，判断越来越贵，最后卖铲子的还是那些能帮你少踩坑的人。</p></div></div>
+<div class="giant-item"><div class="giant-title">Framework Laptop 13 Pro 获得超高讨论热度。</div><div class="giant-body"><p>关键细节：675 点、380 评论，可升级、可维修的硬件路线正好踩中开发者本地负载变重、设备寿命变长的现实。链接：<a href="https://frame.work/laptop13pro" target="_blank">https://frame.work/laptop13pro</a><br>Dolan&#x27;s 锐评：本地 AI 让电脑重新变成生产资料，不是年抛潮玩。能修、能换、能撑住负载，才是真刚需。</p></div></div>
+<div class="giant-item"><div class="giant-title">TagTinker 展示 Flipper Zero 改写电子价签的能力。</div><div class="giant-body"><p>关键细节：GitHub 项目引发 HN 239 点、244 评论，暴露零售 IoT 在认证和无线安全上的草台班子本质。链接：<a href="https://github.com/i12bp8/TagTinker" target="_blank">https://github.com/i12bp8/TagTinker</a><br>Dolan&#x27;s 锐评：一堆现实世界系统还活在“没人会来搞我”的童话里，黑客文化只负责把这层窗户纸狠狠干碎。</p></div></div>
+<div class="giant-item"><div class="giant-title">Zindex 想做面向 Agent 的图示基础设施。</div><div class="giant-body"><p>关键细节：HN 热度不高，只有 9 点、2 评论，但命题很准，Agent 生成的状态和依赖关系已经快把纯文本挤爆。链接：<a href="https://zindex.ai/" target="_blank">https://zindex.ai/</a><br>Dolan&#x27;s 锐评：今天大家都在拼大脑，没人认真修神经系统和可视化控制面，后面一定有人靠这口基础设施闷声发财。</p></div></div>
+<div class="giant-item"><div class="giant-title">程序分析实践派重新回到台前。</div><div class="giant-body"><p>关键细节：相关文章虽小众，只有 18 点，但它直指代码代理最尴尬的底层问题，模型会写，不等于系统懂后果。链接：<a href="https://sawyer.dev/posts/practitioner-program-analysis/" target="_blank">https://sawyer.dev/posts/practitioner-program-analysis/</a><br>Dolan&#x27;s 锐评：自动写码的上限，不是会不会补全，而是能不能少把你送进生产事故。静态分析不是老古董，是保险丝。</p></div></div>
+<div class="quote-block summary"><div class="quote-label">板块总结</div><p>Dolan&#x27;s 锐评：今天大厂和平台都在做同一件事，先把入口抢下来，再把高成本能力拆包定价，最后把安全和治理成本悄悄甩给客户。模型性能还会涨，但真正决定谁赚到钱的，是谁能把留存、套餐和风控捏成一个完整漏斗。只会吹模型神话，不会算单位经济和运维风险，迟早被市场狠狠干醒。</p></div>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">📡 极客雷达</div>
+<div class="radar-item"><div class="radar-num">01</div><div><div class="radar-title">Britannica11 | GitHub热度：非 GitHub 项目，HN 165 点 | 痛点：把 1911 大英百科这种老旧公共知识洗成可结构化调用的数字语料 | 为什么值得关注：数据资产一旦结构化，寿命比流量型模型宣传长得多。链接：https://britannica11.org/</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">02</div><div><div class="radar-title">Cal.diy | GitHub热度：社区关注升温，HN 108 点 | 痛点：给不想被 SaaS 套餐拿捏的团队提供可自托管日程基础设施 | 为什么值得关注：日历和预约是 Agent 落地最早碰到的现实动作接口。链接：https://github.com/calcom/cal.diy</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">03</div><div><div class="radar-title">TagTinker | GitHub热度：安全圈扩散快，HN 239 点 | 痛点：揭示电子价签这类廉价无线系统的认证脆弱性 | 为什么值得关注：物理世界的数字化表面看着聪明，底层常常还是纸糊的。链接：https://github.com/i12bp8/TagTinker</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">04</div><div><div class="radar-title">Zindex | GitHub热度：待观测，HN 9 点 | 痛点：Agent 工作流状态太复杂，纯文本难以承载依赖图和执行拓扑 | 为什么值得关注：谁能把 Agent 的中间状态画出来，谁就有机会做下一代控制台。链接：https://zindex.ai/</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">05</div><div><div class="radar-title">Program Analysis Practitioner View | GitHub热度：非 GitHub 项目，HN 18 点 | 痛点：代码代理缺少可靠的静态理解与风险预判 | 为什么值得关注：真正能进企业链路的代码工具，最后都得补上分析和证明这层地基。链接：https://sawyer.dev/posts/practitioner-program-analysis/</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">06</div><div><div class="radar-title">Theseus | GitHub热度：待观测，HN 56 点 | 痛点：传统动态执行在逆向、兼容和保全场景里成本高又脆弱 | 为什么值得关注：静态 Windows 模拟这种怪路子，往往会在安全研究和遗留系统维护里突然变成狠活。链接：https://neugierig.org/software/blog/2026/04/theseus.html</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">07</div><div><div class="radar-title">Fusion Power Plant Simulator | GitHub热度：非 GitHub 项目，HN 129 点 | 痛点：公众对聚变和算力能源约束缺乏参数化理解 | 为什么值得关注：AI 算力神话最后都要回到电力账本，能源认知会越来越值钱。链接：https://www.fusionenergybase.com/fusion-power-plant-simulator</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">08</div><div><div class="radar-title">Laws of Software Engineering | GitHub热度：非 GitHub 项目，HN 759 点 | 痛点：工具和框架爆炸后，团队缺少跨场景可复用的判断准绳 | 为什么值得关注：在 AI 把产出拉高后，组织最缺的是判断，不是更多样板代码。链接：https://lawsofsoftwareengineering.com</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">09</div><div><div class="radar-title">Periodic Map of Cheese | GitHub热度：非 GitHub 项目，HN 139 点 | 痛点：知识分类常常无聊到没人愿意看 | 为什么值得关注：可视化结构仍是互联网最抗衰的表达形式之一，未来会继续反哺知识工具。链接：https://cheesemap.netlify.app/</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">10</div><div><div class="radar-title">Stephen&#x27;s Sausage Roll 十年回顾 | GitHub热度：非 GitHub 项目，HN 低优先文化热度 | 痛点：高难度系统设计的价值容易被短视频式注意力吞掉 | 为什么值得关注：硬核问题设计社区仍在，它和最挑剔的技术用户群高度重叠。链接：https://thinkygames.com/features/10-years-of-grilling-stephens-sausage-roll-remains-one-of-the-most-influential-puzzle-games-ever-created/</div><div class="radar-body"></div></div></div>
+<div class="quote-block summary"><div class="quote-label">板块总结</div><p>Dolan&#x27;s 锐评：极客圈今天最有意思的暗流，不是又冒出一个套壳 Agent，而是数据结构化、控制面可视化、安全边界、能源直觉这些“没人愿意发朋友圈炫耀”的硬骨头开始重新涨价。真正能撑住下一轮周期的项目，大多不性感，甚至有点灰头土脸，但它们负责决定系统能不能活、能不能省钱、能不能不炸。</p></div>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">💡 终局研判</div>
+<div class="final-section"><div class="final-title">Dolan's 致命锐评</div><div class="final-body"><p>行业风向已经很清楚了，前台在卷谁更像全能同事，后台在卷谁更会把成本、安全和留存塞进同一张表里。开源模型负责把底价狠狠干穿，多模态工作台负责把入口悄悄锁死，套餐切割负责把高价值用户重新称斤论两。还沉迷单项榜单的人，像极了牛市里只看概念不看现金流，最后连自己怎么被收割的都复盘不明白。</p></div></div>
+</section>
+<div class="outro">Dolan's 全景内参 · 2026-04-23 · 仅供个人研究参考<br>锐评由 LLM 生成，链接与事实以原始来源为准</div>
+</div>
+</body>
+</html>
