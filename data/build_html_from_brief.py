@@ -62,7 +62,7 @@ def paragraphize(text):
 
 def split_core(text):
     text = re.sub(r'^(【核心阵地】|核心阵地)\s*\n+', '', text, flags=re.MULTILINE).strip()
-    blocks = [b.strip() for b in re.split(r'(?=^[一二三四五六七八九十]+、)', text, flags=re.MULTILINE) if b.strip()]
+    blocks = [b.strip() for b in re.split(r'(?=^(?:核心阵地[一二三四五六七八九十]+[｜|]|[一二三四五六七八九十]+、))', text, flags=re.MULTILINE) if b.strip()]
     items = []
     for block in blocks:
         lines = block.splitlines()
@@ -76,23 +76,19 @@ def split_giants(text):
     text = re.sub(r'^(【巨头绞肉机】|巨头绞肉机)\s*\n+', '', text, flags=re.MULTILINE).strip()
     summary = ""
     items_text = text
-    summary_m = re.search(r"\nDolan['’]s 锐评：(?!(这不是模型更会画|中国开源模型现在不是追赶剧|Anthropic 终于不装清高|这不是功能调整|一堆团队嘴上喊 AI Native|当用户开始自己搭日程系统|AI 把补丁生成成本打到地板|代码越来越便宜|本地 AI 让电脑重新变成生产资料|一堆现实世界系统还活在|今天大家都在拼大脑|自动写码的上限)).+?$", text, flags=re.DOTALL)
+    summary_m = re.search(r"\nDolan['’]s 锐评：.+$", text, flags=re.DOTALL)
     if summary_m:
         summary = summary_m.group(0).strip()
         items_text = text[:summary_m.start()].rstrip()
-    blocks = [b.strip() for b in re.split(r'(?=^\d+\.\s+核心事件：)', items_text, flags=re.MULTILINE) if b.strip()]
+    blocks = [b.strip() for b in re.split(r'(?=^\d+\.\s+(?:核心事件：|\[核心事件\]))', items_text, flags=re.MULTILINE) if b.strip()]
     items = []
     for block in blocks:
         lines = [ln.strip() for ln in block.splitlines() if ln.strip()]
         if not lines:
             continue
-        title = re.sub(r'^\d+\.\s+核心事件：', '', lines[0]).strip()
+        title = re.sub(r'^\d+\.\s+(?:核心事件：|\[核心事件\]\s*)', '', lines[0]).strip()
         body = '\n'.join(lines[1:]).strip()
         items.append((title, body))
-    if not summary:
-        last_review = re.search(r"(Dolan['’]s 锐评：今天大厂和平台.*)$", text, flags=re.DOTALL)
-        if last_review:
-            summary = last_review.group(1).strip()
     return items, summary
 
 
@@ -119,7 +115,7 @@ def split_radar(text):
 
 subtitle_m = re.search(r"^Title:\s*Dolan['’]s 全景内参[：:]\s*(.+)$", raw, flags=re.MULTILINE)
 subtitle = subtitle_m.group(1).strip() if subtitle_m else DATE_DISPLAY
-core_raw = section_slice(raw, [r'^核心阵地\s*$', r'^【核心阵地】\s*$'], [r'^巨头绞肉机\s*$', r'^【巨头绞肉机】\s*$'])
+core_raw = section_slice(raw, [r'^核心阵地\s*$', r'^【核心阵地】\s*$', r'^核心阵地[一二三四五六七八九十]+[｜|].*$'], [r'^巨头绞肉机\s*$', r'^【巨头绞肉机】\s*$'])
 giants_raw = section_slice(raw, [r'^巨头绞肉机\s*$', r'^【巨头绞肉机】\s*$'], [r'^极客雷达\s*$', r'^【极客雷达】\s*$'])
 radar_raw = section_slice(raw, [r'^极客雷达\s*$', r'^【极客雷达】\s*$'], [r'^终局研判\s*$'])
 final_raw = section_slice(raw, [r'^终局研判\s*$'], [r'\Z'])

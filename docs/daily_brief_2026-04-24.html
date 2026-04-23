@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-04-24 | Dolan's 全景内参 | 编码代理先上桌，Token预算开始像军火一样批发</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.82; }
+a { color: #7a1d1d; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 800px; margin: 0 auto; padding: 56px 28px 84px; }
+.masthead { padding-bottom: 34px; border-bottom: 2px solid #222; margin-bottom: 42px; }
+.kicker { font: 700 12px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8a8a; margin-bottom: 16px; }
+.title { font: 900 34px/1.25 'Noto Sans SC', sans-serif; color: #111; margin: 0 0 12px; }
+.subtitle { font-size: 18px; color: #4e4e4e; }
+.section-header { margin: 56px 0 28px; font: 800 13px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.2em; text-transform: uppercase; color: #666; display: flex; align-items: center; gap: 12px; }
+.section-header::after { content: ''; height: 1px; flex: 1; background: #ddd; }
+.article { margin-bottom: 42px; }
+.article-title { font: 800 24px/1.4 'Noto Sans SC', sans-serif; color: #111; margin-bottom: 14px; }
+.article-body p, .giant-body p, .radar-body p, .summary p, .final-body p { margin: 0 0 14px; font-size: 17px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 18px; margin-top: 16px; }
+.quote-label { font: 800 12px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #b30000; margin-bottom: 8px; }
+.divider { border: none; border-top: 1px solid #e7e2da; margin: 42px 0; }
+.giant-item { margin-bottom: 28px; }
+.giant-title { font: 800 20px/1.45 'Noto Sans SC', sans-serif; margin-bottom: 10px; color: #111; }
+.radar-item { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid #eee; }
+.radar-num { font: 800 12px/1.6 'Noto Sans SC', sans-serif; color: #bbb; padding-top: 3px; }
+.radar-title { font: 700 18px/1.45 'Noto Sans SC', sans-serif; color: #111; margin-bottom: 6px; }
+.final-section { margin-top: 16px; background: #171717; padding: 30px 28px; color: #ededed; }
+.final-title { font: 800 13px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: #ff7a7a; margin-bottom: 14px; }
+.outro { margin-top: 58px; padding-top: 24px; border-top: 1px solid #ece7df; text-align: center; font: 500 12px/1.8 'Noto Sans SC', sans-serif; color: #999; }
+@media (max-width: 640px) { .container { padding: 36px 18px 72px; } .title { font-size: 28px; } .article-title { font-size: 22px; } .giant-title { font-size: 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="kicker">2026 年 4 月 24 日 · 周五</div>
+<h1 class="title">Dolan's 全景内参</h1>
+<div class="subtitle">编码代理先上桌，Token预算开始像军火一样批发</div>
+</header>
+<section>
+<div class="section-header">🎯 核心阵地</div>
+<article class="article"><div class="article-title">核心阵地一｜GPT-5.5先钻Codex后门，模型发布权已经从API文档部转到工作流入口部</div><div class="article-body"><p>背景溯源：<br>过去两年，大模型公司嘴上喊平台中立，手上却越来越像渠道商。谁握住入口，谁就先吃掉开发者的注意力、数据和预算。Simon Willison 这次点破的，不是什么“新模型发布”这种公关稿废话，而是更狠的一刀，GPT-5.5先在 Codex 这种半官方开发工作流里放量，再慢慢补正式 API 叙事。这说明模型首发机制已经变了。以前是研究团队放论文，平台团队上接口，开发者最后接锅。现在顺序倒过来，先把模型塞进高频场景，拿真实工作流做压力测试，再回头修文档、定权限、补计费。说白了，这不是技术理想主义，是产品分发霸权。谁先占住程序员一天里最密集的操作面板，谁就能把模型升级包装成“顺手试一下”，而不是“重新立项采购”。</p>
+<p>完整分析：<br>这波变化为什么危险又性感，核心在于编码代理已经从炫技玩具变成主航道。Anthropic 公开给 Claude Code 做 postmortem，更是把这件事钉死了。只有真正进入生产工作流、出问题就会砸饭碗的产品，才需要像云服务故障那样做复盘。以前大家还在拼 benchmark 跑分，今天真正值钱的已经不是“你会不会写代码”，而是“你改完会不会把仓库炸掉、会不会悄悄把依赖带毒、会不会在凌晨三点把团队叫起来灭火”。同一天，Google Labs 又把 conversation branching 灰度到 20%。这看上去像小修小补，实际上是在给重度用户递刀子。对专业用户来说，线性聊天本来就是残废交互，所有像样的探索都需要分叉、回滚、对比、复算。分支树一旦成为标配，模型调用就不再是一次性问答，而是可审计、可重跑、可并行对赌的工程流程。换句话说，聊天框正在退场，工作流树才是下一代界面。</p>
+<p>更狠的是商业逻辑。把 GPT-5.5 先放进 Codex，本质是把模型升级和 seat 收费捆成一捆卖铲子。纯 API 时代，企业还会问模型差异、价格阶梯、替代成本。工作流时代，用户只会问一句，这个按钮能不能让我今天少写三百行烂胶水。只要代理能把需求拆分、查代码、跑测试、提补丁、留审计，模型差一小截都不是关键，关键是入口黏性。OpenAI、Anthropic、Google 现在都在干同一件事，抢占开发者面前那块最贵的屏幕，然后用模型迭代把用户牢牢绑死。你以为他们在卖 intelligence，实际上他们在卖 dependency。</p>
+<p>真正需要警惕的，不是模型首发渠道变了，而是组织采购逻辑会被倒逼重写。以前 CTO 采购模型像买云资源，先谈 SLA，再谈合规，再谈成本。以后采购编码代理，可能像买操作系统。因为一旦代理接入代码库、CI、凭证、工单系统，它就不再是“工具插件”，而是半个编译文化外加半个组织流程。稳定性事故、错误编辑、供应链污染、审计缺失，全部会变成治理炸弹。Anthropic 的复盘已经在提醒市场，编码代理的竞争不是 demo 秀场，而是可靠性战争。Simon Willison 那句半官方后门 API 的观察，其实是在提醒所有人，别再拿“正式 API 还没出”当行业节奏表了。真正的节奏表，在工程师每天打开多少次代理面板。</p>
+<p>配置演示：<br>下面这套配置适合生产团队给编码代理做灰度首发，不靠拍脑袋赌命。</p>
+<p>agent_release:<br>  channel: codex_like_workspace<br>  model_primary: gpt-5.5<br>  model_fallback: claude_code_stable<br>  rollout_percent: 15<br>  task_scope:<br>    - unit_test_fix<br>    - doc_patch<br>    - small_refactor<br>  block_scope:<br>    - migration_drop_column<br>    - secret_rotation<br>    - payment_logic<br>  guardrails:<br>    require_clean_git_state: true<br>    require_issue_id: true<br>    require_diff_review: true<br>    deny_commands:<br>      - sudo<br>      - curl | sh<br>      - rm -rf /<br>  verification:<br>    run_unit_tests: true<br>    run_lint: true<br>    run_sast: true<br>    rollback_on_failure: true<br>  audit:<br>    store_prompt_hash: true<br>    store_diff_artifact: true<br>    store_command_log: true<br>    reviewer_required: 1</p>
+<p>执行策略：<br>第一，只让代理吃小任务，先看稳定性，不要一上来就让它改支付链路，那不是创新，那是自残。<br>第二，把命令级审计和 diff 留痕做成默认项，不要靠工程师良心补票。<br>第三，分支工作流必须打开，失败路线保留，成功路线可合并，团队才能真正复盘代理表现。</p>
+<p>大佬链接：<br>Simon Willison 原文：<a href="https://simonwillison.net/2026/Apr/23/gpt-5-5/#atom-entries" target="_blank">https://simonwillison.net/2026/Apr/23/gpt-5-5/#atom-entries</a><br>Anthropic Engineering 复盘：<a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank">https://www.anthropic.com/engineering/april-23-postmortem</a><br>Josh Woodward 贴文：<a href="https://x.com/joshwoodward/status/2047147030351642914" target="_blank">https://x.com/joshwoodward/status/2047147030351642914</a></p>
+<p>实战优劣势分析：<br>优势：<br>1. 新模型先落在工作流入口，真实反馈密度远高于公开 API 沙盒，产品迭代更快。<br>2. 分支对话和审计链结合后，团队能把提示工程从玄学变成可追踪资产。<br>3. 可靠性复盘机制建立后，编码代理终于开始像企业软件，而不是演示台上的电子宠物。</p>
+<p>劣势：<br>1. 半官方入口会让文档、权限、计费、合规短期不同步，企业落地时最容易踩坑。<br>2. 一旦代理深接代码库和本地 CLI，任何供应链污染都会被自动化放大，爆炸半径比人工操作大得多。<br>3. 用户被工作流锁定后，迁移成本急速上升，团队很容易在“好用”里签下技术依赖卖身契。</p>
+<p>Dolan&#x27;s 锐评：<br>所谓模型发布，已经不是科研成果出货，而是渠道控制权再分配。谁先站进程序员的日常工作流，谁就能把下一代模型包装成“默认现实”。剩下那些还在等正式 API 文档的厂商，说好听点叫谨慎，说难听点就是连上牌桌的筹码都还没换好。</p></div></article>
+<article class="article"><div class="article-title">核心阵地二｜Tokenmaxxing不是成本失控，是企业把推理预算当成新资本开支，顺手把协作框架重写了</div><div class="article-body"><p>背景溯源：<br>Swyx 这一组信号非常凶。表面看，一条在讲 Tasteful Tokenmaxxing，一条在讲 unsupervised learning 和 latent space crossover，一条在讲 Shopify 进入 AI Phase Transition。三条放一起，才看得出门道，行业已经不再把 token 当纯成本项，而是在把 token、上下文和推理频率一起打包成生产力杠杆。以前企业算 AI 账，只会问每百万 token 多少钱。现在真正聪明的公司开始反着问，如果多给十倍上下文、多跑三轮工具调用、再加一个仿真回路，能不能把人均产出、交付速度和决策质量一起抬上去。Shopify 给出 unlimited Opus-4.6 token budget，本质就是把这道题做成组织级宣言，别抠那点推理零钱，先把全员使用习惯养出来，再从流程里回收效率红利。</p>
+<p>完整分析：<br>这背后其实有三层结构性变化。第一层，算力供给变得像军火后勤。Cloud Next 和 TPUv8 的消息并不只是谷歌又发芯片了这么简单，而是在告诉市场，长上下文、多步推理、工具串联这种高 token 消耗型产品，背后终于有人愿意持续铺基础设施。没有稳定算力，你谈 agent 只是 PPT。第二层，方法论在回摆。Latent Space 把 2026 的 Agent Labs 叙事锚定到无监督学习乘以 latent space crossover，这说明行业开始意识到，只靠监督微调和 prompt 堆料已经接近收益递减。下一轮差异化要靠表征能力、探索效率、仿真环境和系统设计一起发力。第三层，组织协作框架被倒逼升级。Shopify 把 Tangle、Tangent、SimGym 这些内部系统扔出来，就是在告诉同行，AI 不是买个大模型接口再贴进工单系统里就算完事，真要打仗，得有路由、仿真、评估、回滚、预算和权限一整套底座。</p>
+<p>最值得琢磨的是 unlimited token 预算这件事。外行看热闹会说这不就是土豪烧钱，内行都知道这其实是组织设计。因为 AI 采纳最大的障碍，从来不是模型能力不够，而是员工一边担心成本，一边担心出错，一边懒得改变习惯。你只要给人一种“随便用，先别怕浪费”的环境，使用量会像水库开闸一样暴增。Shopify 正在赌，海量真实使用数据、组织内最佳实践和自动化沉淀，会比前期精打细算更值钱。这套逻辑对 SaaS、咨询、研发、投研团队都成立。钱不是没花，而是从单次调用预算，转成组织学习曲线投资。</p>
+<p>但这不是无脑撒币就能赢。Tokenmaxxing 的前提是 tasteful，翻成人话就是烧得值。你得有缓存、有路由、有任务分层、有失败止损。否则只是把一堆废 prompt 和低质量多轮推理打包成更贵的垃圾。真正成熟的企业 AI stack，不会把所有请求都塞给最大模型，而是把检索、规划、执行、评审拆开，把便宜模型放在流水线上，把贵模型留给关键判定，再把结果用仿真环境回测。无监督和 latent crossover 之所以关键，也在这里，未来不是谁的提示词更花，而是谁能用更少人工标注把 agent 放进更真实的反馈循环。说穿了，这场仗正在从“谁会调用模型”，变成“谁能把模型变成组织习惯和资本效率”。</p>
+<p>配置演示：<br>下面这套预算和协作编排配置，适合给企业级 agent 做 token 管理，不让财务和工程团队互相掐脖子。</p>
+<p>ai_org_stack:<br>  budget:<br>    monthly_cap_usd: 120000<br>    unlimited_for_roles:<br>      - engineering<br>      - product_research<br>    alert_threshold_percent: 75<br>    hard_stop_threshold_percent: 92<br>  routing:<br>    classify_model: small_fast_model<br>    planner_model: frontier_reasoning_model<br>    executor_model: mid_cost_coding_model<br>    reviewer_model: frontier_reasoning_model<br>  caching:<br>    semantic_cache: true<br>    cache_ttl_hours: 72<br>    target_hit_ratio: 0.35<br>  simulation:<br>    enabled: true<br>    benchmark_suite:<br>      - repo_regression<br>      - customer_support_replay<br>      - policy_violation_check<br>    accept_if:<br>      success_rate_gte: 0.90<br>      severe_incident_eq: 0<br>  governance:<br>    pii_redaction: true<br>    prompt_logging: true<br>    command_audit: true<br>    human_approval_for_high_risk: true</p>
+<p>落地动作：<br>第一，预算别按部门扯皮，按任务价值分层。<br>第二，仿真环境必须先于全量部署，不然 unlimited token 很快变 unlimited bug。<br>第三，记录缓存命中率、失败回滚率和高风险审批次数，这三项比单看 token 用量更能反映成熟度。</p>
+<p>大佬链接：<br>Latent Space 关于 Tokenmaxxing 的原文：<a href="https://www.latent.space/p/ainews-tasteful-tokenmaxxing" target="_blank">https://www.latent.space/p/ainews-tasteful-tokenmaxxing</a><br>Latent Space 关于无监督与 latent space crossover 的原文：<a href="https://www.latent.space/p/unsupervised-learning-2026" target="_blank">https://www.latent.space/p/unsupervised-learning-2026</a><br>Latent Space 关于 Shopify AI Phase Transition 的原文：<a href="https://www.latent.space/p/shopify" target="_blank">https://www.latent.space/p/shopify</a></p>
+<p>实战优劣势分析：<br>优势：<br>1. 把 token 当资本开支之后，企业终于敢围绕真实高频任务设计流程，而不是在试验田里打转。<br>2. 路由、缓存、仿真和分层审批结合后，可以用更可控的方式把高算力收益兑现成组织效率。<br>3. 无监督和 latent 表征路线一旦成熟，agent 的适配成本会继续下降，长尾场景会被快速吞掉。</p>
+<p>劣势：<br>1. 没有预算治理和缓存纪律的 tokenmaxxing，本质就是把财务黑洞喷成产品烟花。<br>2. 组织会快速依赖少数基础模型和云厂商，一旦价格、策略、地区可用性变动，风险敞口极大。<br>3. 员工习惯被培养起来后，如果内部评测、权限和合规跟不上，事故会和使用量同步飙升。</p>
+<p>Dolan&#x27;s 锐评：<br>今天最会赚钱的 AI 公司，不一定是模型最强的，而是最会把 token 变成组织惯性的那批。算力厂卖铲子，模型厂卖幻觉，真正吃到肉的是把预算、工作流和评测体系绑成一台印钞机的企业。没这套底座，还谈什么 AI 转型，纯属给财报化妆。</p></div></article>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">🌍 巨头绞肉机</div>
+<div class="giant-item"><div class="giant-title">OpenAI 把 GPT-5.5 先经由 Codex 入口对外放量。</div><div class="giant-body"><p>[关键细节] Simon Willison 明确观察到 GPT-5.5 已在 OpenAI Codex 的半官方入口可用，这不是传统 API 先行，而是开发工作流先行。来源：<a href="https://simonwillison.net/2026/Apr/23/gpt-5-5/#atom-entries" target="_blank">https://simonwillison.net/2026/Apr/23/gpt-5-5/#atom-entries</a><br>Dolan&#x27;s 锐评：模型公司嘴上说开放平台，手上做的是渠道封建制。先占工作流，再补接口，才是今天的真打法。</p></div></div>
+<div class="giant-item"><div class="giant-title">Claude Code 的质量波动已经严重到需要公开 postmortem。</div><div class="giant-body"><p>[关键细节] Anthropic 官方工程复盘加上 HN 高热讨论，意味着编码代理的事故处理开始向云服务级运营靠拢。来源：<a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank">https://www.anthropic.com/engineering/april-23-postmortem</a><br>Dolan&#x27;s 锐评：能写博客解释事故，不代表你成熟，只代表你终于伤到用户命门了。编码代理的门票叫可靠性，不叫跑分。</p></div></div>
+<div class="giant-item"><div class="giant-title">Google Labs 把 conversation branching 灰度到 20%。</div><div class="giant-body"><p>[关键细节] Josh Woodward 直接披露 rollout 节奏，说明分支对话已经进入真实流量验证，而不是实验室玩具。来源：<a href="https://x.com/joshwoodward/status/2047147030351642914" target="_blank">https://x.com/joshwoodward/status/2047147030351642914</a><br>Dolan&#x27;s 锐评：还在卖单线程聊天体验的产品，跟拿功能机打智能机没区别，迟早被专业用户踢出工位。</p></div></div>
+<div class="giant-item"><div class="giant-title">Swyx 把 2026 Agent Labs 主线锚定为无监督学习乘以 latent space crossover。</div><div class="giant-body"><p>[关键细节] 这不是单点新闻，而是研究范式转向，意味着 agent 不再只靠监督微调和提示词堆料。来源：<a href="https://www.latent.space/p/unsupervised-learning-2026" target="_blank">https://www.latent.space/p/unsupervised-learning-2026</a><br>Dolan&#x27;s 锐评：行业终于开始戒掉提示词迷信。继续把 prompt 当护城河的人，迟早会被基础方法论回摆狠狠干碎。</p></div></div>
+<div class="giant-item"><div class="giant-title">Tasteful Tokenmaxxing 被推到产品设计核心位。</div><div class="giant-body"><p>[关键细节] Latent Space 把 token 预算、上下文长度和推理频率打包讨论，说明 token 已从成本项升级为性能变量。来源：<a href="https://www.latent.space/p/ainews-tasteful-tokenmaxxing" target="_blank">https://www.latent.space/p/ainews-tasteful-tokenmaxxing</a><br>Dolan&#x27;s 锐评：嫌 token 贵的人，往往更贵，因为他把团队锁死在低质量低吞吐的穷鬼工作流里。</p></div></div>
+<div class="giant-item"><div class="giant-title">Cloud Next 与 TPUv8 释放出更强的算力供给信号。</div><div class="giant-body"><p>[关键细节] TPUv8 被视作支撑长上下文和多步推理产品哲学的基础设施，Google 想把算力发布和 agent 生态一起卖。来源：<a href="https://www.latent.space/p/ainews-tasteful-tokenmaxxing" target="_blank">https://www.latent.space/p/ainews-tasteful-tokenmaxxing</a><br>Dolan&#x27;s 锐评：没有后勤，前线都是幻觉。算力叙事不好听，但它决定谁能把 AI 从 demo 做成现金流。</p></div></div>
+<div class="giant-item"><div class="giant-title">Shopify CTO 公开承认公司进入 AI Phase Transition。</div><div class="giant-body"><p>[关键细节] Tangle、Tangent、SimGym 这些内部系统名字被一口气丢出来，说明 Shopify 已经把 AI 当组织底座，而不是点状试点。来源：<a href="https://www.latent.space/p/shopify" target="_blank">https://www.latent.space/p/shopify</a><br>Dolan&#x27;s 锐评：真正的转型从来不是发一篇内部倡议，而是把流程、工具、预算和考核一起改掉。Shopify 这次是动真格了。</p></div></div>
+<div class="giant-item"><div class="giant-title">Shopify 给出 unlimited Opus-4.6 token budget。</div><div class="giant-body"><p>[关键细节] 这不是单纯福利，而是用预算松绑换全员采纳，用使用爆发换组织学习曲线。来源：<a href="https://www.latent.space/p/shopify" target="_blank">https://www.latent.space/p/shopify</a><br>Dolan&#x27;s 锐评：省 token 的公司通常更费人。把预算抠成芝麻，最后只能收获一地效率烂账。</p></div></div>
+<div class="giant-item"><div class="giant-title">Bitwarden CLI 在供应链攻击活动中被植入恶意包。</div><div class="giant-body"><p>[关键细节] HN 高热说明开发者圈已高度警惕，本地 CLI 和 secrets 工具一旦被污染，agent 自动执行会把事故半径放大。来源：<a href="https://socket.dev/blog/bitwarden-cli-compromised" target="_blank">https://socket.dev/blog/bitwarden-cli-compromised</a><br>Dolan&#x27;s 锐评：大家都在幻想 AI 自动化，没人愿意承认自动化先把你的攻击面也自动放大了，这就叫现代化自爆。</p></div></div>
+<div class="giant-item"><div class="giant-title">MeshCore 团队因商标争议和 AI 生成代码问题分裂。</div><div class="giant-body"><p>[关键细节] 开源治理正在撞上 agent coding 时代的新雷区，品牌控制、贡献归属和合规边界开始一起失火。来源：<a href="https://blog.meshcore.io/2026/04/23/the-split" target="_blank">https://blog.meshcore.io/2026/04/23/the-split</a><br>Dolan&#x27;s 锐评：开源社区最怕的不是分叉，最怕的是嘴上说自由协作，真到商业化和归属权时全员露出资本原形。</p></div></div>
+<div class="giant-item"><div class="giant-title">Palantir 员工开始公开质疑自己是否在成为坏人。</div><div class="giant-body"><p>[关键细节] Wired 报道引爆 HN 讨论，说明 AI 军工和国家安全业务的伦理张力，已经从外部批评升级为内部组织裂缝。来源：<a href="https://www.wired.com/story/palantir-employees-are-starting-to-wonder-if-theyre-the-bad-guys/" target="_blank">https://www.wired.com/story/palantir-employees-are-starting-to-wonder-if-theyre-the-bad-guys/</a><br>Dolan&#x27;s 锐评：政府合同的现金流很香，但道德折价、招聘摩擦和品牌反噬会慢慢把利润啃出洞来。</p></div></div>
+<div class="quote-block summary"><div class="quote-label">板块总结</div><p>Dolan&#x27;s 锐评：这一轮巨头竞争，表面是在卷模型、卷算力、卷产品小功能，底层其实是在抢三样东西，工作流入口、组织预算和风险解释权。谁能一边让用户离不开，一边把事故说得过去，谁就能继续把高估值故事往下编。剩下那些只会喊生态口号的，迟早被真实使用数据狠狠干穿。</p></div>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">📡 极客雷达</div>
+<div class="radar-item"><div class="radar-num">01</div><div><div class="radar-title">OpenHands，GitHub热度：高。痛点：让 agent 直接接 issue、改代码、提 PR。为什么值得关注：如果编码代理真要上岗，这类开源工头最接近企业可替代方案。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">02</div><div><div class="radar-title">aider，GitHub热度：高。痛点：在终端里让模型紧贴真实仓库和 diff 工作流。为什么值得关注：比花里胡哨 IDE 演示更接近重度开发者日常。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">03</div><div><div class="radar-title">Continue，GitHub热度：高。痛点：把多模型能力塞回 IDE，减少上下文来回搬运。为什么值得关注：入口位值钱，谁贴近编辑器谁先吃到高频。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">04</div><div><div class="radar-title">LangGraph，GitHub热度：高。痛点：把多步 agent 做成可追踪状态图。为什么值得关注：分支、回滚、审计这些硬需求，没有图式编排根本兜不住。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">05</div><div><div class="radar-title">AutoGen，GitHub热度：高。痛点：多代理协作容易失控，它提供较成熟的对话编排底座。为什么值得关注：企业做复杂任务拆分时，很难绕开这种框架。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">06</div><div><div class="radar-title">LiteLLM，GitHub热度：高。痛点：多模型路由、计费和兼容层太碎。为什么值得关注：token 预算时代，路由层就是利润层。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">07</div><div><div class="radar-title">Ollama，GitHub热度：极高。痛点：本地模型部署门槛高。为什么值得关注：凡是涉及敏感代码、内网文档和离线场景，本地推理永远有席位。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">08</div><div><div class="radar-title">Temporal，GitHub热度：高。痛点：长任务、重试、补偿和 durable execution 很难手搓。为什么值得关注：真 agent 不是一次函数调用，而是一堆跨时序流程。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">09</div><div><div class="radar-title">Sigstore Cosign，GitHub热度：高。痛点：包和产物签名校验太容易被团队忽略。为什么值得关注：代理会自动拉依赖，签名校验就是最便宜的止血带。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">10</div><div><div class="radar-title">Trivy，GitHub热度：高。痛点：镜像、依赖、SBOM 扫描常常被拖到上线后。为什么值得关注：agent 越勤快，安全扫描越得前置，不然就是高频自动造雷。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">11</div><div><div class="radar-title">OpenTelemetry，GitHub热度：高。痛点：agent 调用链一长就没人看得清。为什么值得关注：没有可观测性，所谓协作框架就是一团黑盒雾霾。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">12</div><div><div class="radar-title">CrewAI，GitHub热度：高。痛点：团队想快速拼出角色分工式 agent。为什么值得关注：虽然容易被拿来画大饼，但它确实是很多业务团队摸到 agent 门把手的第一步。</div><div class="radar-body"><p>Dolan&#x27;s 锐评：极客圈现在最值钱的不是再造一个聊天壳，而是围绕路由、可观测性、持久执行、安全校验这些脏活累活补地基。真正能活下来的开源项目，大概率不是最会讲 AGI 故事的，而是最懂怎么给企业少挖坑、少背锅、少半夜拉人救火的那批。</p></div></div></div>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">💡 终局研判</div>
+<div class="final-section"><div class="final-title">Dolan's 致命锐评</div><div class="final-body"><p>行业风向已经很清楚，模型正在退居幕后，工作流入口、预算控制和治理能力才是台前真权力。接下来一年，最会讲故事的公司未必赢，最会把 agent 塞进组织毛细血管、又不把安全和成本炸穿的公司才会收割。别再迷信参数表了，真正的胜负手，是谁能把幻觉包装成生产力，而且还不被审计抓现行。</p></div></div>
+</section>
+<div class="outro">Dolan's 全景内参 · 2026-04-24 · 仅供个人研究参考<br>锐评由 LLM 生成，链接与事实以原始来源为准</div>
+</div>
+</body>
+</html>
