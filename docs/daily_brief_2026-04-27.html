@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-04-27 | Dolan's 全景内参 | 模型战争从参数军备竞赛，转向工作流与算力栈总包厮杀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.82; }
+a { color: #7a1d1d; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 800px; margin: 0 auto; padding: 56px 28px 84px; }
+.masthead { padding-bottom: 34px; border-bottom: 2px solid #222; margin-bottom: 42px; }
+.kicker { font: 700 12px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8a8a; margin-bottom: 16px; }
+.title { font: 900 34px/1.25 'Noto Sans SC', sans-serif; color: #111; margin: 0 0 12px; }
+.subtitle { font-size: 18px; color: #4e4e4e; }
+.section-header { margin: 56px 0 28px; font: 800 13px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.2em; text-transform: uppercase; color: #666; display: flex; align-items: center; gap: 12px; }
+.section-header::after { content: ''; height: 1px; flex: 1; background: #ddd; }
+.article { margin-bottom: 42px; }
+.article-title { font: 800 24px/1.4 'Noto Sans SC', sans-serif; color: #111; margin-bottom: 14px; }
+.article-body p, .giant-body p, .radar-body p, .summary p, .final-body p { margin: 0 0 14px; font-size: 17px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 18px; margin-top: 16px; }
+.quote-label { font: 800 12px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #b30000; margin-bottom: 8px; }
+.divider { border: none; border-top: 1px solid #e7e2da; margin: 42px 0; }
+.giant-item { margin-bottom: 28px; }
+.giant-title { font: 800 20px/1.45 'Noto Sans SC', sans-serif; margin-bottom: 10px; color: #111; }
+.radar-item { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid #eee; }
+.radar-num { font: 800 12px/1.6 'Noto Sans SC', sans-serif; color: #bbb; padding-top: 3px; }
+.radar-title { font: 700 18px/1.45 'Noto Sans SC', sans-serif; color: #111; margin-bottom: 6px; }
+.final-section { margin-top: 16px; background: #171717; padding: 30px 28px; color: #ededed; }
+.final-title { font: 800 13px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: #ff7a7a; margin-bottom: 14px; }
+.outro { margin-top: 58px; padding-top: 24px; border-top: 1px solid #ece7df; text-align: center; font: 500 12px/1.8 'Noto Sans SC', sans-serif; color: #999; }
+@media (max-width: 640px) { .container { padding: 36px 18px 72px; } .title { font-size: 28px; } .article-title { font-size: 22px; } .giant-title { font-size: 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="kicker">2026 年 4 月 27 日 · 周一</div>
+<h1 class="title">Dolan's 全景内参</h1>
+<div class="subtitle">模型战争从参数军备竞赛，转向工作流与算力栈总包厮杀</div>
+</header>
+<section>
+<div class="section-header">🎯 核心阵地</div>
+<article class="article"><div class="article-title">一、DeepSeek 把模型战场从榜单炫技，硬生生拖进了可采购算力和国产部署这摊真泥地</div><div class="article-body"><p>如果昨天市场还在把 DeepSeek V4 Pro 和 Flash 当成又一轮参数烟花，今天真正值钱的情报只有一句，DeepSeek 不只是追分，它在把模型商品化路径从单一英伟达柜台，拽向华为昇腾这条更脏、更难、但也更接近真实企业采购的通道。Swyx 在 Latent Space 的 roundup 里点得很明白，V4 Pro 是 1.6T-A49B，Flash 是 284B-A13B，而且两者都有 Base 和 Instruct 版本。外行看到的是参数，行内人看到的是 SKU。SKU 这个词一出来，味道就变了，这不是实验室论文心态，这是产品经理和销售总监一起下场的味道。旗舰款负责抬天花板，轻量款负责铺量，Base 负责二次训练和企业定制，Instruct 负责即插即用的推理变现。说白了，DeepSeek 已经不满足做一个会刷榜的模型，它想做的是模型超市，想把不同预算、不同延迟、不同合规要求的客户都拉进来结账。</p>
+<p>更狠的一刀，是昇腾适配。很多人嘴上喊国产替代，手里还抱着 CUDA 不撒手，结果就是战略自主全停在 PPT。DeepSeek 这波把可运行于华为 Ascend chips 的信号打出来，本质上是在说，模型竞争的胜负手，不再只是你能不能把 benchmark 再挤高 1.5 分，而是谁能在客户买得到、运得到、审得过、报销得掉的机器上稳定吐 token。企业不会为了你的模型浪漫主义，重做整套机房；资本也不会因为你论文写得漂亮，就忽略硬件依赖这口黑洞。钱往哪流，永远先看供给链能不能闭环，再看故事讲得多动人。</p>
+<p>这对闭源 API 厂商尤其不友好。过去它们靠模型领先和封闭栈吃高毛利，像在机场卖瓶装水，贵得离谱还理直气壮。现在 DeepSeek 这种打法，是拿接近前沿的能力，加更灵活的部署形态，再叠一层非英伟达单点依赖，把价格和议价权一起往下砸。模型行业真正的绞肉机，不是某一场发布会，而是这种可替代性提升之后的利润坍塌。谁还指望靠神秘黑箱永远收过路费，基本等于在高频交易桌上做慈善梦。</p>
+<p>更深一层看，中国 AI 这轮真正像样的进展，不在于又多了一个能和国际前沿缠斗的模型，而在于模型层和算力层终于开始互相递刀。DeepSeek 提供能力，昇腾提供可落地铁，企业客户提供真实预算，这才像产业，不是朋友圈造神。出口管制本来想把中国 AI 锁死在高端 GPU 的门外，结果逼出来的反而是更强的本地化适配冲动。一旦这条链打通，agent、企业私有部署、政企内网助手和行业微调都会被加速，因为大家第一次看到了不完全依赖外部供给的替代路线。</p>
+<p>部署配置示意：<br>service_name: deepseek-v4-pro-instruct<br>runtime: ascend<br>precision: bf16<br>tensor_parallel: 8<br>max_model_len: 32768<br>scheduler.max_num_batched_tokens: 65536<br>scheduler.max_num_seqs: 256<br>serving.enable_prefix_cache: true<br>serving.enable_chunked_prefill: true<br>observability.exporter: otlp<br>observability.trace_sample_rate: 0.1<br>security.model_allow_list: deepseek-v4-pro, deepseek-flash<br>fallback.route: deepseek-flash</p>
+<p>生产路由策略示意：<br>规则一，长上下文研究任务走 V4 Pro<br>规则二，客服和批量摘要走 Flash<br>规则三，内网敏感数据禁止出公网 API<br>规则四，超时 2.5 秒自动切换到 Flash<br>规则五，所有推理请求写审计日志，保留七天</p>
+<p>这套配置背后的商业逻辑比配置本身更重要。V4 Pro 负责啃高价值任务，Flash 负责把单位请求成本打下来，审计和回退策略负责让企业法务别当场翻桌。真正能卖进去的，不是最强模型，而是最像一个靠谱系统的模型。</p>
+<p>大佬新感悟与原文链接：<br>Swyx 在 Latent Space 的观察重点，不是单纯喊性能，而是点出了双 SKU 和昇腾路径这两个最容易被市场低估的信号。<br>原文链接：<a href="https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and" target="_blank">https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and</a></p>
+<p>实战优劣势分析：<br>优势一，双 SKU 让采购和路由策略不再一刀切，预算分层终于有抓手。<br>优势二，昇腾路径提升了在出口限制环境下的交付确定性，不再被单一 GPU 卡脖子。<br>优势三，Base 和 Instruct 同时存在，给企业二训和即用两条路，减少选型内耗。<br>劣势一，跨硬件生态的工程磨损极大，性能稳定性和工具链成熟度不可能一夜补齐。<br>劣势二，企业如果缺少可观测、缓存和流控设计，换了国产栈也只会把事故从英伟达搬到自己机房。<br>劣势三，价格战一旦打穿，模型厂商自己也要面对利润塌陷，谁先流血过多，谁先出局。</p>
+<p>Dolan&#x27;s 锐评：DeepSeek 这波最阴狠的地方，不是又把榜单刷高，而是开始砸英伟达单盘口的饭碗。行业里一堆人还在对着参数表意淫，真正会赚钱的玩家已经在盯采购单、供货周期和机房电表。谁能在便宜、稳定、可审计的铁上持续吐 token，谁才配谈下一轮估值。其余那些只会讲模型信仰的，统统都是高级 PPT 生成器。</p></div></article>
+<article class="article"><div class="article-title">二、GPT-5.5 搭上 Composer 2 和多任务编排，编码代理终于从演示台玩具，变成能吃掉烂尾需求的现金流机器</div><div class="article-body"><p>过去两年，AI 编码助手最烦人的地方，不是它不够聪明，而是它太像展厅样机。写 demo 时像天降神兵，一进真实项目就开始迷路，文件一多就失忆，权限一开就闯祸，最后留下一堆半截 PR 和工程师的高血压。今天这波信号开始变味了。Ryo Lu 明确表示自己已经彻底切到 GPT-5.5 加 Composer 2 的组合，还持续推 Cursor 的多任务能力；Sam Altman 也确认 GPT-5.5 与 GPT-5.5 Pro 进入 API。单看任何一条都不算核弹，但几条拼起来，市场已经很难再把它当作普通模型迭代。真正变化是，模型、编排层、IDE 容器和审计流程开始结婚，编码工作从单轮对话，转成任务拆解、并行执行、结果回收、风险门禁的流水线。</p>
+<p>这和 Hacker News 上那篇项目复活帖能对上。帖子最值钱的不是鸡汤，而是一个很赤裸的需求验证，开发者愿意把 AI 用在原本根本不会开工的边缘项目上。这个信号比节省 20 分钟写样板代码重要多了，因为它代表 AI 在软件生产里创造的新增价值，不只是提速，而是让原来不值得做的事情突然有了 ROI。对个人开发者，这意味着副项目、插件、小工具、自动化脚本开始重新进入可行区；对团队，这意味着积压票据、历史债务、半死不活的内部系统终于有人肯接盘。AI 在这里不是替代资深工程师，它像一个不会喊累的初级打手，帮你把上下文捡回来、把样板活扛掉、把第一版弄出来，工程师再上去补刀。</p>
+<p>但这里也埋着新雷。编码代理一旦从玩具变成生产工具，评估标准就得从会不会写贪吃蛇，切换成能不能守规矩。日志是否完整，密钥会不会泄露，依赖许可证会不会爆雷，测试覆盖有没有做假，PR 是不是全靠模型瞎编，这些才是真账。OpenAI 同步推进 GPT-5.5 Bio Bug Bounty 的意义也在这里，前沿模型厂商已经知道，能力越高，越不能只拿能力讲故事，必须把边界管理工程化、奖励化、审计化。今天它测试生物风险，明天企业客户就会要求你对编码代理做同等级的可追责治理。没有治理的自动化，不叫提效，叫把事故打包成 SaaS 月费。</p>
+<p>工作流配置示意：<br>planner.model: gpt-5.5<br>planner.temperature: 0.2<br>implementer.model: gpt-5.5-pro<br>implementer.max_context: 256k<br>reviewer.model: gpt-5.5<br>parallel_tasks: 3<br>gates.1: unit_test<br>gates.2: secret_scan<br>gates.3: license_check<br>gates.4: static_analysis<br>merge_policy: reviewer_and_ci_must_pass<br>rollback.on_failed_gate: true<br>artifact.log_retention_days: 14</p>
+<p>团队落地流程示意：<br>第一步，让 planner 把需求拆成三类，样板编码、真实业务逻辑、风险检查。<br>第二步，让 implementer 并行处理低风险文件，但禁止直接碰生产密钥、支付逻辑和基础权限层。<br>第三步，让 reviewer 专门找幻觉、重复依赖和越权修改。<br>第四步，所有输出先过测试、静态扫描和许可证检查，没过就整单打回。<br>第五步，人工只接管真正高价值判断，不再给样板劳动陪葬。</p>
+<p>大佬和一线作者原文链接：<br>Matthew Brunelle 对“用编码辅助复活原本不会完成的项目”这件事的体感，非常接近真实开发者 PMF。<br>原文链接：<a href="https://blog.matthewbrunelle.com/its-ok-to-use-coding-assistance-tools-to-revive-the-projects-you-never-were-going-to-finish/" target="_blank">https://blog.matthewbrunelle.com/its-ok-to-use-coding-assistance-tools-to-revive-the-projects-you-never-were-going-to-finish/</a><br>OpenAI 把 GPT-5.5 Bio Bug Bounty 做成工程化披露流程，说明高能力模型正在被迫接受更硬的风险治理。<br>原文链接：<a href="https://openai.com/index/gpt-5-5-bio-bug-bounty/" target="_blank">https://openai.com/index/gpt-5-5-bio-bug-bounty/</a></p>
+<p>实战优劣势分析：<br>优势一，长流程任务被拆成可并行、可复审、可回滚的流水线，开发者终于不必盯着一个聊天窗赌运气。<br>优势二，烂尾项目、历史遗留系统和低优先级自动化开始重新具备开工价值，软件产出边界被撑开。<br>优势三，编排层价值上升，团队可以把不同模型塞进不同角色，按成本和风险做精算。<br>劣势一，一旦权限设计拉胯，多任务代理会把错误以更快速度撒满整个仓库。<br>劣势二，开发者容易被“看起来很忙”的自动化骗到，产出数量上去，正确性和责任感反而下滑。<br>劣势三，厂商若只吹模型智商，不补审计和门禁，企业迟早会被一次事故教育到关闸。</p>
+<p>Dolan&#x27;s 锐评：编码代理的真钱，不在于替你炫一段花哨代码，而在于把那些本来没人做、做了也不显绩效的脏活重新拉回现金流表。谁能把模型、编排、权限、测试、审计拧成一套能落地的流水线，谁就能从“AI 很聪明”这句废话里榨出真利润。剩下那批只会演示自动写贪吃蛇的，继续在展台打灯就好，别来碰生产仓库。</p></div></article>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">🌍 巨头绞肉机</div>
+<div class="giant-item"><div class="giant-title">DeepSeek V4 Pro 与 Flash 双 SKU 下场，不再满足做单点爆款，而是开始做产品矩阵。</div><div class="giant-body"><p>[关键细节] V4 Pro 为 1.6T-A49B，Flash 为 284B-A13B，且都有 Base 和 Instruct 版本，意味着它在冲能力上限的同时，也盯上了更容易部署和更好卖的走量场景。<br>Dolan&#x27;s 锐评：参数不是重点，SKU 才是刀子。会分层卖货的模型厂，才是真想收钱，不是只想刷存在感。</p></div></div>
+<div class="giant-item"><div class="giant-title">DeepSeek 明牌支持华为昇腾路径，模型战争第一次把国产算力从口号拉到交付清单。</div><div class="giant-body"><p>[关键细节] 在高端 GPU 受限背景下，Ascend 可运行意味着企业不必把命门全绑在单一海外供应链上，采购、交付和合规都多了一条生路。<br>Dolan&#x27;s 锐评：谁还把国产替代当宣传词，谁就准备继续给单一芯片生态交高额保护费。</p></div></div>
+<div class="giant-item"><div class="giant-title">Base 与 Instruct 双版本并行，DeepSeek 把二训客户和即用客户一起收编。</div><div class="giant-body"><p>[关键细节] Base 适合行业微调和私有蒸馏，Instruct 适合直接上线推理，等于把研发部门和业务部门的预算同时盯上了。<br>Dolan&#x27;s 锐评：一鱼两吃才是成熟商业模型，单靠一版通吃所有客户，那是创业者自我感动。</p></div></div>
+<div class="giant-item"><div class="giant-title">GPT-5.5 进入 API，不再是发布会段子，而是开发者流水线里的可结算资源。</div><div class="giant-body"><p>[关键细节] 可用性一旦稳定，模型评估标准就从“聪不聪明”切到“每完成一个真实任务要花多少钱、要担多大风险”。<br>Dolan&#x27;s 锐评：API 上线才是真正的资本市场时刻，没进生产流的模型，再神也只是昂贵烟火。</p></div></div>
+<div class="giant-item"><div class="giant-title">Cursor Composer 2 被用户与 GPT-5.5 绑定使用，编排层开始吃走模型层的叙事红利。</div><div class="giant-body"><p>[关键细节] 用户讨论焦点从单轮回答质量，转向任务编排、多文件修改和并行执行体验，说明 IDE 正在从编辑器升级为代理调度台。<br>Dolan&#x27;s 锐评：模型厂都想当皇帝，最后最赚钱的可能是那个坐在入口收税的编排层宰相。</p></div></div>
+<div class="giant-item"><div class="giant-title">多任务能力把开发者角色推向 orchestrator，编码劳动开始从亲手敲代码变成盯盘和做门禁。</div><div class="giant-body"><p>[关键细节] 一旦任务能并行拆分，人的价值就更偏向优先级判断、风险兜底和结果验收，而不是逐行体力劳动。<br>Dolan&#x27;s 锐评：以后最贵的不是会写代码的人，而是知道哪段代码绝不能让代理碰的人。</p></div></div>
+<div class="giant-item"><div class="giant-title">HN 热帖证明 AI 编码助手最硬的 PMF，不是替代主线工程，而是复活边缘项目。</div><div class="giant-body"><p>[关键细节] 98 points、52 comments 的讨论说明，长尾需求被重新激活，新增价值来自“原本不会做的事现在值得做”。<br>Dolan&#x27;s 锐评：真正的增量市场不在高光项目，而在一堆没人愿意捡的旧坑里，AI 正好最擅长下矿井。</p></div></div>
+<div class="giant-item"><div class="giant-title">编码代理正在扩大软件席位数，ARPU 想象力来自新增项目，而不是存量提效神话。</div><div class="giant-body"><p>[关键细节] 当更多副项目、内部工具和自动化脚本被拉回开发管线，付费座席和 API 调用都会跟着膨胀。<br>Dolan&#x27;s 锐评：提效只是好听说法，真正让财务总监点头的，是原来赚不到的钱现在能入账。</p></div></div>
+<div class="giant-item"><div class="giant-title">GPT-5.5 Bio Bug Bounty 把模型安全从口头原则，拽成可提交、可验证、可赔钱的工程流程。</div><div class="giant-body"><p>[关键细节] 110 points、87 comments 的讨论表明，社区已把高风险能力边界当成一类值得系统红队化的产品问题，而不是公关稿附件。<br>Dolan&#x27;s 锐评：愿意掏赏金找自己毛病的厂商，至少知道迟早要面对监管；不愿意的，多半还想继续装睡。</p></div></div>
+<div class="giant-item"><div class="giant-title">AI 产业正在碰上公众反感，社会许可开始和模型能力并列为硬指标。</div><div class="giant-body"><p>[关键细节] “公众讨厌 AI 行业”与“知识工作拟像化”两条线同时升温，说明用户不只担心失业，更厌恶被低质量自动化内容包围。<br>Dolan&#x27;s 锐评：你以为用户恨的是 AI 抢饭碗，其实更多时候他们恨的是被劣质自动化当成傻子喂料。</p></div></div>
+<div class="giant-item"><div class="giant-title">知识工作拟像化成了白领世界的新恐慌，企业必须证明 AI 不是在生产会动的空心报告。</div><div class="giant-body"><p>[关键细节] 当输出越来越像“看起来做了很多事”，管理层最容易被表演型自动化迷惑，真实正确率和责任归属反而被稀释。<br>Dolan&#x27;s 锐评：最危险的不是 AI 不会干活，而是它太会装忙，让一屋子人都误以为项目在推进。</p></div></div>
+<div class="giant-item"><div class="giant-title">审计、权限和许可证检查开始从边角料，升级成代理时代的准入门票。</div><div class="giant-body"><p>[关键细节] API 可得性提升后，企业会把日志保留、权限边界、依赖合规和回滚能力列入采购前置条件，缺一项都可能直接出局。<br>Dolan&#x27;s 锐评：没有门禁的自动化，就像没刹车的超跑，吹得越猛，翻车越快。</p></div></div>
+<div class="quote-block summary"><div class="quote-label">板块总结</div><p>Dolan&#x27;s 锐评：这一轮巨头绞肉机的本质，不是模型谁更像神，而是谁更像一门能收款、能交付、能过审的生意。底座厂拼命讲参数，编排层忙着卡入口，算力商在抢标准，安全团队开始拿审计当刀。钱已经不再追逐最会讲故事的人，而是追逐最能把故事做成发票的人。不会落地的前沿，就是昂贵噪音。</p></div>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">📡 极客雷达</div>
+<div class="radar-item"><div class="radar-num">01</div><div><div class="radar-title">DeepSeek V4 Pro｜GitHub热度：N/A，非 GitHub 项目｜解决痛点：把旗舰级能力塞进更可商品化的产品包｜值得关注：它代表中国模型厂开始按 SKU 做市场，不再只按榜单做面子。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">02</div><div><div class="radar-title">DeepSeek Flash｜GitHub热度：N/A，非 GitHub 项目｜解决痛点：为高并发、低时延和预算敏感场景提供更轻的推理选项｜值得关注：这是价格战和路由策略真正落地的抓手。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">03</div><div><div class="radar-title">华为昇腾部署路径｜GitHub热度：多仓分散，情报未给具体数字｜解决痛点：给国产算力上的模型部署提供现实路线｜值得关注：谁先把工具链磨顺，谁就先吃掉政企和内网市场。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">04</div><div><div class="radar-title">GPT-5.5 API｜GitHub热度：N/A，非 GitHub 项目｜解决痛点：为复杂编码和长流程任务提供更强的统一模型接口｜值得关注：能力一旦稳定，单位任务成本会重排整个开发工具链估值。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">05</div><div><div class="radar-title">GPT-5.5 Pro｜GitHub热度：N/A，非 GitHub 项目｜解决痛点：把高难度实现和长上下文审阅拉回一个模型面板｜值得关注：高价模型是否真能在复杂任务里打出 ROI，很快就会被企业账本审判。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">06</div><div><div class="radar-title">Cursor Composer 2｜GitHub热度：N/A，非 GitHub 项目｜解决痛点：把写代码、改多文件、组织任务变成可编排流程｜值得关注：IDE 入口正在升级为代理控制台，入口税越来越香。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">07</div><div><div class="radar-title">多任务编排能力｜GitHub热度：N/A，功能形态而非仓库｜解决痛点：让代理并行处理低风险任务，减少工程师在样板劳动上的时间消耗｜值得关注：这会直接改写开发者的岗位定义。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">08</div><div><div class="radar-title">项目复活型编码辅助｜GitHub热度：N/A，使用模式而非仓库｜解决痛点：降低烂尾项目和低优先级需求的启动成本｜值得关注：它是最容易被忽视，却最接近现金流的真实 PMF。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">09</div><div><div class="radar-title">Bio Bug Bounty 机制｜GitHub热度：N/A，治理机制而非仓库｜解决痛点：把高风险能力测试从抽象伦理变成工程化提交流程｜值得关注：未来所有高能力代理产品都要补这门功课。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">10</div><div><div class="radar-title">社会许可监控｜GitHub热度：N/A，舆情与产品变量｜解决痛点：避免企业只盯能力，不看用户厌恶阈值和品牌反噬｜值得关注：下一个估值折价，可能不是技术落后，而是社会反感。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">11</div><div><div class="radar-title">知识工作拟像化预警｜GitHub热度：N/A，叙事信号｜解决痛点：识别“看起来很勤奋”的自动化泡沫｜值得关注：对管理者来说，这比多 5 分 benchmark 更值钱，因为它决定组织会不会被表演型产出拖死。</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">12</div><div><div class="radar-title">审计优先的代理流水线｜GitHub热度：多为企业私有实现｜解决痛点：给代理编码补上日志、权限、回滚和许可证检查｜值得关注：没有这层护城河，任何自动化提效最后都会变成事故加速器。</div><div class="radar-body"><p>Dolan&#x27;s 锐评：极客雷达这块最值得盯的，不是哪个名字今天又冲热搜，而是哪类能力开始从玩具跃迁成基础设施。能留下来的方向都很无聊，路由、审计、门禁、便宜算力、任务编排，听起来不性感，却直接决定谁能活着穿越价格战。市场最爱追光，真正赚钱的往往是那些在机房和流水线上默默卖铲子的狠角色。</p></div></div></div>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">💡 终局研判</div>
+<div class="final-section"><div class="final-title">Dolan's 致命锐评</div><div class="final-body"><p>今天的行业风向已经很清楚，模型本身正在迅速去神圣化，真正值钱的护城河转向三件事，谁的算力不被一卡脖子，谁的工作流能把烂尾需求榨成现金流，谁的治理体系能让企业敢放权。还在迷信单次发布会和参数神话的人，像极了牛市尾声追概念股的散户，热闹看得满脸通红，结账时才发现利润早被入口层、算力层和审计层悄悄卷走了。</p></div></div>
+</section>
+<div class="outro">Dolan's 全景内参 · 2026-04-27 · 仅供个人研究参考<br>锐评由 LLM 生成，链接与事实以原始来源为准</div>
+</div>
+</body>
+</html>
