@@ -61,8 +61,8 @@ def paragraphize(text):
 
 
 def split_core(text):
-    text = re.sub(r'^(【核心阵地】|核心阵地)\s*\n+', '', text, flags=re.MULTILINE).strip()
-    blocks = [b.strip() for b in re.split(r'(?=^(?:核心阵地[一二三四五六七八九十]+[｜|]|[一二三四五六七八九十]+、))', text, flags=re.MULTILINE) if b.strip()]
+    text = re.sub(r'^(【核心阵地】|核心阵地[：:]?)\s*\n+', '', text, flags=re.MULTILINE).strip()
+    blocks = [b.strip() for b in re.split(r'(?=^(?:核心阵地(?:（[一二三四五六七八九十]+）|[一二三四五六七八九十]+[｜|]).*|[一二三四五六七八九十]+、))', text, flags=re.MULTILINE) if b.strip()]
     items = []
     for block in blocks:
         lines = block.splitlines()
@@ -73,13 +73,18 @@ def split_core(text):
 
 
 def split_giants(text):
-    text = re.sub(r'^(【巨头绞肉机】|巨头绞肉机)\s*\n+', '', text, flags=re.MULTILINE).strip()
+    text = re.sub(r'^(【巨头绞肉机】|巨头绞肉机[：:]?)\s*\n+', '', text, flags=re.MULTILINE).strip()
     summary = ""
-    items_text = text
-    summary_m = re.search(r"\nDolan['’]s 锐评：.+$", text, flags=re.DOTALL)
-    if summary_m:
-        summary = summary_m.group(0).strip()
-        items_text = text[:summary_m.start()].rstrip()
+    item_pat = re.compile(r'^\d+\.\s+(?:核心事件：|\[核心事件\])', flags=re.MULTILINE)
+    matches = list(item_pat.finditer(text))
+    if not matches:
+        return [], ""
+    tail = len(text)
+    next_section_m = re.search(r"\n\nDolan['’]s 锐评：", text[matches[-1].end():], flags=re.MULTILINE)
+    if next_section_m:
+        tail = matches[-1].end() + next_section_m.start()
+        summary = text[tail:].strip()
+    items_text = text[:tail].rstrip()
     blocks = [b.strip() for b in re.split(r'(?=^\d+\.\s+(?:核心事件：|\[核心事件\]))', items_text, flags=re.MULTILINE) if b.strip()]
     items = []
     for block in blocks:
@@ -93,7 +98,7 @@ def split_giants(text):
 
 
 def split_radar(text):
-    text = re.sub(r'^(【极客雷达】|极客雷达)\s*\n+', '', text, flags=re.MULTILINE).strip()
+    text = re.sub(r'^(【极客雷达】|极客雷达[：:]?)\s*\n+', '', text, flags=re.MULTILINE).strip()
     summary = ""
     summary_m = re.search(r"\nDolan['’]s 锐评：极客圈今天最有意思的暗流.*$", text, flags=re.DOTALL)
     if summary_m:
@@ -115,9 +120,9 @@ def split_radar(text):
 
 subtitle_m = re.search(r"^Title:\s*Dolan['’]s 全景内参[：:]\s*(.+)$", raw, flags=re.MULTILINE)
 subtitle = subtitle_m.group(1).strip() if subtitle_m else DATE_DISPLAY
-core_raw = section_slice(raw, [r'^核心阵地\s*$', r'^【核心阵地】\s*$', r'^核心阵地[一二三四五六七八九十]+[｜|].*$'], [r'^巨头绞肉机\s*$', r'^【巨头绞肉机】\s*$'])
-giants_raw = section_slice(raw, [r'^巨头绞肉机\s*$', r'^【巨头绞肉机】\s*$'], [r'^极客雷达\s*$', r'^【极客雷达】\s*$'])
-radar_raw = section_slice(raw, [r'^极客雷达\s*$', r'^【极客雷达】\s*$'], [r'^终局研判\s*$'])
+core_raw = section_slice(raw, [r'^核心阵地\s*$', r'^【核心阵地】\s*$', r'^核心阵地[：:]\s*$', r'^核心阵地(?:（[一二三四五六七八九十]+）|[一二三四五六七八九十]+[｜|]).*$'], [r'^巨头绞肉机\s*$', r'^【巨头绞肉机】\s*$', r'^巨头绞肉机[：:].*$'])
+giants_raw = section_slice(raw, [r'^巨头绞肉机\s*$', r'^【巨头绞肉机】\s*$', r'^巨头绞肉机[：:].*$'], [r'^极客雷达\s*$', r'^【极客雷达】\s*$', r'^极客雷达[：:].*$'])
+radar_raw = section_slice(raw, [r'^极客雷达\s*$', r'^【极客雷达】\s*$', r'^极客雷达[：:].*$'], [r'^终局研判\s*$'])
 final_raw = section_slice(raw, [r'^终局研判\s*$'], [r'\Z'])
 final_raw = re.sub(r'^终局研判\s*\n+', '', final_raw, flags=re.MULTILINE)
 
