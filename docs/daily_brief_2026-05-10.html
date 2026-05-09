@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-05-10 | Dolan's 全景内参 | Agent 从神迹演示跌进生产审计，算力叙事开始向毛利率低头</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #faf9f6; color: #222; font-family: 'Noto Serif SC', serif; line-height: 1.82; }
+a { color: #7a1d1d; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 800px; margin: 0 auto; padding: 56px 28px 84px; }
+.masthead { padding-bottom: 34px; border-bottom: 2px solid #222; margin-bottom: 42px; }
+.kicker { font: 700 12px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8a8a; margin-bottom: 16px; }
+.title { font: 900 34px/1.25 'Noto Sans SC', sans-serif; color: #111; margin: 0 0 12px; }
+.subtitle { font-size: 18px; color: #4e4e4e; }
+.section-header { margin: 56px 0 28px; font: 800 13px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.2em; text-transform: uppercase; color: #666; display: flex; align-items: center; gap: 12px; }
+.section-header::after { content: ''; height: 1px; flex: 1; background: #ddd; }
+.article { margin-bottom: 42px; }
+.article-title { font: 800 24px/1.4 'Noto Sans SC', sans-serif; color: #111; margin-bottom: 14px; }
+.article-body p, .giant-body p, .radar-body p, .summary p, .final-body p { margin: 0 0 14px; font-size: 17px; }
+.quote-block { background: #fff8dc; border-left: 4px solid #b30000; padding: 16px 18px; margin-top: 16px; }
+.quote-label { font: 800 12px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #b30000; margin-bottom: 8px; }
+.divider { border: none; border-top: 1px solid #e7e2da; margin: 42px 0; }
+.giant-item { margin-bottom: 28px; }
+.giant-title { font: 800 20px/1.45 'Noto Sans SC', sans-serif; margin-bottom: 10px; color: #111; }
+.radar-item { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid #eee; }
+.radar-num { font: 800 12px/1.6 'Noto Sans SC', sans-serif; color: #bbb; padding-top: 3px; }
+.radar-title { font: 700 18px/1.45 'Noto Sans SC', sans-serif; color: #111; margin-bottom: 6px; }
+.final-section { margin-top: 16px; background: #171717; padding: 30px 28px; color: #ededed; }
+.final-title { font: 800 13px/1.4 'Noto Sans SC', sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: #ff7a7a; margin-bottom: 14px; }
+.outro { margin-top: 58px; padding-top: 24px; border-top: 1px solid #ece7df; text-align: center; font: 500 12px/1.8 'Noto Sans SC', sans-serif; color: #999; }
+@media (max-width: 640px) { .container { padding: 36px 18px 72px; } .title { font-size: 28px; } .article-title { font-size: 22px; } .giant-title { font-size: 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="masthead">
+<div class="kicker">2026 年 5 月 10 日 · 周日</div>
+<h1 class="title">Dolan's 全景内参</h1>
+<div class="subtitle">Agent 从神迹演示跌进生产审计，算力叙事开始向毛利率低头</div>
+</header>
+<section>
+<div class="section-header">🎯 核心阵地</div>
+<article class="article"><div class="article-title">一、文档代理的致命软肋：最会写漂亮废话的机器，正在悄悄污染你的知识资产</div><div class="article-body"><p>原始信号：arXiv 论文 LLMs corrupt your documents when you delegate 与 HN 讨论<br>来源：<a href="https://arxiv.org/abs/2604.15597" target="_blank">https://arxiv.org/abs/2604.15597</a><br>HN 讨论：<a href="https://news.ycombinator.com/item?id=48073246" target="_blank">https://news.ycombinator.com/item?id=48073246</a></p>
+<p>背景溯源：<br>过去两年，办公 AI 的卖点一直是“把脏活交给模型”。先是总结会议、润色邮件、扩写提案，再到今天的“代理式编辑”：用户给一个目标，模型自己打开文档、改结构、替换段落、更新表格、顺手把语气调得像咨询公司 PPT。问题在于，文档不是聊天窗口。聊天错了可以补一句，文档错了会进入合同、论文、财报、制度库、产品需求、法律意见书，最后变成组织的长期记忆。LLM 在这里最危险的不是不会写，而是太会写。它能用流畅语言把事实篡改包成高级感，把格式破坏藏在排版正常的外衣里，把一次小改动扩散成全局语义漂移。真正的事故往往不是页面崩了，而是大家过了两周才发现某个定义、数字、引用、责任边界已经被改坏。</p>
+<p>完整分析：<br>这条情报的核心不是“LLM 有幻觉”这种老掉牙废话，而是“委托式编辑”暴露了 Agent 产品的根基问题：模型生成的是自然语言，但企业需要的是可审计操作。传统文档编辑有一个很硬的事实：每一次改动都应该能被定位、对比、回滚、归责。人类编辑会留下修订痕迹，程序化编辑可以留下 AST diff，数据库迁移会留下 migration 文件。但很多 AI 文档代理的默认路径，是把文档塞进上下文，再吐出一个“更好版本”。这在演示里很丝滑，在生产里就是把审计链条一刀砍断。</p>
+<p>更毒的是，办公文档天然是混合结构：段落、样式、表格、脚注、引用、评论、权限、版本、附件、嵌入对象全都挤在一起。模型看起来像在改文字，实际上是在碰一个结构化系统。只要它无法稳定识别“只改第 3 节第二段，不碰定义表，不改编号，不删除评论”，它就不是生产工具，只是一个穿着西装的全文重写器。今天企业愿意为 AI 办公付钱，不是因为它能写一段漂亮总结，而是因为它能进入法律、咨询、审计、研究、政企流程这些高价值场景。偏偏这些场景最怕隐性错误。</p>
+<p>实战可用的架构原则应该很明确：文档代理不能直接改全文，必须做成“计划、补丁、验证、回滚”的事务模型。模型负责提出变更意图，执行器负责以结构化 API 应用局部补丁，验证器负责比较语义和格式约束，用户最后批准。换句话说，LLM 应该是副驾驶，不是拿着生产数据库 root 权限的实习生。</p>
+<p>代码/配置演示：生产级文档代理的最小护栏</p>
+<p>目标：只允许 Agent 修改指定段落，并输出可验证补丁，而不是整篇重写。</p>
+<p>policy.yaml<br>agent:<br>  mode: patch_only<br>  allowed_operations:<br>    - replace_paragraph<br>    - insert_after_paragraph<br>    - update_table_cell<br>  forbidden_operations:<br>    - rewrite_document<br>    - delete_comments<br>    - change_heading_numbering<br>    - modify_citations<br>  approval_required:<br>    - any_numeric_change<br>    - legal_terms_change<br>    - table_schema_change</p>
+<p>validation:<br>  require_diff_summary: true<br>  require_style_preserved: true<br>  max_changed_paragraphs: 5<br>  numeric_change_requires_source: true<br>  citation_change_requires_user_approval: true</p>
+<p>伪代码：<br>function editDocument(request, document):<br>  plan = llm.createEditPlan(request, document.outline)<br>  assert plan.operations.all(op in policy.allowed_operations)</p>
+<p>patches = []<br>  for operation in plan.operations:<br>    target = document.locate(operation.selector)<br>    before = target.snapshot()<br>    after = llm.rewriteLocalBlock(operation.instruction, before)<br>    patch = structuredDiff(before, after)<br>    validatePatch(patch, policy.validation)<br>    patches.append(patch)</p>
+<p>preview = renderReviewView(document, patches)<br>  if user.approves(preview):<br>    document.applyTransaction(patches)<br>    auditLog.write(request, plan, patches, user.id)<br>  else:<br>    return cancelled</p>
+<p>这个方案不酷，但能活。Agent 行业现在最大的问题就是迷恋“自动完成一切”的戏剧效果，忽略“每一步都能被审计”的工程底线。真正能卖进企业的，不是会写诗的模型，而是会留下证据链的模型。</p>
+<p>大佬们的新感悟：<br>Swyx 的 Latent Space 今天把 Anthropic 高增长和行业裁员潮放在同一张桌子上，本质上也在提醒：AI 预算不是凭空长出来的，而是从组织成本、软件预算、云账单里重新切出来的。原文链接：<a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" target="_blank">https://www.latent.space/p/ainews-anthropic-growing-10xyear</a><br>Amanda Askell 则从对齐角度强调，安全研究不能只盯着“不要做坏事”，还要回答模型应该成为什么。原文链接：<a href="https://x.com/AmandaAskell/status/2052928572810256748" target="_blank">https://x.com/AmandaAskell/status/2052928572810256748</a><br>这两条合起来看很刺眼：一边是 AI 公司要把模型塞进所有高价值工作流，一边是模型人格和行为边界还在摸石头。企业客户不是慈善家，他们买的是效率，不是帮大厂做社会实验。</p>
+<p>实战优劣势分析：<br>优势一，结构化补丁让 AI 编辑从黑盒魔法变成可审计流水线，能进法律、咨询、金融、政企这些高单价场景。优势二，局部编辑显著降低上下文污染和格式破坏，失败半径小。优势三，审计日志天然服务合规、回滚和责任归属，采购部门能听懂。<br>劣势也很硬。第一，开发成本高，必须对 Word、PDF、HTML、Markdown、内部知识库分别适配结构化解析器。第二，用户体验没有“点一下全文变好”那么爽，演示不够性感。第三，模型需要更强的定位、计划和自检能力，否则补丁系统会变成另一层错误包装纸。</p>
+<p>Dolan&#x27;s 锐评：<br>文档代理现在像一个会背麦肯锡黑话的熊孩子，跑得快，手也快，但你不盯着它，它就把合同里的责任主体改成空气。AI 办公的下半场不是谁的总结更丝滑，而是谁敢把改动拆成事务、证据、回滚和责任链。不能做 diff 的 Agent，都是在组织知识库里裸奔。别跟我讲“智能涌现”，先把第 4.2 条别改丢。</p></div></article>
+<article class="article"><div class="article-title">二、Anthropic 狂飙与裁员潮同框：AI 不是效率工具，是资本开支换轨的手术刀</div><div class="article-body"><p>原始信号：Latent Space 日报 Anthropic growing 10x/year, everyone else laying off &gt;10%<br>来源：<a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" target="_blank">https://www.latent.space/p/ainews-anthropic-growing-10xyear</a></p>
+<p>背景溯源：<br>科技行业过去十年最稳定的剧本，是“招人、融资、扩张、讲 TAM、再招人”。疫情后这个剧本被高利率撕开，到了生成式 AI 时代，剧本变成更残酷的一版：AI 原生公司用 ARR 增速讲神话，传统科技公司用裁员和自动化向资本市场交投名状。Latent Space 把 Anthropic 的高增长叙事和“其他公司裁员超过 10%”并置，不是标题党，而是产业资本迁移的截面。钱没有消失，只是从人头预算流向模型订阅、API、推理账单、GPU 集群和自动化平台。以前公司买 SaaS 是给员工提效，现在公司买 AI 是为了证明同样收入可以少养一批人。</p>
+<p>完整分析：<br>这件事最值得拆的不是 Anthropic 到底是不是 10x，而是 10x 背后的收入质量。AI 公司 ARR 口径可能混着长期合约、云抵扣、试点预算、渠道承诺和战略客户预付款。看起来像企业级需求爆炸，实际上可能有一部分是大客户买期权：今天先锁模型能力，明天再决定是不是真替换工作流。模型公司的毛利也不像传统 SaaS 那么漂亮，推理成本、训练成本、芯片折旧、数据采购、安全团队、企业支持全都在吞利润。传统 SaaS 卖的是软件边际成本趋近于零，AI 原生公司卖的是“每次用户用得越多，账单越热”。这就是为什么算力效率、缓存、路由、小模型、MoE、蒸馏会变成董事会话题，不是研究员的玩具。</p>
+<p>但需求侧也是真的。企业客户正在把 AI 放进客服、销售、代码、文档、法务、数据分析、运营监控。只要一个工作流能被模型吞掉 30% 的重复劳动，就足以触发 CFO 的条件反射：少招人，慢补人，砍外包，压咨询费。裁员不一定是 AI 单独造成的，但 AI 给了管理层一个体面说法：不是我无情，是组织杠杆升级。翻译成人话，就是用模型采购替代一部分人力预算。</p>
+<p>这里还有一个更狠的结构变化：AI 头部公司正在从“模型供应商”变成“组织操作系统供应商”。Claude 不是只卖聊天，它卖企业知识入口、代码协作、文档代理、客服自动化和安全品牌。OpenAI、Google、Anthropic、微软都在争夺同一件事：谁能坐在企业员工每天工作的中间层，谁就能收取新时代办公税。裁员潮释放的不只是成本，也是工作流重构机会。</p>
+<p>代码/配置演示：企业 AI 预算重分配监控表</p>
+<p>目标：不要被 ARR 神话骗瘸，内部评估 AI 工具必须看单位经济账。</p>
+<p>ai_budget_review.yaml<br>metrics:<br>  cost_per_resolved_ticket:<br>    formula: monthly_ai_cost / resolved_tickets_by_ai<br>    target: lower_than_human_baseline_by_40_percent<br>  human_hours_saved:<br>    formula: verified_minutes_saved / 60<br>    evidence_required: workflow_logs<br>  hallucination_incident_rate:<br>    formula: material_errors / ai_completed_tasks<br>    threshold: 0.5_percent<br>  escalation_rate:<br>    formula: human_escalations / ai_attempted_tasks<br>    threshold: 15_percent<br>  gross_margin_pressure:<br>    formula: inference_cost / ai_revenue_attributed<br>    threshold: 25_percent</p>
+<p>gating:<br>  pilot_to_production:<br>    require_positive_roi_months: 2<br>    require_security_review: true<br>    require_audit_log: true<br>    require_fallback_owner: true</p>
+<p>伪代码：<br>function evaluateAITool(tool):<br>  roi = calculateVerifiedSavings(tool) - calculateTotalCost(tool)<br>  risk = incidentRate(tool) + compliancePenaltyEstimate(tool)<br>  if roi &gt; 0 and risk &lt; allowedRisk and tool.hasAuditLogs:<br>    approveScaleUp(tool)<br>  else:<br>    keepPilotOrKill(tool)</p>
+<p>这套东西听起来冷酷，但比“员工感觉效率提升了”靠谱。AI 采购进入 2026，最大泡沫不是没人用，而是很多公司无法证明“省下的钱是真的，转嫁的风险不是埋雷”。</p>
+<p>大佬们的新感悟：<br>Swyx / Latent Space 把这个对照摆出来，价值在于没有把 AI 增长写成童话，而是放进裁员、预算、组织效率的同一个资产负债表里。原文链接：<a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" target="_blank">https://www.latent.space/p/ainews-anthropic-growing-10xyear</a><br>Amanda Askell 的正向对齐观点也必须放进商业语境：企业愿意把更多工作交给模型，前提是模型不只是“不杀人放火”，还要诚实、稳定、可解释、知道什么时候该闭嘴。原文链接：<a href="https://x.com/AmandaAskell/status/2052928572810256748" target="_blank">https://x.com/AmandaAskell/status/2052928572810256748</a></p>
+<p>实战优劣势分析：<br>优势一，AI 原生工具真的能吞掉大量重复任务，尤其是客服、内部问答、代码样板、文档初稿、数据清洗。优势二，头部模型公司安全品牌强，能加速企业采购。优势三，裁员和预算冻结反而逼组织寻找自动化替代，AI 公司拿到顺风。<br>劣势同样扎心。第一，推理成本会持续咬毛利，收入高增长不等于利润高质量。第二，企业工作流集成慢，试点到生产有一道“安全、权限、审计、责任”的铁门。第三，AI 替代叙事会引发组织阻力和监管压力，尤其当白领岗位被系统性挤压时，政策讨论不会一直装睡。</p>
+<p>Dolan&#x27;s 锐评：<br>Anthropic 的增长故事不是“AI 改变世界”的鸡汤，而是资本市场在重新定价白领劳动。以前 SaaS 帮员工多干活，现在 Agent 帮老板少雇人。谁还在拿“提升协作体验”当主菜，谁就没看懂钱往哪流。真正的牌桌上，模型公司卖铲子，云厂商卖电，企业 CFO 卖掉一部分岗位换利润率。温柔一点叫组织效率，难听一点叫白领杠杆再抵押。</p></div></article>
+<article class="article"><div class="article-title">三、MoE 与多模态泛化：大模型从炫肌肉进入省电省钱的苦日子</div><div class="article-body"><p>原始信号：UniPool: A Globally Shared Expert Pool for Mixture-of-Experts<br>来源：<a href="https://arxiv.org/abs/2605.06665v1" target="_blank">https://arxiv.org/abs/2605.06665v1</a><br>原始信号：Are We Making Progress in Multimodal Domain Generalization? A Comprehensive Benchmark Study<br>来源：<a href="https://arxiv.org/abs/2605.06643v1" target="_blank">https://arxiv.org/abs/2605.06643v1</a></p>
+<p>背景溯源：<br>过去的大模型竞赛像健身房互相晒围度：参数更大、上下文更长、榜单更高、demo 更花。可进入 2026 后，产业问题变成了两个字：账单。训练要钱，推理要钱，低延迟要钱，多租户服务要钱，企业 SLA 也要钱。MoE 的商业诱惑就在这里：总参数可以很大，但每次只激活一部分专家，用更少计算换更强能力。UniPool 提出的 globally shared expert pool，本质是在问一个更现实的问题：专家能不能跨层、跨任务、跨场景复用，而不是每个模块各自养一堆小山头，最后参数碎片化、路由拥堵、负迁移一地鸡毛。</p>
+<p>完整分析：<br>MoE 的最大价值不是论文指标，而是单位推理成本。如果模型公司每多卖一美元 API，就要烧掉五毛算力，那估值再性感也会被毛利率打回人间。共享专家池试图提高参数利用率，让不同任务从同一组专家里动态取能力。听起来像云计算里的资源池化：不要每个业务线都自己买服务器，而是把能力池化后按需调度。问题是，模型专家不是无状态容器。专家学到的是分布、模式和任务偏好，硬共享可能造成路由竞争、专家过热、负迁移和训练不稳定。它能不能从 paper idea 变成生产方案，关键看三件事：路由是否稳定，专家是否可解释，服务是否可控。</p>
+<p>多模态泛化 benchmark 则从另一个角度泼冷水。多模态模型最容易在 demo 里装神：看图答题、识别场景、解释图表、辅助机器人，全都能在精心样本上起飞。但真实世界不是 benchmark 的摄影棚。医疗影像换设备、自动驾驶换天气、机器人换厨房、工业质检换光照，模型就可能从“智能”退化成“猜得很自信”。跨域泛化才是多模态落地的硬门槛。企业不关心你在某个榜单多 1.2 分，它关心模型出了训练分布后会不会把异常当正常，把危险当背景。</p>
+<p>把 MoE 和多模态泛化放在一起看，今天的大模型行业正在从两个方向被拧螺丝：成本侧要求更高参数效率，可靠性侧要求更强分布外能力。只有会省钱但不稳，是玩具；只有很稳但贵到没人用，是实验室神像。能活下来的模型公司，必须同时回答 CFO 和安全负责人：每次调用多少钱，失败边界在哪里，证据链怎么留。</p>
+<p>代码/配置演示：MoE 服务与泛化评测的生产门禁</p>
+<p>moe_serving.yaml<br>routing:<br>  top_k_experts: 2<br>  capacity_factor: 1.25<br>  expert_pool: global_shared<br>  overflow_strategy: fallback_dense_layer<br>  log_routing_distribution: true</p>
+<p>cost_control:<br>  max_active_parameters_per_request: 12B<br>  cache_reusable_expert_outputs: true<br>  batch_by_route_signature: true<br>  alert_when_expert_hotspot_above: 35_percent</p>
+<p>quality_gate:<br>  compare_against_dense_baseline: true<br>  regression_threshold: 1_percent<br>  out_of_domain_eval_required: true<br>  rollback_on_latency_p95_above_ms: 900</p>
+<p>multimodal_eval.yaml<br>datasets:<br>  in_domain: product_standard_images<br>  out_of_domain:<br>    - low_light_images<br>    - different_camera_vendor<br>    - noisy_text_overlay<br>    - rare_failure_cases</p>
+<p>acceptance:<br>  average_accuracy_drop_limit: 5_percent<br>  critical_error_limit: 0.2_percent<br>  require_failure_explanations: true<br>  require_human_review_for_high_risk_outputs: true</p>
+<p>伪代码：<br>function releaseModel(candidate):<br>  cost = runServingCostBenchmark(candidate)<br>  idScore = evaluate(candidate, inDomainSuite)<br>  oodScore = evaluate(candidate, outOfDomainSuite)<br>  criticalErrors = countCriticalFailures(candidate)</p>
+<p>if cost.withinBudget and oodScore.drop &lt; 5 percent and criticalErrors &lt; limit:<br>    canaryDeploy(candidate)<br>  else:<br>    blockRelease(candidate)</p>
+<p>实战优劣势分析：<br>MoE 共享专家池的优势，是把模型能力做成更像基础设施的资源池，降低重复参数和推理浪费；对算力受限的团队尤其有吸引力。多模态泛化评测的优势，是逼团队承认真实世界比榜单肮脏，提前发现部署雷区。两者结合，可以让模型从“跑分资产”转成“运营资产”。<br>劣势也不客气。MoE 的工程复杂度高，路由、负载均衡、缓存、容错、监控都比 dense 模型麻烦。共享专家池如果没有解释性，排障会很痛苦。多模态泛化 benchmark 则容易被再次刷榜，真正有效的评测必须绑定业务真实数据和高风险失败样本，不能只靠公开数据集自嗨。</p>
+<p>Dolan&#x27;s 锐评：<br>大模型行业终于从“我参数大我有理”的青春期，进入“你毛利率多少”的中年危机。MoE 是省钱的算盘，多模态泛化是少翻车的保险。未来赢家不是榜单上最会摆拍的模型，而是能在脏数据、低预算、高并发、审计压力里继续干活的模型。AI 公司别再把每次发布会都搞成法术展示了，CFO 的 Excel 比你的 demo 更冷血。</p></div></article>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">🌍 巨头绞肉机</div>
+<div class="giant-item"><div class="giant-title">：Anthropic 高增长叙事与行业裁员潮同框，AI 预算正在从人力成本里撬出来。</div><div class="giant-body"><p>[关键细节]：Latent Space 5 月 9 日把 Anthropic growing 10x/year 和 everyone else laying off &gt;10% 放在一起，提醒 ARR、算力支出和组织裁员是同一张资产负债表上的不同科目。来源：<a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" target="_blank">https://www.latent.space/p/ainews-anthropic-growing-10xyear</a><br>Dolan&#x27;s 锐评：这不是 AI 普惠众生，这是 CFO 终于找到一个能把裁员讲成技术升级的包装盒。</p></div></div>
+<div class="giant-item"><div class="giant-title">：Amanda Askell 强调对齐不能只做危险规避，还要训练模型的正向人格与诚实边界。</div><div class="giant-body"><p>[关键细节]：她指出 alignment research 常被迫聚焦 concerning behaviors，但更重要的问题是 AI models can be and why。来源：<a href="https://x.com/AmandaAskell/status/2052928572810256748" target="_blank">https://x.com/AmandaAskell/status/2052928572810256748</a><br>Dolan&#x27;s 锐评：只会拒答的安全模型像过度合规的前台，保命可以，干活不行；企业买的是可靠同事，不是电子门卫。</p></div></div>
+<div class="giant-item"><div class="giant-title">：LLM 文档代理被曝会污染文档，委托式编辑的可靠性问题进入生产红区。</div><div class="giant-body"><p>[关键细节]：arXiv/HN 讨论指出，模型在代理编辑文档时可能篡改内容、破坏格式、引入隐性错误。来源：<a href="https://arxiv.org/abs/2604.15597" target="_blank">https://arxiv.org/abs/2604.15597</a><br>Dolan&#x27;s 锐评：Agent 不会因为会写漂亮段落就自动获得生产权限，不会留审计链的自动化，都是高级事故生成器。</p></div></div>
+<div class="giant-item"><div class="giant-title">：UniPool 提出全局共享专家池，MoE 竞争从参数堆砌转向参数利用率。</div><div class="giant-body"><p>[关键细节]：论文主张通过 globally shared expert pool 提升专家复用和迁移效率，目标直指训练与推理成本。来源：<a href="https://arxiv.org/abs/2605.06665v1" target="_blank">https://arxiv.org/abs/2605.06665v1</a><br>Dolan&#x27;s 锐评：MoE 的终极卖点不是学术优雅，是让模型公司少被 GPU 账单掐住脖子。</p></div></div>
+<div class="giant-item"><div class="giant-title">：多模态领域泛化 benchmark 追问跨域能力到底有没有真进步。</div><div class="giant-body"><p>[关键细节]：Are We Making Progress in Multimodal Domain Generalization? 系统评估多模态模型训练分布外表现，指向机器人、医疗、自动驾驶等落地场景。来源：<a href="https://arxiv.org/abs/2605.06643v1" target="_blank">https://arxiv.org/abs/2605.06643v1</a><br>Dolan&#x27;s 锐评：多模态 demo 在发布会上像神，换个摄像头和灯光就露馅；真实世界不负责配合你的 benchmark。</p></div></div>
+<div class="giant-item"><div class="giant-title">：Bun 实验性 Rust 重写在 Linux x64 glibc 上达到 99.8% 测试兼容。</div><div class="giant-body"><p>[关键细节]：Jarred Sumner 发布信号，HN 讨论热度高，运行时竞争从单纯速度卷到可维护性、内存安全和企业可采纳性。来源：<a href="https://twitter.com/jarredsumner/status/2053047748191232310" target="_blank">https://twitter.com/jarredsumner/status/2053047748191232310</a><br>Dolan&#x27;s 锐评：JS 运行时大战的下半场不是谁喊得快，而是谁能让企业少熬夜、少踩包兼容、少被供应链打脸。</p></div></div>
+<div class="giant-item"><div class="giant-title">：cPanel 黑色一周，44k 服务器遭勒索后又修补 3 个新漏洞。</div><div class="giant-body"><p>[关键细节]：共享主机控制面高权限、高部署量、多租户，任何漏洞都可能变成批量勒索放大器。来源：<a href="https://www.copahost.com/blog/cpanels-black-week-three-new-vulnerabilities-patched-after-ransomware-attack-on-44000-servers/" target="_blank">https://www.copahost.com/blog/cpanels-black-week-three-new-vulnerabilities-patched-after-ransomware-attack-on-44000-servers/</a> 讨论：<a href="https://news.ycombinator.com/item?id=48073680" target="_blank">https://news.ycombinator.com/item?id=48073680</a><br>Dolan&#x27;s 锐评：中小网站以为自己买的是便宜托管，实际买的是一个所有邻居共用门锁的高层公寓。</p></div></div>
+<div class="giant-item"><div class="giant-title">：Internet Archive 扩展 Switzerland 节点，知识保存开始押注跨司法辖区韧性。</div><div class="giant-body"><p>[关键细节]：瑞士节点强化全球归档、镜像、存储冗余与法律韧性，也继续面对版权和数据主权争议。来源：<a href="https://blog.archive.org/2026/05/06/internet-archive-switzerland-expanding-a-global-mission-to-preserve-knowledge/" target="_blank">https://blog.archive.org/2026/05/06/internet-archive-switzerland-expanding-a-global-mission-to-preserve-knowledge/</a><br>Dolan&#x27;s 锐评：当平台忙着删旧内容、AI 忙着吞训练料，互联网档案馆反而像数字文明最后的冷库。</p></div></div>
+<div class="giant-item"><div class="giant-title">：FreeBSD 发布 execve 本地提权安全公告，基础系统补丁优先级再次被提醒。</div><div class="giant-body"><p>[关键细节]：execve 路径涉及权限继承和内核边界，本地提权常与远程初始访问组合成完整攻击链。来源：<a href="https://www.freebsd.org/security/advisories/FreeBSD-SA-26:13.exec.asc" target="_blank">https://www.freebsd.org/security/advisories/FreeBSD-SA-26:13.exec.asc</a><br>Dolan&#x27;s 锐评：看到 local 就降优先级的人，是把攻击者想得太有礼貌；人家拿到一个落点就能顺着你内核往上爬。</p></div></div>
+<div class="giant-item"><div class="giant-title">：Mac 软件分发压力继续升温，独立开发者被签名、公证、权限和政策摩擦消耗。</div><div class="giant-body"><p>[关键细节]：HN 讨论指向 Apple 平台安全体验与独立软件自由分发之间的长期张力。来源：<a href="https://blog.kronis.dev/blog/apple-is-increasing-my-cortisol-levels" target="_blank">https://blog.kronis.dev/blog/apple-is-increasing-my-cortisol-levels</a><br>Dolan&#x27;s 锐评：平台说这是安全，开发者听到的是固定税；守门人最擅长把收费站修成安检口。</p></div></div>
+<div class="giant-item"><div class="giant-title">：HN 热议 cyberlibertarianism 的矛盾，互联网自由叙事被平台权力反噬。</div><div class="giant-body"><p>[关键细节]：文章讨论技术自由主义、平台集中、公共责任和监管之间的冲突，AI 平台治理正在复制同一套矛盾。来源：<a href="https://matduggan.com/the-intolerable-hypocrisy-of-cyberlibertarianism/" target="_blank">https://matduggan.com/the-intolerable-hypocrisy-of-cyberlibertarianism/</a><br>Dolan&#x27;s 锐评：早期互联网喊自由，后期平台拿自由当免死金牌；到了 AI 时代，这套戏法又被 API 网关重新包装。</p></div></div>
+<div class="giant-item"><div class="giant-title">：Zed Theme-Builder 推出，编辑器入口战继续向审美、配置和社区资产延伸。</div><div class="giant-body"><p>[关键细节]：主题构建器降低社区贡献门槛，强化开发者日常入口粘性；AI coding 工作台竞争不只靠模型。来源：<a href="https://zed.dev/theme-builder" target="_blank">https://zed.dev/theme-builder</a></p></div></div>
+<div class="quote-block summary"><div class="quote-label">板块总结</div><p>Dolan&#x27;s 锐评：别小看主题工具，开发者每天盯 8 小时的地方，就是下一代 coding agent 的广告位和收费口。<br><br>## Dolan&#x27;s 锐评：<br>今天的巨头牌桌很清楚：模型公司讲增长，云厂商卖电和算力，平台公司收门票，安全漏洞替所有人补现实主义课程。AI 行业不再是单纯拼智商的技术竞赛，而是现金流、毛利率、审计责任、平台控制权的混战。谁能把能力变成低成本、可控、可采购的基础设施，谁吃肉；谁只会在发布会上放烟花，谁迟早被账单和事故双杀。</p></div>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">📡 极客雷达</div>
+<div class="radar-item"><div class="radar-num">01</div><div><div class="radar-title">Bun Rust rewrite + HN 240 分：JS 运行时兼容与安全迁移，痛点是速度之外的维护性；值得关注，因为 99.8% 测试兼容意味着企业试用门槛继续下降。来源：https://twitter.com/jarredsumner/status/2053047748191232310</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">02</div><div><div class="radar-title">Zed Theme-Builder + HN 110 分：编辑器主题构建，痛点是主题配置门槛高；值得关注，因为编辑器入口正在变成 AI coding 分发层。来源：https://zed.dev/theme-builder</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">03</div><div><div class="radar-title">FreeBSD execve advisory + HN 46 分：基础系统安全公告，痛点是本地提权容易被低估；值得关注，因为 FreeBSD 常藏在网络设备、存储和长周期基础设施里。来源：https://www.freebsd.org/security/advisories/FreeBSD-SA-26:13.exec.asc</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">04</div><div><div class="radar-title">cPanel vulnerabilities + HN 88 分：共享主机控制面安全，痛点是单点面板漏洞放大到成千上万服务器；值得关注，因为中小企业安全外包的底裤又被掀开。来源：https://www.copahost.com/blog/cpanels-black-week-three-new-vulnerabilities-patched-after-ransomware-attack-on-44000-servers/</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">05</div><div><div class="radar-title">Internet Archive Switzerland + HN 474 分：跨国知识归档节点，痛点是数字公共记忆受司法和平台删除影响；值得关注，因为 AI 训练、研究复现和公共知识都离不开历史网页。来源：https://blog.archive.org/2026/05/06/internet-archive-switzerland-expanding-a-global-mission-to-preserve-knowledge/</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">06</div><div><div class="radar-title">No Query Strings + HN 183 分：URL 设计实践，痛点是追踪参数、缓存键和长期链接污染；值得关注，因为可读、可分享、可缓存的 Web 仍是反平台污染的基本功。来源：https://chrismorgan.info/no-query-strings</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">07</div><div><div class="radar-title">Cyberlibertarianism critique + HN 219 分：互联网治理意识形态复盘，痛点是自由叙事被平台权力偷梁换柱；值得关注，因为 AI 平台和模型 API 正在重演同一场政治经济学。来源：https://matduggan.com/the-intolerable-hypocrisy-of-cyberlibertarianism/</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">08</div><div><div class="radar-title">LLM document corruption + HN 305 分：AI 文档代理可靠性，痛点是委托编辑会隐性篡改内容；值得关注，因为办公 AI 能不能进生产，全看 diff、审计和回滚。来源：https://arxiv.org/abs/2604.15597</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">09</div><div><div class="radar-title">UniPool MoE + arXiv：共享专家池架构，痛点是 MoE 专家碎片化和参数利用不足；值得关注，因为算力受限环境里，效率就是护城河。来源：https://arxiv.org/abs/2605.06665v1</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">10</div><div><div class="radar-title">Multimodal Domain Generalization Benchmark + arXiv：多模态跨域评测，痛点是 demo 能力无法代表真实部署稳健性；值得关注，因为机器人、医疗、自动驾驶都死在分布外边界。来源：https://arxiv.org/abs/2605.06643v1</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">11</div><div><div class="radar-title">Apple is increasing my cortisol levels + HN 137 分：Mac 独立软件分发，痛点是签名、公证、权限和平台政策成本；值得关注，因为独立开发者正在被平台合规固定税慢慢榨干。来源：https://blog.kronis.dev/blog/apple-is-increasing-my-cortisol-levels</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">12</div><div><div class="radar-title">I caught the car + HN 15 分：资深工程师身份落差，痛点是 senior 之后不再只是写代码；值得关注，因为 AI 时代基础产出贬值，判断力和 ownership 才是硬通货。来源：https://undecidability.net/senior/</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">13</div><div><div class="radar-title">Trading systems production engineering video + HN 45 分：高可靠交易系统经验，痛点是低延迟、高金额、强审计环境下的变更管理；值得关注，因为 AI 运维进入金融前必须先学会限制故障半径。来源：https://www.youtube.com/watch?v=zR9PpXWsKFQ</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">14</div><div><div class="radar-title">Making your own programming language + HN 7 分：自制语言教程，痛点是编译器入门看似神秘；值得关注，因为 DSL 和内部工具在 AI 辅助下会重新变多，但语义一致性仍要人类还债。来源：https://lisyarus.github.io/blog/posts/making-your-own-programming-language.html</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">15</div><div><div class="radar-title">ROKR wooden typewriter + HN 21 分：机械输入设备文化，痛点是数字疲劳下的触感和仪式需求；值得关注，因为低技术产品也能靠社区内容获得长尾传播。来源：http://writingball.blogspot.com/2026/05/the-rokr-wooden-typewriter-closer-look.html</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">16</div><div><div class="radar-title">Linear Nan Yu 弱信号 + X：协作工具产品暗示，痛点是原始链接和图片上下文不足；值得关注，因为 Linear 一旦改变 issue、项目和 agent 协作入口，会影响开发团队操作系统。来源：https://x.com/thenanyu/status/2052822037488431278</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">17</div><div><div class="radar-title">Amanda Askell alignment view + X：模型正向人格训练，痛点是安全不能只靠负例禁令；值得关注，因为拒答机器没有商业天花板，诚实、稳定、会协作的模型才有企业生命。来源：https://x.com/AmandaAskell/status/2052928572810256748</div><div class="radar-body"></div></div></div>
+<div class="radar-item"><div class="radar-num">18</div><div><div class="radar-title">Latent Space AI News + 高权重日报：AI 商业与裁员同框，痛点是 ARR 和组织效率叙事真假混杂；值得关注，因为头部模型公司的增长质量将决定整个 AI 估值锚。来源：https://www.latent.space/p/ainews-anthropic-growing-10xyear</div><div class="radar-body"></div></div></div>
+<div class="quote-block summary"><div class="quote-label">板块总结</div><p>## Dolan&#x27;s 锐评：<br>极客雷达今天的暗线不是某个项目一夜封神，而是“可控性”正在重新变贵：URL 要干净，文档要可回滚，模型要能跨域，运行时要可维护，平台要少折腾开发者。技术圈过去迷信速度和炫技，现在生产世界拿着账单、审计和安全事故来收税。真正值得盯的项目，不是喊口号最大声的，而是能把复杂系统变得可验证、可迁移、可长期维护的。</p></div>
+</section>
+<hr class="divider">
+<section>
+<div class="section-header">💡 终局研判</div>
+<div class="final-section"><div class="final-title">Dolan's 致命锐评</div><div class="final-body"><p>## Dolan&#x27;s 致命锐评：<br>今天所有信号合起来只有一句话：AI 行业正在从“讲能力”转向“交责任”。Anthropic 式增长说明钱在往头部模型公司流，裁员说明钱从人力池里被抽走，MoE 说明算力账单开始逼宫，多模态泛化和文档污染说明 demo 神话正在被生产现实毒打。下一阶段的赢家，不是最会画大饼的模型厂，而是能把每次调用、每次修改、每次失败都解释清楚并压进成本线的人。硅谷最怕的不是 AI 不够聪明，而是 AI 足够聪明，却还不够便宜、不够稳、不够敢签字。</p></div></div>
+</section>
+<div class="outro">Dolan's 全景内参 · 2026-05-10 · 仅供个人研究参考<br>锐评由 LLM 生成，链接与事实以原始来源为准</div>
+</div>
+</body>
+</html>
